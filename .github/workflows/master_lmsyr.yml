@@ -24,7 +24,7 @@ jobs:
       run: mvn clean install
 
     - name: Deploy to Azure Web App
-      uses: azure/webapps/ROOT-deploy@v1
+      uses: azure/webapps-deploy@v1
       with:
         app-name: 'lmsyr'
         slot-name: 'production'
