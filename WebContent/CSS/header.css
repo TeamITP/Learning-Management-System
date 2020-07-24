@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+:root {
+    --primary: rgb(0, 132, 255);
+}
+
+header {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    width: 100%;
+    margin-left: 10% !important;
+    margin-top:10px;
+}
+
+.avtarImg {
+	margin-right:30%;
+}
+
+
+header {
+    background: rgba(255, 255, 255, 0.95);;
+    padding: 0.5em 0;
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a.logo {
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, rgba(0, 125, 255, 1) 0%, rgba(66, 175, 251, 1) 35%, rgba(0, 61, 255, 0.5494572829131652) 100%);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+a.logo:hover {
+	text-decoration: none !important;
+	color:white;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    font-size: 12pt;
+}
+
+nav li a {
+    padding: 1em;
+}
+
+nav li a:hover {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+#loginImage {
+    height: 40px;
+    margin-left: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(133, 133, 133);
+    padding: 6px 8px;
+    font-size: 10pt;
+    text-decoration: none;
+    display: block;
+}
+
+.logoutDropdown {
+    color: rgb(133, 133, 133);
+}
+
+.regDropdown:hover {
+    color: var(--primary);
+    font-weight: bold;
+     text-decoration: none !important;
+}
+
+.logoutDropdown:hover {
+    background-color: #fcd9d9ab !important;
+    color: red;
+    text-decoration: none !important;
+}
+
+.dropdown-content a:hover {
+    background-color: #d9effcab;
+     text-decoration: none !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownIcon {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 80% 20% !important;
+}

@@ -1,0 +1,67 @@
+
+:root {
+    --primary: rgb(0, 132, 255);
+}
+.footerRow {
+    margin: 0 !important;
+    line-height: 50px;
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: auto;
+    background: linear-gradient(90deg, rgba(0, 125, 255, 1) 0%, rgba(66, 175, 251, 1) 35%, rgba(0, 61, 255, 0.5494572829131652) 100%);
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+#Foot_copyright {
+    font-family: "Roboto";
+    font-size: 17px;
+    color: white;
+}
+
+
+/*Social media icons*/
+
+.iconF1 {
+    height: 20px;
+    width: auto;
+    display: inline;
+    margin-left: 50px;
+    margin-right: 10px;
+    line-height: 50px;
+}
+
+.iconF {
+    height: 25px;
+    width: auto;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+    padding-right: 15px;
+}
+
+#fb,
+#yt,
+#tw,
+#in {
+    position: relative;
+    left: 20px
+}
+
+.linkF {
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+}
