@@ -29,4 +29,4 @@ jobs:
         app-name: 'lmsyr'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_089806291c9b42d395188f1e59d6df3b }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/target/*.war'
