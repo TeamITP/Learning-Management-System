@@ -24,9 +24,9 @@ jobs:
       run: mvn clean install
 
     - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v1
+      uses: azure/webapps-deploy@v1/ROOT
       with:
         app-name: 'lmsyr'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_089806291c9b42d395188f1e59d6df3b }}
-        package: '${{ github.workspace }}/target/ROOT.war'
+        package: '${{ github.workspace }}/target/*.war'
