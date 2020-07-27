@@ -5,6 +5,7 @@
 
 <head>
     <meta charset="ISO-8859-1">
+    <meta name="google-site-verification" content="ds-d0Xcl5-gl0FYFpnclJtS4FBhGWSFD6vcZS5oJTEw" />
     <title>Home | New Montana</title>
     <link rel="icon" href="Images/book.png">
     <link rel="stylesheet" href="CSS/index.css">
