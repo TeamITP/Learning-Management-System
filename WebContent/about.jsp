@@ -11,7 +11,7 @@
 <body>
 
 <!-- Message (Delete this section)-->
-<h1 class="editme">About Us Page Update</h1>
+<h1 class="editme">THIS IS ABOUT US PAGE</h1>
 
 <style>
 .editme {
