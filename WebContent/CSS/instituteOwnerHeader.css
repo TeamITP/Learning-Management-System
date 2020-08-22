@@ -381,9 +381,10 @@ nav ul li {
 /*Page Conatainer*/
 
 .pageContainer {
-    margin-top: 80px;
-    margin-left: 18vw;
+    margin-left: 250px;
     width: 82vw;
     margin-right: 20px;
     margin-bottom: 20px;
+    padding: 50px;
+}   padding: 50px;
 }
