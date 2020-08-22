@@ -1,7 +1,7 @@
-
 :root {
     --primary: rgb(0, 132, 255);
 }
+
 .footerRow {
     margin: 0 !important;
     line-height: 50px;
