@@ -15,7 +15,7 @@ body {
     height: 500px;
     width: 100%;
     display: grid;
-    margin-top:60px;
+    margin-top: 60px;
     grid-template-columns: 50% 50%;
 }
 
@@ -68,7 +68,7 @@ body {
     border-radius: 50px;
     padding: 10px 50px 10px 50px;
     color: white;
-    font-size:15px;
+    font-size: 15px;
     margin-top: 30px;
     outline: none;
 }
