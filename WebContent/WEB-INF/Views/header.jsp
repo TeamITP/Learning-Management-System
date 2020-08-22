@@ -5,7 +5,7 @@
 </head>
 <header>
 <div class="grid-container">
-    <div class="grid-item container">
+    <div class="grid-item navContain">
         <a href="#" class="logo"><i class="fa fa-graduation-cap" aria-hidden="true"></i>  New Montana</a>
         <nav>
             <ul>
