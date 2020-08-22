@@ -1,0 +1,96 @@
+.pageContainer {
+    margin-left: 250px;
+    width: 75vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sideNav {
+    margin-top: 80px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    padding-top: 10px !important;
+    background: linear-gradient(0deg, rgba(0, 125, 255, 1) 0%, rgba(66, 175, 251, 1) 35%, rgba(0, 61, 255, 0.5494572829131652) 100%);
+    border-radius: 10px 0 0 10px;
+    width: 200px;
+    height: 500px;
+}
+
+#imageUserNav {
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.firstRow {
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.nameNav {
+    font-size: 14px;
+    color: white;
+    margin-top: 15px;
+}
+
+#breakLine {
+    margin: 10px 5px 5px 5px;
+    border-top: 0.5px solid white;
+}
+
+.mainSideNav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    display: block;
+    margin-top: 15px;
+}
+
+.mainSideNav a:hover {
+    text-decoration: none;
+    background: #ffffff5b !important;
+    border-radius: 0px 50px 50px 0px;
+    margin-right: 5px;
+    color: #ffffff !important;
+}
+
+.active {
+    text-decoration: none;
+    background: #ffffff5b !important;
+    border-radius: 0px 50px 50px 0px;
+    margin-right: 5px;
+    color: white !important;
+}
+
+#textMainNavi {
+    color: #ffffff;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.iconMainNavi {
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+}
+
+#navToIndex {
+    text-decoration: none;
+}
+
+#navToIndex :hover {
+    cursor: pointer;
+}

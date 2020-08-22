@@ -15,6 +15,7 @@
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 
     <body>
+    <div class="page-container">
         <div class="mainImage">
             <div class="description">
                 <p id="textMainDescription">Learn From Home</p>
@@ -26,8 +27,9 @@
                 <img id="imgMainIndex" src="Images/mainImageIndex.png">
             </div>
         </div>
+        <!--Footer Here-->
+            <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+        </div>
     </body>
-
-    <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 
     </html>
