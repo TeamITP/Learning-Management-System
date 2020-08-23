@@ -7,7 +7,9 @@
         <meta charset="ISO-8859-1">
         <title>Home | Admin</title>
         <link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/employeeNav.css">
+        <link rel="stylesheet" href="CSS/index.css">
+        <link rel="stylesheet" href="CSS/teacherNav.css">
+        <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -24,14 +26,20 @@
         </div>
         <hr id="breakLine">
         <div class="mainSideNav">
-        <a href="employeeIncome.jsp"> <i class="fas fa-funnel-dollar iconMainNavi"></i>Income</a>
-        <a href="employeeClassFees.jsp" class="active"><i class="fas fa-money-bill-alt iconMainNavi" ></i>Class Fees</a>
-		<a href="empTeacherSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Teachers' Salary</a>
-		<a href="empEmpSal.jsp"><i class="fas fa-money-check-alt iconMainNavi"></i>Employees' Salary</a> 
-		<a href="empExpenditures.jsp"><i class="fas fa-file-invoice iconMainNavi"></i>Expenditures</a>
-        <a href="empNotices.jsp"> <i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
-        <a href="empNewStu.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students</a>
+        <a href="teacherClassroom.jsp" class="active"><i
+				class="fas fa-home iconMainNavi" ></i>Classroom</a>
+				<a href="teacherAssignments.jsp" ><i
+				class="fas fa-file-alt iconMainNavi"></i>Assignments</a>
+			<a href="teacherNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a> 
+				<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a>
+                <a href="teacherPayments.jsp"> <i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments</a>
+                <a href="teacherPayments.jsp"> <i class="fas fa-question iconMainNavi"></i>Q & A</a>
         </div>
+        <hr id="breakLine">
+        <h5 class="subTitle">Class Details</h5>
+        <h5 class="textClz" id="className">Combined Mathematics</h5>
+        <h5 class="textClz" id="classYear">2020 A/L</h5>
+        <h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
         </div>
 
 <div class="page-container">
