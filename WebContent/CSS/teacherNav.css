@@ -1,11 +1,25 @@
 .pageContainer {
     margin-left: 250px;
-    width: 75vw;
+    width: 80vw;
     margin-bottom: 20px;
-    padding-left: 50px;
-    padding-top: 80px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 10px;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.sideNav::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.sideNav {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .sideNav {
@@ -13,14 +27,14 @@
     margin-left: 30px;
     margin-bottom: 30px;
     margin-right: 30px;
-    overflow: hidden;
+    overflow-x: hidden;
     position: fixed;
     z-index: 1;
     padding-top: 10px !important;
     background: linear-gradient(0deg, rgba(0, 125, 255, 1) 0%, rgba(66, 175, 251, 1) 35%, rgba(0, 61, 255, 0.5494572829131652) 100%);
     border-radius: 10px 0 0 10px;
     width: 200px;
-    height: 500px;
+    height: 75vh;
 }
 
 #imageUserNav {
@@ -51,11 +65,10 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 15px;
-    margin-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .mainSideNav a:hover {
