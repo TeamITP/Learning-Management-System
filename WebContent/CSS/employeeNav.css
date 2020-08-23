@@ -1,12 +1,25 @@
 .pageContainer {
     margin-left: 250px;
-    width: 75vw;
-    margin-right: 20px;
+    width: 80vw;
     margin-bottom: 20px;
-    padding-left: 50px;
-    padding-top: 80px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-top: 10px;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.sideNav::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.sideNav {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .sideNav {
@@ -14,7 +27,7 @@
     margin-left: 30px;
     margin-bottom: 30px;
     margin-right: 30px;
-    overflow: hidden;
+    overflow-x: hidden;
     position: fixed;
     z-index: 1;
     padding-top: 10px !important;
