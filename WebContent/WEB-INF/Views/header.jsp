@@ -5,7 +5,7 @@
 </head>
 <header>
 <div class="grid-container">
-    <div class="grid-item container">
+    <div class="grid-item navContain">
         <a href="#" class="logo"><i class="fa fa-graduation-cap" aria-hidden="true"></i>  New Montana</a>
         <nav>
             <ul>
@@ -18,7 +18,7 @@
     </div>
     <div class="grid-item avtarImg">
      <div class="dropdown" style="float:right;">
-                        <img id="loginImage" src="Images/avatar.png">
+                        <img id="loginImage" src="Images/userAvatar.png">
                         <div class="dropdown-content">
                             <a href="#" class="regDropdown"><i class="dropdownIcon fa fa-user" aria-hidden="true"></i>Profile</a>
                             <a href="#" class="regDropdown"><i class="dropdownIcon fa fa-graduation-cap" aria-hidden="true"></i>My Courses</a>
