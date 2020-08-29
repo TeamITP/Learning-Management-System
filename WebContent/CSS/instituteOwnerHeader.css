@@ -7,15 +7,21 @@
     margin: 0;
 }
 
+
 /* Hide scrollbar for Chrome, Safari and Opera */
+
 .sidenav::-webkit-scrollbar {
     display: none;
 }
 
+
 /* Hide scrollbar for IE, Edge and Firefox */
+
 .sidenav {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .sidenav {
@@ -70,7 +76,7 @@
 .userNameSideNavBar {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5px;
-    color:rgb(121, 121, 121);
+    color: rgb(121, 121, 121);
     font-size: 17px;
     margin-left: 20px;
 }
@@ -93,7 +99,7 @@
 }
 
 .textDropdownAvtar {
-	padding-left:10px;
+    padding-left: 10px;
 }
 
 #rowDropDown1 :hover {
@@ -109,7 +115,7 @@
 
 #dropDownIcon {
     margin-left: 20px;
-    color:rgb(121, 121, 121);
+    color: rgb(121, 121, 121);
 }
 
 #dropDownContent {
@@ -327,6 +333,7 @@ nav ul li {
     margin-left: 20px;
 }
 
+
 /*Social media icons*/
 
 .iconF1 {
@@ -368,4 +375,16 @@ nav ul li {
     text-decoration: none;
     font-size: 15px;
     color: rgb(121, 121, 121);
+}
+
+
+/*Page Conatainer*/
+
+.pageContainer {
+    margin-left: 250px;
+    width: 82vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 50px;
+}   padding: 50px;
 }
