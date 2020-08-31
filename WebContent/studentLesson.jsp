@@ -46,6 +46,8 @@
         </div>
         <h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
         </div>
+
+		
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
