@@ -9,6 +9,7 @@
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/studentNav.css">
         <link rel="stylesheet" href="CSS/studentClassroom.css">
+        <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -50,6 +51,26 @@
             <!--Header Here-->
             <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
         <div class="pageContainer">
+        <div class="pageTopicContainer">
+				<h1 class="pageTopic">Lesssons</h1>
+				<hr class="dividerTopic">
+			</div>
+
+			<div class="row listClass">
+				<div class="col-1.5 itemContainer">
+					<img src="Images/lessonImg.jpg" id="clzImg">
+					<div class="row">
+						<div class="col-10">
+							<h3 id="lessonNum">Lesson 01</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h3 id="title">Introduction</h3>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
         <!--Footer Here-->
             <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
