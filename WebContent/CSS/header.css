@@ -29,7 +29,7 @@ header {
     overflow: hidden;
     display: block;
     padding-bottom: 50px;
-    padding-top: 70px;
+    padding-top: 60px;
     min-height: 100vh;
     margin: 0 !important;
     max-height: max-content;
@@ -62,15 +62,14 @@ a {
 
 a.logo {
     font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, rgba(0, 125, 255, 1) 0%, rgba(66, 175, 251, 1) 35%, rgba(0, 61, 255, 0.5494572829131652) 100%);
+    color: rgb(0, 132, 255);
     padding: 10px;
-    border-radius: 5px;
+    font-size: larger;
+    text-decoration: none !important;
 }
 
 a.logo:hover {
     text-decoration: none !important;
-    color: white;
 }
 
 nav {
