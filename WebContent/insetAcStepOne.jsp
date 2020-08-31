@@ -58,7 +58,7 @@
                     <textarea placeholder="Description" id="description" name="description"></textarea>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn btn-primary" name="btnSubmit" id="btnSubmit">Next</button>
+                    <button type="button" class="btn btn-primary" name="btnSubmit" id="btnSubmit">Next</button></div>
                     <!--Footer Here-->
                     <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
                 </div>

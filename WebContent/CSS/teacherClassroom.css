@@ -51,6 +51,7 @@
     border-radius: 10px;
     background: #ffffff;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .itemContainer:hover {
@@ -58,7 +59,9 @@
 }
 
 #clzImg {
+    width: 158px;
     height: 150px;
+    border-radius: 10px 10px 0 0;
 }
 
 #lessonNum {
@@ -116,4 +119,35 @@
     width: 158px;
     height: 150px;
     border-radius: 10px 10px 0 0;
+}
+
+#stuInsertImg {
+    height: 400px;
+    margin-top: 20px;
+    z-index: -1;
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+#studentId {
+    margin-left: 20px;
+    margin-top: 300px;
+    border-radius: 5px;
+    border: 1px solid #006FFF;
+    padding: 5px 10px;
+    outline: none;
+}
+
+#btnSubmit {
+    margin: 20px;
+}
+
+#reportImg {
+    width: 150px;
+    margin: 20px;
+    margin-top: 50px;
+}
+
+#btnReport {
+    margin-top: 100px;
 }
