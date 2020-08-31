@@ -7,7 +7,6 @@
         <meta charset="ISO-8859-1">
         <title>Home | Admin</title>
         <link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/index.css">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -45,6 +44,66 @@
             <!--Header Here-->
             <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
         <div class="pageContainer">
+        <h3 id="lessonName">Trigonometry</h3>
+        <div class="row">
+        <p id="introLesson">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nullam nec est magna. Morbi ipsum diam, gravida vitae 
+dapibus ut, suscipit vitae lorem.</p>
+        </div>
+        <div class="row btnCont">
+        <button id="btnUpdate">Update</button>
+            <button id="btnDelete">Delete</button>
+        </div>
+        <div class="pageTopicContainer">
+                    <h1 class="pageTopic">Reading and Activities</h1>
+                    <hr class="dividerTopic">
+                </div>
+
+                <div class="row listClass">
+			<div class="col-1.5 itemContainer">
+				<img src="Images/pdfIcon.png" id="clzImg">
+				<div class="row">
+					<div class="col-10">
+						<h3 id="lessonNum">Lesson 01</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h3 id="title">Introduction</h3>
+					</div>
+				</div>
+			</div>
+
+            <div class="col-1.5 itemContainer">
+				<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+			</div>
+		</div>
+
+
+         <div class="pageTopicContainer">
+                    <h1 class="pageTopic">Video Tutorials</h1>
+                    <hr class="dividerTopic">
+                </div>
+
+                <div class="row listClass">
+			<div class="col-1.5 itemContainer">
+				<img src="Images/youtubeVideo.png" id="youtubeV">
+				<div class="row">
+					<div class="col-10">
+						<h3 id="lessonNum">Lesson 01</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h3 id="title">Introduction</h3>
+					</div>
+				</div>
+			</div>
+
+            <div class="col-1.5 itemContainer">
+				<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+			</div>
+		</div>
         </div>
         <!--Footer Here-->
             <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>

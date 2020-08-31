@@ -15,7 +15,7 @@ body {
     height: 500px;
     width: 100%;
     display: grid;
-    margin-top: 60px;
+    margin-top: 0%;
     grid-template-columns: 50% 50%;
 }
 
