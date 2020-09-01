@@ -57,8 +57,8 @@
 					vitae dapibus ut, suscipit vitae lorem.</p>
 			</div>
 			<div class="row btnCont">
-				<button id="btnUpdate">Update</button>
-				<button id="btnDelete">Delete</button>
+				<button id="btnUpdate" style="outline:none">Update</button>
+				<button id="btnDelete" style="outline:none"  data-toggle="modal" data-target="#deleteModalLesson">Delete</button>
 			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Reading and Activities</h1>
@@ -69,8 +69,13 @@
 				<div class="col-1.5 itemContainer">
 					<img src="Images/pdfIcon.png" id="clzImg">
 					<div class="row">
-						<div class="col-10">
+						<div class="col-8">
 							<h3 id="lessonNum">Lesson 01</h3>
+						</div>
+						<div class="col-4">
+							<button data-toggle="modal" data-target="#deleteModal" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
+								<i class="fas fa-minus-circle"></i>
+							</button>
 						</div>
 					</div>
 					<div class="row">
@@ -95,8 +100,13 @@
 				<div class="col-1.5 itemContainer">
 					<img src="Images/youtubeVideo.png" id="youtubeV">
 					<div class="row">
-						<div class="col-10">
+						<div class="col-8">
 							<h3 id="lessonNum">Lesson 01</h3>
+						</div>
+						<div class="col-4">
+							<button data-toggle="modal" data-target="#deleteModalVideo" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
+								<i class="fas fa-minus-circle"></i>
+							</button>
 						</div>
 					</div>
 					<div class="row">
@@ -108,6 +118,99 @@
 
 				<div class="col-1.5 itemContainer">
 					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+				</div>
+			</div>
+		</div>
+
+		<!--Moodal for delete service-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Lesson Material</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value=""
+									name="serviceId" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									you want to delete this material ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Moodal for delete video-->
+		<div class="modal fade" id="deleteModalVideo" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Video</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value=""
+									name="serviceId" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									you want to delete this video ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Moodal for delete for Lesson-->
+		<div class="modal fade" id="deleteModalLesson" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Video</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value=""
+									name="serviceId" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									you want to delete this lesson ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
