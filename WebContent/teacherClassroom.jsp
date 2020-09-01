@@ -97,8 +97,9 @@
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
 				<div class="col-3">
-                <button type="submit" class="btn btn-danger" id="btnReport">Get Report of Students</button>
-                </div>
+					<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Report of Students</button>
+				</div>
 			</div>
 		</div>
 

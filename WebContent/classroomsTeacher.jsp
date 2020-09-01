@@ -19,35 +19,35 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-        <img src="Images/classroomMainImage.png" id="mainImg">
-        <div class="topTitle">
-        <h3 id="titleTop">Classrooms</h3>
-    </div>
-    <div class="row listClass">
-			<div class="col-1.5 itemContainer">
-				<img src="Images/classroomImg.jpg" id="clzImg">
-				<div class="row">
-					<div class="col-9">
-						<h3 id="classYear">2020 A/L</h3>
-					</div>
-					<div class="col-2">
-						<img src="Images/more.png" id="moreIcon">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<h3 id="subject">Physics</h3>
-					</div>
-				</div>
+			<img src="Images/classroomMainImage.png" id="mainImg">
+			<div class="topTitle">
+				<h3 id="titleTop">Classrooms</h3>
 			</div>
+			<div class="row listClass">
+				<div class="col-1.5 itemContainer">
+					<img src="Images/classroomImg.jpg" id="clzImg">
+					<div class="row">
+						<div class="col-9">
+							<h3 id="classYear">2020 A/L</h3>
+						</div>
+						<div class="col-2">
+							<img src="Images/more.png" id="moreIcon">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h3 id="subject">Physics</h3>
+						</div>
+					</div>
+				</div>
 
-            <div class="col-1.5 itemContainer">
-				<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+				<div class="col-1.5 itemContainer">
+					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+				</div>
 			</div>
 		</div>
-        </div>
-	<!--Footer Here-->
-	<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+		<!--Footer Here-->
+		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
 </body>
 
