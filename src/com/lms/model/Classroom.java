@@ -29,6 +29,17 @@ public class Classroom {
 		this.description = description;
 		this.classTime = classTime;
 	}
+	
+	
+
+	public Classroom(int grade, String subject, String teacherId, String description, String classTime) {
+		super();
+		this.grade = grade;
+		this.subject = subject;
+		this.teacherId = teacherId;
+		this.description = description;
+		this.classTime = classTime;
+	}
 
 	//Setters and Getters
 	public String getClassrooId() {

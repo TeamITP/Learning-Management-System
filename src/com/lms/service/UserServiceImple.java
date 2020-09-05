@@ -25,7 +25,7 @@ public class UserServiceImple implements UserService {
 		try {
 			connection = ConnectDB.getDBConnection();
 			
-			String sql = "SELECT password FROM Student WHERE Student_ID = ?";
+			String sql = "SELECT password FROM Teacher WHERE Teacher_ID = ?";
 			
 			preparedStatement = connection.prepareStatement(sql);
 			
