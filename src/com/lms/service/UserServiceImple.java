@@ -32,11 +32,9 @@ public class UserServiceImple implements UserService {
 			preparedStatement.setString(1, userId);
 			
 			ResultSet rs = preparedStatement.executeQuery();
-			System.out.println("Hello");
 			
 			if(rs.next()) {
-				System.out.println(rs.getString(0));
-				if(password.equals(rs.getString(0))) {
+				if(password.equals(rs.getString(1))) {
 					status = 1;
 				}
 			}
