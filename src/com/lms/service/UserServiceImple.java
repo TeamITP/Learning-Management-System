@@ -1,11 +1,9 @@
 package com.lms.service;
-import java.io.IOException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.logging.Level;
 import com.lms.util.ConnectDB;
 
@@ -27,7 +25,7 @@ public class UserServiceImple implements UserService {
 		try {
 			connection = ConnectDB.getDBConnection();
 			
-			String sql = "";
+			String sql = "SELECT password FROM Student WHERE Student_ID = ?";
 			
 			preparedStatement = connection.prepareStatement(sql);
 			
@@ -53,6 +51,7 @@ public class UserServiceImple implements UserService {
 
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
+			System.out.println(e.getMessage());
 		}
 		
 		return status;
