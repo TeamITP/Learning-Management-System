@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Classroom</title>
+<title>Create Classroom</title>
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/classroom.css">
 <link rel="stylesheet"
@@ -19,35 +19,37 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-        <img src="Images/classroomMainImage.png" id="mainImg">
-        <div class="topTitle">
-        <h3 id="titleTop">Classrooms</h3>
-    </div>
-    <div class="row listClass">
-			<div class="col-1.5 itemContainer">
-				<img src="Images/classroomImg.jpg" id="clzImg">
-				<div class="row">
-					<div class="col-9">
-						<h3 id="classYear">2020 A/L</h3>
-					</div>
-					<div class="col-2">
-						<img src="Images/more.png" id="moreIcon">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<h3 id="subject">Physics</h3>
-					</div>
-				</div>
+			<img src="Images/classroomMainImage.png" id="mainImg">
+			<div class="topTitle">
+				<h3 id="titleTop">Create Classroom</h3>
 			</div>
+			<form action="">
+				<div class="row">
+					<input placeholder="Subject" type="text" id="subject"
+						name="subject" required>
+				</div>
+				<div class="row">
+					<input placeholder="Grade" type="text" id="grade" name="grade"
+						required>
+				</div>
+				<div class="row">
+					<input placeholder="Class Date & Time" type="text" id="clzTime"
+						name="clzTime" required>
+				</div>
+				<div class="row">
+					<input placeholder="Description" type="text" id="description"
+						name="description" required>
+				</div>
+				<div class="row">
+					<button type="submit" class="btn btn-primary" name="btnSubmit"
+						id="bnCreateClz">Create Classroom</button>
+				</div>
+			</form>
 
-            <div class="col-1.5 itemContainer">
-				<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
-			</div>
+
 		</div>
-        </div>
-	<!--Footer Here-->
-	<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+		<!--Footer Here-->
+		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
 </body>
 
