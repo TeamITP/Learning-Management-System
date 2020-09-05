@@ -27,7 +27,7 @@ public class ConnectDB {
 		try {
 			if (connection == null || connection.isClosed()) {
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			    connection = DriverManager.getConnection("jdbc:sqlserver://yrazure.database.windows.net:1433;database=ITP;user=admin2020@yrazure;password=ADMIN@2020;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+			    connection = DriverManager.getConnection("jdbc:sqlserver://yrazure.database.windows.net:1433;database=IT_Project;user=admin2020@yrazure;password=admin@2020;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
 					}
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.println(e);
