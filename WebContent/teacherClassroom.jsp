@@ -7,7 +7,6 @@
         <meta charset="ISO-8859-1">
         <title>Home | Admin</title>
         <link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/index.css">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
