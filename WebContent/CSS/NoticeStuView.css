@@ -1,0 +1,23 @@
+.boxed {
+   border: 1px solid #006FFF;
+   height:110px;
+   width:600px;
+   margin-left:300px;
+   margin-top:-400px;
+   font-size: 15px;
+}
+
+
+img {
+  margin-left:800px;
+  
+ 
+  margin-top:15px;
+}
+
+h1{
+	color:blue;
+	font-size: 15px;
+
+}
+
