@@ -5,52 +5,49 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Home | Admin</title>
+<title>Update Classroom</title>
 <link rel="icon" href="Images/book.png">
-<link rel="stylesheet" href="CSS/index.css">
-<link rel="stylesheet" href="CSS/employeeNav.css">
+<link rel="stylesheet" href="CSS/classroom.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
 </head>
 
 <body>
-	<div class="sideNav">
-		<div class="row justify-content-center firstRow">
-			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
-			</div>
-			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
-			</div>
-		</div>
-		<hr id="breakLine">
-		<div class="mainSideNav">
-			<a href="employeeClassFess.jsp" class="active"><i
-				class="fas fa-money-bill-alt iconMainNavi"></i>Class Fees</a> <a
-				href="empIncome.jsp"><i
-				class="fas fa-funnel-dollar iconMainNavi"></i>Income</a> <a
-				href="empExpenditures.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditures</a> <a
-				href="empTeacherSal.jsp"><i
-				class="fas fa-money-check-alt iconMainNavi"></i>Teachers Salary</a> <a
-				href="empEmployeeSal.jsp"><i
-				class="fas fa-money-check-alt iconMainNavi"></i>Employees Salary</a> <a
-				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
-			<a href="empTeacherReg.jsp"><i
-				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
-				href="empStudentReg.jsp"> <i
-				class="fas fa-user-plus iconMainNavi"></i>New Students
-			</a>
-		</div>
-	</div>
-
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-		<div class="pageContainer"></div>
+		<div class="pageContainer">
+			<img src="Images/classroomMainImage.png" id="mainImg">
+			<div class="topTitle">
+				<h3 id="titleTop">Update Classroom</h3>
+			</div>
+			<form action="">
+				<div class="row">
+					<input placeholder="Subject" type="text" id="subject"
+						name="subject" required>
+				</div>
+				<div class="row">
+					<input placeholder="Grade" type="text" id="grade" name="grade"
+						required>
+				</div>
+				<div class="row">
+					<input placeholder="Class Date & Time" type="text" id="clzTime"
+						name="clzTime" required>
+				</div>
+				<div class="row">
+					<input placeholder="Description" type="text" id="description"
+						name="description" required>
+				</div>
+				<div class="row">
+					<button type="submit" class="btn btn-warning" name="btnSubmit"
+						id="bnCreateClz">Update Classroom</button>
+				</div>
+			</form>
+
+
+		</div>
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
