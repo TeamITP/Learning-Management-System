@@ -6,6 +6,15 @@
 <!DOCTYPE html>
 <html>
 
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Home | Admin</title>
+        <link rel="icon" href="Images/book.png">
+        <link rel="stylesheet" href="CSS/teacherNav.css">
+        <link rel="stylesheet" href="CSS/teacherClassroom.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Classroom</title>
@@ -16,6 +25,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+>>>>>>> branch 'Batheesha' of https://github.com/TeamITP/Learning-Management-System.git
 
 </head>
 
