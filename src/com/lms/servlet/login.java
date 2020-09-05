@@ -59,6 +59,7 @@ public class login extends HttpServlet {
 	    	response.sendRedirect(url);
 	    } else {
 	    	request.setAttribute("message", "Credentials Mismatch");
+	    	request.setAttribute("userId", username);
 	    	RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 		    dis.forward(request, response);
 	    }
