@@ -1,0 +1,114 @@
+/*Page Topic*/
+.pageTopic {
+	font-size: 15px;
+	color: #636363;
+}
+
+.dividerTopic {
+	border-top: 1px solid #707070;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#stepImage {
+	margin-top: 20px;
+	width: 200px;
+	margin-left: 20px;
+}
+
+#titleInput, #description {
+	width: 400px;
+	border-radius: 50px;
+	border: 1px solid #006FFF;
+	padding: 6px 15px 6px 15px;
+	margin-top: 20px;
+	margin-left: 20px;
+	outline: none;
+}
+
+#description {
+	height: 200px;
+	border-radius: 10px;
+}
+
+#btnSubmit {
+	border-radius: 50px !important;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 100px;
+}
+
+.uploadField {
+	width: 400px;
+	height: 200px;
+	margin: 20px;
+	border-radius: 10px;
+	border: 1px solid #006FFF;
+	padding: 15px;
+}
+
+#btnUpload {
+	height: 50px !important;
+	width: auto;
+	margin-left: 150px;
+	margin-top: 60px;
+	display: block;
+}
+
+#btnUpload:hover {
+	cursor: pointer;
+	opacity: 50%;
+	align-content: center;
+	justify-items: center;
+}
+
+#warning {
+	margin: 20px;
+	display: none;
+	width: 320px;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	color: white;
+	background: #ec3d54;
+}
+
+#pdfContainer {
+	display: none;
+}
+
+#imgPdf {
+	height: 100px;
+}
+
+#fileName {
+	font-size: small;
+	color: #636363;
+}
+
+#okImg {
+	height: 40px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.success {
+	margin: 40px;
+}
+
+#successMsg {
+	font-size: medium;
+	color: grey;
+}
+
+#mainImg {
+	position: absolute;
+	right: 50px;
+	bottom: 60px;
+	max-height: 250px;
+	z-index: -1;
+}
+
+#btnSubmit {
+	width: 200px;
+}
