@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert Activity</title>
+<title>Insert Lesson</title>
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/teacherNav.css">
 <link rel="stylesheet" href="CSS/insertActivity.css">
@@ -51,22 +51,24 @@
 		<div class="pageContainer">
 			<!--Page Topic-->
 			<div class="pageTopicContainer">
-				<h1 class="pageTopic">Insert Reading and Activities</h1>
+				<h1 class="pageTopic">Insert New Lesson</h1>
 				<hr class="dividerTopic">
 			</div>
+			<img src="Images/insertLesson.png" id="mainImg">
 			<div class="row">
-				<img src="Images/step3.png" id="stepImage">
+				<input placeholder="Title" id="titleInput" name="title">
 			</div>
-			<div class="row success align-items-center">
-				<img src="Images/okGreen.png" id="okImg">
-				<h5 id="successMsg">Lesson Material was successfully added</h5>
+			<div class="row">
+				<textarea placeholder="Description" id="description"
+					name="description"></textarea>
 			</div>
 			<div class="row">
 				<button type="button" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Finish</button>
-				<!--Footer Here-->
-				<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+					id="btnSubmit">Create Lesson</button>
 			</div>
+			<!--Footer Here-->
+			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+		</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
