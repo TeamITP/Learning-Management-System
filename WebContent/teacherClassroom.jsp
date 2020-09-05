@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 
-<<<<<<< HEAD
     <head>
         <meta charset="ISO-8859-1">
         <title>Home | Admin</title>
@@ -12,7 +11,7 @@
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-=======
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Classroom</title>
