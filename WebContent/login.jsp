@@ -29,7 +29,7 @@
                         <img id="avatar" src="Images/avatar.png">
                     </div>
                     <div class="form-group col-sm-12 inputBox">
-                        <input class="form-control" type="text" name="uid" placeholder="User Id" required>
+                        <input class="form-control" type="text" name="uid" value="${userId}"placeholder="User Id" required>
                     </div>
                     <div class="form-group col-sm-12 inputBox">
                         <input class="form-control" type="password" name="pass" placeholder="Password" required>

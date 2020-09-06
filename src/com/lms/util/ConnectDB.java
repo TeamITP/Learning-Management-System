@@ -32,9 +32,6 @@ public class ConnectDB {
 		} catch (ClassNotFoundException | SQLException e) {
 			System.out.println(e);
 		}
-		if(connection == null) {
-			System.out.println("Connection is null");
-		}
 		return connection;
 	}
 }
