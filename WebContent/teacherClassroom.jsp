@@ -52,7 +52,7 @@
 				<img src="Images/avatarTeacher.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav"><%=username %></h5>
 			</div>
 		</div>
 		<hr id="breakLine">

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import com.lms.util.ConnectDB;
 
@@ -25,19 +26,25 @@ public class UserServiceImple implements UserService {
 		try {
 			connection = ConnectDB.getDBConnection();
 			
-			String sql = "SELECT password FROM Teacher WHERE Teacher_ID = ?";
+			ArrayList<String> sql = new ArrayList<String>();
+			sql.add("SELECT password FROM Teacher WHERE Teacher_ID = ?");
+			sql.add("SELECT password FROM Student WHERE Student_ID = ?");
+			sql.add("SELECT Password FROM Employee WHERE Emp_ID = ?");
+			sql.add("SELECT Password FROM Owner WHERE Admin_ID = ?");
 			
-			preparedStatement = connection.prepareStatement(sql);
-			
-			preparedStatement.setString(1, userId);
-			
-			ResultSet rs = preparedStatement.executeQuery();
-			
-			if(rs.next()) {
-				if(password.equals(rs.getString(1))) {
-					status = 1;
-				}
+			for(String query : sql) {
+				preparedStatement = connection.prepareStatement(query);
+				preparedStatement.setString(1, userId);
+				ResultSet rs = preparedStatement.executeQuery();
+				if(rs.next()) {
+					if(password.equals(rs.getString(1))) {
+						status = 1;
+						break;
+					}
+				} 
 			}
+			
+			
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
