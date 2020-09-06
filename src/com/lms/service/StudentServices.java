@@ -18,6 +18,6 @@ public interface StudentServices {
 		 * 
 		 * @param student
 		 */
-		public int createClass(Student student);
+		public int StudentRegistration(Student student);
 		
 }

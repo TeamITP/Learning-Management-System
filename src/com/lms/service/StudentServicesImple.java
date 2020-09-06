@@ -17,7 +17,7 @@ import com.lms.util.ConnectDB;
  * IT19134772
  */
 
-public abstract class StudentServicesImple implements StudentServices{
+public class StudentServicesImple implements StudentServices{
 	private static Connection connection;
 	private static PreparedStatement preparedStatement;
  
@@ -58,4 +58,8 @@ public abstract class StudentServicesImple implements StudentServices{
 		
 		return status;
 	}
+
+
+
+
 }
