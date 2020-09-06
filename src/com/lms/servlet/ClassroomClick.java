@@ -19,7 +19,6 @@ public class ClassroomClick extends HttpServlet {
 		String classroomId = request.getParameter("classId");
 		HttpSession httpSession = request.getSession();
     	httpSession.setAttribute("classroomId", classroomId);
-    	System.out.println(httpSession.getAttribute("classroomId"));
     	response.sendRedirect("teacherClassroom.jsp");
 	}
 

@@ -69,7 +69,7 @@
 				<%} %>
 
 				<div class="col-1.5 itemContainer">
-					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+					<a href="createClassroom.jsp"><img id="btnUpload" src="Images/addIcon.png" name="btnUpload"></a>
 				</div>
 			</div>
 		</div>
