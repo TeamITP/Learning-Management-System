@@ -10,9 +10,10 @@ public class Employee {
 	private String Address;
 	private String Phone;
 	private String NIC;
-	
+
 	public Employee() {}
 	
+
 	public Employee(String emp_ID, String name, String password, String address, String phone, String nIC) {
 		super();
 		Emp_ID = emp_ID;

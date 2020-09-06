@@ -9,9 +9,10 @@ import com.lms.model.Employee;
 /*IT19142692*/
 
 public interface EmployeeAction {
+
 	// Initializing logger
 	public static final Logger logger = Logger.getLogger(UserService.class.getName());
 	
 	public int insertEmployee(Employee employee);
-	
+
 }

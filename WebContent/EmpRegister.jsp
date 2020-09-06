@@ -121,6 +121,7 @@ var b = 0;
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 10px;"><button class="btn btn-primary" type="submit" name="submit">Register Employee</button></div>
+
                         </div>
                     </div>
                 </form>    
