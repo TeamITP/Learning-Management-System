@@ -27,6 +27,10 @@ public class Student {
 		this.password = password;
 	}
 
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getStudent_ID() {
 		return Student_ID;
 	}
