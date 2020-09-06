@@ -1,7 +1,23 @@
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Home | Admin</title>
+        <link rel="icon" href="Images/book.png">
+        <link rel="stylesheet" href="CSS/teacherNav.css">
+        <link rel="stylesheet" href="CSS/teacherClassroom.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
 <head>
 <meta charset="ISO-8859-1">
@@ -13,17 +29,40 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+>>>>>>> branch 'Batheesha' of https://github.com/TeamITP/Learning-Management-System.git
 
 </head>
 
 <body>
+	<%
+		String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
 				<img src="Images/avatarTeacher.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav"><%=username %></h5>
 			</div>
 		</div>
 		<hr id="breakLine">
@@ -41,9 +80,9 @@
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
 
 	<div class="page-container">
@@ -56,11 +95,20 @@
 			</div>
 
 			<div class="row listClass">
-				<div class="col-1.5 itemContainer">
+
+				<%
+					LessonService lessonService = new LessonServiceImple();
+				ArrayList<Lesson> arrayList = lessonService.getListLessons(clzId);
+				int i = 0;
+				for (Lesson lesson : arrayList) {
+				%>
+				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=lesson.getLessonId()%>').click()">
 					<img src="Images/lessonImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-10">
-							<h3 id="lessonNum">Lesson 01</h3>
+							<h3 id="lessonNum">
+								Lesson
+								<%=++i%></h3>
 						</div>
 					</div>
 					<div class="row">
@@ -68,7 +116,14 @@
 							<h3 id="title">Introduction</h3>
 						</div>
 					</div>
+					
+					<form action="teacherLesson.jsp" method="Post">
+				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
+				<input type="submit" id="<%=lesson.getLessonId()%>" hidden></form>
 				</div>
+				<%
+					}
+				%>
 				<div class="col-1.5 itemContainer">
 					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
 				</div>
