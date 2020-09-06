@@ -1,5 +1,5 @@
-<%@page import="com.lms.model.Lesson"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.model.Lesson"%>
 <%@page import="com.lms.service.LessonServiceImple"%>
 <%@page import="com.lms.service.LessonService"%>
 <%@page import="com.lms.model.Classroom"%>
@@ -29,8 +29,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
->>>>>>> branch 'Batheesha' of https://github.com/TeamITP/Learning-Management-System.git
-
 </head>
 
 <body>

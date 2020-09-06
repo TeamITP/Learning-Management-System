@@ -44,6 +44,7 @@
             <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
         <div class="pageContainer">
         	    <div class="contact-clean">
+
         <form method="post">
             <h2 class="text-center">Student Registration</h2>
             <div class="col"><label>Enter First Name</label><input class="form-control" type="text"></div>
