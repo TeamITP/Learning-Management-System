@@ -53,6 +53,7 @@
                 <div class="col"><label>Enter the Address</label><input class="form-control" type="text"></div>
                 <div class="col"><label>Enter the Gaurdian Name</label><input class="form-control" type="text"></div>
                 <div class="col"><label>Enter the Phone Number</label><input class="form-control" type="text"></div>
+
 				<button class="btn btn-primary" type="submit">&nbsp;Register</button></div>
         </form>
             <script src="studentregistration/js/jquery.min.js"></script>
