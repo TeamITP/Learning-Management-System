@@ -50,7 +50,7 @@
 			ArrayList<Classroom> arrayList = classroomServices.getClassroomList(username);
 			
 			for(Classroom classroom: arrayList) {%>
-				<div class="col-1.5 itemContainer" onclick="document.getElementById('btnSubmit').click()">
+				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=classroom.getClassrooId()%>').click()">
 					<img src="Images/classroomImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-9">
@@ -65,11 +65,11 @@
 				</div>
 				<form action="ClassroomClick" method="Post">
 				<input name="classId" id="classId" value="<%=classroom.getClassrooId() %>" hidden>
-				<input type="submit" id="btnSubmit" hidden></form>
+				<input type="submit" id="<%=classroom.getClassrooId()%>" hidden></form>
 				<%} %>
 
 				<div class="col-1.5 itemContainer">
-					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+					<a href="createClassroom.jsp"><img id="btnUpload" src="Images/addIcon.png" name="btnUpload"></a>
 				</div>
 			</div>
 		</div>
