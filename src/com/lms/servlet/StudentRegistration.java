@@ -39,7 +39,7 @@ public class StudentRegistration extends HttpServlet {
 		student.setGuardian(request.getParameter("Guardian"));
 		
 		StudentServices studentServices = new StudentServicesImple();
-		int status = studentServices.createClass(student);
+		int status = studentServices.StudentRegistration(student);
 		
 		if(status == 1) {
 			request.setAttribute("message", "Insert Succesful");
