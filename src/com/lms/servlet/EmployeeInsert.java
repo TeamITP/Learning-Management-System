@@ -21,7 +21,7 @@ public class EmployeeInsert extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 response.setContentType("text/html");
 		
-		Employee employee = new Employee(null, null, null, null, null, null);
+		Employee employee = new Employee();
 		
 		/*
 		 * Initialize values for employee object
