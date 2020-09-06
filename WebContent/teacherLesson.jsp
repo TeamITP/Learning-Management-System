@@ -21,8 +21,10 @@
 
 <body>
 <%
-		String username = "";
+	String username = "";
+
 	String clzId = (String) session.getAttribute("classroomId");
+	
 	String lessonId = request.getParameter("lessonId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
