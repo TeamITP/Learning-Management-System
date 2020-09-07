@@ -41,7 +41,7 @@
 						name="description" required>
 				</div>
 				<div class="row">
-					<button type="submit" class="btn btn-warning" name="btnSubmit"
+					<button type="submit" style="color:white !important"class="btn btn-warning" name="btnSubmit"
 						id="bnCreateClz">Update Classroom</button>
 				</div>
 			</form>

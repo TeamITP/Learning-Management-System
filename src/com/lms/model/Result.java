@@ -19,6 +19,10 @@ public class Result {
 		Description = description;
 	}
 
+	public Result() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getResult_id() {
 		return Result_id;
 	}
