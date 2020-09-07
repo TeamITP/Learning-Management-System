@@ -16,6 +16,10 @@
 	margin-left: 20px;
 }
 
+.pageTopicContainer {
+	margin-top:10px;
+}
+
 #titleInput, #description {
 	width: 400px;
 	border-radius: 50px;
