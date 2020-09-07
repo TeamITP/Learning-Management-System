@@ -115,15 +115,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<button class="btn btn-success" type="button">Enter
-						Results</button>
+					<a href = "enterstudentresult.jsp" ><button class="btn btn-success" type="button">Enter Results</button></a> 
 				</div>
 				<div class="col-md-4">
-					<button class="btn btn-warning" type="button">Classroom</button>
+					<a href = "sudentClassroom.jsp"> <button class="btn btn-warning" type="button">Classroom</button></a>
 				</div>
 				<div class="col-md-4">
-					<button class="btn btn-danger" type="button">Delete
-						Profile</button>
+					<a href = "deletestudent.jsp"> <button class="btn btn-danger" type="button">Delete
+						Profile</button> </a>
 				</div>
 			</div>
 		</div>
