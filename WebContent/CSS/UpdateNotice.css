@@ -3,7 +3,11 @@
     padding: 0;
     font-family: "Montserrat",sans-serif;
 }
-
+#img{
+	margin-top: 20px;
+	width: 200px;
+	margin-left: 900px;
+}
 
 
 form{
@@ -67,4 +71,16 @@ form .btn{
     font-size: 18px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
     transition: 0.6s ease-in-out;
+}
+
+.boxed {
+	border-radius:5px;
+	width:500px;
+	height:200px;
+	border:1px solid #0080ff;
+}
+
+#imgUpN {
+	z-index : -1;
+	margin-left:400px;
 }
