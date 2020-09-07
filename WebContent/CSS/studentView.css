@@ -1,0 +1,29 @@
+.boxed {
+   border: 1px solid #006FFF;
+  height:110px;
+width:600px;
+ margin-left:300px;
+margin-top:-400px;
+
+}
+
+.btn{
+    position: relative;
+    margin: 26px 20px 20px 10px;
+    height: 30px;
+    width: 110px;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    color: white;
+    background: gold;
+    font-size: 15px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    transition: 0.6s ease-in-out;
+}
+img {
+  margin-left:900px;
+  
+ 
+  margin-top:15px;
+}

@@ -1,11 +1,44 @@
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<%
+	String username = "";
 
+	String clzId = (String) session.getAttribute("classroomId");
+	
+	String lessonId = request.getParameter("lessonId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null | lessonId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+	LessonService lessonService = new LessonServiceImple();
+	Lesson lesson = lessonService.getLessonById(lessonId);
+	%>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home | Admin</title>
+<title><%=lesson.getName() %></title>
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/teacherNav.css">
 <link rel="stylesheet" href="CSS/teacherClassroom.css">
@@ -17,6 +50,7 @@
 </head>
 
 <body>
+
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -41,23 +75,24 @@
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
-
+	
 	<div class="page-container">
-		<!--Header Here-->
+		<!--Headers Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-			<h3 id="lessonName">Trigonometry</h3>
+			<h3 id="lessonName"><%=lesson.getName() %></h3>
 			<div class="row">
-				<p id="introLesson">Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit. Nullam nec est magna. Morbi ipsum diam, gravida
-					vitae dapibus ut, suscipit vitae lorem.</p>
+				<p id="introLesson"><%=lesson.getDescription() %></p>
 			</div>
 			<div class="row btnCont">
-				<button id="btnUpdate" style="outline:none">Update</button>
+			<form action="updateLesson.jsp" method="Post">
+				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
+				<button type = "submit" id="btnUpdate" style="outline:none">Update</button>
+				</form>
 				<button id="btnDelete" style="outline:none"  data-toggle="modal" data-target="#deleteModalLesson">Delete</button>
 			</div>
 			<div class="pageTopicContainer">
@@ -122,7 +157,7 @@
 			</div>
 		</div>
 
-		<!--Moodal for delete service-->
+		<!--Moodal for delete Material-->
 		<div class="modal fade" id="deleteModal" role="form">
 			<div class="modal-dialog modal-dialog-centered">
 				<!-- Modal content-->
@@ -195,10 +230,10 @@
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form class="modalUpd" method="post" action="">
+						<form class="modalUpd" method="post" action="DeleteLesson">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value=""
-									name="serviceId" hidden> <label
+								<input name="url" hidden> <input value="<%=lesson.getLessonId() %>"
+									name="lessonId" hidden> <label
 									style="padding: 10px; padding-left: 20px;">Are you sure
 									you want to delete this lesson ?</label>
 							</div>
