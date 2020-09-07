@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
-
+import com.lms.model.Classroom;
 import com.lms.model.Student;
 import com.lms.util.ConnectDB;
 
@@ -59,4 +59,48 @@ public class StudentServicesImple implements StudentServices{
 
 		return status;
 	}
+	
+	@Override
+	public Student getStudent(String Student_ID) {
+		Student student = new Student();
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT * FROM Student WHERE Student_ID = ?";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, Student_ID);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				student.setStudent_ID(resultSet.getString(2));
+				student.setFristName(resultSet.getString(3));
+				student.setLastName(resultSet.getString(4));
+				student.setAddress(resultSet.getString(5));
+				student.setPhone(resultSet.getString(6));
+				student.setGuardian(resultSet.getString(7));
+				student.setPassword(resultSet.getString(8));
+			}
+	} catch (SQLException e) {
+		logger.log(Level.SEVERE, e.getMessage());
+	} finally {
+		/*
+		 * Close statement and database connectivity at the end of transaction
+		 */
+		try {
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (java.sql.SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		}
+	}
+		return student;
+	}
+
 }	
