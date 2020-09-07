@@ -49,11 +49,11 @@
             <h2 class="text-center">Student Registration</h2>
             <div class="col"><label>Enter First Name</label><input class="form-control" name = "firstName" type="text"></div>
             <div class="form-group">
+
                 <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text"></div>
                 <div class="col"><label>Enter the Address</label><input class="form-control" name = "address" type="text"></div>
                 <div class="col"><label>Enter the Phone Number</label><input class="form-control" name = "phone" type="text"></div>
                 <div class="col"><label>Enter the Gaurdian Name</label><input class="form-control" name = "Guardian" type="text"></div>
-                
 
 				<button class="btn btn-primary" type="submit">&nbsp;Register</button></div>
         </form>

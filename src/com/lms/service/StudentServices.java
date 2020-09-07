@@ -1,14 +1,13 @@
 package com.lms.service;
 
+/**
+ * Imbulana Liyanage D.S.I.
+ * IT19134772
+ */
 
 import java.util.logging.Logger;
 
 import com.lms.model.Student;
-
-/**	/**
- * Imbulana Liyanage D.S.I.	 * Imbulana Liyanage D.S.I.
- * IT19134772	 * IT19134772
- */	 
 
 public interface StudentServices {
 	// Initializing logger

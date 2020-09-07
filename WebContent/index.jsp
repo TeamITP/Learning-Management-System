@@ -23,7 +23,7 @@
 				<p id="textSubDescription">Everyday Anywhere Anytime</p>
 				<p id="textLongDescription">We conduct courses with highly
 					recognized and well experienced panel of teachers in Sri Lanka</p>
-				<button class="bnLogin">Login</button>
+				<a href="login.jsp"><button class="bnLogin">Login</button></a>
 			</div>
 			<div class="imageView">
 				<img id="imgMainIndex" src="Images/mainImageIndex.png">
