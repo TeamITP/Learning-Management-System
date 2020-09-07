@@ -1,3 +1,9 @@
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,6 +22,28 @@
 </head>
 
 <body>
+<%
+	String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -40,9 +68,9 @@
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject() %></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription() %></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime() %></h5>
 	</div>
 
 	<div class="page-container">
@@ -55,17 +83,20 @@
 				<hr class="dividerTopic">
 			</div>
 			<img src="Images/insertLesson.png" id="mainImg">
+			<form action="InsertLesson" method="Post">
+				<input name="classroomId" id="classroomId" value="<%=classroom.getClassrooId() %>" hidden>
 			<div class="row">
-				<input placeholder="Title" id="titleInput" name="title">
+				<input placeholder="Lesson Name" id="titleInput" name="lessonName">
 			</div>
 			<div class="row">
 				<textarea placeholder="Description" id="description"
 					name="description"></textarea>
 			</div>
 			<div class="row">
-				<button type="button" class="btn btn-primary" name="btnSubmit"
+				<button type="submit" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Create Lesson</button>
 			</div>
+			</form>
 			<!--Footer Here-->
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
@@ -81,7 +112,7 @@
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 	crossorigin="anonymous"></script>
 <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 
