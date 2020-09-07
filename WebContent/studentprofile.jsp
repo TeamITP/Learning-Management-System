@@ -57,7 +57,7 @@
 				</div>
 				<div class="col-md-6">
 					<label>&nbsp;</label><input class="form-control-lg" type="text"
-						placeholder="Name">
+						placeholder="firstName" value=<%=student.getFristName()%> readonly>
 				</div>
 			</div>
 		</div>
