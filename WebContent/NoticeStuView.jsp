@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="CSS/teacherClassroom.css">
 <link rel="stylesheet" href="CSS/UpdateNotice.css">
 
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -68,11 +68,18 @@
 <link rel="stylesheet" href="CSS/UpdateNotice.css">
 
 			<div class="boxed">
-			<h1>Title</h1>
+			<h6>Title</h6>
 		Further to the communications made via the Faculty Pages regarding the mid-term examination.
 		</div>
 		
-<img src="Images/notice1.png" width ="600" height="500">
+		<div class="boxed1">
+			<h6>Title</h6>
+		This is to confirm that there is no WEEKEND BATCH for Year 1 & 2 JUNE INTAKE students of FOC.
+		</div>
+		
+	
+		
+<img src="Images/notice1.png" id="img1" width ="600" height="500">
 
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
