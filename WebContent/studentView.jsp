@@ -12,7 +12,10 @@
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 
 <body>
+
+
 <img src="Images/a4.png" width ="600" height="500">
+
 <div class="boxed">
 Further to the communications made via the Faculty Pages regarding the mid-term examinations,  Campus.
 
