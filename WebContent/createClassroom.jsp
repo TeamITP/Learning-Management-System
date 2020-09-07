@@ -15,6 +15,20 @@
 </head>
 
 <body>
+	<%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	%>
+
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -23,7 +37,9 @@
 			<div class="topTitle">
 				<h3 id="titleTop">Create Classroom</h3>
 			</div>
-			<form action="">
+			<form method="post" action="AddClassroom">
+			<input placeholder="Description" type="text" id="teacherId"
+						name="teacherId" value="<%=username%>" hidden>
 				<div class="row">
 					<input placeholder="Subject" type="text" id="subject"
 						name="subject" required>

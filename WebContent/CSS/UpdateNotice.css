@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat",sans-serif;
+}
+
+
+
+form{
+    position: absolute;
+    width: 320px;
+     border: 1px solid #006FFF;
+    background: #fff;
+    border-radius:5px;
+    box-shadow: 1px 1px 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin:20px;
+}
+
+form h1{
+    color: blue;
+    font-size: 24px;
+    font-weight: 650;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0 10px 20px;
+    width: 160px;
+    border-bottom: 4px solid blue;
+    padding-bottom: 4px;
+}
+
+form input{
+    margin: 20px;
+    padding: 10px 20px;
+    width: 280px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3),
+          inset 3px 3px 3px rgba(0,0,0,0.3);
+    transition: 0.6s ease-in-out;
+}
+
+form textarea{
+    margin: 20px;
+    padding: 40px 20px;
+    width: 280px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3),
+          inset 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+form .btn{
+    position: relative;
+    margin: 20px 20px 40px 20px;
+    height: 40px;
+    width: 280px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: White;
+    background: blue;
+    font-size: 18px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    transition: 0.6s ease-in-out;
+}

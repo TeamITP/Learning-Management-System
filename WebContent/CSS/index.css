@@ -6,8 +6,7 @@
 	url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap')
 	;
 
-:root { -
-	-primary: rgb(0, 132, 255);
+:root { --primary: rgb(0, 132, 255);
 }
 
 body {
@@ -82,9 +81,9 @@ body {
 
 .bnLogin:hover {
 	background-color: white;
-	border: 1px solid var(- -primary);
-	color: var(- -primary);
+	border: 1px solid var(--primary);
+	color: var(--primary);
 	font-weight: bold;
 	cursor: pointer;
-	outline: none;
+	outline: none !important;
 }
