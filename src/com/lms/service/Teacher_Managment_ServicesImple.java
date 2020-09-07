@@ -92,4 +92,44 @@ public static boolean insertContact(String name,String contact,String birthdate,
     	return isSuccess;
     }
 
+public Teacher getTeacher(String teacherId) {
+	Teacher teacher = new Teacher();
+	try {
+		connection = ConnectDB.getDBConnection();
+		
+		String sql = "SELECT * FROM Teacher WHERE Teacher_ID = ?";
+		
+		preparedStatement = connection.prepareStatement(sql);
+		
+		preparedStatement.setString(1, teacherId);
+		
+		ResultSet resultSet = preparedStatement.executeQuery();
+		
+		while (resultSet.next()) {
+			teacher.setName(resultSet.getString(3));
+			teacher.setTitle(resultSet.getString(4));
+			teacher.setSubject(resultSet.getString(5));
+			teacher.setContact(resultSet.getString(6));
+			teacher.setBirthdate(resultSet.getString(7));
+		}
+} catch (SQLException e) {
+	logger.log(Level.SEVERE, e.getMessage());
+} finally {
+	/*
+	 * Close statement and database connectivity at the end of transaction
+	 */
+	try {
+		if (preparedStatement != null) {
+			preparedStatement.close();
+		}
+		if (connection != null) {
+			connection.close();
+		}
+	} catch (java.sql.SQLException e) {
+		logger.log(Level.SEVERE, e.getMessage());
+	}
+}
+	return teacher;
+}
+
 }

@@ -15,5 +15,7 @@ public interface Teacher_Managment_Services {
 	public static final Logger logger = Logger.getLogger(UserService.class.getName());
 	
 	public int registerTeacher(Teacher teacher);
+	
+	public Teacher getTeacher(String teacherId);
 
 }
