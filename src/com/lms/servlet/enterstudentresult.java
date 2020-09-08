@@ -9,34 +9,39 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Employee;
-import com.lms.service.EmployeeServicesImpl;
-import com.lms.service.EmployeeServices;
+import com.lms.model.Result;
+import com.lms.service.ResultServices;
+import com.lms.service.ResultServicesImple;
 
-@WebServlet("/EmployeeInsert")
-public class EmployeeInsert extends HttpServlet {
+/**
+ * Servlet implementation class enterstudentresult
+ */
+@WebServlet("/enterstudentresult")
+public class enterstudentresult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setContentType("text/html");
-		
-		Employee employee = new Employee();
-		
+		response.setContentType("text/html");
+
+		Result result = new Result() ;
+
 		/*
-		 * Initialize values for employee object
+		 * Initialize values for result object
 		 * */
-		
-		employee.setName(request.getParameter("fullname"));
-		employee.setNIC(request.getParameter("nic"));
-		employee.setPhone(request.getParameter("phone"));
-		employee.setAddress(request.getParameter("address"));
-		
-		EmployeeServices employeeaction = new EmployeeServicesImpl();
-		int status = employeeaction.insertEmployee(employee);
-		
+
+		result.setClassroom_id(request.getParameter("Classroom_id"));
+		result.setType(request.getParameter("Type"));
+		result.setDescription(request.getParameter("Description"));
+
+
+		ResultServices resultServices = new ResultServicesImple();
+		int status = resultServices.enterstudentresult(result);
+
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
+			request.setAttribute("message", "Insert Succesful");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
 			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
@@ -49,5 +54,4 @@ response.setContentType("text/html");
 		    dis.forward(request, response);
 		}
 	}
-
 }
