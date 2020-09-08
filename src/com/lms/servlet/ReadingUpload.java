@@ -47,7 +47,7 @@ public class ReadingUpload extends HttpServlet {
 			String fileName = part.getSubmittedFileName();
 			//String path = "C:\\Users\\yasir\\git\\Learning-Management-System\\WebContent\\UploadedFiles\\Readings" + File.separator + fileName;
 			
-			String path = getServletContext().getRealPath("\\WebContent\\UploadedFiles\\Readings" + File.separator + fileName);
+			String path = getServletContext().getRealPath("/WebContent/UploadedFiles/Readings" + File.separator + fileName);
 			
 			InputStream inputStream = part.getInputStream();
 			boolean status = uploadFile(inputStream, path);
