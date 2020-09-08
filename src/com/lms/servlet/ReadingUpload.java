@@ -45,7 +45,7 @@ public class ReadingUpload extends HttpServlet {
 			Part part  = request.getPart("file");
 			
 			String fileName = part.getSubmittedFileName();
-			String path = System.getProperty("catalina.base") +"\\UploadedFiles\\Readings" + File.separator + fileName;
+			String path = getServletContext().getRealPath("/UploadedFiles/Readings" + File.separator + fileName);
 			
 			//String path = getServletContext().getRealPath("/WebContent/UploadedFiles/Readings" + File.separator + fileName);
 			
