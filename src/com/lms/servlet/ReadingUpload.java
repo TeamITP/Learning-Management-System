@@ -84,8 +84,7 @@ public class ReadingUpload extends HttpServlet {
 	            out.write(bytes, 0, read);
 	        }
 	        writer.println("New file " + fileName + " created at " + path);
-	        System.out.println( "File" + fileName + "being uploaded to" + path);;
-	        response.sendRedirect(newFile);
+	        System.out.println( "File" + fileName + "being uploaded to" + path);
 	    } catch (FileNotFoundException fne) {
 	        writer.println("You either did not specify a file to upload or are "
 	                + "trying to upload a file to a protected or nonexistent "
