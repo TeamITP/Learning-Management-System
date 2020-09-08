@@ -55,8 +55,6 @@ public class ReadingUpload extends HttpServlet {
 			if(status == true) {
 				response.sendRedirect("index.jsp");
 			}
-			final Logger logger = Logger.getLogger(ReadingUpload.class.getName());
-			logger.log(null, status + "FilePath- >" + path);
 		}
 	}
 	
