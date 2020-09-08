@@ -71,7 +71,7 @@
 						</label>
 					</div>
 			</div>
-			<input onchange="inputChanged()" type="file" name="file"
+			<input onchange="inputChanged()" draggable="true" type="file" name="file"
 				id="fileUpload" hidden />
 			<div class="row">
 				<button type="button" class="btn btn-primary" name="btnSubmit"
