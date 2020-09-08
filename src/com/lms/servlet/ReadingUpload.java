@@ -52,6 +52,9 @@ public class ReadingUpload extends HttpServlet {
 			InputStream inputStream = part.getInputStream();
 			boolean status = uploadFile(inputStream, path);
 			
+			if(status == true) {
+				response.sendRedirect("index.jsp");
+			}
 			final Logger logger = Logger.getLogger(ReadingUpload.class.getName());
 			logger.log(null, status + "FilePath- >" + path);
 		}
