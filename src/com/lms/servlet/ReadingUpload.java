@@ -45,15 +45,14 @@ public class ReadingUpload extends HttpServlet {
 			Part part  = request.getPart("file");
 			
 			String fileName = part.getSubmittedFileName();
-			String path = getServletContext().getRealPath("/UploadedFiles/Readings" + File.separator + fileName);
 			
-			//String path = getServletContext().getRealPath("/WebContent/UploadedFiles/Readings" + File.separator + fileName);
+			String path = getServletContext().getRealPath("/UploadedFiles/Readings" + File.separator + fileName);
 			
 			InputStream inputStream = part.getInputStream();
 			boolean status = uploadFile(inputStream, path);
 			
 			if(status == true) {
-				response.sendRedirect("index.jsp");
+				response.sendRedirect(path);
 			}
 		}
 	}
