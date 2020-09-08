@@ -8,6 +8,7 @@
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
+        <link rel="stylesheet" href="CSS/UpdateNotice.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -85,7 +86,7 @@
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>
             
-            <link rel="stylesheet" href="CSS/UpdateNotice.css">
+            
 </body>
 
     <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>

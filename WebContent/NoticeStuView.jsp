@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="CSS/teacherClassroom.css">
 <link rel="stylesheet" href="CSS/UpdateNotice.css">
 
-	
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -65,7 +64,7 @@
 				<hr class="dividerTopic">
 			</div>
 			
-<link rel="stylesheet" href="CSS/UpdateNotice.css">
+
 
 			<div class="boxed">
 			<h6>Title</h6>

@@ -68,7 +68,7 @@ form .btn{
     border-radius: 8px;
     color: White;
     background: blue;
-    font-size: 8px;
+    font-size: 15px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
     transition: 0.6s ease-in-out;
 }
@@ -77,7 +77,7 @@ form .btn{
 	border-radius:5px;
 	padding: 40px 20px;
 	width:500px;
-	height:150px;
+	height:200px;
 	border:1px solid #0080ff;
 	font-size: 16px;
 }
