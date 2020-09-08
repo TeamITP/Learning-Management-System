@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+.rows
+{
+    margin-bottom: 70px;
+    margin-left: 150px;
+    max-height: max-content;
+  
+    
+}
+
+.btn 
+{
+    border: 2px solid #006FFF !important;
+    margin-left: 100px;
+    width:280px;
+    border-radius: 10px !important;
+    
+}
+.dis
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    margin-left: 100px;
+
+}
+
+
+.pageTopic
+{
+	font-size:15px;
+}
+.rowone
+{
+	  margin-top:20px;
+   
+}
