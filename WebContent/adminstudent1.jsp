@@ -61,12 +61,11 @@ var b = 0;
 		<div class="mainSideNav">
 			<a href="adminHome.jsp"><i
 				class="fas fa-home iconMainNavi" ></i>Home</a>
-				<a href="adminEmployee.jsp" class="active" ><i
+				<a href="adminEmployee.jsp"   ><i
 				class="fas fa-user-tie iconMainNavi"   ></i>Teachers</a>
 			<a href="adminEmployee.jsp"><i
 				class="fas fa-user-tie iconMainNavi"></i>Employees</a> 
-				<
-				href="adminCustomers.jsp"><i class="fas fa-user iconMainNavi"  ></i>Students</a><a
+				<a href="adminstudent1.jsp"  class="active"><i class="fas fa-user iconMainNavi"  ></i>Students</a><a
 				href="adminOrders.jsp"   ><i
 				class="fa fa-money iconMainNavi"></i>Bills and Payments</a> <a
 				href="adminServices.jsp" ><i
@@ -163,7 +162,7 @@ var b = 0;
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><label class="col-form-label"><strong>Alevel Student</strong></label></div>
+                 <div class="col-md-3"><label class="col-form-label"><strong>Alevel Student</strong></label></div> 
                 <div class="col-md-3"><label class="col-form-label"><strong>Olevel Student</strong></label></div>
                 <div class="col-md-3"><label class="col-form-label"><strong>6-9 Student</strong></label></div>
                 <div class="col-md-3"><label class="col-form-label"><strong>Primary Student</strong></label></div>
@@ -173,50 +172,50 @@ var b = 0;
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><button class="btn btn-primary" type="button" style="padding: 11px;margin: 4px;">Physical Science&nbsp;</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 10</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 6</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 1</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button" style="padding: 11px;margin: 4px;">Physical Science&nbsp;</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 10</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 6</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 1</button></a></div>
             </div>
         </div>
     </div>
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><button class="btn btn-primary" type="button" style="margin: 12px;">&nbsp; Bio Science&nbsp;&nbsp;</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 11</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 7</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 2</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button" style="margin: 12px;">&nbsp; Bio Science&nbsp;&nbsp;</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 11</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 7</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 2</button></a></div>
             </div>
         </div>
     </div>
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><button class="btn btn-primary" type="button" style="margin: 16px;">Commerce&nbsp; &nbsp;</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button" style="margin: 16px;">Commerce&nbsp; &nbsp;</button></a></div>
                 <div class="col-md-3"></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 8</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 3</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 8</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 3</button></a></div>
             </div>
         </div>
     </div>
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><button class="btn btn-primary" type="button" style="margin: 14px;">Art Stream&nbsp; &nbsp;&nbsp;</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button" style="margin: 14px;">Art Stream&nbsp; &nbsp;&nbsp;</button></a></div>
                 <div class="col-md-3"></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 9</button></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 4</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 9</button></a></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 4</button></a></div>
             </div>
         </div>
     </div>
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><button class="btn btn-primary" type="button" style="margin: 22px;">&nbsp; Other&nbsp; &nbsp; &nbsp; &nbsp;</button></div>
+                <div class="col-md-3"><button class="btn btn-primary" type="button" style="margin: 22px;">&nbsp; Other&nbsp; &nbsp; &nbsp; &nbsp;</button></a></div>
                 <div class="col-md-3"></div>
                 <div class="col-md-3"></div>
-                <div class="col-md-3"><button class="btn btn-primary" type="button">Grade 5</button></div>
+                <div class="col-md-3"><a href = "adminstudent2.jsp"><button class="btn btn-primary" type="button">Grade 5</button></a></div>
             </div>
         </div>
     </div>
