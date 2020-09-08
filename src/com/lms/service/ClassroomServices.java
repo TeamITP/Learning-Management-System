@@ -33,7 +33,14 @@ public interface ClassroomServices {
 	/**
 	 * Get ClassroomById
 	 * 
-	 * @param teacherId
+	 * @param classroomId
 	 */
 	public Classroom getClassroom(String classroomId);
+	
+	/**
+	 *Update Classroom
+	 * 
+	 * @param classroomId
+	 */
+	public int updateClassroom(Classroom classroom);
 }

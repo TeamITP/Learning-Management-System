@@ -44,8 +44,9 @@ public class DeleteLesson extends HttpServlet {
 			request.setAttribute("message", "Delete Succesful");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    dis.forward(request, response);
+			response.sendRedirect("teacherClassroom.jsp");
+			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
+		    //dis.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Delete Failed");
 			request.setAttribute("lessonId", lessonId);
