@@ -24,8 +24,7 @@
 
 <body>
 
-	<%
-		String username = "";
+	<%String username = "";
 
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -37,7 +36,6 @@
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	StudentServices studentServices = new StudentServicesImple();
 	Student student = studentServices.getStudent(username);
 	%>
@@ -57,7 +55,7 @@
 				</div>
 				<div class="col-md-6">
 					<label>&nbsp;</label><input class="form-control-lg" type="text"
-						placeholder="firstName" value=<%=student.getFristName()%> readonly>
+						placeholder="firstName" value= <%=student.getFristName()%> readonly>
 				</div>
 			</div>
 		</div>
@@ -86,8 +84,7 @@
 					placeholder="Password" value=<%=student.getPassword()%> readonly>
 			</div>
 			<div class="form-group">
-				<button class="btn btn-primary btn-lg" type="submit">UPDaTE
-					PROFILE</button>
+				<a href = "studentupdate.jsp"><button class="btn btn-primary btn-lg" type="submit">UPDATE PROFILE</button> </a>
 			</div>
 		</form>
 	</div>
@@ -118,11 +115,11 @@
 					<a href = "enterstudentresult.jsp" ><button class="btn btn-success" type="button">Enter Results</button></a> 
 				</div>
 				<div class="col-md-4">
-					<a href = "sudentClassroom.jsp"> <button class="btn btn-warning" type="button">Classroom</button></a>
+					<a href = "studentupdate.jsp"> <button class="btn btn-warning" type="button">Classroom</button></a>
 				</div>
 				<div class="col-md-4">
-					<a href = "deletestudent.jsp"> <button class="btn btn-danger" type="button">Delete
-						Profile</button> </a>
+					 <button class="btn btn-danger" type="button"  data-toggle="modal" data-target="#deleteModal">Delete
+						Profile</button>
 				</div>
 			</div>
 		</div>
@@ -141,6 +138,37 @@
 	<div></div>
 	<script src="studentprofile/js/jquery.min.js"></script>
 	<script src="studentprofile/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!--Moodal for delete Student-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Student</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="deleteStudent">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value="<%=username%>>"
+									name="userID" hidden> <label
+									style="padding: 10px; padding-left: 20px;">It's not possible to restore your profile once you deleted them. Are you sure
+									you want to delete your profile ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 
 
