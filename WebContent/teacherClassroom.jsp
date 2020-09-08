@@ -185,8 +185,8 @@
 					<div class="modal-body">
 						<form class="modalUpd" method="post" action="">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value=""
-									name="serviceId" hidden> <label
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userID" hidden> <label
 									style="padding: 10px; padding-left: 20px;">It's not possible to restore classrooms once you deleted them. Are you sure
 									you want to delete this classroom ?</label>
 							</div>
