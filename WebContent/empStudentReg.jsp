@@ -35,7 +35,7 @@
         <a href="empEmployeeSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Employees Salary</a>
 		<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a> 
 		<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a>
-        <a href="StudentRegistration.jsp" class="active"> <i class="fas fa-user-plus iconMainNavi"></i>New Students</a>
+        <a href="empStudentReg.jsp" class="active"> <i class="fas fa-user-plus iconMainNavi"></i>New Students</a>
         </div>
         </div>
 
