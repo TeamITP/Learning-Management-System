@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="studentprofile/css/styles.css">
 <title>Insert title here</title>
 </head>
-
+<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
 
 	<%String username = "";
@@ -83,9 +83,7 @@
 					class="form-control" type="text" name="password"
 					placeholder="Password" value=<%=student.getPassword()%> readonly>
 			</div>
-			<div class="form-group">
-				<a href = "studentupdate.jsp"><button class="btn btn-primary btn-lg" type="submit">UPDATE PROFILE</button> </a>
-			</div>
+			 
 		</form>
 	</div>
 	<div class="col"></div>
@@ -112,10 +110,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<a href = "enterstudentresult.jsp" ><button class="btn btn-success" type="button">Enter Results</button></a> 
+					<a href = "studentClassroom.jsp" ><button class="btn btn-success" type="button">Classroom</button></a> 
 				</div>
 				<div class="col-md-4">
-					<a href = "studentupdate.jsp"> <button class="btn btn-warning" type="button">Classroom</button></a>
+					<a href = "studentupdate.jsp"> <button class="btn btn-warning" type="button">Update Profile</button></a>
 				</div>
 				<div class="col-md-4">
 					 <button class="btn btn-danger" type="button"  data-toggle="modal" data-target="#deleteModal">Delete
