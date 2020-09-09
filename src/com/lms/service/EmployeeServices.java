@@ -1,7 +1,9 @@
 package com.lms.service;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
+import com.lms.model.CommonNotice;
 import com.lms.model.Employee;
 
 /*Anuththara K.G.S.N*/
@@ -21,4 +23,5 @@ public interface EmployeeServices {
 		
 		//Update Employee Profile
 		public int updateEmployee(Employee employee);
+
 }

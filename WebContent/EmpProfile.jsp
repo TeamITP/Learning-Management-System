@@ -44,7 +44,7 @@
 	<div class="page-container">
     <!--Header Here-->
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-
+<div class="pageContainer">
     <div class="col-lg-10 offset-lg-1" style="height: 170px;"><img class="img-fluid" src="EmployeeProfile/img/boardEmp.png" height="70px" width="auto" style="margin: 70px;"></div>
     <div class="col-lg-10 offset-lg-1" style="font-size: 30px;border-radius: 7px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;width: 800px;height: 160px;"><img src="EmployeeProfile/img/avatarEmp.png" width="100px" height="100px" alt="Empavatar" style="margin: 50px;"><label id="EmpAvatar" style="font-size: 30px;">Nimesha Perera</label></div>
     <div>
@@ -164,11 +164,11 @@
             </div>
         </div>
     </div>
+    </div>
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
 
-	<!--Footer Here-->
-    <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	
     </div>
     
     <!--Moodal for delete Profile-->
