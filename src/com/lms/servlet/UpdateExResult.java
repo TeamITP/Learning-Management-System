@@ -16,14 +16,14 @@ import com.lms.service.ExamResultServicesImp;
 /**
  * Servlet implementation class UpdateResult
  */
-@WebServlet("/UpdateResult")
-public class UpdateExamResult extends HttpServlet {
+@WebServlet("/UpdateExResult")
+public class UpdateExResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateExamResult() {
+    public UpdateExResult() {
         super();
         // TODO Auto-generated constructor stub
     }
