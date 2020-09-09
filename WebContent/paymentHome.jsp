@@ -80,6 +80,15 @@
 				href="teacherPayments.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
 			</a>
+			
+			
+				 <a
+				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i
+				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
+				href="empStudentReg.jsp"> <i
+				class="fas fa-user-plus iconMainNavi"></i>New Students
+			</a>
 		</div>
 
 	</div>

@@ -40,13 +40,13 @@
 
 <body>
 
-
+<!-- Title Page-->
 <%
 	String username = "";
 		if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'S') {
+		if (username.charAt(0) != 'E') {
 			response.sendRedirect("index.jsp");
 		}
 

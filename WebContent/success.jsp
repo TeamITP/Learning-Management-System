@@ -55,7 +55,7 @@ png {
 		if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'S') {
+		if (username.charAt(0) != 'E') {
 			response.sendRedirect("index.jsp");
 		}
 
@@ -86,6 +86,14 @@ png {
 				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
 				href="teacherPayments.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
+			</a>
+			
+				 <a
+				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i
+				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
+				href="empStudentReg.jsp"> <i
+				class="fas fa-user-plus iconMainNavi"></i>New Students
 			</a>
 		</div>
 
