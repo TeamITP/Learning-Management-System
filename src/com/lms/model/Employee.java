@@ -10,7 +10,11 @@ public class Employee {
 	private String Address;
 	private String Phone;
 	private String NIC;
+
+	//constructor
+	public Employee() {}
 	
+	//overloaded constructor
 	public Employee(String emp_ID, String name, String password, String address, String phone, String nIC) {
 		super();
 		Emp_ID = emp_ID;
@@ -21,6 +25,7 @@ public class Employee {
 		NIC = nIC;
 	}
 
+	//setters and getters
 	public String getEmp_ID() {
 		return Emp_ID;
 	}

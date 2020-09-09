@@ -1,3 +1,6 @@
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -15,6 +18,28 @@
 </head>
 
 <body>
+<%
+	String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -23,25 +48,27 @@
 			<div class="topTitle">
 				<h3 id="titleTop">Update Classroom</h3>
 			</div>
-			<form action="">
+			<form action="UpdateClassroom" method="post">
+			<input placeholder="Subject" type="text" id="classroomId"
+						name="classroomId" value="<%=clzId %>"  hidden>
 				<div class="row">
 					<input placeholder="Subject" type="text" id="subject"
-						name="subject" required>
+						name="subject" value="<%=classroom.getSubject() %>" required>
 				</div>
 				<div class="row">
-					<input placeholder="Grade" type="text" id="grade" name="grade"
+					<input placeholder="Grade" value="<%=classroom.getGrade() %>" type="text" id="grade" name="grade"
 						required>
 				</div>
 				<div class="row">
-					<input placeholder="Class Date & Time" type="text" id="clzTime"
+					<input placeholder="Class Date & Time" value="<%=classroom.getClassTime() %>" type="text" id="clzTime"
 						name="clzTime" required>
 				</div>
 				<div class="row">
-					<input placeholder="Description" type="text" id="description"
+					<input placeholder="Description" value="<%=classroom.getDescription() %>" type="text" id="description"
 						name="description" required>
 				</div>
 				<div class="row">
-					<button type="submit" class="btn btn-warning" name="btnSubmit"
+					<button type="submit" style="color:white !important"class="btn btn-warning" name="btnSubmit"
 						id="bnCreateClz">Update Classroom</button>
 				</div>
 			</form>
