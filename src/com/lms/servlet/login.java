@@ -44,7 +44,7 @@ public class login extends HttpServlet {
 	    System.out.println(status);
 	    
 	    if(username.charAt(0) == 'A') {
-	    	url = "adminHome.jsp";
+	    	url = "ownerHome.jsp";
 	    } else if (username.charAt(0) == 'S') {
 	    	url = "classroomsStudent.jsp";
 	    } else if (username.charAt(0) == 'E') {
