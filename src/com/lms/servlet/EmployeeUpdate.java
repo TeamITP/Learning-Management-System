@@ -10,42 +10,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lms.model.Employee;
-import com.lms.service.EmployeeServicesImpl;
 import com.lms.service.EmployeeServices;
-
-@WebServlet("/EmployeeInsert")
-public class EmployeeInsert extends HttpServlet {
+import com.lms.service.EmployeeServicesImpl;
+/**
+ * Servlet implementation class EmployeeUpdate
+ */
+@WebServlet("/EmployeeUpdate")
+public class EmployeeUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EmployeeUpdate() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setContentType("text/html");
-		
 		Employee employee = new Employee();
 		
-		/*
-		 * Initialize values for employee object
-		 * */
-		
 		employee.setName(request.getParameter("fullname"));
-		employee.setNIC(request.getParameter("nic"));
-		employee.setPhone(request.getParameter("phone"));
 		employee.setAddress(request.getParameter("address"));
+		employee.setPhone(request.getParameter("phone"));
+		employee.setNIC(request.getParameter("nic"));
+		employee.setPassword(request.getParameter("password"));
 		
 		EmployeeServices employeeservices = new EmployeeServicesImpl();
-		int status = employeeservices.insertEmployee(employee);
+		
+		int status = employeeservices.updateEmployee(employee);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
+			request.setAttribute("message", "Insert Succesful");
+			request.setAttribute("Emp_ID", employee.getEmp_ID());
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
 		    dis.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
+			request.setAttribute("Emp_ID", employee.getEmp_ID());
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
 		    dis.forward(request, response);
 		}
 	}
