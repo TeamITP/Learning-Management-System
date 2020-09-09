@@ -156,3 +156,17 @@ nav li a:hover {
 	display: grid;
 	grid-template-columns: 80% 20% !important;
 }
+
+#loginA {
+	background:rgb(0, 132, 255);
+	color:white;
+	padding:5px 15px;
+	outline:none;
+	margin-left:20px;
+	text-decoration: none !important;
+	border-radius:5px;
+}
+
+#loginA:hover {
+	cursor:pointer;
+}

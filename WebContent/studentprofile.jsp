@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="studentprofile/css/styles.css">
 <title>Insert title here</title>
 </head>
-<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+
 <body>
 
 	<%String username = "";
@@ -83,7 +83,6 @@
 					class="form-control" type="text" name="password"
 					placeholder="Password" value=<%=student.getPassword()%> readonly>
 			</div>
-			 
 		</form>
 	</div>
 	<div class="col"></div>
@@ -110,6 +109,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
+
 					<a href = "studentClassroom.jsp" ><button class="btn btn-success" type="button">Classroom</button></a> 
 				</div>
 				<div class="col-md-4">

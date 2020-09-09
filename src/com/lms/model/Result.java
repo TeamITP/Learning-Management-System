@@ -10,6 +10,9 @@ public class Result {
 	private String Classroom_id;
 	private String Type;
 	private String Description;
+	
+
+	
 
 	public Result(String result_id, String classroom_id, String type, String description) {
 		super();
