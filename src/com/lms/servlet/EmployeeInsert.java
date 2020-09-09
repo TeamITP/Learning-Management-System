@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lms.model.Employee;
 import com.lms.service.EmployeeServicesImpl;
-import com.lms.service.EmployeeAction;
+import com.lms.service.EmployeeServices;
 
 @WebServlet("/EmployeeInsert")
 public class EmployeeInsert extends HttpServlet {
@@ -32,8 +32,8 @@ response.setContentType("text/html");
 		employee.setPhone(request.getParameter("phone"));
 		employee.setAddress(request.getParameter("address"));
 		
-		EmployeeAction employeeaction = new EmployeeServicesImpl();
-		int status = employeeaction.insertEmployee(employee);
+		EmployeeServices employeeservices = new EmployeeServicesImpl();
+		int status = employeeservices.insertEmployee(employee);
 		
 		if(status == 1) {
 			request.setAttribute("message", "Insert Successful");

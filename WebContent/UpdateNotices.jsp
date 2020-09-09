@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-        <title>Update Notices</title>
+        <title> Update Notice </title>
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
+        <link rel="stylesheet" href="CSS/teacherClassroom.css">
+        <link rel="stylesheet" href="CSS/UpdateNotice.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
@@ -41,7 +43,7 @@
 
 
 <!--Page Content Start Here-->
-<div class="page-container">
+         <div class="page-container">
             <!--Header Here-->
             <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
             <div class="pageContainer">
@@ -50,17 +52,22 @@
                     <h1 class="pageTopic"> Update Notice </h1>
                     <hr class="dividerTopic">
                 </div>
+          
               
 <form>
     <input name="" placeholder="Title" required>
     <textarea placeholder="Notice Here"></textarea>
     <button class="btn">Update Notice</button>
 </form>
-<img src="Images/notice2.png" width ="500" height="400">
-                </div>
+
+ <img src="Images/image4.png" id="imgUpN" width ="500" height="400">     
+
+            </div>
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>
+            
+            
 </body>
 
     <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>

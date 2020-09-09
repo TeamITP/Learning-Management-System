@@ -1,6 +1,13 @@
 <!--Anuththara K.G.S.N-->
 <!--IT19142692-->
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.model.Employee"%>
+<%@page import="com.lms.service.EmployeeServicesImpl"%>
+<%@page import="com.lms.service.EmployeeServices"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +25,22 @@
 </head>
 
 <body>
+	<%
+		String username = "";
+			if (session.getAttribute("userId") != null) {
+			username = (String) session.getAttribute("userId");
+
+			if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+			}
+
+			} else {
+			response.sendRedirect("index.jsp");
+			}
+
+			EmployeeServices employeeServices = new EmployeeServicesImpl();
+			Employee employee = employeeServices.getEmployee(username);
+			%>
 
 	<div class="page-container">
      <!--Header Here-->
@@ -36,33 +59,26 @@
                     <div style="height: 435px;border: 3px solid rgb(41,124,233);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;margin: 60px;padding: 20px;width: 380px;">
                         <div class="row">
                             <div class="col">
-                                <h1 style="font-size: 20px;">Basic Details</h1>
+                                <h1 style="font-size: 20px;">Employee Details</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" placeholder="Full Name" style="width: 320px;padding: 2px;height: 30px;border: 2px solid rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" value="<%=employee.getName()%>" id="fullname" name="fullname" placeholder="Full Name" style="width: 320px;padding: 2px;height: 30px;border: 2px solid rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="height: 30px;width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"
-                                    placeholder="NIC"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" value="<%=employee.getAddress()%>" id="address" name="address" style="height: 30px;width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"
+                                    placeholder="Address"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Email"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" value="<%=employee.getPhone()%>" id="phone" name="phone" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Phone"></div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col" style="padding: 10px;"><input type="text" value="<%=employee.getNIC()%>" id="nic" name="nic" placeholder="NIC" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Password"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h1 style="height: 24px;font-size: 20px;">Contact Details</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" placeholder="Address" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Phone"></div>
-                        </div><button class="btn btn-primary" type="button">Update</button></div>
+                            <div class="col" style="padding: 10px;"><input type="text" value="<%=employee.getPassword()%>" id="password" name="password" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Password"></div>
+                        </div><button class="btn btn-primary" type="submit">Update</button></div>
                 </form>
                 </div>
                 <div class="col-md-6"><img src="EmployeeUpdate/img/updateEmp.png" style="width: 350px;height: 350px;padding: 20px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;margin: 70px;"></div>

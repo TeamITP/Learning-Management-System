@@ -10,6 +10,9 @@ public class Result {
 	private String Classroom_id;
 	private String Type;
 	private String Description;
+	
+
+	
 
 	public Result(String result_id, String classroom_id, String type, String description) {
 		super();
@@ -17,6 +20,10 @@ public class Result {
 		Classroom_id = classroom_id;
 		Type = type;
 		Description = description;
+	}
+
+	public Result() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getResult_id() {

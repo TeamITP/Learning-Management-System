@@ -50,21 +50,21 @@
     </div>
     <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 100px;">
         <div class="col" style="border-style: solid;border-color: #197dff;">
-            <form style="height: 468.525px;" action="#" method="post">
+            <form style="height: 468.525px;" action="Teacher_Registration" method="post">
                 <div class="form-row">
                     <div class="col">
                         <div class="form-row">
                             <div class="col">
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Full Name"type="text"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Email"type="email"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Contact"type="text" style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Birthday"type="date" style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Title"type="text" style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Subject"type="text" style="border-color: #197dff;"></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Full Name"type="text" name="name"style="border-color: #197dff;"></div>
+                                <!--  <div style="padding-top: 5px;"><input class="form-control" placeholder = "Email"type="email"name="email"style="border-color: #197dff;"></div>-->
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Contact"type="text" name="contact"style="border-color: #197dff;"></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Birthday"type="date" name="birthday"style="border-color: #197dff;"></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Title"type="text" name="title"style="border-color: #197dff;"></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Subject"type="text"name="subject" style="border-color: #197dff;"></div>
                                 <div>
                                     <div class="form-check" style="padding-top: 40px;"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border-radius: 2px;border: 2px solid #197dff ;border-bottom-color: #e73f34;"><label class="form-check-label" for="formCheck-1">Above details are correct and the teacher is agreed for the terms and conditions of the institute.</label></div>
                                 </div>
-                                <div style="padding-top: 20px;"><button class="btn btn-primary" type="button">Register Teacher</button></div>
+                                <div style="padding-top: 20px;"><button class="btn btn-primary" type="submit">Register Teacher</button></div>
                             </div>
                         </div>
                     </div>
