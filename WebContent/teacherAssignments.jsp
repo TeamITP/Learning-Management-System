@@ -11,18 +11,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
- <title>Add Question</title>
-<link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/teacherNav.css">
-     <link rel="stylesheet" href="CSS/teacherClassroom.css">
-     <link rel="stylesheet" href="CSS/UploadAssignment.css">
-     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Published Assignments</title>
+<link rel="stylesheet" href="CSS/AssignmnetTeacher.css">
+<link rel="stylesheet" href="CSS/teacherNav.css">
+<link rel="stylesheet" href="CSS/teacherClassroom.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
+<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+
 <body>
-<%
-	String username = "";
+	<%
+		String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -31,7 +31,6 @@
 			response.sendRedirect("index.jsp");
 		}
 
-		
 		if (clzId == null) {
 			response.sendRedirect("index.jsp");
 		}
@@ -39,12 +38,10 @@
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-	
+
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
-	
 	%>
-	
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -55,9 +52,8 @@
 			</div>
 		</div>
 		<hr id="breakLine">
-		
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp"><i
+			<a href="teacherClassroom.jsp" ><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="teacherAssignments.jsp" class="active"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
@@ -79,28 +75,38 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-		<h1 class="pageTopic">Assignment</h1>
-              <hr class="dividerTopic">
-             
-	
-	
-<form action="AddAssignment" method="post">
+		<div class="row">
+		<div class="col-6">
+				<%
+					AssignmentServices assignmentServices = new AssignmentServiceImpl();
+				ArrayList<Assignment> arrayList = assignmentServices.getAssignmentList(clzId);
 
-   <h1>Add Question</h1>
-    <input type="Deadline" name="deadline" placeholder="Deadline" required>
-    <textarea placeholder="Question" name="question"></textarea>
-    <input name="classroomId" value="<%=clzId %>" hidden>
-    <button type="submit" class="btn">Add Assignment</button>
-</form>
+				for (Assignment assignment : arrayList) {
+					System.out.println(assignment.toString());
+				%>
+				<div class="assignContainer">
+					<p><%=assignment.getQuestion()%></p>
+					<p><%=assignment.getDate()%></p>
+					<div>
 
-<img src="Images/a2.png" id="a2" width="600" height="500">
+						<button class="btn">Update</button>
+						<button class="btn1" hidden>Delete</button>
+					</div>
+				</div>
 
- 
-</div>
-    <!--Footer Here-->
+				<%
+					}
+				%>
+
+				<a href="uploadAssignment.jsp">Add A Question</a>
+			</div>
+			<div class="col-6"><img id="imageAssignm" src="Images/a4.png" height="500"></div>
+			</div>
+		</div>
+
+		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>           
-           
+	</div>
+
 </body>
- 
 </html>

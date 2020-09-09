@@ -1,30 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat",sans-serif;
-}
 
 
-body{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background:white;
-background-size:60% 60%;
-  
-}
-img {
-  margin-left:700px;
-  
- 
-  margin-top:15px;
-}
 
 form{
-    position: absolute;
     width: 320px;
      border: 1px solid #006FFF;
     background: #fff;
@@ -33,6 +10,7 @@ form{
     box-sizing: border-box;
     overflow: hidden;
     margin-right:480px;
+    margin-top:20px;
 }
 
 form h1{
@@ -85,7 +63,10 @@ form .btn{
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
     transition: 0.6s ease-in-out;
 }
-
+.a2 {
+  margin-left:700px;
+   margin-top:15px;
+}
 
 
 
