@@ -68,12 +68,12 @@
 
 			<div class="boxed">
 			<h6>Title</h6>
-		Further to the communications made via the Faculty Pages regarding the mid-term examination.
+		Combined Mathematics exam will be held on next monday at 10.00 am.
 		</div>
 		
 		<div class="boxed1">
 			<h6>Title</h6>
-		This is to confirm that there is no WEEKEND BATCH for Year 1 & 2 JUNE INTAKE students of FOC.
+		2020 A/L Chemistry class will not be held in next sunday. 
 		</div>
 		
 	

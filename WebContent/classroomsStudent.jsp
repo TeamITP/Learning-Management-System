@@ -1,5 +1,6 @@
 <%@page import="com.lms.model.Classroom"%>
 <%@page import="java.util.ArrayList"%>
+
 <%@page import="com.lms.service.ClassroomServicesImpl"%>
 <%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -17,7 +18,28 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
+<%
+	String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
 
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("classroomsStudent.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 <body>
 	<%
 	String username = "";
@@ -49,12 +71,18 @@
 					<img src="Images/classroomImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-9">
-							<h3 id="classYear">Grade <%=classroom.getGrade() %></h3>
+
+							<h3 id="classYear"><%=classroom.getGrade() %></h3>
+						</div>
+						<div class="col-2">
+							<img src="Images/more.png" id="moreIcon">
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="subjectName"><%=classroom.getSubject() %></h3>
+
+							<h3 id="subject"><%=classroom.getSubject() %></h3>
 						</div>
 					</div>
 				</div>
