@@ -31,9 +31,23 @@ public interface ClassroomServices {
 	public ArrayList<Classroom> getClassroomList(String teacherId);
 	
 	/**
-	 * Get ClassroomById
+	 * Get List of classroom for Students
 	 * 
 	 * @param teacherId
 	 */
+	public ArrayList<Classroom> getClassroomListStudent(String studentId);
+	
+	/**
+	 * Get ClassroomById
+	 * 
+	 * @param classroomId
+	 */
 	public Classroom getClassroom(String classroomId);
+	
+	/**
+	 *Update Classroom
+	 * 
+	 * @param classroomId
+	 */
+	public int updateClassroom(Classroom classroom);
 }

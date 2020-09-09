@@ -48,7 +48,7 @@
 		}
 
 	} else {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
@@ -69,8 +69,8 @@
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="teacherAssignments.jsp"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
+				href="teacherResults.jsp"><i
+				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
 				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
 				Marks</a> <a href="teacherPayments.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
@@ -185,8 +185,8 @@
 					<div class="modal-body">
 						<form class="modalUpd" method="post" action="">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value=""
-									name="serviceId" hidden> <label
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userID" hidden> <label
 									style="padding: 10px; padding-left: 20px;">It's not possible to restore classrooms once you deleted them. Are you sure
 									you want to delete this classroom ?</label>
 							</div>

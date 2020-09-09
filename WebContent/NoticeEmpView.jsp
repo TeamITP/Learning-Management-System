@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-        <title> Update Notice </title>
+        <title>Notice Employee view </title>
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
@@ -49,18 +49,37 @@
             <div class="pageContainer">
                 <!--Page Topic-->
                 <div class="pageTopicContainer">
-                    <h1 class="pageTopic"> Update Notice </h1>
+                    <h1 class="pageTopic"> Notice</h1>
                     <hr class="dividerTopic">
                 </div>
-          
-              
+ <div class="row">        
+    <div class="col-6">
+    <div class="boxed">
+			<h1>Title</h1>
+		<p>Further to the communications made via the Faculty Pages regarding the mid-term examination.</p>
+		<div class="row">
+		<div class="col-7">
+		<h5 id="timeNotice">Time Here</h5>
+		</div>
+		<div class="col-2">
+<button type="button" class="btn btn-warning btn-sm">Edit</button>
+		</div>
+		<div class="col-2">
+		<button type="button" class="btn btn-danger btn-sm">Delete</button>
+		</div>
+		</div>
+		</div>
+		</div>     
+    <div class="col-6">     
 <form>
     <input name="" placeholder="Title" required>
     <textarea placeholder="Notice Here"></textarea>
-    <button class="btn">Update Notice</button>
+    <button class="btn">Publish Notice</button>
+    <img src="Images/image5.png" width ="200" height="200">   
 </form>
-
- <img src="Images/image4.png" id="imgUpN" width ="500" height="400">     
+</div> 
+</div> 
+   
 
             </div>
                 <!--Footer Here-->
