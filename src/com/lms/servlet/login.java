@@ -46,11 +46,11 @@ public class login extends HttpServlet {
 	    if(username.charAt(0) == 'A') {
 	    	url = "adminHome.jsp";
 	    } else if (username.charAt(0) == 'S') {
-	    	url = "index.jsp";
+	    	url = "classroomsStudent.jsp";
 	    } else if (username.charAt(0) == 'E') {
-	    	url = "managerFindServices.jsp";
+	    	url = "EmpProfile.jsp";
 	    } else {
-	    	url = "index.jsp";
+	    	url = "classroomsTeacher.jsp";
 	    }
 	    
 	    if(status == 1) {

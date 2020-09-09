@@ -24,8 +24,6 @@ String clzPath="";
 			clzPath = "index.jps";
 		}
 
-	} else {
-		response.sendRedirect("login.jsp");
 	}%>
 <header>
 	<div class="grid-container">
@@ -35,24 +33,27 @@ String clzPath="";
 			<nav>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
-					<li><a href="<%=clzPath%>">Courses</a></li>
+					<li><a href="<%=clzPath%>">Classrooms</a></li>
 					<li><a href="about.jsp">About</a></li>
 					<li><a href="contact.jsp">Contact</a></li>
+					<%
+			if (session.getAttribute("userId") == null) {
+		%><li><a  id="loginA" href="login.jsp">Login</a></li><%} %>
 				</ul>
 			</nav>
 		</div>
+
 		
 		<%if(session.getAttribute("userId") != null) { %>
 		<div class="grid-item avtarImg">
 			<div class="dropdown" style="float: right;">
 				<img id="loginImage" src="Images/userAvatar.png">
 				<div class="dropdown-content">
-					<a href="#" class="regDropdown"><i
+					<a href="<%=profilePath %>" class="regDropdown"><i
 						class="dropdownIcon fa fa-user" aria-hidden="true"></i>Profile</a> 
 						<a
-						href="#" class="regDropdown"><i
-						class="dropdownIcon fa fa-graduation-cap" aria-hidden="true"></i>My
-						Courses</a> <a href="#" class="logoutDropdown"><i
+						href="<%=clzPath %>" class="regDropdown"><i
+						class="dropdownIcon fa fa-graduation-cap" aria-hidden="true"></i>Classrooms</a> <a href="logOut" class="logoutDropdown"><i
 						class="dropdownIcon fas fa-sign-out-alt"></i>Logout</a>
 				</div>
 			</div>
