@@ -93,7 +93,7 @@
     <button type="submit" class="btn">Add Assignment</button>
 </form>
 
-<img src="Images/a2.png" id="a2" width="600" height="500">
+<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
 
  
 </div>

@@ -28,7 +28,7 @@
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'T') {
+		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
 
@@ -46,33 +46,40 @@
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/userAvatar.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav"><%=username%></h5>
+				<h5 class="nameNav">Yasiru Randika</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp"><i
+			<a href="studentClassroom.jsp" ><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"class="active"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
+				href="studentAssignments.jsp"  class="active"><i
+				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
+				href="studentsNotices.jsp"><i
 				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
+				href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
+				Marks</a> <a href="QnA_Student.jsp"> <i
+				class="fas fa-question iconMainNavi"></i>Q & A
 			</a>
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
-		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
-		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
+		<h5 class="textClz" id="className">Combined Mathematics</h5>
+		<div class="row justify-content-center lastRow">
+			<div class="col-3">
+				<img src="Images/avatarTeacher.png" id="teacherAv">
+			</div>
+			<div class="col-9 align-items-center">
+				<h5 class="textClz" id="teacherName">Mr. Anura Perera</h5>
+			</div>
+		</div>
+		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
 	</div>
-
-	<div class="page-container">
+		
+		<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
