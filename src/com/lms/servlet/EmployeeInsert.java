@@ -32,8 +32,8 @@ response.setContentType("text/html");
 		employee.setPhone(request.getParameter("phone"));
 		employee.setAddress(request.getParameter("address"));
 		
-		EmployeeServices employeeaction = new EmployeeServicesImpl();
-		int status = employeeaction.insertEmployee(employee);
+		EmployeeServices employeeservices = new EmployeeServicesImpl();
+		int status = employeeservices.insertEmployee(employee);
 		
 		if(status == 1) {
 			request.setAttribute("message", "Insert Successful");

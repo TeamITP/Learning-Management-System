@@ -60,7 +60,7 @@
 				<img src="Images/step2.png" id="stepImage">
 			</div>
 			<div class="row">
-				<form enctype='multipart/form-data'>
+				<form enctype='multipart/form-data' method="post" action="ReadingUpload">
 					<div class="uploadField">
 						<label for="fileUpload"> <img id="btnUpload"
 							src="Images/addIcon.png" name="btnUpload">
@@ -74,7 +74,7 @@
 			<input onchange="inputChanged()" draggable="true" type="file" name="file"
 				id="fileUpload" hidden />
 			<div class="row">
-				<button type="button" class="btn btn-primary" name="btnSubmit"
+				<button type="submit" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Next</button>
 			</div>
 			</form>

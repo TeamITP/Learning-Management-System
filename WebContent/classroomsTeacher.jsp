@@ -46,7 +46,8 @@
 				<h3 id="titleTop">Classrooms</h3>
 			</div>
 			<div class="row listClass">
-			<%ClassroomServices classroomServices = new ClassroomServicesImpl();
+			<%
+			ClassroomServices classroomServices = new ClassroomServicesImpl();
 			ArrayList<Classroom> arrayList = classroomServices.getClassroomList(username);
 			
 			for(Classroom classroom: arrayList) {%>
