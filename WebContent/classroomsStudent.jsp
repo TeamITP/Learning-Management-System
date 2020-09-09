@@ -1,3 +1,7 @@
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -15,6 +19,19 @@
 </head>
 
 <body>
+	<%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+	%>
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -24,26 +41,38 @@
 				<h3 id="titleTop">Classrooms</h3>
 			</div>
 			<div class="row listClass">
-				<div class="col-1.5 itemContainer">
+			<%ClassroomServices classroomServices = new ClassroomServicesImpl();
+			ArrayList<Classroom> arrayList = classroomServices.getClassroomListStudent(username);
+			
+			for(Classroom classroom: arrayList) {%>
+				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=classroom.getClassrooId()%>').click()">
 					<img src="Images/classroomImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-9">
-							<h3 id="classYear">2020 A/L</h3>
-						</div>
-						<div class="col-2">
-							<img src="Images/more.png" id="moreIcon">
+							<h3 id="classYear">Grade <%=classroom.getGrade() %></h3>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="subject">Physics</h3>
+							<h3 id="subjectName"><%=classroom.getSubject() %></h3>
 						</div>
 					</div>
 				</div>
+				<form action="ClassroomClickStu" method="Post">
+				<input name="classId" id="classId" value="<%=classroom.getClassrooId() %>" hidden>
+				<input type="submit" id="<%=classroom.getClassrooId()%>" hidden></form>
+				<%} %>
+				
+				<%if(arrayList.size() == 0) { %>
+				<div class="alert alert-danger" role="alert">
+  You are not assigned for any classroom. Please contact the institute.
+</div>
+				<%} %>
 			</div>
-			<!--Footer Here-->
-			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
+		<!--Footer Here-->
+		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"

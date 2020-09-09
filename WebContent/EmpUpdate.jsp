@@ -36,33 +36,26 @@
                     <div style="height: 435px;border: 3px solid rgb(41,124,233);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;margin: 60px;padding: 20px;width: 380px;">
                         <div class="row">
                             <div class="col">
-                                <h1 style="font-size: 20px;">Basic Details</h1>
+                                <h1 style="font-size: 20px;">Employee Details</h1>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" placeholder="Full Name" style="width: 320px;padding: 2px;height: 30px;border: 2px solid rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" id="fullname" name="fullname" placeholder="Full Name" style="width: 320px;padding: 2px;height: 30px;border: 2px solid rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="height: 30px;width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"
-                                    placeholder="NIC"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" id="address" name="address" style="height: 30px;width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"
+                                    placeholder="Address"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Email"></div>
+                            <div class="col" style="padding: 10px;"><input type="text" id="phone" name="phone" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Phone"></div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col" style="padding: 10px;"><input type="text" id="nic" name="nic" placeholder="NIC" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Password"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h1 style="height: 24px;font-size: 20px;">Contact Details</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" placeholder="Address" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col" style="padding: 10px;"><input type="text" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Phone"></div>
-                        </div><button class="btn btn-primary" type="button">Update</button></div>
+                            <div class="col" style="padding: 10px;"><input type="text" id="password" name="password" style="width: 320px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Password"></div>
+                        </div><button class="btn btn-primary" type="submit">Update</button></div>
                 </form>
                 </div>
                 <div class="col-md-6"><img src="EmployeeUpdate/img/updateEmp.png" style="width: 350px;height: 350px;padding: 20px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;margin: 70px;"></div>
