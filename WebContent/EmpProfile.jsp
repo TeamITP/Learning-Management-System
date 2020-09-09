@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col"><button class="btn btn-primary" type="button" style="margin: 20px;">Go to Dashboard</button></div>
+                <div class="col"><a href = "paymentForm.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;">Go to Dashboard</button></div>
             </div>
         </div>
         <div class="col" style="height: 420px;">
