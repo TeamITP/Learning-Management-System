@@ -62,7 +62,7 @@ var b = 0;
 			<a href="adminEmployee.jsp" class="active"><i
 				class="fas fa-user-tie iconMainNavi"></i>Teachers</a> <a
 				href="adminEmployee.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Employees</a>
-			<a href="adminCustomers.jsp"><i class="fas fa-user iconMainNavi"></i>Students</a><a
+			<a href="adminStudents.jsp"><i class="fas fa-user iconMainNavi"></i>Students</a><a
 				href="adminOrders.jsp"><i class="fa fa-money iconMainNavi"></i>Bills
 				and Payments</a> <a href="adminServices.jsp"><i
 				class="fas fa-tasks iconMainNavi"></i>Notices and Events</a> <a
