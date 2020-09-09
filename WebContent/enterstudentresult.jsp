@@ -17,11 +17,11 @@
 <div class="register-photo">
         <div class="form-container">
             <div class="image-holder"></div>
-            <form method="post">
+            <form method="post" Action= "enterstudentresult">
                 <h2 class="text-center"><strong>Enter Result</strong></h2>
-                <div class="col"><label>Classroom ID</label><input class="form-control" type="text"></div>
-                <div class="col"><label>Exam Type</label><input class="form-control" type="text"></div>
-                <div class="col"><label>Exam Result Description</label><textarea class="form-control"></textarea></div>
+                <div class="col"><label>Classroom ID</label><input class="form-control" name = "Classroom_id" type="text"></div>
+                <div class="col"><label>Exam Type</label><input class="form-control" name = "Type" type="text"></div>
+                <div class="col"><label>Exam Result Description</label><textarea class="form-control" name = "Description"></textarea></div>
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send Result</button></div>
             </form>
         </div>
@@ -29,5 +29,6 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+
+
 </html>
