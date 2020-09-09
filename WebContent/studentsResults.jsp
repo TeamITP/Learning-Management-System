@@ -1,3 +1,6 @@
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,10 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>ResultEnter</title>
     <link rel="icon" href="Images/book.png">
-<link rel="stylesheet" href="CSS/studentNav.css">
-<link rel="stylesheet" href="CSS/studentClassroom.css">
-<link rel="stylesheet" href="CSS/teacherClassroom.css">
- 
+	<link rel="stylesheet" href="CSS/studentNav.css">
+	<link rel="stylesheet" href="CSS/studentClassroom.css">
+	<link rel="stylesheet" href="CSS/teacherClassroom.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -19,6 +21,26 @@
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
+
+<%
+	String username = "";
+String clzId = (String)session.getAttribute("classroomId");
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("index.jsp");
+		}
+		
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+		
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+%>
 
 <div class="sideNav">
 		<div class="row justify-content-center firstRow">
@@ -35,7 +57,7 @@
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="studentAssignments.jsp"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="enterstudentresult.jsp"  class="active"><i
+				href="studentsResults.jsp"  class="active"><i
 				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
 				href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
 				Marks</a> <a href="QnA_Student.jsp"> <i
