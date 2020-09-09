@@ -48,7 +48,7 @@
 		}
 
 	} else {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
@@ -69,8 +69,8 @@
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="teacherAssignments.jsp"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
+				href="teacherResults.jsp"><i
+				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
 				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
 				Marks</a> <a href="teacherPayments.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments

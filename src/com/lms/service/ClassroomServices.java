@@ -31,6 +31,13 @@ public interface ClassroomServices {
 	public ArrayList<Classroom> getClassroomList(String teacherId);
 	
 	/**
+	 * Get List of classroom for Students
+	 * 
+	 * @param teacherId
+	 */
+	public ArrayList<Classroom> getClassroomListStudent(String studentId);
+	
+	/**
 	 * Get ClassroomById
 	 * 
 	 * @param classroomId
