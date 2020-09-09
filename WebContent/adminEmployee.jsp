@@ -143,7 +143,7 @@ var b = 0;
         <div class="col"><button class="btn btn-primary" type="button" style="background-color: rgb(217,13,0);border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;height: 30px;">Delete</button></div>
     </div>
     <div class="row">
-        <div class="col"><button class="btn btn-primary" type="button" style="margin: 10px;border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Add New Employee</button></div>
+        <div class="col"><a href = "EmpRegister.jsp"><button class="btn btn-primary" type="button" style="margin: 10px;border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Add New Employee</button></div>
     </div>
     <div class="row">
         <div class="col">

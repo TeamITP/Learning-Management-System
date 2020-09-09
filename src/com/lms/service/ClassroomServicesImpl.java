@@ -130,7 +130,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
 			/*
-			 * Close statement and database connectivity at the end of transaction
+			 * Close statement and database connectivity at the end of the transaction
 			 */
 			try {
 				if (preparedStatement != null) {
@@ -182,6 +182,67 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		}
 
 		return status;
+	}
+
+	@Override
+	public ArrayList<Classroom> getClassroomListStudent(String studentId) {
+		ArrayList<Classroom> arrayList = new ArrayList<Classroom>();
+
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			ArrayList<String> clzId = new ArrayList<String>();
+ 			
+			String sqlQ = "SELECT * FROM ClassroomStudent WHERE Student_id = ?";
+			preparedStatement = connection.prepareStatement(sqlQ);
+			preparedStatement.setString(1, studentId);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				clzId.add(resultSet.getString(1));
+			}
+			
+			for(String clz : clzId) {
+
+			String sql = "SELECT * FROM Classroom WHERE Classroom_id = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, clz);
+
+			ResultSet resultSet1 = preparedStatement.executeQuery();
+
+			while (resultSet1.next()) {
+				Classroom classroom = new Classroom();
+				classroom.setClassrooId(resultSet1.getString(2));
+				classroom.setGrade(resultSet1.getInt(3));
+				classroom.setSubject(resultSet1.getString(4));
+				classroom.setDescription(resultSet1.getString(5));
+				classroom.setClassTime(resultSet1.getString(6));
+
+				arrayList.add(classroom);
+			}
+			System.out.println(arrayList.toString());
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return arrayList;
 	}
 
 }
