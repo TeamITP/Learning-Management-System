@@ -2,9 +2,10 @@ package com.lms.model;
 
 public class Assignment {
 	
-		protected String A_ID;
-	    protected String Date;
-	    protected String Question;
+		private String A_ID;
+	    private String Date;
+	    private String Class_ID;
+	    private String Question;
 	    
 	    
 	    public Assignment() {}
@@ -12,7 +13,7 @@ public class Assignment {
 	    public Assignment( String Date, String Class_ID, String Question) {
 	        super();
 	        this.Date = Date;
-	        
+	        this.Class_ID =Class_ID;
 	        this.Question = Question;
 	    }
 	    
@@ -24,23 +25,37 @@ public class Assignment {
 	        this.Question = Question;
 	    }
 
-	    public String getA_ID() {
-	        return A_ID;
-	    }
-	    public void setA_Id(String A_ID) {
-	        this.A_ID = A_ID;
-	    }
-	    public String getDate() {
-	        return Date;
-	    }
-	    public void setDate(String Date) {
-	        this.Date = Date;
-	    }
-	  
-	    public String getQuestion() {
-	        return Question;
-	    }
-	    public void setQuestion(String Question) {
-	        this.Question =Question;
-	    }
+		public String getA_ID() {
+			return A_ID;
+		}
+
+		public void setA_ID(String a_ID) {
+			A_ID = a_ID;
+		}
+
+		public String getDate() {
+			return Date;
+		}
+
+		public void setDate(String date) {
+			Date = date;
+		}
+
+		public String getClass_ID() {
+			return Class_ID;
+		}
+
+		public void setClass_ID(String class_ID) {
+			Class_ID = class_ID;
+		}
+
+		public String getQuestion() {
+			return Question;
+		}
+
+		public void setQuestion(String question) {
+			Question = question;
+		}
+
+	   
 }
