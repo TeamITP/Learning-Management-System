@@ -44,7 +44,7 @@
 	<div class="page-container">
     <!--Header Here-->
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-
+<div class="pageContainer">
     <div class="col-lg-10 offset-lg-1" style="height: 170px;"><img class="img-fluid" src="EmployeeProfile/img/boardEmp.png" height="70px" width="auto" style="margin: 70px;"></div>
     <div class="col-lg-10 offset-lg-1" style="font-size: 30px;border-radius: 7px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;width: 800px;height: 160px;"><img src="EmployeeProfile/img/avatarEmp.png" width="100px" height="100px" alt="Empavatar" style="margin: 50px;"><label id="EmpAvatar" style="font-size: 30px;">Nimesha Perera</label></div>
     <div>
@@ -96,7 +96,8 @@
                             <div class="col"><input type="text" value="<%=employee.getPassword()%>" id="password" name="password" style="width: 300px;border-color: rgb(0,111,255);"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 4px;margin: 2px;"><button class="btn btn-primary" type="button" style="height: 35px;background-color: rgb(232,32,19);margin: 10px;">Delete Account</button><button class="btn btn-primary" type="button" style="margin: 20px;height: 35px;background-color: rgb(248,194,5);">Update</button></div>
+                            <div class="col" style="padding: 4px;margin: 2px;"><button class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" type="button" style="height: 35px;background-color: rgb(232,32,19);margin: 10px;">Delete Account</button>
+                            <a href = "EmpUpdate.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;height: 35px;background-color: rgb(248,194,5);">Update</button></div>
                         </div>
                         </form>
                     </div>
@@ -115,7 +116,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col"><button class="btn btn-primary" type="button" style="margin: 20px;">Go to Dashboard</button></div>
+                <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;">Go to Dashboard</button></div>
             </div>
         </div>
         <div class="col" style="height: 420px;">
@@ -159,16 +160,48 @@
                 <div class="col"><img src="EmployeeProfile/img/requestEmp.png" style="width: 250px;height: 250px;"></div>
             </div>
             <div class="row">
-                <div class="col"><button class="btn btn-primary" type="button" style="margin: 20px;">Request Form</button></div>
+                <div class="col"><a href = "EmpLeave.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;">Request Form</button></div>
             </div>
         </div>
+    </div>
     </div>
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
 
-	<!--Footer Here-->
-    <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	
     </div>
+    
+    <!--Moodal for delete Profile-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="index.jsp">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userId" hidden> <label
+									style="padding: 10px; padding-left: 20px;"> Are you sure to delete your profile
+									?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cancel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    
 </body>
 
 </html>

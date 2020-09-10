@@ -46,6 +46,7 @@ public class Examinations extends HttpServlet {
 		Examination examination = new Examination();
 		 examination.setDate(Date);
 		 examination.setClassroomid(request.getParameter("classroomId"));
+		 
 		 ExaminationServices examinationservices = new ExaminationServicesImp();
 		int status = examinationservices.InsertExamination(examination);
 		

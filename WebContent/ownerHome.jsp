@@ -42,7 +42,7 @@ var b = 0;
 
 		<div id="dropDown1">
 			<div id="rowDropDown1">
-				<form id="form" method="post" action="empProfile">
+				<form id="form" method="post" action="adminHome.jsp">
 					<input name="user" value="" hidden> <a onClick="submit()">
 						<i class="far fa-user"></i> <label class="textDropdownAvtar"
 						id="textProf">Profile</label>
@@ -50,7 +50,7 @@ var b = 0;
 				</form>
 			</div>
 			<div id="rowDropDown1">
-				<a href="logout"> <i class="fas fa-power-off"></i><label
+				<a href="logOut"> <i class="fas fa-power-off"></i><label
 					id="textLogout" class="textDropdownAvtar">Logout</label>
 				</a>
 			</div>
@@ -58,8 +58,8 @@ var b = 0;
 		<hr />
 		<label id="textMainNavi">Main Navigation</label>
 		<div class="mainSideNav">
-			<a href="adminHome.jsp"><i class="fas fa-home iconMainNavi"></i>Home</a>
-			<a href="adminEmployee.jsp" class="active"><i
+			<a href="adminHome.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Home</a>
+			<a href="adminEmployee.jsp" ><i
 				class="fas fa-user-tie iconMainNavi"></i>Teachers</a> <a
 				href="adminEmployee.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Employees</a>
 			<a href="adminStudents.jsp"><i class="fas fa-user iconMainNavi"></i>Students</a><a
@@ -94,9 +94,23 @@ var b = 0;
 			NewMontana.lk</h3>
 	</div>
 </header>
+<%
+	String username = "";
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
 
+		if (username.charAt(0) != 'A') {
+			response.sendRedirect("index.jsp");
+		}
+
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+
+	%>
 <body>
-	<div class="pageContainer">HELLO WORLD</div>
+	<div class="pageContainer">ADMIN HOME PAGE</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"

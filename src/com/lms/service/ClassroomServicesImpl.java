@@ -130,7 +130,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
 			/*
-			 * Close statement and database connectivity at the end of transaction
+			 * Close statement and database connectivity at the end of the transaction
 			 */
 			try {
 				if (preparedStatement != null) {

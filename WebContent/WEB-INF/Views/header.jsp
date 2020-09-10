@@ -21,14 +21,14 @@ String clzPath="";
 			clzPath = "index.jps";
 		} else {
 			profilePath="index.jsp";
-			clzPath = "index.jps";
+			clzPath = "index.jsp";
 		}
 
 	}%>
 <header>
 	<div class="grid-container">
 		<div class="grid-item navContain">
-			<a href="#" class="logo"><i class="fa fa-graduation-cap"
+			<a href="index.jsp" class="logo"><i class="fa fa-graduation-cap"
 				aria-hidden="true"></i> New Montana</a>
 			<nav>
 				<ul>
