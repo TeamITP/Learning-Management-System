@@ -166,4 +166,54 @@ public class ExamResultServicesImp implements ExamResultServices{
 		return status;	
 	}
 
+
+	@Override
+	public ArrayList<ExamResult> getstudentmarks(String studentid, String examid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+//	public ArrayList<ExamResult> getstudentmarks(String studentid,String examid) {
+//		ArrayList<ExamResult> arrayList = new ArrayList<ExamResult>();
+//		
+//		try {
+//			connection = ConnectDB.getDBConnection();
+//			
+//			String sql = "SELECT * from Exam_Result where Stu_ID = '"+studentid+"' and Exam_ID = '"+examid+"'";
+//			
+//			preparedstatement = connection.prepareStatement(sql);
+//			
+//			
+//			
+//			ResultSet resultSet = preparedstatement.executeQuery();
+//			
+//			while (resultSet.next()) {
+//				ExamResult examresult = new ExamResult();
+//				examresult.setMarks(resultSet.getInt(5));
+//				examresult.setRank(resultSet.getInt(6));
+//				
+//				
+//				arrayList.add(examresult);
+//			}
+//		} catch (SQLException e) {
+//			System.out.println(e.getMessage());
+//		} finally {
+//			/*
+//			 * Close statement and database connectivity at the end of transaction
+//			 */
+//			try {
+//				if (preparedstatement != null) {
+//					preparedstatement.close();
+//				}
+//				if (connection != null) {
+//					connection.close();
+//				}
+//			} catch (java.sql.SQLException e) {
+//				System.out.println(e.getMessage());
+//			}
+//		}
+//		return arrayList;
+//	}
+
 }

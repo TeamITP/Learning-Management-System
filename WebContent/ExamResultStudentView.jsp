@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="com.lms.service.ExamResultServicesImp"%>
+    <%@page import="com.lms.service.ExamResultServices"%>
+     <%@page import="java.util.ArrayList"%>
+     <%@page import="com.lms.model.ExamResult"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +20,36 @@
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
+<%
+		String username = "";
+String eId = request.getParameter("examId");
+
+if(eId != null) {
+	HttpSession httpSession = request.getSession();
+	httpSession.setAttribute("examId", eId);
+}
+
+String examId = (String)session.getAttribute("examId");
+
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		if (examId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	
+	
+	
+%>
 
   <div class="sideNav">
             <div class="row justify-content-center firstRow">
@@ -73,7 +107,7 @@
                 </div>
           </div>
           <div class="col btn">
-            <button type="button" class="btn btn-danger">Re-Correction Apply</button>
+            <button onclick="document.getElementById('<%=examresult.getResult_ID()%>').click()" class="btn btn-light btn">type="button" class="btn btn-danger">Re-Correction Apply</button>
           </div>
         </div>
         
@@ -81,15 +115,25 @@
         </form> 
         <div class="row justify-content-start sheet"> Result Sheet</div>
           
-
+ <% ExamResultServices examresultservices = new ExamResultServicesImp();
+      ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
+      System.out.println(arrayList);
+    %>
+    
+    <% for(ExamResult examresult: arrayList) {%>
           <div class="row grid" >
-              <div class="col one">tt</div>
-              <div class="col one">tt</div>
-              <div class="col two">tt</div>
-              <div class="col three">tt</div>
+        <div class="col one"><%=examresult.getResult_ID() %></div>
+        <div class="col one"><%=examresult.getStudent_ID() %></div>
+        <div class="col two"><%=examresult.getMarks() %></div>
+        <div class="col three"><%=examresult.getRank() %></div>
+        
+        
+        <form action="ResultTeacherView.jsp" method="Post" hidden>
+				<input name="examId" id="examId" value="<%=examresult.getResult_ID() %>" hidden>
+				<input type="submit" id="<%=examresult.getResult_ID()%>" hidden></form>
               
           </div>
-                    
+        <%} %>             
                     
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
