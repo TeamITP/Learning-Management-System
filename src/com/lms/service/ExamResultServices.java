@@ -20,6 +20,6 @@ public interface ExamResultServices {
 	public int DeleteResult(String resultid);
 	
 	
-	public ArrayList<ExamResult> getstudentmarks(String studentid,String examid);
+	public boolean getstudentmarks(String studentid,String examid);
 
 }
