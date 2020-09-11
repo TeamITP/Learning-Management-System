@@ -1,6 +1,5 @@
 <%@page import="com.lms.model.Classroom"%>
 <%@page import="java.util.ArrayList"%>
-
 <%@page import="com.lms.service.ClassroomServicesImpl"%>
 <%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -20,7 +19,6 @@
 </head>
 <%
 	String username = "";
-	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
@@ -28,32 +26,12 @@
 			response.sendRedirect("index.jsp");
 		}
 
-		
-		if (clzId == null) {
-			response.sendRedirect("classroomsStudent.jsp");
-		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
 
-	ClassroomServices classroomServices = new ClassroomServicesImpl();
-	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
 <body>
-	<%
-	String username = "";
-		if (session.getAttribute("userId") != null) {
-		username = (String) session.getAttribute("userId");
-
-		if (username.charAt(0) != 'S') {
-			response.sendRedirect("index.jsp");
-		}
-
-	} else {
-		response.sendRedirect("login.jsp");
-	}
-	%>
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -71,18 +49,12 @@
 					<img src="Images/classroomImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-9">
-
-							<h3 id="classYear"><%=classroom.getGrade() %></h3>
-						</div>
-						<div class="col-2">
-							<img src="Images/more.png" id="moreIcon">
-
+							<h3 id="classYear">Grade <%=classroom.getGrade() %></h3>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-
-							<h3 id="subject"><%=classroom.getSubject() %></h3>
+							<h3 id="subjectName"><%=classroom.getSubject() %></h3>
 						</div>
 					</div>
 				</div>

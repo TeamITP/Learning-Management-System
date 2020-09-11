@@ -127,7 +127,7 @@
 						</div>
 					</div>
 					
-					<form action="teacherLesson.jsp" method="Post">
+					<form action="LessonClick" method="Post">
 				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
 				<input type="submit" id="<%=lesson.getLessonId()%>" hidden></form>
 				</div>
