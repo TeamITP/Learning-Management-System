@@ -1,3 +1,7 @@
+<%@page import="javax.swing.text.Document"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,6 +20,31 @@
 </head>
 
 <body>
+<%
+	String username = "";
+String clzId = (String) session.getAttribute("classroomId");
+String lessonId = (String) session.getAttribute("lessonId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+		if (lessonId == null) {
+			response.sendRedirect("teacherLesson.jsp");
+		}
+		
+		if (clzId == null) {
+			response.sendRedirect("classroomsTeacher.jsp");
+		}
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -57,6 +86,10 @@
 			<div class="row">
 				<img src="Images/step1.png" id="stepImage">
 			</div>
+			<form action="ReadingInsert" method="Post">
+				<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
+				<input name="classroomId" id="<%=clzId%>" hidden>
+				<%System.out.println(clzId); %>
 			<div class="row">
 				<input placeholder="Title" id="titleInput" name="title">
 			</div>
@@ -65,9 +98,10 @@
 					name="description"></textarea>
 			</div>
 			<div class="row">
-				<button type="button" class="btn btn-primary" name="btnSubmit"
+				<button type="type" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Next</button>
 			</div>
+			</form>
 			<!--Footer Here-->
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
