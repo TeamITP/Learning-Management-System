@@ -50,7 +50,7 @@ public class EmployeeDelete extends HttpServlet {
 			request.setAttribute("userId", empId);
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
 		    dis.forward(request, response);
 	}
 

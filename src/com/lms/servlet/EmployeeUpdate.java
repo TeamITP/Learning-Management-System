@@ -44,7 +44,7 @@ public class EmployeeUpdate extends HttpServlet {
 		int status = employeeservices.updateEmployee(employee);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
+			request.setAttribute("message", "Insert Successful");
 			request.setAttribute("Emp_ID", employee.getEmp_ID());
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
