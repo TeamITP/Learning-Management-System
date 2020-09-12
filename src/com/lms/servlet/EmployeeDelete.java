@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lms.model.Employee;
 import com.lms.service.EmployeeServices;
@@ -40,7 +41,9 @@ public class EmployeeDelete extends HttpServlet {
 		
 		if(status == 1) {
 			request.setAttribute("message", "Delete Successful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
+			HttpSession session=request.getSession();  
+	        session.invalidate();
+	        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
 			response.sendRedirect("index.jsp");
 			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
