@@ -10,4 +10,9 @@ public interface AssignmentServices {
 	public ArrayList<Assignment> getAssignmentList(String Class_ID);
 
 	public Assignment getAssignment(String A_ID);
+	
+	public int UpdateAssignment(Assignment assignment);
+	
+	public int DeleteAssignment(String A_ID);
+
 }
