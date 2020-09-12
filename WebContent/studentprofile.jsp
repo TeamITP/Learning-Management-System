@@ -110,10 +110,10 @@
 			<div class="row">
 				<div class="col-md-4">
 
-					<a href = "studentClassroom.jsp" ><button class="btn btn-success" type="button">Classroom</button></a> 
+					<a href = "ClassroomsStudent.jsp" ><button class="btn btn-success" type="button">Classroom</button></a> 
 				</div>
 				<div class="col-md-4">
-					<a href = "studentupdate.jsp"> <button class="btn btn-warning" type="button">Update Profile</button></a>
+					<a href = "updateStudent.jsp"> <button class="btn btn-warning" type="button">Update Profile</button></a>
 				</div>
 				<div class="col-md-4">
 					 <button class="btn btn-danger" type="button"  data-toggle="modal" data-target="#deleteModal">Delete
@@ -137,29 +137,29 @@
 	<script src="studentprofile/js/jquery.min.js"></script>
 	<script src="studentprofile/bootstrap/js/bootstrap.min.js"></script>
 	
-	<!--Moodal for delete Student-->
+	<!--Moodal for delete Profile-->
 		<div class="modal fade" id="deleteModal" role="form">
 			<div class="modal-dialog modal-dialog-centered">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<label class="modal-title">Delete Student</label>
+						<label class="modal-title">Delete</label>
 						<button type="button" id="bnClose" style="outline: none"
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
 						<form class="modalUpd" method="post" action="deleteStudent">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value="<%=username%>>"
-									name="userID" hidden> <label
-									style="padding: 10px; padding-left: 20px;">It's not possible to restore your profile once you deleted them. Are you sure
-									you want to delete your profile ?</label>
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userId" hidden> <label
+									style="padding: 10px; padding-left: 20px;"> Are you sure to delete your profile
+									?</label>
 							</div>
 							<!-- form-group end.// -->
 							<div class="form-group">
 								<button data-dismiss="modal"
 									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cansel</button>
+									class="btn btn-warning">Cancel</button>
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</div>
 						</form>

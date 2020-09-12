@@ -21,7 +21,7 @@ import com.lms.util.ConnectDB;
 public class StudentServicesImple implements StudentServices{
 	private static Connection connection;
 	private static PreparedStatement preparedStatement;
-
+	private static Statement statement;
 
 	public int StudentRegistration(Student student) {
 		int status = 0;
@@ -138,53 +138,7 @@ public class StudentServicesImple implements StudentServices{
 		
 		return status;
 	}
-
-	@Override
-	public ArrayList<Student> getListStudent(String Student_ID) {
-		ArrayList<Student> arrayList = new ArrayList<Student>();
-
-		try {
-			connection = ConnectDB.getDBConnection();
-
-			String sql = "SELECT * FROM Student WHERE Student_ID = ?";
-
-			preparedStatement = connection.prepareStatement(sql);
-
-			preparedStatement.setString(1, Student_ID);
-
-			ResultSet resultSet = preparedStatement.executeQuery();
-
-			while (resultSet.next()) {
-				Student student = new Student();
-				student.setStudent_ID(resultSet.getString(2));
-				student.setFristName(resultSet.getString(3));
-				student.setLastName(resultSet.getString(4));
-				student.setAddress(resultSet.getString(5));
-				student.setPhone(resultSet.getString(6));
-				student.setGuardian(resultSet.getString(7));
-				student.setPassword(resultSet.getString(8));
-
-				arrayList.add(student);
-			}
-		} catch (SQLException e) {
-			logger.log(Level.SEVERE, e.getMessage());
-		} finally {
-			/*
-			 * Close statement and database connectivity at the end of transaction
-			 */
-			try {
-				if (preparedStatement != null) {
-					preparedStatement.close();
-				}
-				if (connection != null) {
-					connection.close();
-				}
-			} catch (java.sql.SQLException e) {
-				logger.log(Level.SEVERE, e.getMessage());
-			}
-		}
-		return arrayList;
-	}
+	 
 	
 	@Override
 	public int updateStudent(Student student) {
@@ -195,13 +149,16 @@ public class StudentServicesImple implements StudentServices{
 			String sql = "UPDATE Student SET firstName = ?, lastName = ?, address = ?, phone = ?, Guardian = ?, password = ? WHERE Student_ID = ?";
 
 			preparedStatement = connection.prepareStatement(sql);
+			System.out.println(student.getPassword());
 
 			preparedStatement.setString(1, student.getFristName());
 			preparedStatement.setString(2, student.getLastName());
 			preparedStatement.setString(3, student.getAddress());
-			preparedStatement.setString(3, student.getPhone());
-			preparedStatement.setString(3, student.getGuardian());
-			preparedStatement.setString(3, student.getPassword());
+			preparedStatement.setString(4, student.getPhone());
+			preparedStatement.setString(5, student.getGuardian());
+			preparedStatement.setString(6, student.getPassword());
+			preparedStatement.setString(7, student.getStudent_ID());
+			
 
 			status= preparedStatement.executeUpdate();
 
