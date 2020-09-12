@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lms.model.Employee;
 import com.lms.service.EmployeeServices;
@@ -33,6 +34,7 @@ public class EmployeeUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Employee employee = new Employee();
 		
+		employee.setEmp_ID(request.getParameter("empId"));
 		employee.setName(request.getParameter("fullname"));
 		employee.setAddress(request.getParameter("address"));
 		employee.setPhone(request.getParameter("phone"));

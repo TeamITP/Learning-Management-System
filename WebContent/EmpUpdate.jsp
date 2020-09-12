@@ -56,6 +56,7 @@
             <div class="row">
                 <div class="col-md-6">
                 <form action="EmployeeUpdate" method="post">
+                <input name="empId" value="<%=username %>" hidden>
                     <div style="height: 435px;border: 3px solid rgb(41,124,233);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;margin: 60px;padding: 20px;width: 380px;">
                         <div class="row">
                             <div class="col">

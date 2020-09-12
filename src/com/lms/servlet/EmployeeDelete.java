@@ -32,8 +32,8 @@ public class EmployeeDelete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String empId = request.getParameter("empId");
-		
+		String empId = request.getParameter("userId");
+
 		EmployeeServices employeeServices = new EmployeeServicesImpl();
 		
 		int status = employeeServices.deleteEmployee(empId);
