@@ -291,4 +291,50 @@ public class LessonMaterialServImple implements LessonMaterialsService {
 		return status;
 	}
 
+	@Override
+	public int updateViewCount(String materialId) {
+		int status = 0;
+
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String s = "SELECT * FROM Reading WHERE Material_id = ?";
+			preparedStatement = connection.prepareStatement(s);
+			preparedStatement.setString(1, materialId);
+			
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+			int count = resultSet.getInt(9) + 1;
+			
+			String sql = "UPDATE Reading SET Num_Views = ? WHERE Material_id=?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setInt(1, count);
+			preparedStatement.setString(2, materialId);
+
+			status = preparedStatement.executeUpdate();
+			}
+
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+			System.out.println(e.getMessage());
+		}
+
+		return status;
+	}
+
 }

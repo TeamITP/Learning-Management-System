@@ -63,4 +63,11 @@ public interface LessonMaterialsService {
 		 * @param lessonId
 		 */
 		public ArrayList<VideoMaterial> getListVideo(String lessonId);
+		
+		/**
+		 * Get list of video Materials
+		 * 
+		 * @param lessonId
+		 */
+		public int updateViewCount(String lessonId);
 }

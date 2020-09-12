@@ -1,3 +1,6 @@
+<%@page import="com.lms.model.Student"%>
+<%@page import="com.lms.service.StudentServicesImple"%>
+<%@page import="com.lms.service.StudentServices"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.lms.model.Lesson"%>
 <%@page import="com.lms.service.LessonServiceImple"%>
@@ -18,6 +21,8 @@
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <head>
 <meta charset="ISO-8859-1">
@@ -147,16 +152,100 @@
 			<div class="row">
 				<div class="col-8">
 					<img src="Images/studentInsert.png" id="stuInsertImg">
+					<form  method="Post" action="InsertStudentClz">
+						<input value="<%=clzId %>" name="classroomId" hidden>
 					<div class="row">
-						<input placeholder="StudentId" id="studentId" name="title">
+						<input placeholder="StudentId" id="studentId" name="studentId">
 					</div>
 					<div class="row">
 						<button type="submit" class="btn btn-primary" name="btnSubmit"
 							id="btnSubmit">Add Student</button>
 					</div>
+					</form>
 					<div class="col-2"></div>
 				</div>
 			</div>
+			
+			<!-- Student Search List -->
+			
+			<div class="row studentTable">
+			<div class="input-group md-form form-sm form-2 pl-0">
+  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
+  <div class="input-group-append">
+    <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+        aria-hidden="true"></i></span>
+  </div>
+</div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+    <%StudentServices studentServices = new StudentServicesImple();
+    ArrayList<String> studentArrayList = studentServices.getStudentArrayList(clzId);
+    
+    for(String stuId : studentArrayList) {
+    Student student = studentServices.getStudentById(stuId);%>
+      <tr>
+        <td><%=student.getStudent_ID() %></td>
+        <td><%=student.getFristName() %></td>
+        <td><%=student.getLastName() %></td>
+        <td><%=student.getPhone() %></td>
+        <td><button data-toggle="modal" data-target="#del<%=student.getStudent_ID() %>" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
+								<i class="fas fa-minus-circle"></i>
+							</button></td>
+      </tr>
+      
+      <div class="modal fade" id="del<%=student.getStudent_ID() %>" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Remove Student </label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="Post" action="DeleteStuClz">
+						<input value="<%=clzId %>" name="classroomId" hidden>
+							<div class="row"><input value="<%=student.getStudent_ID() %>"
+									name="studentId" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									remove this student ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Remove</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+      <%} %>
+    </tbody>
+  </table>
+			</div>
+			
+			<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 			<div class="row">
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
@@ -203,6 +292,8 @@
 			</div>
 		</div>
 </body>
+
+<script type="text/javascript">window.print()</script>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
 	crossorigin="anonymous"></script>
