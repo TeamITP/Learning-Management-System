@@ -1,45 +1,10 @@
-boxed {
-   border: 1px solid #006FFF;
-  height:110px;
-width:600px;
- margin-left:300px;
-margin-top:-400px;
-
+.assignContainer {
+  margin: 10px;
+  border:1px solid #0080ff;
+  border-radius: 5px;
 }
 
-btn{
-    position: relative;
-    margin: 26px 20px 20px 10px;
-    height: 30px;
-    width: 110px;
-    border: none;
-    outline: none;
-    border-radius: 18px;
-    color: white;
-    background: #0000ff;
-    font-size: 15px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-    transition: 0.6s ease-in-out;
-}
-
-btn1{
-    position: relative;
-    margin: 30px 10px 10px 20px;
-    height: 30px;
-    width: 110px;
-    border: none;
-    outline: none;
-    border-radius: 18px;
-    color: white;
-    background: #ff0000;
-    font-size: 15px;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-    transition: 0.6s ease-in-out;
-}
-
-img {
-  margin-left:900px;
-  
- 
+#imageAssignm {
+  z-index:-1;
   margin-top:15px;
 }

@@ -1,3 +1,6 @@
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,6 +21,32 @@
 
 
 <body>
+<%
+	String username = "";
+String clzId = (String) session.getAttribute("classroomId");
+String lessonId = (String) session.getAttribute("lessonId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+		
+		if (clzId == null) {
+			response.sendRedirect("classroomsTeacher.jsp");
+		}
+		if (lessonId == null) {
+			response.sendRedirect("teacherLesson.jsp");
+		}
+		
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -60,7 +89,8 @@
 				<img src="Images/step2.png" id="stepImage">
 			</div>
 			<div class="row">
-				<form enctype='multipart/form-data'>
+				<form enctype='multipart/form-data' method="post" action="ReadingUpload">
+				<input value="<%=clzId %> name="classroomId" hidden>
 					<div class="uploadField">
 						<label for="fileUpload"> <img id="btnUpload"
 							src="Images/addIcon.png" name="btnUpload">
@@ -71,10 +101,10 @@
 						</label>
 					</div>
 			</div>
-			<input onchange="inputChanged()" type="file" name="file"
+			<input onchange="inputChanged()" draggable="true" type="file" name="file"
 				id="fileUpload" hidden />
 			<div class="row">
-				<button type="button" class="btn btn-primary" name="btnSubmit"
+				<button type="submit" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Next</button>
 			</div>
 			</form>

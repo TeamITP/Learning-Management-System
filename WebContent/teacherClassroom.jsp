@@ -12,7 +12,7 @@
 
     <head>
         <meta charset="ISO-8859-1">
-        <title>Home | Admin</title>
+        <title>Classroom</title>
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
@@ -33,7 +33,7 @@
 
 <body>
 	<%
-		String username = "";
+	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -48,7 +48,7 @@
 		}
 
 	} else {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
@@ -69,8 +69,8 @@
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="teacherAssignments.jsp"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
+				href="teacherResults.jsp"><i
+				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
 				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
 				Marks</a> <a href="teacherPayments.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
@@ -86,7 +86,19 @@
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+		
 		<div class="pageContainer">
+		<h3 id="lessonName"><%=classroom.getSubject() %></h3>
+			<div class="row">
+				<p id="introLesson"><%=classroom.getDescription() %>  |  <%=classroom.getClassTime() %></p>
+			</div>
+			<div class="row btnCont">
+			<form action="updateClassroom.jsp" method="Post">
+				<input name="classroomId" id="classroomId" value="<%=classroom.getClassrooId() %>" hidden>
+				<button type = "submit" id="btnUpdate" style="outline:none">Update</button>
+				</form>
+				<button id="btnDelete" style="outline:none"  data-toggle="modal" data-target="#deleteModal">Delete</button>
+			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Lesssons</h1>
 				<hr class="dividerTopic">
@@ -111,11 +123,11 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title">Introduction</h3>
+							<h3 id="title"><%=lesson.getName() %></h3>
 						</div>
 					</div>
 					
-					<form action="teacherLesson.jsp" method="Post">
+					<form action="LessonClick" method="Post">
 				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
 				<input type="submit" id="<%=lesson.getLessonId()%>" hidden></form>
 				</div>
@@ -123,7 +135,7 @@
 					}
 				%>
 				<div class="col-1.5 itemContainer">
-					<img id="btnUpload" src="Images/addIcon.png" name="btnUpload">
+					<a href="insertLesson.jsp"><img id="btnUpload" src="Images/addIcon.png" name="btnUpload"></a>
 				</div>
 			</div>
 
@@ -159,6 +171,37 @@
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
+	
+	<!--Moodal for delete Classroom-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Classroom</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userID" hidden> <label
+									style="padding: 10px; padding-left: 20px;">It's not possible to restore classrooms once you deleted them. Are you sure
+									you want to delete this classroom ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"

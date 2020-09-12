@@ -1,3 +1,11 @@
+<%@page import="com.lms.model.Teacher"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.Teacher_Managment_Services"%>
+<%@page import="com.lms.service.Teacher_Managment_ServicesImple"%>
+<%@page import="com.lms.model.Classroom"%>
+
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,6 +20,25 @@
 </head>
 
 <body>
+
+<%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+		
+		Teacher_Managment_Services teacher_managment = new Teacher_Managment_ServicesImple();
+		Teacher teacher = teacher_managment.getTeacher(username);
+		//ArrayList<Teacher> arrayList = teacher_managment .getTeacherDeatail(username);
+	%>
+
 
 	<div class="page-container">
 	
@@ -28,7 +55,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><label class="col-form-label">R.M.N.A Rathnayaka</label></div>
+                        <div class="col"><label class="col-form-label"><%=teacher.getName() %></label></div>
                     </div>
                 </div>
             </div>
@@ -37,14 +64,53 @@
                     <div style="padding-left: 30px;">
                         <div class="row">
                             <div class="col" style="width: 150px;padding-left: 15px;">
-                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
+                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Name</label></div>
                             </div>
                             <div class="col">
-                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
+                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;"><%=teacher.getName() %></label></div>
                             </div>
                         </div>
                     </div>
                     <div style="padding-left: 30px;">
+                        <div class="row">
+                            <div class="col" style="width: 150px;padding-left: 15px;">
+                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Subject</label></div>
+                            </div>
+                            <div class="col">
+                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;"><%=teacher.getSubject() %></label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-left: 30px;">
+                        <div class="row">
+                            <div class="col" style="width: 150px;padding-left: 15px;">
+                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Contact</label></div>
+                            </div>
+                            <div class="col">
+                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;"><%=teacher.getContact() %></label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-left: 30px;">
+                        <div class="row">
+                            <div class="col" style="width: 150px;padding-left: 15px;">
+                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Birthday</label></div>
+                            </div>
+                            <div class="col">
+                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;"><%=teacher.getBirthdate()%></label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-left: 30px;">
+                        <div class="row">
+                            <div class="col" style="width: 150px;padding-left: 15px;">
+                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Title</label></div>
+                            </div>
+                            <div class="col">
+                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;"><%=teacher.getTitle()%>
+                        </div>
+                    </div>
+                   <!--   <div style="padding-left: 30px;">
                         <div class="row">
                             <div class="col" style="width: 150px;padding-left: 15px;">
                                 <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
@@ -53,47 +119,7 @@
                                 <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
                             </div>
                         </div>
-                    </div>
-                    <div style="padding-left: 30px;">
-                        <div class="row">
-                            <div class="col" style="width: 150px;padding-left: 15px;">
-                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
-                            </div>
-                            <div class="col">
-                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding-left: 30px;">
-                        <div class="row">
-                            <div class="col" style="width: 150px;padding-left: 15px;">
-                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
-                            </div>
-                            <div class="col">
-                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding-left: 30px;">
-                        <div class="row">
-                            <div class="col" style="width: 150px;padding-left: 15px;">
-                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
-                            </div>
-                            <div class="col">
-                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding-left: 30px;">
-                        <div class="row">
-                            <div class="col" style="width: 150px;padding-left: 15px;">
-                                <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
-                            </div>
-                            <div class="col">
-                                <div style="height: 42px;padding-left: -10px;"><label style="border-style: solid;border-color: #197dff;width: 150px;color: #A8A0A0;border-radius: 5px;padding-left: 18px;height: 35px;">xxx@gmail.com35</label></div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;">

@@ -1,3 +1,10 @@
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,6 +25,30 @@
 </head>
 
 <body>
+<%
+	String username = "";
+String clzId = (String)session.getAttribute("classroomId");
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("index.jsp");
+		}
+		
+		if(clzId == null) {
+			response.sendRedirect("classroomsStudent.jsp");
+		}
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+		
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+	LessonService lessonService = new LessonServiceImple();
+	ArrayList<Lesson> lessons = lessonService.getListLessons(clzId);
+%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -33,8 +64,8 @@
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="studentAssignments.jsp"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="studentsNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
+				href="studentsResults.jsp"><i
+				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
 				href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
 				Marks</a> <a href="QnA_Student.jsp"> <i
 				class="fas fa-question iconMainNavi"></i>Q & A
@@ -42,16 +73,8 @@
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<div class="row justify-content-center lastRow">
-			<div class="col-3">
-				<img src="Images/avatarTeacher.png" id="teacherAv">
-			</div>
-			<div class="col-9 align-items-center">
-				<h5 class="textClz" id="teacherName">Mr. Anura Perera</h5>
-			</div>
-		</div>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject() %></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime() %></h5>
 	</div>
 
 
@@ -59,26 +82,43 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
+			<h3 id="lessonName"><%=classroom.getSubject() %></h3>
+			<div class="row">
+				<p id="introLesson"><%=classroom.getDescription() %>  |  <%=classroom.getClassTime() %></p>
+			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Lesssons</h1>
 				<hr class="dividerTopic">
 			</div>
 
 			<div class="row listClass">
-				<div class="col-1.5 itemContainer">
+
+				<%
+				int i = 0;
+				for (Lesson lesson : lessons) {
+				%>
+				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=lesson.getLessonId()%>').click()">
 					<img src="Images/lessonImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-10">
-							<h3 id="lessonNum">Lesson 01</h3>
+							<h3 id="lessonNum">
+								Lesson
+								<%=++i%></h3>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title">Introduction</h3>
+							<h3 id="title"><%=lesson.getName() %></h3>
 						</div>
 					</div>
+					
+					<form action="teacherLesson.jsp" method="Post">
+				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
+				<input type="submit" id="<%=lesson.getLessonId()%>" hidden></form>
 				</div>
-			</div>
+				<%
+					}
+				%>
 		</div>
 
 

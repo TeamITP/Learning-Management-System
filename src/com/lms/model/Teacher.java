@@ -15,7 +15,7 @@ public class Teacher {
 	private String Subject;
 	
 	
-	public Teacher(String teacherId, String email, String name, String contact, String birthdate, String title,
+	public Teacher(String teacherId,String email, String name, String contact, String birthdate, String title,
 			String subject) {
 		super();
 		TeacherId = teacherId;
@@ -25,6 +25,11 @@ public class Teacher {
 		Birthdate = birthdate;
 		Title = title;
 		Subject = subject;
+	}
+
+
+	public Teacher() {
+		super();
 	}
 
 
