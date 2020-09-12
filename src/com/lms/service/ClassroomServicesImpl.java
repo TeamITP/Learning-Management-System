@@ -162,7 +162,6 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			preparedStatement.setString(4, classroom.getClassTime());
 			preparedStatement.setString(5, classroom.getClassrooId());
 
-			System.out.println(preparedStatement);
 			status = preparedStatement.executeUpdate();
 
 			try {
