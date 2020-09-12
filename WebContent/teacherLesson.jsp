@@ -16,25 +16,20 @@
 <html>
 <%
 	String username = "";
-
 	String clzId = (String) session.getAttribute("classroomId");
 	
 	String lessonId = (String) session.getAttribute("lessonId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
-
 		if (username.charAt(0) != 'T') {
 			response.sendRedirect("index.jsp");
 		}
-
 		if (clzId == null | lessonId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	
