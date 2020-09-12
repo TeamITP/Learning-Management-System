@@ -1,3 +1,9 @@
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -5,7 +11,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert Activity</title>
+<title>Insert Video</title>
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/teacherNav.css">
 <link rel="stylesheet" href="CSS/insertActivity.css">
@@ -16,6 +22,28 @@
 </head>
 
 <body>
+<%
+	String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -40,9 +68,9 @@
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject() %></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription() %></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime() %></h5>
 	</div>
 
 	<div class="page-container">
@@ -51,22 +79,31 @@
 		<div class="pageContainer">
 			<!--Page Topic-->
 			<div class="pageTopicContainer">
-				<h1 class="pageTopic">Insert Reading and Activities</h1>
+				<h1 class="pageTopic">Insert New Video</h1>
 				<hr class="dividerTopic">
 			</div>
+			<img src="Images/youtubeContent.png" id="mainImg">
+			<form action="VideoUpload" method="Post">
+				<input name="classroomId" id="classroomId" value="<%=classroom.getClassrooId() %>" hidden>
 			<div class="row">
-				<img src="Images/step3.png" id="stepImage">
-			</div>
-			<div class="row success align-items-center">
-				<img src="Images/okGreen.png" id="okImg">
-				<h5 id="successMsg">Lesson Material was successfully added</h5>
+				<input placeholder="Video Title" id="titleInput" name="videoName">
 			</div>
 			<div class="row">
-				<a href="teacherLesson.jsp"><button class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Finish</button></a>
-				<!--Footer Here-->
-				<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+				<input placeholder="Video URL" id="titleInput" 
+					name="url">
 			</div>
+			<div class="row">
+				<input placeholder="Description" id="titleInput" 
+					name="description">
+			</div>
+			<div class="row">
+				<button type="submit" class="btn btn-primary" name="btnSubmit"
+					id="btnSubmit">Insert Video</button>
+			</div>
+			</form>
+			<!--Footer Here-->
+			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+		</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
@@ -79,7 +116,7 @@
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 	crossorigin="anonymous"></script>
 <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 
