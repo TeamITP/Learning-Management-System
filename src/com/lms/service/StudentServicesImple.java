@@ -12,9 +12,9 @@ import com.lms.model.Lesson;
 import com.lms.model.Student;
 import com.lms.util.ConnectDB;
 
-/**	/**
- * Imbulana Liyanage D.S.I.	 * Imbulana Liyanage D.S.I.
- * IT19134772	 * IT19134772
+/**	 
+ * Imbulana Liyanage D.S.I.	  
+ * IT19134772	  
  */	 
 
 
@@ -146,10 +146,10 @@ public class StudentServicesImple implements StudentServices{
 		try {
 			connection = ConnectDB.getDBConnection();
 
-			String sql = "UPDATE Student SET firstName = ?, lastName = ?, address = ?, phone = ?, Guardian = ?, password = ? WHERE Student_ID = ?";
+			String sql = "UPDATE Student SET fristName = ?, lastName = ?, address = ?, phone = ?, Guardian = ?, password = ? WHERE Student_ID = ?";
 
 			preparedStatement = connection.prepareStatement(sql);
-			System.out.println(student.getPassword());
+			 
 
 			preparedStatement.setString(1, student.getFristName());
 			preparedStatement.setString(2, student.getLastName());
