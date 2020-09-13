@@ -17,6 +17,15 @@
 <body>
 <%
 		String username = "";
+String rId = request.getParameter("Result_ID");
+
+if(rId != null) {
+	HttpSession httpSession = request.getSession();
+	httpSession.setAttribute("Result_ID", rId);
+}
+
+String Result_ID = (String)session.getAttribute("Result_ID");
+
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -78,7 +87,7 @@
             
         
         <textarea name="description"placeholder="Description"></textarea>
-        <input type="text" name="resultid" value="<%= %>" hidden>
+        <input type="text" name="resultid" value="<%=Result_ID  %>" hidden>
         <button type="submit" class="btn btn-primary btn2">Re-Correction Apply</button>
          
    </form>

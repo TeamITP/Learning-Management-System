@@ -1,11 +1,11 @@
 package com.lms.service;
 
-import com.lms.model.Recorrection;
+import com.lms.model.Recorrect;
 
 public interface RecorrectionServices {
 	
 	
 	
-	public  int InsertResult(Recorrection recorrection);
+	public  int InsertRecorrection(Recorrect recorrection);
 
 }

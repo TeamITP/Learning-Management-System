@@ -170,28 +170,28 @@ public class ExamResultServicesImp implements ExamResultServices{
 
 	
 	
-	public boolean getstudentmarks(String studentid,String examid) {
-		
+	public  ExamResult getstudentmarks(String studentid,String examid) {
+		ExamResult examResult = new ExamResult();
 		
 		try {
-			connection = ConnectDB.getDBConnection();
+connection = ConnectDB.getDBConnection();
 			
-			String sql = "SELECT * from Exam_Result where Stu_ID = '"+studentid+"' and Exam_ID = '"+examid+"'";
+			String sql = "SELECT *,Rank() OVER(ORDER BY Marks DESC) rank From Exam_Result WHERE Exam_ID = ?";
 			
 			preparedstatement = connection.prepareStatement(sql);
 			
-			
+			preparedstatement.setString(1, examid);
 			
 			ResultSet resultSet = preparedstatement.executeQuery();
-			
-			
 				
-				if(resultSet.next()) {
-					
-					isSuccess = true;
-				}else{
-					isSuccess = false;
+			while (resultSet.next()) {
+				if (resultSet.getString(4).equals(studentid)) {
+					examResult.setMarks(resultSet.getInt(5));
+					examResult.setRank(resultSet.getInt(6));
+					break;
 				}
+				
+			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -209,7 +209,7 @@ public class ExamResultServicesImp implements ExamResultServices{
 				System.out.println(e.getMessage());
 			}
 		}
-		return  isSuccess;
+		return examResult ;
 	}
 
 }

@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.lms.model.ExamResult;
-import com.lms.model.Recorrection;
+import com.lms.model.Recorrect;
 import com.lms.util.ConnectDB;
 
 public class RecorrectionServicesImp implements RecorrectionServices{
@@ -18,7 +17,7 @@ public class RecorrectionServicesImp implements RecorrectionServices{
 	
 	
 	
-	public  int InsertResult(Recorrection recorrection)
+	public  int InsertRecorrection(Recorrect recorrection)
 	{ 
 		
 		int status = 0;

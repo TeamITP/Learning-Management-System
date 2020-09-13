@@ -28,12 +28,12 @@
 		username = (String) session.getAttribute("userId");
 
 		if (username.charAt(0) != 'S') {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("login.jsp");
 		}
 
 		
 		if (clzId == null) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("classroomsStudent.jsp");
 		}
 
 	} else {
@@ -91,19 +91,20 @@
    <button onclick="document.getElementById('<%=examination.getExamID()%>').click()" class="btn btn-light btn"><p>Exam ID : <%=examination.getExamID()%></p><p>Date : <%=examination.getDate()%></p></button>
 </div>
 
-<form action="ResultTeacherView.jsp" method="Post" hidden>
+<form action="ExamResultStudentView.jsp" method="Post" hidden>
 				<input name="examId" id="examId" value="<%=examination.getExamID() %>" hidden>
 				<input type="submit" id="<%=examination.getExamID()%>" hidden></form>
    
 <%} %>
 </div>
-<div class="col colone"><img src="Images/twostudents.png"  width="500" height="500"></div>
+<div class="col colone"><img src="Images/twostudents.png"  width="600" height="700"></div>
     </div>
                     
                     
                 <!--Footer Here-->
-                <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+               <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include> 
             </div>
+            
     </body>
     <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

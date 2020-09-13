@@ -1,6 +1,6 @@
 package com.lms.model;
 
-public class Recorrection {
+public class Recorrect {
 	
 	private String description;
 	private String resultId;

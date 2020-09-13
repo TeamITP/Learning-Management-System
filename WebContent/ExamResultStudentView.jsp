@@ -35,12 +35,12 @@ String examId = (String)session.getAttribute("examId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'T') {
-			response.sendRedirect("index.jsp");
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("login.jsp");
 		}
 
 		if (examId == null) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("classroomsStudent.jsp");
 		}
 
 	} else {
@@ -88,14 +88,15 @@ String examId = (String)session.getAttribute("examId");
                     <hr class="dividerTopic">
                 </div>
 
-  <form>           
+   <% ExamResultServices examresultservices = new ExamResultServicesImp();
+   ExamResult examResult = examresultservices.getstudentmarks(username, eId);%>        
   <div class="row justify-content-start row1">
         <div class="col-10 col-md-2 c1 colone">
             <div class="row mark">
-                <h class="head" >Your Marks</h>
+                <h class="head" >exam</h>
             </div>
             <div class="row marks">
-                <p class="head">  78.00 </p>
+                <p class="head">  <%=examResult.getMarks() %> </p>
             </div>
         </div>
         <div class="col-10 col-md-2 coltwo ">
@@ -103,36 +104,41 @@ String examId = (String)session.getAttribute("examId");
                     <h class="head">Your Ranks</h>
                 </div>
                 <div class="row ranks">
-                    <p class="head2"> 10</p>
+                    <p class="head2"> <%=examResult.getRank() %></p>
                 </div>
           </div>
-          <div class="col btn">
-            <button onclick="document.getElementById('<%=examresult.getResult_ID()%>').click()" class="btn btn-light btn">type="button" class="btn btn-danger">Re-Correction Apply</button>
-          </div>
-        </div>
-        
-    
-        </form> 
-        <div class="row justify-content-start sheet"> Result Sheet</div>
-          
- <% ExamResultServices examresultservices = new ExamResultServicesImp();
+          <% 
       ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
       System.out.println(arrayList);
     %>
     
-    <% for(ExamResult examresult: arrayList) {%>
+    
+   
+    
+  <form action="Recorrection.jsp" method="Post" hidden>
+				<input name="examId" id="examId" value="<%= examResult.getResult_ID()%>" hidden>
+				<input type="submit" id="<%= examResult.getResult_ID()%>" hidden></form> 
+     
+      
+				
+          <div class="col btn">
+            <a href="Recorrection.jsp"><button submit="document.getElementById('<%= examResult.getResult_ID()%>').click()" class="btn btn-light btn">Re-Correction Apply</button></a>
+          </div>
+        </div>
+      
+      
+        <div class="row justify-content-start sheet"> Result Sheet</div>
+          
+  <% for(ExamResult examresult: arrayList) {%>
+    
           <div class="row grid" >
         <div class="col one"><%=examresult.getResult_ID() %></div>
         <div class="col one"><%=examresult.getStudent_ID() %></div>
         <div class="col two"><%=examresult.getMarks() %></div>
         <div class="col three"><%=examresult.getRank() %></div>
         
-        
-        <form action="ResultTeacherView.jsp" method="Post" hidden>
-				<input name="examId" id="examId" value="<%=examresult.getResult_ID() %>" hidden>
-				<input type="submit" id="<%=examresult.getResult_ID()%>" hidden></form>
-              
-          </div>
+   
+       
         <%} %>             
                     
                 <!--Footer Here-->
