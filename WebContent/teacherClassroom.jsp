@@ -272,10 +272,10 @@ $(document).ready(function(){
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form class="modalUpd" method="post" action="">
+						<form class="modalUpd" method="post" action="DeleteClz">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value="<%=username %>"
-									name="userID" hidden> <label
+							 <input value="<%=clzId %>"
+									name="classroomId" hidden> <label
 									style="padding: 10px; padding-left: 20px;">It's not possible to restore classrooms once you deleted them. Are you sure
 									you want to delete this classroom ?</label>
 							</div>
@@ -292,8 +292,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 </body>
-
-<script type="text/javascript">window.print()</script>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
 	crossorigin="anonymous"></script>

@@ -42,17 +42,17 @@ public class AddClassroom extends HttpServlet {
 		int status = classroomServices.createClass(classroom);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Classroom Inserted Successfully");
+			request.setAttribute("link", "classroomsTeacher.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Classroom Inserting Failed");
+			request.setAttribute("link", "classroomsTeacher.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

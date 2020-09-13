@@ -244,4 +244,37 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		return arrayList;
 	}
 
+	@Override
+	public int deleteClassroom(String classroomId) {
+		int status = 0;
+
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "DELETE FROM Classroom WHERE Classroom_id = ?";
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, classroomId);
+
+			status = preparedStatement.executeUpdate();
+
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+			System.out.println(e.getMessage());
+		}
+
+		return status;
+	}
+
 }
