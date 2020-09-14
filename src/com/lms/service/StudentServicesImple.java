@@ -227,8 +227,8 @@ public class StudentServicesImple implements StudentServices{
 	}
 
 	@Override
-	public ArrayList<String> getStudentArrayList(String classroomId) {
-		ArrayList<String> arrayList = new ArrayList<String>();
+	public ArrayList<Student> getStudentArrayList(String classroomId) {
+		ArrayList<Student> arrayList = new ArrayList<Student>();
 
 		try {
 			connection = ConnectDB.getDBConnection();
@@ -242,7 +242,10 @@ public class StudentServicesImple implements StudentServices{
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
-				arrayList.add(resultSet.getString(2));
+				Student  student = new Student();
+				student.setStudent_ID(resultSet.getString(2));
+				student.setJoinDate(resultSet.getString(3));
+				arrayList.add(student);
 			}
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
@@ -352,7 +355,7 @@ public class StudentServicesImple implements StudentServices{
 		try {
 			connection = ConnectDB.getDBConnection();
 
-			String sql = "INSERT INTO ClassroomStudent VALUES(?, ?)";
+			String sql = "INSERT INTO ClassroomStudent(Classroom_id, Student_id) VALUES(?, ?)";
 
 			preparedStatement = connection.prepareStatement(sql);
 
