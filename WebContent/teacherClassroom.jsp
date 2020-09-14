@@ -155,7 +155,7 @@
 					<form  method="Post" action="InsertStudentClz">
 						<input value="<%=clzId %>" name="classroomId" hidden>
 					<div class="row">
-						<input placeholder="StudentId" id="studentId" name="studentId">
+						<input placeholder="StudentId" id="studentId" name="studentId" required>
 					</div>
 					<div class="row">
 						<button type="submit" class="btn btn-primary" name="btnSubmit"
@@ -188,10 +188,10 @@
     </thead>
     <tbody id="myTable">
     <%StudentServices studentServices = new StudentServicesImple();
-    ArrayList<String> studentArrayList = studentServices.getStudentArrayList(clzId);
+    ArrayList<Student> studentArrayList = studentServices.getStudentArrayList(clzId);
     
-    for(String stuId : studentArrayList) {
-    Student student = studentServices.getStudentById(stuId);%>
+    for(int j = 0; j < studentArrayList.size(); j++) {
+    Student student = studentServices.getStudentById(studentArrayList.get(j).getStudent_ID());%>
       <tr>
         <td><%=student.getStudent_ID() %></td>
         <td><%=student.getFristName() %></td>
@@ -251,8 +251,10 @@ $(document).ready(function(){
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
 				<div class="col-3">
+				<form action="ClzStudentReport" method="post">
+				<input name="classroomId" value="<%=clzId%>" hidden>
 					<button type="submit" class="btn btn-danger" id="btnReport">Get
-						Report of Students</button>
+						Report of Students</button></form>
 				</div>
 			</div>
 		</div>
@@ -272,10 +274,10 @@ $(document).ready(function(){
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form class="modalUpd" method="post" action="">
+						<form class="modalUpd" method="post" action="DeleteClz">
 							<div class="row">
-								<input value="admin" name="url" hidden> <input value="<%=username %>"
-									name="userID" hidden> <label
+							 <input value="<%=clzId %>"
+									name="classroomId" hidden> <label
 									style="padding: 10px; padding-left: 20px;">It's not possible to restore classrooms once you deleted them. Are you sure
 									you want to delete this classroom ?</label>
 							</div>
@@ -292,8 +294,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 </body>
-
-<script type="text/javascript">window.print()</script>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
 	crossorigin="anonymous"></script>

@@ -121,6 +121,7 @@ public class LessonMaterialServImple implements LessonMaterialsService {
 				readingMaterial.setName(resultSet.getString(5));
 				readingMaterial.setDescription(resultSet.getString(6));
 				readingMaterial.setPathLink(resultSet.getString(8));
+				readingMaterial.setViews(resultSet.getInt(9));
 				
 				arrayList.add(readingMaterial);
 			}

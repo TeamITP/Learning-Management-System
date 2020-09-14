@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.lms.service.LessonService;
+import com.lms.service.LessonServiceImple;
 import com.lms.service.UserService;
 import com.lms.service.UserServiceImple;
 
@@ -52,7 +54,7 @@ public class login extends HttpServlet {
 	    } else {
 	    	url = "classroomsTeacher.jsp";
 	    }
-	    
+	     
 	    if(status == 1) {
 	    	HttpSession httpSession = request.getSession();
 	    	httpSession.setAttribute("userId", username);
