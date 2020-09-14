@@ -48,7 +48,7 @@ public interface StudentServices {
 		 */
 		public ArrayList<Student> getListStudent(String Student_ID);
 		
-		public ArrayList<String> getStudentArrayList(String classroomId);
+		public ArrayList<Student> getStudentArrayList(String classroomId);
 		
 		public Student getStudentById(String studentId);
 		

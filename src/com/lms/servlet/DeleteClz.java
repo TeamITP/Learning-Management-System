@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Lesson;
-import com.lms.service.LessonService;
-import com.lms.service.LessonServiceImple;
+import com.lms.service.ClassroomServices;
+import com.lms.service.ClassroomServicesImpl;
 
 /**
- * Servlet implementation class updateLesson
+ * Servlet implementation class DeleteClz
  */
-@WebServlet("/updateLesson")
-public class updateLesson extends HttpServlet {
+@WebServlet("/DeleteClz")
+public class DeleteClz extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateLesson() {
+    public DeleteClz() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,26 +31,20 @@ public class updateLesson extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Lesson lesson = new Lesson();
+		String clzId = request.getParameter("classroomId");
 		
-		lesson.setName(request.getParameter("lessonName"));
-		lesson.setDescription(request.getParameter("description"));
-		lesson.setLessonId(request.getParameter("lessonId"));
-		
-		LessonService lessonService = new LessonServiceImple();
-		
-		int status = lessonService.updateLesson(lesson);
-		
+		ClassroomServices classroomServices = new ClassroomServicesImpl();
+		int status = classroomServices.deleteClassroom(clzId);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Lesson Updated Successfully");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Classroom Deleted Successfully");
+			request.setAttribute("link", "classroomsTeacher.jsp");
 			request.setAttribute("status", "OK");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Lesson Updating Failed");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Classroom Deleting Failed");
+			request.setAttribute("link", "classroomsTeacher.jsp");
 			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);

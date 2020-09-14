@@ -1,6 +1,8 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,19 +45,19 @@ public class VideoUpload extends HttpServlet {
 		
 		int status = lessonMaterialsService.insertVideo(videoMaterial);
 		
+		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-		    //dis.forward(request, response);
+			request.setAttribute("message", "Video Material Inserted Successfully");
+			request.setAttribute("link", "teacherLesson.jsp");
 			request.setAttribute("status", "OK");
-			response.sendRedirect("teacherLesson.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("teacherLesson.jsp");
+			request.setAttribute("message", "Video Material Inserting Failed");
+			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

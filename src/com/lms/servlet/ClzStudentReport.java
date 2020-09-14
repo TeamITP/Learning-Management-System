@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.service.StudentServices;
-import com.lms.service.StudentServicesImple;
+import com.lms.service.ClassroomServices;
+import com.lms.service.ClassroomServicesImpl;
 
 /**
- * Servlet implementation class InsertStudentClz
+ * Servlet implementation class ClzStudentReport
  */
-@WebServlet("/InsertStudentClz")
-public class InsertStudentClz extends HttpServlet {
+@WebServlet("/ClzStudentReport")
+public class ClzStudentReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertStudentClz() {
+    public ClzStudentReport() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,24 +32,19 @@ public class InsertStudentClz extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String classroomId = request.getParameter("classroomId");
-		String studentId = request.getParameter("studentId");
 		
-		StudentServices studentServices = new StudentServicesImple();
-		int status = studentServices.addStudentClassroom(studentId, classroomId);
+		ClassroomServices classroomServices = new ClassroomServicesImpl();
+		String path = classroomServices.generateReport(classroomId);
 		
-		
-		if(status == 1) {
-			request.setAttribute("message", "Student Assigned for Class Successfully");
-			request.setAttribute("link", "teacherClassroom.jsp");
-			request.setAttribute("status", "OK");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-			dispatcher.forward(request, response);
-		} else if (status == 0) {
-			request.setAttribute("message", "Student Assigning Failed");
-			request.setAttribute("link", "teacherClassroom.jsp");
+		if (path != null) {
+			response.sendRedirect(path);
+		} else {
+			request.setAttribute("message", "Error in Generating Report");
+			request.setAttribute("link", "classroomsTeacher.jsp");
 			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);
+		
 		}
 	}
 

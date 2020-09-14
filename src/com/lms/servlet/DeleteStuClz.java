@@ -37,19 +37,19 @@ public class DeleteStuClz extends HttpServlet {
 		StudentServices studentServices = new StudentServicesImple();
 		int status = studentServices.removeStudentClassroom(studentId, classroomId);
 		
+		
 		if(status == 1) {
-			request.setAttribute("message", "Delete Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("teacherClassroom.jsp");
-			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    //dis.forward(request, response);
+			request.setAttribute("message", "Student Removed Successfully");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Delete Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Student Removing Failed");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 
