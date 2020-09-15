@@ -226,4 +226,163 @@ public class StudentServicesImple implements StudentServices{
 		return status;
 	}
 
+	@Override
+	public ArrayList<Student> getStudentArrayList(String classroomId) {
+		ArrayList<Student> arrayList = new ArrayList<Student>();
+
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT * FROM ClassroomStudent WHERE  Classroom_id = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, classroomId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				Student  student = new Student();
+				student.setStudent_ID(resultSet.getString(2));
+				student.setJoinDate(resultSet.getString(3));
+				arrayList.add(student);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return arrayList;
+	}
+
+	@Override
+	public Student getStudentById(String studentId) {
+		Student student = new Student();
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT * FROM Student WHERE Student_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, studentId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				
+				student.setStudent_ID(resultSet.getString(2));
+				student.setFristName(resultSet.getString(3));
+				student.setLastName(resultSet.getString(4));
+				student.setAddress(resultSet.getString(5));
+				student.setPhone(resultSet.getString(6));
+				student.setGuardian(resultSet.getString(7));
+				student.setPassword(resultSet.getString(8));
+			}
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return student;
+	}
+
+	@Override
+	public int removeStudentClassroom(String studentId, String classroomId) {
+		int status = 0;
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "DELETE FROM ClassroomStudent WHERE Student_id = ? AND Classroom_id = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, studentId);
+			preparedStatement.setString(2, classroomId);
+
+			status= preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return status;
+	}
+
+	@Override
+	public int addStudentClassroom(String studentId, String classroomId) {
+		int status = 0;
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "INSERT INTO ClassroomStudent(Classroom_id, Student_id) VALUES(?, ?)";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(2, studentId);
+			preparedStatement.setString(1, classroomId);
+
+			status= preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return status;
+	}
+
 }	

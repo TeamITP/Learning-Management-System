@@ -8,23 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.lms.model.VideoMaterial;
-import com.lms.service.LessonMaterialServImple;
-import com.lms.service.LessonMaterialsService;
+import com.lms.service.StudentServices;
+import com.lms.service.StudentServicesImple;
 
 /**
- * Servlet implementation class VideoUpload
+ * Servlet implementation class DeleteStuClz
  */
-@WebServlet("/VideoUpload")
-public class VideoUpload extends HttpServlet {
+@WebServlet("/DeleteStuClz")
+public class DeleteStuClz extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public VideoUpload() {
+    public DeleteStuClz() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,28 +31,22 @@ public class VideoUpload extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
-		VideoMaterial videoMaterial = new VideoMaterial();
+		String classroomId = request.getParameter("classroomId");
+		String studentId = request.getParameter("studentId");
 		
-		HttpSession session = request.getSession();
-		videoMaterial.setClassroomId((String) session.getAttribute("classroomId"));
-		videoMaterial.setLessonId((String) session.getAttribute("lessonId"));
-		videoMaterial.setName(request.getParameter("videoName"));
-		videoMaterial.setDescription(request.getParameter("description"));
-		videoMaterial.setUrl(request.getParameter("url"));
-		
-		int status = lessonMaterialsService.insertVideo(videoMaterial);
+		StudentServices studentServices = new StudentServicesImple();
+		int status = studentServices.removeStudentClassroom(studentId, classroomId);
 		
 		
 		if(status == 1) {
-			request.setAttribute("message", "Video Material Inserted Successfully");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Student Removed Successfully");
+			request.setAttribute("link", "teacherClassroom.jsp");
 			request.setAttribute("status", "OK");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Video Material Inserting Failed");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Student Removing Failed");
+			request.setAttribute("link", "teacherClassroom.jsp");
 			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);

@@ -2,6 +2,8 @@ package com.lms.servlet;
 
 import java.io.File;
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,19 +32,20 @@ public class DeleteReadingMaterial extends HttpServlet {
 		file.delete();
 		
 		int status = lessonMaterialsService.deleteReadingMaterial(request.getParameter("materialId"));
+		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-		    //dis.forward(request, response);
-			response.sendRedirect("teacherLesson.jsp");
+			request.setAttribute("message", "Reading Material Deleted Successfully");
+			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("teacherLesson.jsp");
-	}
+			request.setAttribute("message", "Reading Material Deleting Failed");
+			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 
 }
