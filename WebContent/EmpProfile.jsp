@@ -182,7 +182,7 @@
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form class="modalUpd" method="post" action="index.jsp">
+						<form class="modalUpd" method="post" action="EmployeeDelete">
 							<div class="row">
 								<input value="admin" name="url" hidden> <input value="<%=username %>"
 									name="userId" hidden> <label
