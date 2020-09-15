@@ -102,7 +102,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col" style="width: 480px;"><img src="EmployeeProfile/img/profileEmp.png" style="width: 450px;height: 450px;margin: 60px;padding: 50px;"></div>
+                <div class="col" style="width: 480px;"><img src="EmployeeProfile/img/profileEmp.png" style="width: 450px;height: 450px;margin: 60px;padding: 50px;"></div>           
             </div>
         </div>
     </div>
@@ -111,57 +111,13 @@
             <div class="row">
                 <div class="col" style="width: 300px;">
                     <div class="row">
-                        <div class="col"><img src="EmployeeProfile/img/dashboardEmp.png" style="width: 250px;height: 250px;margin: 5px;"></div>
+                        <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary" type="button" style="padding-right: 20px;margin: 20px;">Go to Dashboard</button></div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;">Go to Dashboard</button></div>
-            </div>
+            </div> 
         </div>
-        <div class="col" style="height: 420px;">
-            <div style="height: 400px;border: 2px solid rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;font-size: 14px;width: 300px;">
-                <form action="#" method="post">
-                <div style="height: 180px;width: 270px;margin: 10px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
-                    <div class="row">
-                        <div class="col"><label style="width: 80px;height: 25px;font-size: 13px;margin: 5px;color: rgb(0,111,255);">Date</label><input type="text" style="border-color: rgb(0,111,255);margin: 3px;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><label class="col-form-label" style="width: 80px;height: 25px;margin: 5px;color: rgb(0,111,255);">Reason</label></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><textarea style="width: 250px;height: 50px;margin: 5px;border-width: 2px;border-color: rgb(0,111,255);"></textarea></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><button class="btn btn-primary" type="button" style="margin: 5px;height: 30px;padding: 2px;background-color: rgb(232,32,19);">Not Approved</button></div>
-                    </div>
-                </div>
-                </form>
-                <form action="#" method="post">
-                <div style="border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;height: 180px;width: 270px;margin: 10px;">
-                    <div class="row">
-                        <div class="col"><label style="width: 80px;height: 25px;margin: 5px;font-size: 13px;color: rgb(0,123,255);">Date</label><input type="text" style="border-color: rgb(0,111,255);margin: 3px;"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><label class="col-form-label" style="width: 80px;height: 25px;margin: 5px;font-size: 13px;color: rgb(0,123,255);">Reason</label></div>
-                    </div>
-                    <div class="row">
-                        <div class="col" style="border-color: rgb(0,111,255);"><textarea style="width: 250px;height: 50px;margin: 5px;border-width: 2px;border-color: rgb(0,111,255);"></textarea></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><button class="btn btn-primary" type="button" style="height: 30px;margin: 5px;padding: 2px;background-color: rgb(38,133,59);">Approved</button></div>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-        <div class="col" style="height: 300px;">
-            <div class="row">
-                <div class="col"><img src="EmployeeProfile/img/requestEmp.png" style="width: 250px;height: 250px;"></div>
-            </div>
-            <div class="row">
-                <div class="col"><a href = "EmpLeave.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;">Request Form</button></div>
-            </div>
+        
+    
         </div>
     </div>
     </div>
