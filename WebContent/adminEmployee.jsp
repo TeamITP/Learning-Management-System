@@ -145,66 +145,7 @@ var b = 0;
     <div class="row">
         <div class="col"><a href = "EmpRegister.jsp"><button class="btn btn-primary" type="button" style="margin: 10px;border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Add New Employee</button></div>
     </div>
-    <div class="row">
-        <div class="col">
-            <h1 style="font-size: 25px;background-color: #e5f0ff;width: 910px;margin: 10px;">For Approval</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col" style="height: 700px;">
-            <div style="height: 300px;width: 380px;border-style: solid;border-color: rgb(0,123,255);margin: 10px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
-                <div class="row">
-                    <div class="col" style="height: 38px;"><label style="width: 120px;height: 30px;margin: 5px;">Employee ID</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);"></div>
-                </div>
-                <div class="row">
-                    <div class="col" style="height: 38px;"><label style="width: 120px;height: 35px;margin: 5px;">Name</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);"></div>
-                </div>
-                <div class="row">
-                    <div class="col" style="height: 38px;"><label style="width: 120px;height: 35px;margin: 5px;">Date</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);"></div>
-                </div>
-                <div class="row">
-                    <div class="col"><label class="col-form-label" style="width: 120px;height: 35px;margin: 5px;">Reason</label></div>
-                </div>
-                <div class="row">
-                    <div class="col"><textarea style="width: 355px;height: 60px;margin: 5px;border-width: 2px;border-color: rgb(0,123,255);"></textarea></div>
-                </div>
-                <div class="row">
-                    <div class="col"><button class="btn btn-primary" type="button" style="margin: 10px;background-color: rgb(55,180,44);border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Approve</button>
-                        <button
-                            class="btn btn-primary" type="button" style="margin: 10px;background-color: rgb(217,13,0);border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;width: 85px;">Reject</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div style="width: 380px;height: 300px;margin: 10px;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
-                        <div class="row">
-                            <div class="col"><label style="width: 120px;height: 30px;margin: 5px;">Employee ID</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><label style="width: 120px;height: 30px;margin: 5px;">Name</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><label style="width: 120px;height: 30px;margin: 5px;">Date</label><input type="text" style="width: 230px;border-color: rgb(0,123,255);">
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label" style="width: 120px;height: 30px;margin: 5px;">Reason</label></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><textarea style="width: 355px;height: 60px;margin: 5px;border-width: 2px;border-color: rgb(0,123,255);"></textarea></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><button class="btn btn-primary" type="button" style="margin: 10px;background-color: rgb(55,180,44);border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Approve</button>
-                                <button
-                                    class="btn btn-primary" type="button" style="width: 85px;margin: 10px;background-color: rgb(217,13,0);border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Reject</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col"><img src="EmployeeAdmin/img/admin2Emp.png" style="width: 350px;height: 350px;margin: 20px;padding: 20px;"></div>
+
     </div>
     <script src="EmployeeAdmin/js/jquery.min.js"></script>
     <script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>

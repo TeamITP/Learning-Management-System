@@ -19,7 +19,13 @@ public class LessonClick extends HttpServlet {
 		String lessonId = request.getParameter("lessonId");
 		HttpSession httpSession = request.getSession();
     	httpSession.setAttribute("lessonId", lessonId);
+    	String userId = (String)httpSession.getAttribute("userId");
+    	
+    	if(userId.charAt(0) == 'T') {
     	response.sendRedirect("teacherLesson.jsp");
+    	} else {
+    		response.sendRedirect("studentLesson.jsp");
+    	}
 	}
 
 }

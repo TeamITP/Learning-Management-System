@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Lesson;
-import com.lms.service.LessonService;
-import com.lms.service.LessonServiceImple;
+import com.lms.service.UserService;
+import com.lms.service.UserServiceImple;
 
 /**
- * Servlet implementation class updateLesson
+ * Servlet implementation class resetStuPassword
  */
-@WebServlet("/updateLesson")
-public class updateLesson extends HttpServlet {
+@WebServlet("/resetStuPassword")
+public class resetStuPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateLesson() {
+    public resetStuPassword() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,26 +31,21 @@ public class updateLesson extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Lesson lesson = new Lesson();
+		String userId = request.getParameter("uid");
+		String password = request.getParameter("password");
+		UserService userService = new UserServiceImple();
 		
-		lesson.setName(request.getParameter("lessonName"));
-		lesson.setDescription(request.getParameter("description"));
-		lesson.setLessonId(request.getParameter("lessonId"));
-		
-		LessonService lessonService = new LessonServiceImple();
-		
-		int status = lessonService.updateLesson(lesson);
-		
-		
+		int status = userService.updatePassword(userId, password);
+				
 		if(status == 1) {
-			request.setAttribute("message", "Lesson Updated Successfully");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Successfully Reset the Password");
+			request.setAttribute("link", "login.jsp");
 			request.setAttribute("status", "OK");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Lesson Updating Failed");
-			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("message", "Password Resetting Failed");
+			request.setAttribute("link", "login.jsp");
 			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);

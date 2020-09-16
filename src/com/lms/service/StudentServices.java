@@ -29,7 +29,20 @@ public interface StudentServices {
 		 
 		public int updateStudent(Student student);
 		
-		 
-		 
+		/**
+		 * Get list of Lessons
+		 * @return ArrayList<Lesson>
+		 * @param Class Id
+		 */
+		public ArrayList<Student> getListStudent(String Student_ID);
+		
+		public ArrayList<Student> getStudentArrayList(String classroomId);
+		
+		public Student getStudentById(String studentId);
+		
+		public int removeStudentClassroom(String studentId, String classroomId);
+		
+		public int addStudentClassroom(String studentId, String classroomId);
+
 
 }
