@@ -2,6 +2,8 @@ package com.lms.service;
 
 
 
+import java.util.ArrayList;
+
 /**
  * Imbulana Liyanage D.S.I.
  * IT19134772
@@ -34,15 +36,15 @@ public interface StudentServices {
 		 * @return ArrayList<Lesson>
 		 * @param Class Id
 		 */
-		public ArrayList<Student> getListStudent(String Student_ID);
-		
-		public ArrayList<Student> getStudentArrayList(String classroomId);
 		
 		public Student getStudentById(String studentId);
 		
 		public int removeStudentClassroom(String studentId, String classroomId);
 		
 		public int addStudentClassroom(String studentId, String classroomId);
+
+
+		ArrayList<Student> getStudentArrayList(String classroomId);
 
 
 }
