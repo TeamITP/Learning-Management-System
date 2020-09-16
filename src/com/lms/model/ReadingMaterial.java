@@ -13,6 +13,7 @@ public class ReadingMaterial {
 	private String name;
 	private String description;
 	private String pathLink;
+	private int views;
 	
 	public ReadingMaterial() {
 		// TODO Auto-generated constructor stub
@@ -78,6 +79,14 @@ public class ReadingMaterial {
 
 	public void setPathLink(String pathLink) {
 		this.pathLink = pathLink;
+	}
+
+	public int getViews() {
+		return views;
+	}
+
+	public void setViews(int views) {
+		this.views = views;
 	}
 	
 	

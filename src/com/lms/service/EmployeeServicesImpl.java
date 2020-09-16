@@ -146,13 +146,15 @@ public class EmployeeServicesImpl implements EmployeeServices {
 			String sql = "UPDATE Employee SET Name = ?, Address = ?, Phone = ?, NIC = ?, Password = ? WHERE Emp_ID = ?";
 
 			preparedStatement = connection.prepareStatement(sql);
+			System.out.println(employee.getPassword());
 
 			preparedStatement.setString(1, employee.getName());
-			preparedStatement.setString(4, employee.getAddress());
+			preparedStatement.setString(2, employee.getAddress());
 			preparedStatement.setString(3, employee.getPhone());
-			preparedStatement.setString(2, employee.getNIC());
-			preparedStatement.setString(3, employee.getPassword());
-			
+			preparedStatement.setString(4, employee.getNIC());
+			preparedStatement.setString(5, employee.getPassword());
+			preparedStatement.setString(6, employee.getEmp_ID());
+				
 			status= preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
