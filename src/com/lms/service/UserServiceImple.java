@@ -1,5 +1,6 @@
 package com.lms.service;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +20,13 @@ import javax.mail.internet.MimeMessage;
 
 import com.lms.model.Lesson;
 import com.lms.util.ConnectDB;
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 
 /* 
  * @author W.G. YASIRU RANDIKA 
@@ -81,6 +89,7 @@ public class UserServiceImple implements UserService {
 int status = 0;
 String email = null;
 String fName = null;
+int n = 0;
 		try {
 			connection = ConnectDB.getDBConnection();
 
@@ -102,7 +111,7 @@ String fName = null;
 			}
 			
 			Random rnd = new Random();
-			int n = 100000 + rnd.nextInt(900000);
+			 n = 100000 + rnd.nextInt(900000);
 			
 			sql = "UPDATE Student SET vCode = ? WHERE Student_ID = ?";
 
@@ -113,6 +122,54 @@ String fName = null;
 			
 			preparedStatement.executeUpdate();
 			
+			
+			Email from = new Email("codewithwings@gmail.com");
+		    String subject = "Account Verification";
+		    Email to = new Email(email);
+		    Content content = new Content("text/html", "<h1 style=\"font-size: 17px; font-family: Arial, Helvetica, sans-serif;\">Hello " + fName +",</h1>\r\n" + 
+		    		"<p style=\"font-size: 15px; font-family: Arial, Helvetica, sans-serif;\">You have requested to reset your account password. So, the below verification code can be used.</p>\r\n" + 
+		    		"\r\n" + 
+		    		"<h2 style=\"color:#0066ff;font-size: 20px; font-family: Arial, Helvetica, sans-serif;\"><b>" +String.valueOf(n) + "</b></h2>\r\n" + 
+		    		"\r\n" + 
+		    		"<p style=\"font-size: 15px; font-family: Arial, Helvetica, sans-serif;\">Thank You <br> New Montana Accounts Team</p>");
+		    Mail mail = new Mail(from, subject, to, content);
+
+		    SendGrid sg = new SendGrid("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");
+		    Request request = new Request();
+		    
+		    try {
+		      request.setMethod(Method.POST);
+		      request.setEndpoint("mail/send");
+		      request.setBody(mail.build());
+		      Response response = sg.api(request);
+		      
+		      status = 1;
+		      System.out.println(response.getStatusCode());
+		      System.out.println(response.getBody());
+		      System.out.println(response.getHeaders());
+		      
+		      
+		      
+		    } catch (IOException ex) {
+		      ex.printStackTrace();;
+		    }
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+			System.out.println(e.getMessage());
+		}
+			
+			/*
 			//Creating a result for getting status that messsage is delivered or not!
 	        String result;
 	        // Get recipient's email-ID, message & subject-line from index.html page
@@ -174,21 +231,8 @@ String fName = null;
 	        }
 	        System.out.print(result);
 			
-			try {
-				if (preparedStatement != null) {
-					preparedStatement.close();
-				}
-				if (connection != null) {
-					connection.close();
-				}
-			} catch (java.sql.SQLException e) {
-				logger.log(Level.SEVERE, e.getMessage());
-			}
-
-		} catch (SQLException e) {
-			logger.log(Level.SEVERE, e.getMessage());
-			System.out.println(e.getMessage());
-		}
+			*/
+		
 		
 		return status;
 	}
@@ -282,6 +326,5 @@ String fName = null;
 		
 		return status;
 	}
-	
 	
 }
