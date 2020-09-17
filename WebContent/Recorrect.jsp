@@ -30,7 +30,7 @@ String Result_ID = (String)session.getAttribute("Result_ID");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'T') {
+		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
 
@@ -83,9 +83,8 @@ String Result_ID = (String)session.getAttribute("Result_ID");
                 </div>
 
               
-    <form action="ResultTeacherView" method="post">
-            
-        
+    <form action="Recorrection" method="post">
+             
         <textarea name="description"placeholder="Description"></textarea>
         <input type="text" name="resultid" value="<%=Result_ID  %>" hidden>
         <button type="submit" class="btn btn-primary btn2">Re-Correction Apply</button>

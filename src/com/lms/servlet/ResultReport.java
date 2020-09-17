@@ -9,24 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Recorrect;
-import com.lms.service.RecorrectionServices;
-import com.lms.service.RecorrectionServicesImp;
-
-
-
+import com.lms.service.ClassroomServices;
+import com.lms.service.ClassroomServicesImpl;
+import com.lms.service.ExamResultServices;
+import com.lms.service.ExamResultServicesImp;
 
 /**
- * Servlet implementation class Recorrection
+ * Servlet implementation class ResultReport
  */
-@WebServlet("/Recorrection")
-public class Recorrection extends HttpServlet {
+@WebServlet("/ResultReport")
+public class ResultReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Recorrection() {
+    public ResultReport() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,36 +41,21 @@ public class Recorrection extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String examid = request.getParameter("examid");
 		
+		ExamResultServices examresultServices = new ExamResultServicesImp();
+		String path = examresultServices.generateReport("examid",getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
-		String Description = request.getParameter("description");
-		String result_id = request.getParameter("resultid");
-		
-		
-		Recorrect recorrect = new Recorrect();
-		
-		recorrect.setDescription(Description);
-		recorrect.setResultId(result_id);
-		
-  
-		
-  
-		
-		
-		RecorrectionServices recorrectionservices = new RecorrectionServicesImp();
-		int status = recorrectionservices.InsertRecorrection(recorrect);
-		
-		 if(status == 1)
-		    {request.setAttribute("message", "Recorrection is Successfully insert");
-			request.setAttribute("link", "index.jsp");
-			request.setAttribute("status", "OK");
+		if (path != null) {
+			response.sendRedirect(path);
+		} else {
+			request.setAttribute("message", "Error in Generating Report");
+			request.setAttribute("link", "classroomsTeacher.jsp");
+			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-			dispatcher.forward(request, response); 	
-		    }
-		    else if(status == 0)
-		    {
-		    	request.setAttribute("message", "Insert Failed");
-		    }
-	} 
+			dispatcher.forward(request, response);
+		
+		}
+	}
 
 }

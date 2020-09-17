@@ -21,5 +21,8 @@ public interface ExamResultServices {
 	
 	
 	public ExamResult getstudentmarks(String studentid,String examid);
+	
+	
+	public String generateReport(String examId, String root);
 
 }

@@ -109,8 +109,19 @@ String examId = (String)session.getAttribute("examId");
       ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
       System.out.println(arrayList);
     %>
+    
       
     <div class="row justify-content-start sheet"> Result Sheet</div>
+    
+    <div class="input-group md-form form-sm form-2 pl-0">
+  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
+  <div class="input-group-append">
+    <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+        aria-hidden="true"></i></span>
+  </div>
+</div>
+
+
     
 <% for(ExamResult examresult: arrayList) {%>
     <div class="row grid" >
@@ -120,7 +131,9 @@ String examId = (String)session.getAttribute("examId");
         <div class="col three"><%=examresult.getRank() %></div>
         <div class="col four"><button type="button" data-toggle="modal" data-target="#update<%=examresult.getResult_ID() %>" class="btn btn-danger edit">Update</button></div>
         <div class="col five"><button type="button" data-toggle="modal" data-target="#delete<%=examresult.getResult_ID()%>" class="btn btn-danger delete">Delete</button></div>
-        
+     
+     
+			
         
         <!--Moodal for update marks-->
 		<div class="modal fade" id="update<%=examresult.getResult_ID() %>" role="form">
@@ -185,7 +198,21 @@ String examId = (String)session.getAttribute("examId");
 		
     </div>
                     
-    <%} %>                
+    <%} %>  
+    
+    <!-- Search form -->  
+  
+    <div class="row report">
+				<div class="col-2">
+					<img src="Images/reportImg.png" id="reportImg">
+				</div>
+				<div class="col-3">
+				<form action="ResultReport" method="post">
+				<input name="examid" value="<%= examId %>" hidden>
+					<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Report of Results</button></form>
+				</div>
+			</div>                 
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>

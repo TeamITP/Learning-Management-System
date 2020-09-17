@@ -93,7 +93,7 @@ String examId = (String)session.getAttribute("examId");
   <div class="row justify-content-start row1">
         <div class="col-10 col-md-2 c1 colone">
             <div class="row mark">
-                <h class="head" >exam</h>
+                <h class="head" >Your Marks</h>
             </div>
             <div class="row marks">
                 <p class="head">  <%=examResult.getMarks() %> </p>
@@ -115,14 +115,14 @@ String examId = (String)session.getAttribute("examId");
     
    
     
-  <form action="Recorrection.jsp" method="Post" hidden>
-				<input name="examId" id="examId" value="<%= examResult.getResult_ID()%>" hidden>
-				<input type="submit" id="<%= examResult.getResult_ID()%>" hidden></form> 
+  <form action="Recorrect.jsp" method="Post" hidden>
+				<input name="resultid" id="resultid" value="<%= examResult.getResult_ID()%>" hidden>
+				<input type="resultid" id="<%= examResult.getResult_ID()%>" hidden></form> 
      
       
 				
           <div class="col btn">
-            <a href="Recorrection.jsp"><button submit="document.getElementById('<%= examResult.getResult_ID()%>').click()" class="btn btn-light btn">Re-Correction Apply</button></a>
+            <a href="Recorrect.jsp"><button onclick="document.getElementById('<%= examResult.getResult_ID()%>').click()" class="btn btn-danger btn">Re-Correction Apply</button></a>
           </div>
         </div>
       
@@ -137,13 +137,13 @@ String examId = (String)session.getAttribute("examId");
         <div class="col two"><%=examresult.getMarks() %></div>
         <div class="col three"><%=examresult.getRank() %></div>
         
-   
+   </div>
        
         <%} %>             
                     
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-            </div>
+            
 </body>
 <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
