@@ -1,28 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="com.lms.service.ExaminationServicesImp"%>
-    <%@page import="com.lms.service.ExaminationServices"%>
-    <%@page import="com.lms.model.Examination"%>
-    <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
-
-
-    <head>
-        <meta charset="ISO-8859-1">
+<head>
+   <meta charset="ISO-8859-1">
         <title>Exam marks</title>
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/QnA_Teacher.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-         <link rel="stylesheet" href="CSS/ExamlistStudentView.css">
+         <link rel="stylesheet" href="CSS/Recorrection.css">
 
-    </head>
-
-    <body>
-    <%
+</head>
+<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+<body>
+<%
 		String username = "";
+String rId = request.getParameter("Result_ID");
+
+if(rId != null) {
+	HttpSession httpSession = request.getSession();
+	httpSession.setAttribute("Result_ID", rId);
+}
+
+String Result_ID = (String)session.getAttribute("Result_ID");
+
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -42,7 +45,7 @@
 
 	
 %>
-        <div class="sideNav">
+<div class="sideNav">
             <div class="row justify-content-center firstRow">
                 <div class="col-4">
                     <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
@@ -79,35 +82,27 @@
                     <hr class="dividerTopic">
                 </div>
 
-                       
-   <% ExaminationServices examinationservices = new ExaminationServicesImp();
-      ArrayList<Examination> arrayList = examinationservices.getExaminationList(clzId);
-      System.out.println(arrayList);%> 
-      
-      <% for(Examination examination: arrayList) {%>    
-                    <div class="row rowone">
-        <div class="col first">
-<div class="row rows">
-   <button onclick="document.getElementById('<%=examination.getExamID()%>').click()" class="btn btn-light btn"><p>Exam ID : <%=examination.getExamID()%></p><p>Date : <%=examination.getDate()%></p></button>
-</div>
+              
+    <form action="Recorrection" method="post">
+             
+        <textarea name="description"placeholder="Description"></textarea>
+        <input type="text" name="resultid" value="<%=Result_ID  %>" hidden>
+        <button type="submit" class="btn btn-primary btn2">Re-Correction Apply</button>
+         
+   </form>
 
-<form action="ResultTeacherView.jsp" method="Post" hidden>
-				<input name="examId" id="examId" value="<%=examination.getExamID() %>" hidden>
-				<input type="submit" id="<%=examination.getExamID()%>" hidden></form>
-   
-<%} %>
-</div>
-<div class="col colone"><img src="Images/twostudents.png"  width="500" height="500"></div>
-    </div>
-                    
+
+
+<img src="Images/image-recorrection.png" class="picture" width="800" height="400">
+
                     
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>
-    </body>
-    <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
+</body>
+ <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
-    </html>
+</html>
