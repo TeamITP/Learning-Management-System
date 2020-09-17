@@ -1,3 +1,11 @@
+<%@page import="com.lms.model.Teacher"%>
+<%@page import="com.lms.model.Teacher_Qualification"%>
+<%@page import="com.lms.model.Education"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.Teacher_Managment_Services"%>
+<%@page import="com.lms.service.Teacher_Managment_ServicesImple"%>
+<%@page import="com.lms.model.Certification"%>
+<%@page import="com.lms.model.Teacher_Experiance"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -84,6 +92,25 @@ var b = 0;
 	</header>
 
 <body>
+
+	<%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'A') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+		
+		Teacher_Managment_Services teacher_managmentx = new Teacher_Managment_ServicesImple();
+		//Teacher teacher1 = teacher_managmentx.getTeacher();
+		ArrayList<Teacher> arrayList =  teacher_managmentx.getTeacherList();
+		
+	%>
 <div class="page-container">
 	<div class="pageContainer">
 	
@@ -104,8 +131,12 @@ var b = 0;
                         <div class="row">
                             <div class="col"><label class="col-form-label" style="border-radius: 5px;border-style: none;border-color: rgb(77,160,244);background: linear-gradient(90deg, black 0%, rgb(0,111,255) 0%, rgb(117,215,247) 94%);background-color: #006FFF;color: rgb(154,158,162);width: 100px;height: 28px;">Total Teacher</label></div>
                         </div>
+                        <% Teacher_Managment_Services teacher_managmentxx = new Teacher_Managment_ServicesImple();
+                		Teacher teacher1 = teacher_managmentxx.CountTeacher();
+                        
+                        %>
                         <div class="row">
-                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 100px;height: 28px;padding-top: 2px;">27</label></div>
+                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 100px;height: 28px;padding-top: 2px;"><%=teacher1.getcount() %></label></div>
                         </div>
                     </div>
                 </div>
@@ -128,82 +159,71 @@ var b = 0;
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <tr></tr>
+                            <tr>
+                            	<th>Teacher ID</th>
+      							<th> Name</th>
+     							<th>Title</th>
+     							<th>Subject</th>
+     							<th>Contact</th>
+     							<th>Birthday</th>
+                            </tr>
                         </thead>
+                       <% for(Teacher tec: arrayList) {%>
                         <tbody>
                             <tr>
                                 <td>
-                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"></div>
+                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"><%=tec.getTeacherId() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=tec.getName() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=tec.getTitle() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=tec.getSubject() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=tec.getContact() %></div>
                                 </td>
-                                <td><button class="btn btn-primary" type="button" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=tec.getBirthdate()%></div>
+                                </td>
+                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#deleteModal" type=submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td><button class="btn btn-primary" type="button" style="background-color: rgb(255,0,0);border-style: none;border-radius: 20px;">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td><button class="btn btn-primary" type="button" style="background-color: rgb(255,0,0);border-style: none;border-radius: 20px;">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"></div>
-                                </td>
-                                <td><button class="btn btn-primary" type="button" style="background-color: rgb(255,0,0);border-style: none;border-radius: 20px;">Delete</button></td>
-                            </tr>
-                        </tbody>
+         				 <!--Moodal for delete Profile-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Remove Teacher</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="Teacher_Delete">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value="<%=tec.getTeacherId() %>"
+									name="userId" hidden> <label
+									style="padding: 10px; padding-left: 20px;"> Are you sure
+									remove this student ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cancel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> 
+	
+                           
+                        </tbody><%} %>
                     </table>
                 </div>
             </div>
@@ -282,7 +302,18 @@ var b = 0;
                     </div>
                 </div>
             </div>
-            <div class="row"></div>
+            <div class="row">
+            <div class="row">
+				<div class="col-2">
+					<img src="Images/reportImg.png" id="reportImg">
+				</div>
+				<div class="col-3">
+				<form action="ClzStudentReport" method="post">
+				<input name="classroomId"  hidden>
+					<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Report of Students</button></form>
+				</div>
+			</div></div>
         </div>
     </div>
     
@@ -294,6 +325,9 @@ var b = 0;
         
             <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
         </div>
+        
+       
+    
 </body>
 
 </html>

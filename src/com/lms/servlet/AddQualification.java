@@ -1,10 +1,5 @@
 package com.lms.servlet;
 
-/* 
- * @author Rathnayaka R.M.N.A
- * IT19139418
- * 
- * */
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -14,48 +9,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Teacher;
+import com.lms.model.Certification;
+import com.lms.model.Teacher_Qualification;
 import com.lms.service.Teacher_Managment_Services;
 import com.lms.service.Teacher_Managment_ServicesImple;
 
 /**
- * Servlet implementation class Teacher_Profile_Update
+ * Servlet implementation class AddQualification
  */
-@WebServlet("/Teacher_Profile_Update")
-public class Teacher_Profile_Update extends HttpServlet {
+@WebServlet("/AddQualification")
+public class AddQualification extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-   
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Teacher teacher = new Teacher();
-		teacher.setTeacherId(request.getParameter("Teacher_ID"));
-		teacher.setName(request.getParameter("name"));
-		teacher.setTitle(request.getParameter("title"));
-		teacher.setSubject(request.getParameter("subject"));
-	    teacher.setContact(request.getParameter("contact"));
-		teacher.setBirthdate(request.getParameter("birthday"));
-		teacher.setpw(request.getParameter("pass"));
+		Teacher_Qualification que = new Teacher_Qualification();
 		
-	Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
+		que.setTeacher_id(request.getParameter("teacherId"));
+		que.setDescription(request.getParameter("que"));
 		
-		int status = teacher_managment1.updateTeacher(teacher);
+		
+	     Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
+	     
+		int status = teacher_managment1.addQue(que);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
-			request.setAttribute("Teacher_ID", teacher.getTeacherId());
+			request.setAttribute("message", "Insert Succesful");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile_update.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile.jsp");
 		    dis.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
-			request.setAttribute("Teacher_ID", teacher.getTeacherId());
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
 			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
 		    dis.forward(request, response);
 		}
 	}
-	
 
 }

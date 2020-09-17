@@ -65,7 +65,7 @@ var b = 0;
 				class="fas fa-user-tie iconMainNavi"   ></i>Teachers</a>
 			<a href="adminEmployee.jsp"><i
 				class="fas fa-user-tie iconMainNavi"></i>Employees</a> 
-				<a href="adminstudent1.jsp"  class="active"><i class="fas fa-user iconMainNavi"  ></i>Students</a><a
+				<a href="adminCustomers.jsp"  class="active"><i class="fas fa-user iconMainNavi"  ></i>Students</a><a
 				href="adminOrders.jsp"   ><i
 				class="fa fa-money iconMainNavi"></i>Bills and Payments</a> <a
 				href="adminServices.jsp" ><i

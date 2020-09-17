@@ -56,11 +56,11 @@
                         <div class="form-row">
                             <div class="col">
                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Full Name"type="text" name="name"style="border-color: #197dff;"></div>
-                                <!--  <div style="padding-top: 5px;"><input class="form-control" placeholder = "Email"type="email"name="email"style="border-color: #197dff;"></div>-->
                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Contact"type="text" name="contact"style="border-color: #197dff;"></div>
                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Birthday"type="date" name="birthday"style="border-color: #197dff;"></div>
                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Title"type="text" name="title"style="border-color: #197dff;"></div>
                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Subject"type="text"name="subject" style="border-color: #197dff;"></div>
+                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Password"type="text"name="pass"style="border-color: #197dff;"></div>
                                 <div>
                                     <div class="form-check" style="padding-top: 40px;"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border-radius: 2px;border: 2px solid #197dff ;border-bottom-color: #e73f34;"><label class="form-check-label" for="formCheck-1">Above details are correct and the teacher is agreed for the terms and conditions of the institute.</label></div>
                                 </div>
