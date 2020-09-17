@@ -25,6 +25,7 @@ public class ClzStudentReport extends HttpServlet {
     public ClzStudentReport() {
         super();
         // TODO Auto-generated constructor stub
+      
     }
 
 	/**
@@ -34,7 +35,7 @@ public class ClzStudentReport extends HttpServlet {
 		String classroomId = request.getParameter("classroomId");
 		
 		ClassroomServices classroomServices = new ClassroomServicesImpl();
-		String path = classroomServices.generateReport(classroomId);
+		String path = classroomServices.generateReport(classroomId, getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
 			response.sendRedirect(path);
