@@ -16,25 +16,20 @@
 <html>
 <%
 	String username = "";
-
 	String clzId = (String) session.getAttribute("classroomId");
 	
 	String lessonId = (String) session.getAttribute("lessonId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
-
 		if (username.charAt(0) != 'T') {
 			response.sendRedirect("index.jsp");
 		}
-
 		if (clzId == null | lessonId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	
@@ -113,7 +108,7 @@
 					<img src="Images/pdfIcon.png" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()" id="clzImg">
 					<div class="row">
 						<div class="col-8">
-							<h3 id="lessonNum">PDF</h3>
+							<h3 id="lessonNum">Views  <%=readingMaterial.getViews() %></i></h3>
 						</div>
 						<div class="col-4">
 							<button data-toggle="modal" data-target="#<%=readingMaterial.getReadingMatId() %>" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
