@@ -1,5 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.model.Student"%>
+<%@page import="com.lms.service.StudentServicesImple"%>
+<%@page import="com.lms.service.StudentServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
     <!DOCTYPE html>
     <html>
 
@@ -87,6 +91,23 @@ var b = 0;
 	</header>
 
     <body>
+    
+    <%String username = "";
+
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'A') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	StudentServices studentServices = new StudentServicesImple();
+	Student student = studentServices.getStudent(username);
+	%>
+	
         <div class="pageContainer">
         <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
         <ul class="nav nav-pills nav-fill text-dark">
@@ -98,6 +119,10 @@ var b = 0;
                         <ul class="nav navbar-nav"></ul>
                         <form class="form-inline mr-auto" target="_self">
                             <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" placeholder="search" style="padding: 6px;"></div>
+                        
+                       
+
+
                         </form>
                     </div>
                 </div>
@@ -122,9 +147,9 @@ var b = 0;
     <div>
         <div class="container1">
             <div class="row">
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
+                <div class="col-md-3"><input type="text" value = <%=student.getStudent_ID() %>> </div>
+                <div class="col-md-3"><input type="text" value = <%=student.getFristName() %>> </div>
+                <div class="col-md-3"><input type="text" value = <%=student.getPhone() %>> </div>
                 <div class="col-md-3"><button class="btn btn-danger btn-lg" type="button" style="margin: 5px;">DELETE</button></div>
             </div>
         </div>
@@ -159,6 +184,25 @@ var b = 0;
             </div>
         </div>
     </div>
+    
+    </br>
+    </br>
+    <div class="row">
+				 
+				<div class="col-3">
+				<form action="StudentReport" method="post">
+				 
+					<button type="submit" class="btn btn-success" id="btnReport"> Get
+						Report of Students</button></form>
+				</div>
+			</div>
+		</div>
+
+	
+	</br>
+	</br>
+						
+						
     <div>
         <div class="container1">
             <div class="row">

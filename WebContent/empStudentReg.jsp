@@ -51,9 +51,9 @@
             <div class="form-group">
 
                 <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
-                <div class="col"><label>Enter the Address</label><input class="form-control" name = "address" type="text" required></div>
-                <div class="col"><label>Enter the Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
-                <div class="col"><label>Enter the Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
+                <div class="col"><label>Enter Email Address</label><input class="form-control" name = "address" type="text" required></div>
+                <div class="col"><label>Enter Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
+                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
 
 				<button class="btn btn-primary" type="submit">&nbsp;Register</button></div>
         </form>

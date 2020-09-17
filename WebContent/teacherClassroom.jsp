@@ -187,11 +187,7 @@
       </tr>
     </thead>
     <tbody id="myTable">
-    <%StudentServices studentServices = new StudentServicesImple();
-    ArrayList<Student> studentArrayList = studentServices.getStudentArrayList(clzId);
-    
-    for(int j = 0; j < studentArrayList.size(); j++) {
-    Student student = studentServices.getStudentById(studentArrayList.get(j).getStudent_ID());%>
+     
       <tr>
         <td><%=student.getStudent_ID() %></td>
         <td><%=student.getFristName() %></td>
@@ -231,7 +227,7 @@
 				</div>
 			</div>
 		</div>
-      <%} %>
+      
     </tbody>
   </table>
 			</div>
