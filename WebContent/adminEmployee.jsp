@@ -173,10 +173,7 @@ var b = 0;
                                 <td>
                                     <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"><%=employee.getEmp_ID() %></div>
                                 </td>
-                                <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getEmp_ID() %></div>
-                                </td>
-                                <td>
+                                <td>                                
                                     <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getName() %></div>
                                 </td>
                                 <td>
@@ -192,11 +189,7 @@ var b = 0;
                                     <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getPassword()%></div>
                                 </td>
                                 <td><button class="btn btn-primary"data-toggle="modal" data-target="#deleteModal" type=submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
-                            </tr>
-         				
-		
-	
-                           
+                            </tr>       		                
                         </tbody><%} %>
                     </table>
                 </div>
