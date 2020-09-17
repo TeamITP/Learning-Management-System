@@ -1,6 +1,7 @@
 package com.lms.service;
 
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -300,7 +301,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 	}
 
 	@Override
-	public String generateReport(String classroomId) {
+	public String generateReport(String classroomId, String root) {
 		String filePath = null;
 
 		// Create a new font object selecting one of the PDF base fonts
@@ -446,13 +447,37 @@ public class ClassroomServicesImpl implements ClassroomServices {
 
 			// close the content stream
 			cos.close();
+			
+			//For Local Host
+			/*
 			// Save the results and ensure that the document is properly closed:
 			filePath = System.getProperty("catalina.base")
-					+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+					+ "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 
 			document.save(filePath);
 			document.close();
 			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			*/
+			
+			/*
+			//For GitHub
+			// Save the results and ensure that the document is properly closed:
+						filePath = System.getProperty("catalina.base")
+								+ "\\site\\wwwroot\\webapps\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+
+						document.save(filePath);
+						document.close();
+						filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						*/
+			
+			//Final DEPLOYMENT ON SERVER
+			// Save the results and ensure that the document is properly closed:
+						filePath = root + File.separator + classroomId + ".pdf";
+
+						document.save(filePath);
+						document.close();
+						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
