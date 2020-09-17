@@ -42,20 +42,19 @@ public class updateLesson extends HttpServlet {
 		
 		int status = lessonService.updateLesson(lesson);
 		
+		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			request.setAttribute("lessonId", lesson.getLessonId());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherLesson.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Lesson Updated Successfully");
+			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			request.setAttribute("lessonId", lesson.getLessonId());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherLesson.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Lesson Updating Failed");
+			request.setAttribute("link", "teacherLesson.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

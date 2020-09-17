@@ -40,17 +40,17 @@ Lesson lesson = new Lesson();
 		int status = lessonService.insertLesson(lesson);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Lesson Inserted Successfully");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Lesson Inserting Failed");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

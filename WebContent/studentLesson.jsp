@@ -1,3 +1,14 @@
+<%@page import="com.lms.model.VideoMaterial"%>
+<%@page import="com.lms.model.Lesson"%>
+<%@page import="com.lms.service.LessonServiceImple"%>
+<%@page import="com.lms.service.LessonService"%>
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
+<%@page import="com.lms.model.ReadingMaterial"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.LessonMaterialServImple"%>
+<%@page import="com.lms.service.LessonMaterialsService"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,6 +28,33 @@
 </head>
 
 <body>
+<%
+	String username = "";
+
+	String clzId = (String) session.getAttribute("classroomId");
+	
+	String lessonId = (String) session.getAttribute("lessonId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'S') {
+			response.sendRedirect("index.jsp");
+		}
+
+		if (clzId == null | lessonId == null) {
+			response.sendRedirect("classroomsStudent.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+	LessonService lessonService = new LessonServiceImple();
+	Lesson lesson = lessonService.getLessonById(lessonId);
+	%>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -35,7 +73,7 @@
 				href="studentsNotices.jsp"><i
 				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
 				href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="QnA_Student.jsp" class="active"> <i
+				Marks</a> <a href="QnA_Student.jsp"> <i
 				class="fas fa-question iconMainNavi"></i>Q & A
 			</a>
 		</div>
@@ -58,11 +96,9 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-			<h3 id="lessonName">Trigonometry</h3>
+			<h3 id="lessonName"><%=lesson.getName() %></h3>
 			<div class="row">
-				<p id="introLesson">Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit. Nullam nec est magna. Morbi ipsum diam, gravida
-					vitae dapibus ut, suscipit vitae lorem.</p>
+				<p id="introLesson"><%=lesson.getDescription() %></p>
 			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Reading and Activities</h1>
@@ -70,21 +106,30 @@
 			</div>
 
 			<div class="row listClass">
+			<%LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
+			ArrayList<ReadingMaterial> readingMaterials = lessonMaterialsService.getListReadingMaterials(lessonId);
+			for(ReadingMaterial readingMaterial : readingMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/pdfIcon.png" id="clzImg">
+					<img src="Images/pdfIcon.png" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()" id="clzImg">
 					<div class="row">
-						<div class="col-10">
-							<h3 id="lessonNum">Lesson 01</h3>
+						<div class="col-8">
+							<h3 id="lessonNum">PDF</h3>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title">Introduction</h3>
+							<h3 id="title" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
 						</div>
 					</div>
 				</div>
-			</div>
-
+				
+		<form action="ReadingClick" target="_blank" method="post" hidden>
+		<input name="materialId" value="<%=readingMaterial.getReadingMatId() %>" hidden>
+		<input name="link" value="<%=readingMaterial.getPathLink() %>" hidden>
+ 		<input type="submit" id="click<%=readingMaterial.getReadingMatId()%>">
+		</form>
+				<%} %>
+</div>
 
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Video Tutorials</h1>
@@ -92,19 +137,26 @@
 			</div>
 
 			<div class="row listClass">
+				<%
+			ArrayList<VideoMaterial> videoMaterials = lessonMaterialsService.getListVideo(lessonId);
+			for(VideoMaterial videoMaterial : videoMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/youtubeVideo.png" id="youtubeV">
+					<img src="Images/youtubeVideo.png" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()" id="youtubeV">
 					<div class="row">
-						<div class="col-10">
-							<h3 id="lessonNum">Lesson 01</h3>
+						<div class="col-8">
+							<h3 id="lessonNum">YouTube</h3>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title">Introduction</h3>
+							<h3 id="title" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"><%=videoMaterial.getName() %></h3>
 						</div>
 					</div>
 				</div>
+
+				
+		<form action="<%=videoMaterial.getUrl() %>" target="_blank" hidden>
+		<input type="submit" id="click<%=videoMaterial.getVideoMatId()%>"></form><%} %>
 			</div>
 		</div>
 		<!--Footer Here-->

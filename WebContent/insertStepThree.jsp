@@ -62,8 +62,8 @@
 				<h5 id="successMsg">Lesson Material was successfully added</h5>
 			</div>
 			<div class="row">
-				<button type="button" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Finish</button>
+				<a href="teacherLesson.jsp"><button class="btn btn-primary" name="btnSubmit"
+					id="btnSubmit">Finish</button></a>
 				<!--Footer Here-->
 				<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 			</div>

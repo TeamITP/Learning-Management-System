@@ -41,19 +41,17 @@ public class DeleteLesson extends HttpServlet {
 		int status = lessonService.deleteLesson(lessonId);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Delete Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("teacherClassroom.jsp");
-			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    //dis.forward(request, response);
+			request.setAttribute("message", "Lesson Deleted Successfully");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Delete Failed");
-			request.setAttribute("lessonId", lessonId);
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherLesson.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Lesson Deleting Failed");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 }

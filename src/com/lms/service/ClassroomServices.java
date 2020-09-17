@@ -50,4 +50,8 @@ public interface ClassroomServices {
 	 * @param classroomId
 	 */
 	public int updateClassroom(Classroom classroom);
+	
+	public String generateReport(String classroomId, String root);
+	
+	public int deleteClassroom(String classroomId);
 }

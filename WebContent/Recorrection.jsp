@@ -15,6 +15,27 @@
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
+<%
+		String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	
+%>
 <div class="sideNav">
             <div class="row justify-content-center firstRow">
                 <div class="col-4">
@@ -53,12 +74,13 @@
                 </div>
 
               
-    <form>
+    <form action="ResultTeacherView" method="post">
             
         
-        <textarea placeholder="Description"></textarea>
-        <button type="button" class="btn btn-primary btn2">Re-Correction Apply</button>
-   
+        <textarea name="description"placeholder="Description"></textarea>
+        <input type="text" name="resultid" value="<%= %>" hidden>
+        <button type="submit" class="btn btn-primary btn2">Re-Correction Apply</button>
+         
    </form>
 
 

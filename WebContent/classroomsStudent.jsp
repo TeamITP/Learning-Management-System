@@ -17,11 +17,9 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
-
-<body>
-	<%
+<%
 	String username = "";
-		if (session.getAttribute("userId") != null) {
+	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
 		if (username.charAt(0) != 'S') {
@@ -29,9 +27,11 @@
 		}
 
 	} else {
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("index.jsp");
 	}
+
 	%>
+<body>
 	<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>

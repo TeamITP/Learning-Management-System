@@ -17,4 +17,10 @@ public interface UserService {
 	 * @param userID, password
 	 */
 	public int validate(String userId, String password);
+	
+	public int accountVerification(String userId);
+	
+	public int verificationCode(String code, String userId);
+	
+	public int updatePassword(String userId, String pw);
 }
