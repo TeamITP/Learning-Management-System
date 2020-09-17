@@ -455,13 +455,18 @@ public class ClassroomServicesImpl implements ClassroomServices {
 						document.close();
 						
 						//Final DEPLOYMENT ON SERVER
-						filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 						
 						//For Local Host
+						/*
+						 * 'LearningManagementSystem' name in the below link might change
+						 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
+						 * Then see, where your file originally saved on pc
+						 * */
 						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 						
 						//For GitHub Deployment TESTING
-						//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 			
 			
 		} catch (IOException e) {
