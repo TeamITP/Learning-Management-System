@@ -448,36 +448,20 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			// close the content stream
 			cos.close();
 			
-			//For Local Host
-			/*
-			// Save the results and ensure that the document is properly closed:
-			filePath = System.getProperty("catalina.base")
-					+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-
-			document.save(filePath);
-			document.close();
-			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-			*/
-			
-			/*
-			//For GitHub
-			// Save the results and ensure that the document is properly closed:
-						filePath = System.getProperty("catalina.base")
-								+ "\\webapps\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-
-						document.save(filePath);
-						document.close();
-						filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-			
-						*/
-			
-			//Final DEPLOYMENT ON SERVER
-			// Save the results and ensure that the document is properly closed:
 						filePath = root + File.separator + classroomId + ".pdf";
 
 						document.save(filePath);
+						System.out.println(filePath);
 						document.close();
+						
+						//Final DEPLOYMENT ON SERVER
 						filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						
+						//For Local Host
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						
+						//For GitHub Deployment TESTING
+						//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 			
 			
 		} catch (IOException e) {
