@@ -73,7 +73,6 @@ public class Employee {
 	public void setNIC(String nIC) {
 		NIC = nIC;
 	}
-	
-	
+
 	
 }

@@ -46,19 +46,19 @@ public class EmployeeUpdate extends HttpServlet {
 		int status = employeeservices.updateEmployee(employee);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
+			request.setAttribute("message", "Update profile Successful");
 			request.setAttribute("Emp_ID", employee.getEmp_ID());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("link", "EmpProfile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
+			request.setAttribute("message", "Update profile Failed");
 			request.setAttribute("Emp_ID", employee.getEmp_ID());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("link", "EmpProfile.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 	}
 

@@ -103,19 +103,20 @@
                     </div>
                 </div>
                 <div class="col" style="width: 480px;"><img src="EmployeeProfile/img/profileEmp.png" style="width: 450px;height: 450px;margin: 60px;padding: 50px;"></div>           
+           		<div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary btn-lg" type="button" style="padding-right: 20px;margin: 100px;">Go to Dashboard</button></div>
             </div>
         </div>
     </div>
-    <div class="row">
+   <!-- <div class="row" style="padding: 15px;">
         <div class="col">
-            <div class="row">
+            <div class="row" style="padding-right:50px;">
                 <div class="col" style="width: 300px;">
                     <div class="row">
-                        <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary" type="button" style="padding-right: 20px;margin: 20px;">Go to Dashboard</button></div>
+                        <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary btn-lg" type="button" style="padding-right: 20px;margin: 200px;">Go to Dashboard</button></div>
                     </div>
                 </div>
             </div> 
-        </div>
+        </div> -->
         
     
         </div>
@@ -123,7 +124,6 @@
     </div>
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
-
 	
     </div>
     
