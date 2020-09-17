@@ -449,7 +449,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			/*
 			// Save the results and ensure that the document is properly closed:
 			filePath = System.getProperty("catalina.base")
-					+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+					+ "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 
 			document.save(filePath);
 			document.close();
