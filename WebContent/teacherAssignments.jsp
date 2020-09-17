@@ -138,6 +138,13 @@
 				
 
 				<a href="uploadAssignment.jsp">Add A Question</a>
+				
+				 <div class="col-8">
+				<form action="reportAssignment" method="post">
+				<input name="classroomId" value="<%=clzId%>" hidden>
+					<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Assignments</button></form>
+				</div>
 			</div>
 			<div class="col-6"><img id="imageAssignm" src="Images/a4.png" height="500"></div>
 			</div>

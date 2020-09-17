@@ -1,9 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat",sans-serif;
-}
 
 img {
   margin-left:700px;
@@ -16,16 +10,17 @@ body{
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content:left;
     align-items: center;
     background:white;
-    background-image: url(/Images/a1.png)  no-repeat Right;
     background-size:45% 60%;
   
 }
 
 form{
-    position: absolute;
+    position:right;
+    margin-left:300px;
+    margin-top:-10px;
     width: 320px;
      border: 1px solid #006FFF;
     background: #fff;
@@ -47,7 +42,7 @@ form h1{
     padding-bottom: 4px;
 }
 
-form input{
+/* form input{
     margin: 20px;
     padding: 10px 20px;
     width: 280px;
@@ -58,7 +53,7 @@ form input{
     box-shadow: 3px 3px 3px rgba(0,0,0,0.3),
           inset 3px 3px 3px rgba(0,0,0,0.3);
     transition: 0.6s ease-in-out;
-}
+} */
 
 form textarea{
     margin: 20px;
@@ -71,7 +66,7 @@ form textarea{
           inset 3px 3px 3px rgba(0,0,0,0.3);
 }
 
-form .btn{
+.btn{
     position: relative;
     margin: 10px 10px 20px 20px;
     height: 40px;
@@ -80,10 +75,10 @@ form .btn{
     outline: none;
     border-radius: 8px;
     color: White;
-    background: gold;
+    background-color:gold;
     font-size: 18px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-    transition: 0.6s ease-in-out;
+   
 }
 
 .btn1{
@@ -93,25 +88,11 @@ form .btn{
     width: 120px;
     border: none;
     outline: none;
-    border-radius: 8px;
+    border-radius:8px;
     color: White;
-    background: blue;
+    background:blue;
     font-size: 18px;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-    transition: 0.6s ease-in-out;
+
 }
 
-.upload-button  {
-  color: white;
-  display: inline-block;
-  background: #1CB6E0;
-  border: none;
-  padding: 7px 15px;
-  font-weight: 700;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 10pt;
-  position: absolute;
-  left:0;
-  opacity:0;
-}
