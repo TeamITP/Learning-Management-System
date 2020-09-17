@@ -446,6 +446,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 
 			// close the content stream
 			cos.close();
+			/*
 			// Save the results and ensure that the document is properly closed:
 			filePath = System.getProperty("catalina.base")
 					+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
@@ -453,6 +454,15 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			document.save(filePath);
 			document.close();
 			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			*/
+			
+			// Save the results and ensure that the document is properly closed:
+						filePath = System.getProperty("catalina.base")
+								+ "\\webapps\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+
+						document.save(filePath);
+						document.close();
+						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
