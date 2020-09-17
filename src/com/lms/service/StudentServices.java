@@ -36,16 +36,21 @@ public interface StudentServices {
 		 * @return ArrayList<Lesson>
 		 * @param Class Id
 		 */
-		 
-		
+ 
 		public Student getStudentById(String studentId);
 		
 		public int removeStudentClassroom(String studentId, String classroomId);
 		
 		public int addStudentClassroom(String studentId, String classroomId);
 		
-		public String studentgenerateReport(String classroomId);
+		public String studentgenerateReport(String classroomId, String root);
 		
 		public ArrayList<Student> getStudentArrayList(String Student_ID);
+
+
+		 
+
+		 
+
 
 }

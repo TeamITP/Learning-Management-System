@@ -51,7 +51,7 @@ public interface ClassroomServices {
 	 */
 	public int updateClassroom(Classroom classroom);
 	
-	public String generateReport(String classroomId);
+	public String generateReport(String classroomId, String root);
 	
 	public int deleteClassroom(String classroomId);
 }

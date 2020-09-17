@@ -406,7 +406,7 @@ public class StudentServicesImple implements StudentServices{
 	}
 	
 	@Override
-	public String studentgenerateReport(String Student_ID) {
+	public String studentgenerateReport(String Student_ID, String root) {
 		String filePath = null;
 
 		// Create a new font object selecting one of the PDF base fonts
@@ -543,12 +543,27 @@ public class StudentServicesImple implements StudentServices{
 
 			// close the content stream
 			cos.close();
-			// Save the results and ensure that the document is properly closed:
-			filePath = root + File.separator + Student_ID + ".pdf";
+		
+						filePath = root + File.separator + Student_ID + ".pdf";
 
-			document.save(filePath);
-			document.close();
-			filePath = "\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
+						document.save(filePath);
+						System.out.println(filePath);
+						document.close();
+						
+						//Final DEPLOYMENT ON SERVER
+						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						
+						//For Local Host
+						/*
+						 * 'LearningManagementSystem' name in the below link might change
+						 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
+						 * Then see, where your file originally saved on pc
+						 * */
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						
+						//For GitHub Deployment TESTING
+						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
