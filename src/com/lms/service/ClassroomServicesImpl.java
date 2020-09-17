@@ -447,7 +447,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 
 			// close the content stream
 			cos.close();
-			
+		
 						filePath = root + File.separator + classroomId + ".pdf";
 
 						document.save(filePath);
@@ -467,7 +467,6 @@ public class ClassroomServicesImpl implements ClassroomServices {
 						
 						//For GitHub Deployment TESTING
 						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
