@@ -14,6 +14,7 @@ public class Student {
 	private String phone;
 	private String Guardian;
 	private String password;
+	private String joinDate;
 	
 	public Student(String student_ID, String fristName, String lastName, String address, String phone, String guardian,
 			String password) {
@@ -84,5 +85,14 @@ public class Student {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(String joinDate) {
+		this.joinDate = joinDate;
 	}	
+	
 }

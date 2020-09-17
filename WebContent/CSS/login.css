@@ -58,3 +58,42 @@
     font-weight: bold;
     margin-bottom: 0;
 }
+
+#forgot {
+    font-size: medium !important;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+#forgot:hover {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.badge-warning {
+    margin-bottom: 20px !important;
+}
+
+.close {
+    outline: none !important;
+}
+
+.codeVerify {
+    margin-left: 0 !important;
+    background: #ffffff;
+    padding: 24;
+    border-radius: 8;
+    border: 1px solid #3375cc !important;
+}
+
+#bnVerify {
+    width: 150px !important;
+    margin-left: 0 !important;
+}
+
+.img {
+    margin-bottom: 20px !important;
+    margin-top: 30px !important;
+}
