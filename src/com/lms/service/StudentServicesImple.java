@@ -598,7 +598,7 @@ public class StudentServicesImple implements StudentServices{
 						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 						
 						//For GitHub Deployment TESTING
-						filePath = "\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
+						filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
