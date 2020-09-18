@@ -266,7 +266,7 @@ public class ExaminationServicesImp implements ExaminationServices {
 	      ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
 
 		for (int i = 0; i < arrayList.size(); i++) {
-			ExamResult examresult = new ExamResult();
+			ExamResult examresult = examresultservices.getResult(arrayList.get(i).getResult_ID());
 			row = table.createRow(20);
 			cell = row.createCell(15, examresult.getResult_ID());
 			cell.setFontSize(12);

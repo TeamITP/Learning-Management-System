@@ -23,6 +23,9 @@ public interface ExamResultServices {
 	public ExamResult getstudentmarks(String studentid,String examid);
 	
 	
+	public ExamResult getResult(String Resultid);
+	
+	
 	
 
 }

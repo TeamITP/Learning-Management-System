@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -230,6 +231,48 @@ connection = ConnectDB.getDBConnection();
 		return examResult ;
 	}
 	
+	
+	
+	public ExamResult getResult(String Resultid) {
+		ExamResult examresult = new ExamResult();
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT *,Rank() OVER(ORDER BY Marks DESC) rank From Exam_Result WHERE Result_ID = ?";
+			
+			preparedstatement = connection.prepareStatement(sql);
+			
+			preparedstatement.setString(1, Resultid);
+			
+			ResultSet resultSet = preparedstatement.executeQuery();
+			
+			while (resultSet.next()) {
+				examresult.setStudent_ID(resultSet.getString(2));
+				examresult.setExam_ID(resultSet.getString(3));
+				examresult.setMarks(resultSet.getInt(5));
+				examresult.setStudent_ID(resultSet.getString(4));
+				examresult.setRank(resultSet.getInt(6));
+				
+			}
+	} catch (SQLException e) {
+		
+	} finally {
+		/*
+		 * Close statement and database connectivity at the end of transaction
+		 */
+		try {
+			if (preparedstatement != null) {
+				preparedstatement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (java.sql.SQLException e) {
+			
+		}
+	}
+		return examresult;
+	}
 	
 	
 	
