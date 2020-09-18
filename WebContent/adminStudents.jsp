@@ -105,103 +105,147 @@ var b = 0;
 		response.sendRedirect("index.jsp");
 	}
 	StudentServices studentServices = new StudentServicesImple();
-	Student student = studentServices.getStudent(username);
+	ArrayList<Student> arrayList = studentServices.getStudentList();
 	%>
 	
-        <div class="pageContainer">
-        <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-        <ul class="nav nav-pills nav-fill text-dark">
-        <li class="nav-item text-secondary"><a class="nav-link active" href="#"><strong>Student</strong></a></li>
-        <li class="nav-item">
-            <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-                <div class="container1"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-                        <ul class="nav navbar-nav"></ul>
-                        <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" placeholder="search" style="padding: 6px;"></div>
-                        
+        <div class="page-container">
+	<div class="pageContainer">
+	
+		<!-- Header here -->
+  		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+  		
+  		  <div class="row" style="padding-top: 10px;">
+  		
+        <div class="col" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
+            <div style="background-color: #006FFF;border-radius: 5px;"><label style="color: rgb(248,249,251);padding-left: 10px;">Students</label></div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 20px;">
+        <div class="col" style="padding-left: 50px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <div class="row">
+                            <div class="col"><label class="col-form-label" style="border-radius: 5px;border-style: none;border-color: rgb(77,160,244);background: linear-gradient(90deg, black 0%, rgb(0,111,255) 0%, rgb(117,215,247) 94%);background-color: #006FFF;color: rgb(154,158,162);width: 100px;height: 28px;">Total Student</label></div>
+                        </div>
                        
-
-
-                        </form>
+                        <div class="row">
+                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 100px;height: 28px;padding-top: 2px;"></label></div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </li>
-        <li class="nav-item"></li>
-    </ul>
-    <div class="row">
-        <div class="col-auto align-self-center order-3 mx-auto"><label class="text-info">Total Students&nbsp; &nbsp; &nbsp;</label><input class="border rounded-0 border-info shadow form-control-lg" type="text"></div>
-    </div>
-    <div class="col align-self-center"><button class="btn btn-primary btn-lg border rounded-0 shadow" data-toggle="tooltip" data-bs-tooltip="" type="button">Add Student</button></div>
-    <div>
-        <div class="container1">
-            <div class="row">
-                <div class="col-md-3"><label class="col-form-label"><strong>Student ID</strong></label></div>
-                <div class="col-md-3"><label class="col-form-label"><strong>First Name</strong></label></div>
-                <div class="col-md-3"><label class="col-form-label"><strong>Phone Number</strong></label></div>
-                <div class="col-md-3"></div>
+            </div>
+             <div class="row" style="padding-top: 10px;">
+                <div class="col" style="padding-top: 20px;">
+                    <div class="container1" style="padding-left: 1px;">
+                        <div><input type="text" style="width: 300px;border: 2px solid rgb(0,123,255);border-radius: 5px;padding-top: 2px;"><button class="btn btn-primary" type="button" style="border-radius: 5px;height: 31px;padding-top: 1px;">Search</button></div>
+                    </div>
+                </div>
             </div>
         </div>
+        
+         
+        
+        
+        <div class="col">
+            <div></div><img src=" " style="height: 150px;"></div>
+        <div class="col"></div>
     </div>
-    <div>
-        <div class="container1">
-            <div class="row">
-                <div class="col-md-3"><input type="text" value = <%=student.getStudent_ID() %>> </div>
-                <div class="col-md-3"><input type="text" value = <%=student.getFristName() %>> </div>
-                <div class="col-md-3"><input type="text" value = <%=student.getPhone() %>> </div>
-                <div class="col-md-3"><button class="btn btn-danger btn-lg" type="button" style="margin: 5px;">DELETE</button></div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container1">
-            <div class="row">
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><button class="btn btn-danger btn-lg" type="button" style="margin: 6px;">DELETE</button></div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container1">
-            <div class="row">
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><button class="btn btn-danger btn-lg" type="button" style="margin: 5px;">DELETE</button></div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container1">
-            <div class="row">
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><input type="text"></div>
-                <div class="col-md-3"><button class="btn btn-danger btn-lg" type="button" style="margin: 5px;">DELETE</button></div>
-            </div>
-        </div>
-    </div>
-    
-    </br>
-    </br>
-    <div class="row">
-				 
-				<div class="col-3">
-				<form action="StudentReport" method="post">
-				 
-					<button type="submit" class="btn btn-success" id="btnReport"> Get
-						Report of Students</button></form>
+    <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
+        <div class="col">
+            <div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            	<th>Student ID</th>
+      							<th> First Name</th>
+     							<th>Last Name</th>
+     							<th>Email Address</th>
+     							<th>Phone</th>
+     							<th>Guardian</th>
+                            </tr>
+                        </thead>
+                       <% for(Student student: arrayList) {%>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"><%=student.getStudent_ID() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=student.getFristName() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=student.getLastName() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=student.getAddress() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=student.getPhone() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=student.getGuardian()%></div>
+                                </td>
+                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#del<%=student.getStudent_ID()%>" type=submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
+                            </tr>
+         				
+		
+							<div class="modal fade" id="del<%=student.getStudent_ID() %>" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Remove Student </label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="Post" action="DeleteStu">
+						 <input value=  name="Student_ID" hidden>
+							<div class="row"><input value="<%=student.getStudent_ID() %>"
+									name="Student_ID" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									remove this student ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cansel</button>
+								<button type="submit" class="btn btn-danger">Remove</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
+                           
+                        </tbody><%} %>
+                    </table>
+                </div>
+                
 
-	
-	</br>
-	</br>
-						
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+     <div class="row">
+            <div class="row">
+				<div class="col-2">
+					<img src="Images/reportImg.png" id="reportImg">
+				</div>
+				<div class="col-3">
+				<form action="StudentReport" method="post">
+				<input name="Student_ID"  hidden>
+					<button type="submit" class="btn btn-success" id="btnReport">Get
+						Report of Students</button></form>
+				</div>
+			</div></div>
+			</div>
+			</br>
+			</br>		
 						
     <div>
         <div class="container1">
@@ -269,6 +313,7 @@ var b = 0;
      
         </div>
         
+         
     </body>
 	 
 <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>

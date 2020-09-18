@@ -45,7 +45,10 @@ public interface StudentServices {
 		
 		public String studentgenerateReport(String classroomId, String root);
 		
-		public ArrayList<Student> getStudentArrayList(String Student_ID);
+		public ArrayList<Student> getStudentList();
+
+
+		public int removeStudent(String Student_ID);
 
 
 		 
