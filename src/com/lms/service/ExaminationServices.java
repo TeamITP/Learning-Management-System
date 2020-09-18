@@ -12,6 +12,10 @@ public interface ExaminationServices {
 
    public ArrayList<Examination> getExaminationList(String classroomid);
 
+   
+   public Examination getExamination(String examId);
 
+   
+   public String generateReport(String examId, String root);
 
 }

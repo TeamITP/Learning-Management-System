@@ -13,6 +13,8 @@ import com.lms.service.ClassroomServices;
 import com.lms.service.ClassroomServicesImpl;
 import com.lms.service.ExamResultServices;
 import com.lms.service.ExamResultServicesImp;
+import com.lms.service.ExaminationServices;
+import com.lms.service.ExaminationServicesImp;
 
 /**
  * Servlet implementation class ResultReport
@@ -43,8 +45,8 @@ public class ResultReport extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String examid = request.getParameter("examid");
 		
-		ExamResultServices examresultServices = new ExamResultServicesImp();
-		String path = examresultServices.generateReport("examid",getServletContext().getRealPath("/UploadedFiles/PDF"));
+		ExaminationServices examinationServices = new ExaminationServicesImp();
+		String path = examinationServices.generateReport(examid,getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
 			response.sendRedirect(path);
