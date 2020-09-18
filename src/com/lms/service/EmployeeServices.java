@@ -31,4 +31,6 @@ public interface EmployeeServices {
 		//Get a List
 		public ArrayList<Employee> getEmployeeArrayList();
 		
+		//Remove Employee
+		public int removeEmployee(String empId);
 }

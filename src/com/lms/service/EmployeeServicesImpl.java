@@ -404,6 +404,42 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		return filePath;
 	}
 
+	@Override
+	public int removeEmployee(String empId) {
+		int status = 0;
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "DELETE FROM Employee WHERE Emp_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			 
+			preparedStatement.setString(1, empId);
+
+			status= preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		
+		return status;
+	}
+
 	
 
 	

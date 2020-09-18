@@ -150,7 +150,7 @@ var b = 0;
     		<form action="EmployeeReport" method="post">
     		<input name="empId" value="<%=username %>" hidden>
            	<div class="col"><button class="btn btn-success" type="submit" id="btnReport">Generate Report of Employees</button></div>
-    </div>
+    </div> 
     
     <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px">
         <div class="col">
@@ -188,8 +188,38 @@ var b = 0;
                                 <td>
                                     <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getPassword()%></div>
                                 </td>
-                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#deleteModal" type="button" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
-                            </tr>       		                
+                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#del<%=employee.getEmp_ID() %>" type="submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
+                            </tr>  
+                            <div class="modal fade" id="del<%=employee.getEmp_ID() %>" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Remove Employee </label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="Post" action="EmployeeDel">
+						 <input value=  name="Emp_ID" hidden>
+							<div class="row"><input value="<%=employee.getEmp_ID() %>"
+									name="Emp_ID" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									remove this employee ?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cancel</button>
+								<button type="submit" class="btn btn-danger">Remove</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+                                 		                
                         </tbody><%} %>
                     </table>
                 </div>
@@ -209,36 +239,6 @@ var b = 0;
     
     </div>
     
-    <!--Moodal for delete Profile-->
-		<div class="modal fade" id="deleteModal" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="post" action="EmployeeDelete">
-							<div class="row">
-								<input value="admin" name="url" hidden> <input value="<%=username %>"
-									name="userId" hidden> <label
-									style="padding: 10px; padding-left: 20px;"> Are you sure to delete this profile
-									?</label>
-							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cancel</button>
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
 		
 </body>
 
