@@ -247,7 +247,6 @@ connection = ConnectDB.getDBConnection();
 			ResultSet resultSet = preparedstatement.executeQuery();
 			
 			while (resultSet.next()) {
-				examresult.setStudent_ID(resultSet.getString(2));
 				examresult.setExam_ID(resultSet.getString(3));
 				examresult.setMarks(resultSet.getInt(5));
 				examresult.setStudent_ID(resultSet.getString(4));

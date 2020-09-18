@@ -18,7 +18,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
          <link rel="stylesheet" href="CSS/ResultTeacherView.css">
-
+         
+         
+        
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
@@ -100,7 +102,8 @@ String examId = (String)session.getAttribute("examId");
             <input type="text" class="id" name="id" placeholder="Student ID">
             <input type="text" name="exmaId" value="<%=examId %>" hidden>
         </div>
-        <div class="col col1"><input type="text" class="marks" name="marks" placeholder="Marks"></div>
+        Quantity (between 1 and 100):
+        <div class="col col1"><input type="text" class="marks"  name="marks" placeholder="Marks" min="1" max="100"></div>
         <div class="col col1"><button type="submit" class="btn btn-primary addresult">Add Result</button></div>
     </div>
     </form>
