@@ -171,24 +171,24 @@ var b = 0;
                         <tbody>
                             <tr>
                                 <td>
-                                    <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"><%=employee.getEmp_ID() %></div>
+                                    <div style="border-width: 1px;border-style: solid;height: 40px ;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getEmp_ID() %></div>
                                 </td>
                                 <td>                                
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getName() %></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getName() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getAddress() %></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getAddress() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getPhone() %></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getPhone() %></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getNIC()%></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getNIC()%></div>
                                 </td>
                                 <td>
-                                    <div style="height: 40px;border: 1px solid #006FFF ;"><%=employee.getPassword()%></div>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getPassword()%></div>
                                 </td>
-                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#deleteModal" type=submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
+                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#deleteModal" type="button" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
                             </tr>       		                
                         </tbody><%} %>
                     </table>
@@ -208,6 +208,38 @@ var b = 0;
     <script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>
     
     </div>
+    
+    <!--Moodal for delete Profile-->
+		<div class="modal fade" id="deleteModal" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="EmployeeDelete">
+							<div class="row">
+								<input value="admin" name="url" hidden> <input value="<%=username %>"
+									name="userId" hidden> <label
+									style="padding: 10px; padding-left: 20px;"> Are you sure to delete this profile
+									?</label>
+							</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cancel</button>
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>

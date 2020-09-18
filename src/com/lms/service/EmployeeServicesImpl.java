@@ -280,7 +280,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 			cos.setLeading(14.5f);
 			cos.beginText();
 			// Setting the position for the line
-			cos.newLineAtOffset(25, 800);
+			cos.newLineAtOffset(25, 750);
 
 			// Adding text in the form of string
 			cos.showText("----------------------------------------------------------------------------");
@@ -334,15 +334,15 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		Cell<PDPage> cell;
 		
 		Row<PDPage> row = table.createRow(20);
-		cell = row.createCell(20, "Employee ID");
+		cell = row.createCell(16, "Employee ID");
 		cell.setFontSize(12);
-		cell = row.createCell(20, "Employee Name");
+		cell = row.createCell(25, "Employee Name");
 		cell.setFontSize(12);
-		cell = row.createCell(20, "Address");
+		cell = row.createCell(23, "Address");
 		cell.setFontSize(12);
-		cell = row.createCell(20, "Contact Number");
+		cell = row.createCell(19, "Contact Number");
 		cell.setFontSize(12);
-		cell = row.createCell(20, "National ID");
+		cell = row.createCell(17, "National ID");
 		cell.setFontSize(12);
 		
 		EmployeeServices employeeServices = new EmployeeServicesImpl();
@@ -351,19 +351,19 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		for (int i = 0; i < employee.size(); i++) {
 			Employee employees = employeeServices.getEmployee(employee.get(i).getEmp_ID());
 			row = table.createRow(20);
-			cell = row.createCell(20, employees.getEmp_ID());
+			cell = row.createCell(16, employees.getEmp_ID());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(20, employees.getName());
+			cell = row.createCell(25, employees.getName());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(20, employees.getAddress());
+			cell = row.createCell(23, employees.getAddress());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(20, employees.getPhone());
+			cell = row.createCell(19, employees.getPhone());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(20, employees.getNIC());
+			cell = row.createCell(17, employees.getNIC());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
 		}
