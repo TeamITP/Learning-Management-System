@@ -10,6 +10,9 @@ public class Employee {
 	private String Address;
 	private String Phone;
 	private String NIC;
+	
+	private int count;
+	
 
 	//constructor
 	public Employee() {}
@@ -72,6 +75,14 @@ public class Employee {
 
 	public void setNIC(String nIC) {
 		NIC = nIC;
+	}
+
+	public int getcount() {
+		return count;
+	}
+
+	public void setcount(int count1) {
+		count = count1;
 	}
 
 	

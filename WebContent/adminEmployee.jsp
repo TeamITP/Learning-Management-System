@@ -127,19 +127,20 @@ var b = 0;
             <div class="row">
                 <div class="col" style="height: 110px;margin: 10px;">
                     <div style="border-style: solid;border-color: rgb(62,140,228);width: 150px;height: 80px;margin: 20px;padding: 10px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
+                      <div>
                         <div class="row">
-                            <div class="col" style="width: 130px;height: 30px;">
-                                <h1 style="font-size: 13px;height: 30px;width: 130px;background-color: #71afff;">Total Employees</h1>
-                            </div>
+                            <div class="col"><label class="col-form-label" style="border-radius: 5px;border-style: none;border-color: rgb(77,160,244);background: linear-gradient(90deg, black 0%, rgb(0,111,255) 0%, rgb(117,215,247) 94%);background-color: #006FFF;width: 125px;height: 28px;">Total Employees</label></div>
                         </div>
+                       	<%EmployeeServices employeeservices = new EmployeeServicesImpl();
+                       	Employee employees = employeeservices.CountEmployee();
+                       	%>
                         <div class="row">
-                            <div class="col" style="width: 130px;"><input type="text" style="width: 130px;height: 30px;border-style: solid;border-color: rgb(62,140,228);"></div>
+                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 125px;height: 28px;padding-top: 2px;"><%=employees.getcount() %></label></div>
                         </div>
                     </div>
+                      
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col"><input type="text" style="margin: 20px;width: 350px;border-style: solid;border-color: rgb(62,140,228);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" placeholder="Search Employee Name Here"></div>
             </div>
            
         </div>
@@ -190,7 +191,8 @@ var b = 0;
                                 </td>
                                 <td><button class="btn btn-primary"data-toggle="modal" data-target="#del<%=employee.getEmp_ID() %>" type="submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
                             </tr>  
-                            <div class="modal fade" id="del<%=employee.getEmp_ID() %>" role="form">
+                            
+            <div class="modal fade" id="del<%=employee.getEmp_ID() %>" role="form">
 			<div class="modal-dialog modal-dialog-centered">
 				<!-- Modal content-->
 				<div class="modal-content">

@@ -33,4 +33,7 @@ public interface EmployeeServices {
 		
 		//Remove Employee
 		public int removeEmployee(String empId);
+		
+		//Count of employees
+		public Employee CountEmployee();
 }

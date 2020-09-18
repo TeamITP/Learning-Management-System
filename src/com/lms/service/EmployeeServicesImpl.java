@@ -383,7 +383,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									document.close();
 									
 									//Final DEPLOYMENT ON SERVER
-									filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									//filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For Local Host
 									/*
@@ -391,7 +391,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 									 * Then see, where your file originally saved on pc
 									 * */
-									//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+									filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For GitHub Deployment TESTING
 									//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
@@ -438,6 +438,42 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		}
 		
 		return status;
+	}
+
+	@Override
+	public Employee CountEmployee() {
+		Employee employee = new Employee();
+		
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT COUNT( *) FROM Employee";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()) {
+				employee.setcount(resultSet.getInt(1));
+			}
+		}catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return employee;
 	}
 
 	

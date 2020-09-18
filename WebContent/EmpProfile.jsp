@@ -46,7 +46,7 @@
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <div class="pageContainer">
     <div class="col-lg-10 offset-lg-1" style="height: 170px;"><img class="img-fluid" src="EmployeeProfile/img/boardEmp.png" height="70px" width="auto" style="margin: 70px;"></div>
-    <div class="col-lg-10 offset-lg-1" style="font-size: 30px;border-radius: 7px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;width: 800px;height: 160px;"><img src="EmployeeProfile/img/avatarEmp.png" width="100px" height="100px" alt="Empavatar" style="margin: 50px;"><label id="EmpAvatar" style="font-size: 30px;">Nimesha Perera</label></div>
+    <div class="col-lg-10 offset-lg-1" style="font-size: 30px;border-radius: 7px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;width: 800px;height: 160px;"><img src="EmployeeProfile/img/avatarEmp.png" width="100px" height="100px" alt="Empavatar" style="margin: 50px;"><label id="EmpAvatar" style="font-size: 30px;"></label></div>
     <div>
         <div class="container">
             <div class="row" style="padding: 15px;">
@@ -107,18 +107,7 @@
             </div>
         </div>
     </div>
-   <!-- <div class="row" style="padding: 15px;">
-        <div class="col">
-            <div class="row" style="padding-right:50px;">
-                <div class="col" style="width: 300px;">
-                    <div class="row">
-                        <div class="col"><a href = "paymentHome.jsp"><button class="btn btn-primary btn-lg" type="button" style="padding-right: 20px;margin: 200px;">Go to Dashboard</button></div>
-                    </div>
-                </div>
-            </div> 
-        </div> -->
-        
-    
+   
         </div>
     </div>
     </div>
