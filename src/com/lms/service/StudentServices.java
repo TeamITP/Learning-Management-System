@@ -1,6 +1,9 @@
 package com.lms.service;
 
-
+/**
+ *  Imbulana Liyanage D.S.I.
+ * IT19134772
+ */
 
 import java.util.ArrayList;
 
@@ -49,6 +52,9 @@ public interface StudentServices {
 
 
 		public int removeStudent(String Student_ID);
+
+
+		public Student CountStudent();
 
 
 		 

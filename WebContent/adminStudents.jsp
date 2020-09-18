@@ -1,3 +1,7 @@
+<!--Imbulana Liyanage D.S.I.-->
+<!--IT19134772-->
+
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.lms.model.Student"%>
 <%@page import="com.lms.service.StudentServicesImple"%>
@@ -128,9 +132,12 @@ var b = 0;
                         <div class="row">
                             <div class="col"><label class="col-form-label" style="border-radius: 5px;border-style: none;border-color: rgb(77,160,244);background: linear-gradient(90deg, black 0%, rgb(0,111,255) 0%, rgb(117,215,247) 94%);background-color: #006FFF;color: rgb(154,158,162);width: 100px;height: 28px;">Total Student</label></div>
                         </div>
-                       
+                       	<% StudentServices studentS = new StudentServicesImple();
+                       	Student student1 = studentS.CountStudent();
+                       	
+                       	%>
                         <div class="row">
-                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 100px;height: 28px;padding-top: 2px;"></label></div>
+                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 100px;height: 28px;padding-top: 2px;"><%=student1.getCount() %></label></div>
                         </div>
                     </div>
                 </div>

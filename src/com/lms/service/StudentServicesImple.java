@@ -442,6 +442,44 @@ public class StudentServicesImple implements StudentServices{
 	}
 	
 	@Override
+	public Student CountStudent() {
+		Student student1 = new Student();
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT COUNT(*) FROM Student";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			//preparedStatement.setString(1, Student_ID);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				student1.setCount(resultSet.getInt(1));
+				 
+			}
+	} catch (SQLException e) {
+		logger.log(Level.SEVERE, e.getMessage());
+	} finally {
+		/*
+		 * Close statement and database connectivity at the end of transaction
+		 */
+		try {
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (java.sql.SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		}
+	}
+		return student1;
+	}
+	
+	@Override
 	public String studentgenerateReport(String Student_ID, String root) {
 		String filePath = null;
 
