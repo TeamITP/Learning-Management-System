@@ -263,7 +263,7 @@ public class ExaminationServicesImp implements ExaminationServices {
 		cell.setFontSize(12);
 
 		ExamResultServices examresultservices = new ExamResultServicesImp();
-	      ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
+	    ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
 
 		for (int i = 0; i < arrayList.size(); i++) {
 			ExamResult examresult = examresultservices.getResult(arrayList.get(i).getResult_ID());
