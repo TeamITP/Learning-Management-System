@@ -17,7 +17,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Payment Home</title>
+    <title>Incomes</title>
 
 
 
@@ -73,7 +73,7 @@
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
 				href="income.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
-				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
+				href="expendi.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
 				href="expendi.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
 			</a>
@@ -110,94 +110,11 @@
 			
    				 
    				 <div class="txttttheader">			
- 			<h2> Payment Category</h2>
+ 			<h2> Institute Incomes</h2>
  			</div>
  			
  		
  		
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Hey Employee!</strong> Please be sure to sign out every time you use and end up to ensure the security of payments transactions
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
- 			
-
-
- 			<div class="container">
-  <div class="row row-cols-3">
-    <div class="col"><div class="wrapperIMG">
-  <div class="image1"> <a href="ClassFee_pmt.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/classfees.png" a class="btn btn-outline-light" href="ClassFee_pmt.jsp" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Class Fees</h5>
-    <p class="card-text">To pay the tuition fees of the students attending the class</p>
-    <a href="ClassFee_pmt.jsp" class="btn btn-primary">Pay Class Fee</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div></div>
-    <div class="col"><div class="image1">
-    				 <a href="tsalary.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/teachersalary.png" a class="btn btn-outline-light" href="tsalary.jsp" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Teachers Salary</h5>
-    <p class="card-text">To pay the monthly salary of the teachers related to the class.</p>
-    <a href="tsalary.jsp" class="btn btn-primary">Pay Teacher Salary</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-    				 <a href="emsalary.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/employeesalary.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Employee Salary</h5>
-    <p class="card-text">To pay the monthly salary of the employees related to the institution.</p>
-    <a href="#" class="btn btn-primary">Employee Salary</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-     				<a href="income.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/income.png"  a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-     				<a href="expendi.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/expand.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-  </div>
-</div>
 
 
 
