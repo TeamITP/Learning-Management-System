@@ -1,3 +1,6 @@
+/*Anuththara K.G.S.N*/
+/*IT19142692*/
+
 package com.lms.service;
 
 import java.util.ArrayList;
@@ -7,8 +10,6 @@ import com.lms.model.CommonNotice;
 import com.lms.model.Employee;
 import com.lms.model.Student;
 
-/*Anuththara K.G.S.N*/
-/*IT19142692*/
 public interface EmployeeServices {
 	// Initializing logger
 		public static final Logger logger = Logger.getLogger(UserService.class.getName());

@@ -1,7 +1,7 @@
-package com.lms.model;
-
 /*Anuththara K.G.S.N*/
 /*IT19142692*/
+
+package com.lms.model;
 
 public class Employee {	
 	private String Emp_ID;

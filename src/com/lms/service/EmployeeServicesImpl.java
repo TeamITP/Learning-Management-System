@@ -1,3 +1,6 @@
+/*Anuththara K.G.S.N*/
+/*IT19142692*/
+
 package com.lms.service;
 
 import java.awt.Color;
@@ -32,11 +35,6 @@ import be.quodlibet.boxable.Row;
 import be.quodlibet.boxable.VerticalAlignment;
 import be.quodlibet.boxable.line.LineStyle;
 
-/* 
- * @author Anuththara K.G.S.N.
- * IT19142692
- * 
- * */
 public class EmployeeServicesImpl implements EmployeeServices {
 
 	private static Connection connection;
