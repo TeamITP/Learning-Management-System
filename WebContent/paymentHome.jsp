@@ -21,8 +21,12 @@
 
 
 
-
-
+ <!-- mdbootstrapcss-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 	
 <link rel="icon" href="Images/pmtIcon.png">
 <link rel="stylesheet" href="CSS/nav_pmt.css">
@@ -39,19 +43,12 @@
 
 
 <body>
-<%
-	String username = "";
-		if (session.getAttribute("userId") != null) {
-		username = (String) session.getAttribute("userId");
 
-		if (username.charAt(0) != 'E') {
-			response.sendRedirect("index.jsp");
-		}
-
-	} else {
-		response.sendRedirect("login.jsp");
-	}
-	%>
+<!-- mdbootstrapJaVaScrip-->
+<script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
 
 
@@ -61,7 +58,7 @@
 				<img src="Images/pmtIcon.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Payments</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
@@ -72,12 +69,12 @@
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
 				href="tsalary.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
-				href="teacherAssignments.jsp"><i
+				href="emsalary.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
-				href="teacherNotices.jsp"><i
+				href="income.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
 				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
-				href="teacherPayments.jsp"> <i
+				href="expendi.jsp"> <i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
 			</a>
 			
@@ -100,7 +97,7 @@
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 			<div class="pageTopicContainer">
-				<h1 class="pageTopic">Payments</h1>
+				
 				<hr class="dividerTopic">
 			</div>
 			
@@ -115,42 +112,132 @@
    				 <div class="txttttheader">			
  			<h2> Payment Category</h2>
  			</div>
-		<div class="container">
-  			<div class="row">
-   				 <div class="col">
-    <div class="rowz">
-  <div class="columnz"> 			   				
-<div class="wrapperIMG">
-  <div><div class="image1">
-    				<img src="Images/classfees.png" a class="btn btn-outline-light" href="ClassFee_pmt.jsp" role="button" style="width:150px;height:150px;">
-    				</div></div>
-  <div><div class="image1">
-    				<img src="Images/teachersalary.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-    				</div></div>
-  <div><div class="image1">
-    				<img src="Images/employeesalary.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-    				</div></div>
-  <div><div class="image1">
-    				<img src="Images/income.png"  a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-    				</div></div>
-  <div><div class="image1">
-    				<img src="Images/expand.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-    				</div></div>
+ 			
+ 		
+ 		
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Hey Employee!</strong> Please be sure to sign out every time you use and end up to ensure the security of payments transactions
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
- 
-  </div>  	
-    
- 
-   						 
-    			
-  			</div>
-			</div>
-			
-    							</div>
-    							</div>
-    							</div>
-			
-			
+ 			
+
+
+ 			<div class="container">
+  <div class="row row-cols-3">
+    <div class="col"><div class="wrapperIMG">
+  <div class="image1"> <a href="ClassFee_pmt.jsp" title="">
+    				
+<div class="card" style="width: 18rem;">
+  <img src="Images/classfees.png" a class="btn btn-outline-light" href="ClassFee_pmt.jsp" role="button" style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">Class Fees</h5>
+    <p class="card-text">To pay the tuition fees of the students attending the class</p>
+    <a href="ClassFee_pmt.jsp" class="btn btn-primary">Pay Class Fee</a>
+  </div>
+</div>
+
+    				</a>
+    				</div></div></div>
+    <div class="col"><div class="image1">
+    				 <a href="tsalary.jsp" title="">
+    				
+<div class="card" style="width: 18rem;">
+  <img src="Images/teachersalary.png" a class="btn btn-outline-light" href="tsalary.jsp" role="button" style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">Teachers Salary</h5>
+    <p class="card-text">To pay the monthly salary of the teachers related to the class.</p>
+    <a href="tsalary.jsp" class="btn btn-primary">Pay Teacher Salary</a>
+  </div>
+</div>
+
+    				</a>
+    				</div></div>
+    <div class="col"><div class="image1">
+    				 <a href="emsalary.jsp" title="">
+    				
+<div class="card" style="width: 18rem;">
+  <img src="Images/employeesalary.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">Employee Salary</h5>
+    <p class="card-text">To pay the monthly salary of the employees related to the institution.</p>
+    <a href="#" class="btn btn-primary">Employee Salary</a>
+  </div>
+</div>
+
+    				</a>
+    				</div></div>
+    <div class="col"><div class="image1">
+     				<a href="income.jsp" title="">
+    				
+<div class="card" style="width: 18rem;">
+  <img src="Images/income.png"  a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+    				</a>
+    				</div></div>
+    <div class="col"><div class="image1">
+     				<a href="expendi.jsp" title="">
+    				
+<div class="card" style="width: 18rem;">
+  <img src="Images/expand.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+    				</a>
+    				</div></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 			
+ 			
+	
+ 			
+ 			
+ 			
+ 			
+ 			
+					
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 			
+ 		
 	
 			
 		
@@ -183,7 +270,12 @@
 			
 			
 			
-			
+	 			
+ <!-- page-container end--> 					
+<!-- page-container end--> 			
+</div> 			
+<!-- page-container end--> 		 			
+ <!-- page-container end--> 		
 			
 			
 			
@@ -197,7 +289,7 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
-	</div>
+	
 
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
@@ -229,6 +321,7 @@
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/mainPMT.js"></script>
+		</div>
 		
 		</body>		
 	
