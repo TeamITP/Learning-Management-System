@@ -89,7 +89,7 @@
 
 		<div class="upload-wrap" style="position: relative">
 
-			<input class="file_upload_btn" type="file" name="assignment_file" hidden
+			<input class="file_upload_btn" type="file" name="assignment_file" 
 				size="50" id="assignment_file_upload_input" onchange="onUpload()" />
 		
 		<lable for="assignment_file_upload_input" type="button" class="btn btn-primary" name="btnSubmit"

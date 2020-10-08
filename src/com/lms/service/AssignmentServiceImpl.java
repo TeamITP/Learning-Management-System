@@ -122,7 +122,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 		try {
 			connection = ConnectDB.getDBConnection();
 			
-			String sql = "SELECT * FROM Assginment WHERE A_ID = ?";
+			String sql = "SELECT * FROM Assignment WHERE A_ID = ?";
 			
 			preparedStatement = connection.prepareStatement(sql);
 			
@@ -228,6 +228,47 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 		return status;	
 	}
 	
+	public Assignment getAssignment1(String Class_ID) {
+		Assignment assignment = new Assignment();
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT * FROM Assignment WHERE Class_ID = ?";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setString(1, Class_ID);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				assignment.setA_ID(resultSet.getString(2));
+				assignment.setDate(resultSet.getString(3));
+				assignment.setClass_ID(resultSet.getString(4));
+				assignment.setQuestion(resultSet.getString(5));
+			}
+	} catch (SQLException e) {
+		System.out.println(e.getMessage());
+	} finally {
+		/*
+		 * Close statement and database connectivity at the end of transaction
+		 */
+		try {
+			if (preparedStatement != null) {
+				preparedStatement.close();
+			}
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (java.sql.SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+		return assignment;
+	}
+	
+	
+	
 	public String generateReport(String Class_ID) {
 		String filePath = null;
 
@@ -256,14 +297,14 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
 
-	   Assignment assignment = getAssignment(Class_ID);
+	   Assignment assignment = getAssignment1(Class_ID);
 
 		try {
 			cos.setFont(PDType1Font.COURIER, 12);
 			cos.setLeading(14.5f);
 			cos.beginText();
 			// Setting the position for the line
-			cos.newLineAtOffset(25, 800);
+			cos.newLineAtOffset(25, 830);
 
 			// Adding text in the form of string
 			cos.showText("----------------------------------------------------------------------------");
@@ -281,6 +322,9 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 			cos.showText("Classroom ID : " + assignment.getClass_ID());
 			cos.newLine();
 			cos.newLine();
+			cos.setFont(fontPlain, 12);
+			cos.showText("Questions:");
+			cos.endText();
 			
 
 		} catch (IOException e2) {
@@ -356,6 +400,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 
 			document.save(filePath);
 			document.close();
+			
 			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Class_ID + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

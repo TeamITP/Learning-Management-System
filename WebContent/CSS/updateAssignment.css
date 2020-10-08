@@ -16,12 +16,7 @@ body{
 background-size:60% 60%;
   
 }
-img {
-  margin-left:700px;
-  
- 
-  margin-top:15px;
-}
+
 
 form{
     position: absolute;
@@ -84,6 +79,10 @@ form .btn{
     box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
     transition: 0.6s ease-in-out;
 }
+/* #imageAssignm { */
+/*   z-index:-1; */
+/*   margin-top:15px; */
+/* } */
 
 
 

@@ -48,7 +48,7 @@ public class fileSubmit extends HttpServlet {
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
                         String name = new File(item.getName()).getName();
-                        item.write( new File("c:/lms/upload" + File.separator + name));
+                        item.write( new File("/UploadedFiles/Questions" + File.separator + name));
                     }
                 }
                //File uploaded successfully
