@@ -4,7 +4,7 @@
 	padding: 5px 10px 5px 10px;
 	font-size: large;
 	border-radius: 5px;
-	margin-top:10px;
+	margin-top: 10px;
 	color: white;
 }
 
@@ -144,16 +144,40 @@
 
 #reportImg {
 	width: 150px;
-	margin: 20px;
-	margin-top: 50px;
+	margin: 0px 20px 20px 20px;
 }
 
 #btnReport {
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .studentTable {
-	width:80%;
-	margin-left:10px !important;
-	margin-top:30px;
+	width: 80%;
+	margin-left: 10px !important;
+	margin-top: 30px;
+}
+
+.dateS {
+	border-radius: 5px;
+	border: 1px solid #006FFF;
+	padding: 5px 10px;
+	outline: none;
+	color: #c0c0c0;
+}
+
+.dateS:hover {
+	cursor: pointer;
+}
+
+#titleReport {
+	color: #006FFF;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#para {
+	color: #aeaeae;
+	font-size: 15px;
+	margin-left: 20px;
+	margin-top: 5px;
 }

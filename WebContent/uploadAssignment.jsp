@@ -11,17 +11,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
- <title>Add Question</title>
+<title>Add Question</title>
 <link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/teacherNav.css">
-     <link rel="stylesheet" href="CSS/teacherClassroom.css">
-     <link rel="stylesheet" href="CSS/UploadAssignment.css">
-     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="CSS/teacherNav.css">
+<link rel="stylesheet" href="CSS/teacherClassroom.css">
+<link rel="stylesheet" href="CSS/UploadAssignment.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
 <body>
-<%
+	<%
 	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
@@ -44,7 +44,7 @@
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	
 	%>
-	
+
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<hr id="breakLine">
-		
+
 		<div class="mainSideNav">
 			<a href="teacherClassroom.jsp"><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
@@ -79,28 +79,29 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-		<h1 class="pageTopic">Assignment</h1>
-              <hr class="dividerTopic">
-             
-	
-	
-<form action="AddAssignment" method="post">
+			<h1 class="pageTopic">Assignment</h1>
+			<hr class="dividerTopic">
 
-   <h1>Add Question</h1>
-    <input type="Deadline" name="deadline" placeholder="Deadline" required>
-    <textarea placeholder="Question" name="question"></textarea>
-    <input name="classroomId" value="<%=clzId %>" hidden>
-    <button type="submit" class="btn">Add Assignment</button>
-</form>
 
-<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
 
- 
-</div>
-    <!--Footer Here-->
+			<form action="AddAssignment" method="post">
+
+				<h1>Add Question</h1>
+				<input type="Deadline" name="deadline" placeholder="Deadline"
+					required>
+				<textarea placeholder="Question" name="question"></textarea>
+				<input name="classroomId" value="<%=clzId %>" hidden>
+				<button type="submit" class="btn">Add Assignment</button>
+			</form>
+
+			<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
+
+
+		</div>
+		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>           
-           
+	</div>
+
 </body>
- 
+
 </html>
