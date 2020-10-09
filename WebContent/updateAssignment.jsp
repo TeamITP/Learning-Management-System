@@ -11,63 +11,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
- <title>Update Question</title>
-
-<link rel="icon" href="Images/book.png">
-<link rel="stylesheet" href="CSS/teacherNav.css">
-<link rel="stylesheet" href="CSS/teacherClassroom.css">
-<link rel="stylesheet" href="CSS/UploadAssignment.css">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-</head>
-<body>
-	<%
-
-String aId = request.getParameter("A_ID");
-	String username = "";
-	String clzId = (String) session.getAttribute("classroomId");
-	if (session.getAttribute("userId") != null) {
-		username = (String) session.getAttribute("userId");
-
-		if (username.charAt(0) != 'T') {
-			response.sendRedirect("index.jsp");
-		}
-
-		
-		if (clzId == null) {
-			response.sendRedirect("index.jsp");
-		}
-
-	} else {
-		response.sendRedirect("index.jsp");
-	}
-	
-	ClassroomServices classroomServices = new ClassroomServicesImpl();
-	Classroom classroom = classroomServices.getClassroom(clzId);
-	
-	%>
-
-	<div class="sideNav">
-		<div class="row justify-content-center firstRow">
-			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
-			</div>
-			<div class="col-8 align-items-center">
-<%@page import="com.lms.model.Classroom"%>
-<%@page import="com.lms.service.ClassroomServicesImpl"%>
-<%@page import="com.lms.service.ClassroomServices"%>
-<%@page import="com.lms.model.Assignment"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.lms.service.AssignmentServiceImpl"%>
-<%@page import="com.lms.service.AssignmentServices"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
  <title>Update Question</title>
 <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
