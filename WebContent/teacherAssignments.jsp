@@ -140,14 +140,21 @@
 						</div>
 					</div>
 					<%} %>
-
-
-
-					<a href="uploadAssignment.jsp">Add A Question</a>
+				
+<div class="row" style="width:400px !important;margin-top:50px">
+<div class="col-6">
+				<a href="uploadAssignment.jsp"><button type="button" style="margin-top:10px !important;margin-left:10px" class="btn btn-primary" id="btnReport" >Add Questions</button></a>
 				</div>
-				<div class="col-6">
-					<img id="imageAssignm" src="Images/a4.png" height="500">
+				 <div class="col-6">
+				<form action="reportAssignment" method="post">
+				<input name="classroomId" value="<%=clzId%>" hidden>
+					<button type="submit" style="margin-top:10px !important" class="btn btn-danger" id="btnReport" >Get
+						Questions</button></form>
 				</div>
+			</div>
+			</div>
+			<div class="col-6"><img id="imageAssignm" src="Images/a4.png" height="500"></div>
+
 			</div>
 		</div>
 

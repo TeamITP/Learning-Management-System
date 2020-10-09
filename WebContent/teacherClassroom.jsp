@@ -181,6 +181,7 @@
 			<!-- Student Search List -->
 
 			<div class="row studentTable">
+
 				<div class="input-group md-form form-sm form-2 pl-0">
 					<input class="form-control my-0 py-1 red-border" type="text"
 						id="myInput" placeholder="Search" aria-label="Search">
@@ -201,6 +202,7 @@
 					</thead>
 					<tbody id="myTable">
 						<%StudentServices studentServices = new StudentServicesImple();
+
     ArrayList<Student> studentArrayList = studentServices.getStudentArrayList(clzId);
     
     for(int j = 0; j < studentArrayList.size(); j++) {
@@ -272,6 +274,7 @@ $(document).ready(function(){
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
+
 				<div class="col-5">
 					<form action="ClzStudentReport" method="post">
 						<input name="classroomId" value="<%=clzId%>" hidden>
@@ -288,6 +291,7 @@ $(document).ready(function(){
 						<button type="submit" class="btn btn-danger" id="btnReport">Get
 							Report of Students</button>
 					</form>
+
 				</div>
 			</div>
 		</div>
