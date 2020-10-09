@@ -61,18 +61,21 @@
 		<div class="pageContainer">
 			<div class="contact-clean">
 
-                <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
+                <!--<div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
                 <div class="col"><label>Enter Email Address</label><input class="form-control" name = "address" type="text" required></div>
                 <div class="col"><label>Enter Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
-                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
+                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>-->
 
-
+						<div class="col">
+							<label>Enter First Name</label><input class="form-control"
+								name="fristName" type="text" required>
+						</div>
 						<div class="col">
 							<label>Enter Last Name</label><input class="form-control"
 								name="lastName" type="text" required>
 						</div>
 						<div class="col">
-							<label>Enter the Address</label><input class="form-control"
+							<label>Enter Email Address</label><input class="form-control"
 								name="address" type="text" required>
 						</div>
 						<div class="col">
@@ -84,7 +87,7 @@
 								name="Guardian" type="text" required>
 						</div>
 
-						<button class="btn btn-primary" type="submit">&nbsp;Register</button>
+						<button class="btn btn-primary" type="submit">&nbsp;ADD NEW STUDENT</button>
 					</div>
 				</form>
 				<script src="studentregistration/js/jquery.min.js"></script>
@@ -92,7 +95,7 @@
 			</div>
 		</div>
 		<!--Footer Here-->
-		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+		<!--<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>-->
 	</div>
 </body>
 
