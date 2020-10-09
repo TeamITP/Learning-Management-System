@@ -20,58 +20,72 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="row boxLogIn">
-            <div class="hidden-md-down col-md-6 d-flex justify-content-center ">
-                <img id="loginIllus" src="Images/loginIlustrator.png">
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <form class="form" method="post" action="login">
-                    <div class="col-sm-12 avatarDiv">
-                        <img id="avatar" src="Images/avatar.png">
-                    </div>
-                    <div class="form-group col-sm-12 inputBox">
-                        <input class="form-control" type="text" name="uid" value="${userId}"placeholder="User Id" required>
-                    </div>
-                    <div class="form-group col-sm-12 inputBox">
-                        <input class="form-control" type="password" name="pass" placeholder="Password" required>
-                    </div>
-                    <div class="col-sm-12 d-flex justify-content-start">
-                        <button data-toggle="modal" data-target="#exampleModalCenter" type="button" id="forgot" text-decoration="none" style="color:grey"><i class="fas fa-question-circle"></i>  Forgot Password</button>
-                    </div>
-                    <div class="col-sm-12 d-flex justify-content-center">
-                        <label class="loginError">${message }</span>
-                    </div>
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary" id="bnLogin" name="submit" value="login">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+			<div class="hidden-md-down col-md-6 d-flex justify-content-center ">
+				<img id="loginIllus" src="Images/loginIlustrator.png">
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<form class="form" method="post" action="login">
+					<div class="col-sm-12 avatarDiv">
+						<img id="avatar" src="Images/avatar.png">
+					</div>
+					<div class="form-group col-sm-12 inputBox">
+						<input class="form-control" type="text" name="uid"
+							value="${userId}" placeholder="User Id" required>
+					</div>
+					<div class="form-group col-sm-12 inputBox">
+						<input class="form-control" type="password" name="pass"
+							placeholder="Password" required>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-start">
+						<button data-toggle="modal" data-target="#exampleModalCenter"
+							type="button" id="forgot" text-decoration="none"
+							style="color: grey">
+							<i class="fas fa-question-circle"></i> Forgot Password
+						</button>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-center">
+						<label class="loginError">${message }</span>
+					</div>
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-primary" id="bnLogin"
+							name="submit" value="login">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
 
-        <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Account Verification</h5>
-        <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="UserIdVerify" method="post">
-         <span class="badge badge-danger">Only Students can use this Verification</span>
-        <span class="badge badge-warning">A Verification code will be sent to your email</span>
-        <input class="form-control" name= "userId" type="text" placeholder="Enter User Id" required>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Send</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-			
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalCenterTitle"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle">Account
+							Verification</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="UserIdVerify" method="post">
+							<span class="badge badge-danger">Only Students can use
+								this Verification</span> <span class="badge badge-warning">A
+								Verification code will be sent to your email</span> <input
+								class="form-control" name="userId" type="text"
+								placeholder="Enter User Id" required>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>

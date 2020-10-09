@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 String clzId = (String) session.getAttribute("classroomId");
 String lessonId = (String) session.getAttribute("lessonId");
@@ -90,17 +90,17 @@ String lessonId = (String) session.getAttribute("lessonId");
 				<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
 				<input name="classroomId" id="<%=clzId%>" hidden>
 				<%System.out.println(clzId); %>
-			<div class="row">
-				<input placeholder="Title" id="titleInput" name="title">
-			</div>
-			<div class="row">
-				<textarea placeholder="Description" id="description"
-					name="description"></textarea>
-			</div>
-			<div class="row">
-				<button type="type" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Next</button>
-			</div>
+				<div class="row">
+					<input placeholder="Title" id="titleInput" name="title">
+				</div>
+				<div class="row">
+					<textarea placeholder="Description" id="description"
+						name="description"></textarea>
+				</div>
+				<div class="row">
+					<button type="type" class="btn btn-primary" name="btnSubmit"
+						id="btnSubmit">Next</button>
+				</div>
 			</form>
 			<!--Footer Here-->
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>

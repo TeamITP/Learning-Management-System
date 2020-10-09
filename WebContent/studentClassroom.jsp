@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 String clzId = (String)session.getAttribute("classroomId");
 		if (session.getAttribute("userId") != null) {
@@ -84,7 +84,9 @@ String clzId = (String)session.getAttribute("classroomId");
 		<div class="pageContainer">
 			<h3 id="lessonName"><%=classroom.getSubject() %></h3>
 			<div class="row">
-				<p id="introLesson"><%=classroom.getDescription() %>  |  <%=classroom.getClassTime() %></p>
+				<p id="introLesson"><%=classroom.getDescription() %>
+					|
+					<%=classroom.getClassTime() %></p>
 			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Lesssons</h1>
@@ -97,7 +99,8 @@ String clzId = (String)session.getAttribute("classroomId");
 				int i = 0;
 				for (Lesson lesson : lessons) {
 				%>
-				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=lesson.getLessonId()%>').click()">
+				<div class="col-1.5 itemContainer"
+					onclick="document.getElementById('<%=lesson.getLessonId()%>').click()">
 					<img src="Images/lessonImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-10">
@@ -111,20 +114,22 @@ String clzId = (String)session.getAttribute("classroomId");
 							<h3 id="title"><%=lesson.getName() %></h3>
 						</div>
 					</div>
-					
+
 					<form action="LessonClick" method="Post">
-				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
-				<input type="submit" id="<%=lesson.getLessonId()%>" hidden></form>
+						<input name="lessonId" id="lessonId"
+							value="<%=lesson.getLessonId() %>" hidden> <input
+							type="submit" id="<%=lesson.getLessonId()%>" hidden>
+					</form>
 				</div>
 				<%
 					}
 				%>
+			</div>
+
+
+			<!--Footer Here-->
+			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
-
-
-		<!--Footer Here-->
-		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"

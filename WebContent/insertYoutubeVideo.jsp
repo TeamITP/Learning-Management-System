@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
@@ -84,22 +84,21 @@
 			</div>
 			<img src="Images/youtubeContent.png" id="mainImg">
 			<form action="VideoUpload" method="Post">
-				<input name="classroomId" id="classroomId" value="<%=classroom.getClassrooId() %>" hidden>
-			<div class="row">
-				<input placeholder="Video Title" id="titleInput" name="videoName">
-			</div>
-			<div class="row">
-				<input placeholder="Video URL" id="titleInput" 
-					name="url">
-			</div>
-			<div class="row">
-				<input placeholder="Description" id="titleInput" 
-					name="description">
-			</div>
-			<div class="row">
-				<button type="submit" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Insert Video</button>
-			</div>
+				<input name="classroomId" id="classroomId"
+					value="<%=classroom.getClassrooId() %>" hidden>
+				<div class="row">
+					<input placeholder="Video Title" id="titleInput" name="videoName">
+				</div>
+				<div class="row">
+					<input placeholder="Video URL" id="titleInput" name="url">
+				</div>
+				<div class="row">
+					<input placeholder="Description" id="titleInput" name="description">
+				</div>
+				<div class="row">
+					<button type="submit" class="btn btn-primary" name="btnSubmit"
+						id="btnSubmit">Insert Video</button>
+				</div>
 			</form>
 			<!--Footer Here-->
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
@@ -116,7 +115,7 @@
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 	crossorigin="anonymous"></script>
 <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 
