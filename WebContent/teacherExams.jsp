@@ -109,9 +109,9 @@
        <div class="col second"> 
 
         <form action="Examinations" method="post">
-            <input name="classroomId" value="<%=clzId %>" hidden>
+            <input name="classroomId" value="<%=clzId%>" hidden>
              <input type="Deadline" name="date" placeholder="Date" required>
-             <textarea placeholder="Description" name="discription"></textarea>
+             <textarea placeholder="Description" name="discription" required></textarea>
              
         <div class="row"><button type="submit" class="btn btn-primary btn2">Add Exam</button></div>
         

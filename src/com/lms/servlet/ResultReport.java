@@ -49,7 +49,9 @@ public class ResultReport extends HttpServlet {
 		String path = examinationServices.generateReport(examid,getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
+			
 			response.sendRedirect(path);
+			
 		} else {
 			request.setAttribute("message", "Error in Generating Report");
 			request.setAttribute("link", "classroomsTeacher.jsp");

@@ -50,11 +50,10 @@ public class Recorrection extends HttpServlet {
 		
 		
 		Recorrect recorrect = new Recorrect();
-		
 		recorrect.setDescription(Description);
 		recorrect.setResultId(result_id);
 		
-  
+
 		
   
 		
@@ -64,7 +63,7 @@ public class Recorrection extends HttpServlet {
 		
 		 if(status == 1)
 		    {request.setAttribute("message", "Recorrection is Successfully insert");
-			request.setAttribute("link", "index.jsp");
+			request.setAttribute("link", "Recorrect.jsp");
 			request.setAttribute("status", "OK");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response); 	

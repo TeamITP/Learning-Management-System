@@ -31,6 +31,8 @@ public class RecorrectionServicesImp implements RecorrectionServices{
 	     preparedstatement.setString(2, recorrection.getDescription());
 	   
 	     
+	     System.out.println(recorrection.getResultId());
+	     System.out.println(recorrection.getDescription());
 	     
 	     status =  preparedstatement.executeUpdate();
 	     

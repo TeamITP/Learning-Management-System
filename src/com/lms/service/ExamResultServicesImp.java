@@ -207,6 +207,7 @@ connection = ConnectDB.getDBConnection();
 				if (resultSet.getString(4).equals(studentid)) {
 					examResult.setMarks(resultSet.getInt(5));
 					examResult.setRank(resultSet.getInt(6));
+					examResult.setResult_ID(resultSet.getString(2));
 					break;
 				}
 				
@@ -247,6 +248,7 @@ connection = ConnectDB.getDBConnection();
 			ResultSet resultSet = preparedstatement.executeQuery();
 			
 			while (resultSet.next()) {
+				examresult.setResult_ID(resultSet.getString(2));
 				examresult.setExam_ID(resultSet.getString(3));
 				examresult.setMarks(resultSet.getInt(5));
 				examresult.setStudent_ID(resultSet.getString(4));

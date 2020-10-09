@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
          <link rel="stylesheet" href="CSS/ResultTeacherView.css">
-         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
          
         
 </head>
@@ -99,11 +100,11 @@ String examId = (String)session.getAttribute("examId");
  
         <div class="col col1">
        
-            <input type="text" class="id" name="id" placeholder="Student ID">
+            <input type="text" class="id" name="id" placeholder="Student ID" required>
             <input type="text" name="exmaId" value="<%=examId %>" hidden>
         </div>
-        Quantity (between 1 and 100):
-        <div class="col col1"><input type="text" class="marks"  name="marks" placeholder="Marks" min="1" max="100"></div>
+        
+        <div class="col col1"><input type="text" class="marks"  name="marks" placeholder="Marks" "></div>
         <div class="col col1"><button type="submit" class="btn btn-primary addresult">Add Result</button></div>
     </div>
     </form>
@@ -117,7 +118,7 @@ String examId = (String)session.getAttribute("examId");
     <div class="row justify-content-start sheet"> Result Sheet</div>
     
     <div class="input-group md-form form-sm form-2 pl-0">
-  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
+  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" aria-label="Search">
   <div class="input-group-append">
     <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
         aria-hidden="true"></i></span>
@@ -127,16 +128,17 @@ String examId = (String)session.getAttribute("examId");
 
     
 <% for(ExamResult examresult: arrayList) {%>
+<table id="myTable">
     <div class="row grid" >
-        <div class="col one"><%=examresult.getResult_ID() %></div>
-        <div class="col one"><%=examresult.getStudent_ID() %></div>
-        <div class="col two"><%=examresult.getMarks() %></div>
-        <div class="col three"><%=examresult.getRank() %></div>
-        <div class="col four"><button type="button" data-toggle="modal" data-target="#update<%=examresult.getResult_ID() %>" class="btn btn-danger edit">Update</button></div>
-        <div class="col five"><button type="button" data-toggle="modal" data-target="#delete<%=examresult.getResult_ID()%>" class="btn btn-danger delete">Delete</button></div>
+    
+      <tr><td width=15%><div class="col one"><%=examresult.getResult_ID() %></div></td>
+      <td width=15%><div class="col one"><%=examresult.getStudent_ID() %></div></td>
+      <td width=20%><div class="col two"><%=examresult.getMarks() %></div></td>
+      <td width=20%><div class="col three"><%=examresult.getRank() %></div></td>
+      <td ><div class="col four"><button type="button" data-toggle="modal" data-target="#update<%=examresult.getResult_ID() %>" class="btn btn-danger edit">Update</button></div></td>
+     <td><div class="col five"><button type="button" data-toggle="modal" data-target="#delete<%=examresult.getResult_ID()%>" class="btn btn-danger delete">Delete</button></div></td>
      
-     
-			
+  		</tr>
         
         <!--Moodal for update marks-->
 		<div class="modal fade" id="update<%=examresult.getResult_ID() %>" role="form">
@@ -193,16 +195,41 @@ String examId = (String)session.getAttribute("examId");
 									class="btn btn-warning promt">Cansel</button>
 								<button type="submit" class="btn btn-primary promt">Delete</button>
 							</div>
+							<div class="col"><img src="Images/image4.png" width="5" height="5"></div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+			
     </div>
-                    
+  </table>   
+  
+  
+ <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>         
     <%} %>  
-    
+       
+   <script>
+    $("input[name='marks']").change(function() {
+      number = $("input[name='marks']").val()
+       if( number < 0 || number > 100 ) {
+           $("input[name='marks']").val("");
+           alert("You can only input between 0 - 100 ");
+         }
+       });
+</script>
+
+   
+   
     <!-- Search form -->  
   
     <div class="row report">
@@ -215,7 +242,10 @@ String examId = (String)session.getAttribute("examId");
 					<button type="submit" class="btn btn-danger" id="btnReport">Get
 						Report of Results</button></form>
 				</div>
-			</div>                 
+			</div>     
+			
+			
+		        
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>
