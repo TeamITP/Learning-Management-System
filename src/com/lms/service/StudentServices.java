@@ -2,6 +2,7 @@ package com.lms.service;
 
 
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -45,6 +46,9 @@ public interface StudentServices {
 
 
 		ArrayList<Student> getStudentArrayList(String classroomId);
+
+
+		ArrayList<Student> getStudentArrayListbyDate(String classroomId, java.util.Date startDate, java.util.Date endDate);
 
 
 }

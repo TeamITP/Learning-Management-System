@@ -28,7 +28,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 
 	String clzId = (String) session.getAttribute("classroomId");
@@ -106,11 +106,13 @@
 			</div>
 
 			<div class="row listClass">
-			<%LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
+				<%LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
 			ArrayList<ReadingMaterial> readingMaterials = lessonMaterialsService.getListReadingMaterials(lessonId);
 			for(ReadingMaterial readingMaterial : readingMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/pdfIcon.png" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()" id="clzImg">
+					<img src="Images/pdfIcon.png"
+						onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"
+						id="clzImg">
 					<div class="row">
 						<div class="col-8">
 							<h3 id="lessonNum">PDF</h3>
@@ -118,18 +120,21 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
+							<h3 id="title"
+								onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
 						</div>
 					</div>
 				</div>
-				
-		<form action="ReadingClick" target="_blank" method="post" hidden>
-		<input name="materialId" value="<%=readingMaterial.getReadingMatId() %>" hidden>
-		<input name="link" value="<%=readingMaterial.getPathLink() %>" hidden>
- 		<input type="submit" id="click<%=readingMaterial.getReadingMatId()%>">
-		</form>
+
+				<form action="ReadingClick" target="_blank" method="post" hidden>
+					<input name="materialId"
+						value="<%=readingMaterial.getReadingMatId() %>" hidden> <input
+						name="link" value="<%=readingMaterial.getPathLink() %>" hidden>
+					<input type="submit"
+						id="click<%=readingMaterial.getReadingMatId()%>">
+				</form>
 				<%} %>
-</div>
+			</div>
 
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Video Tutorials</h1>
@@ -141,7 +146,9 @@
 			ArrayList<VideoMaterial> videoMaterials = lessonMaterialsService.getListVideo(lessonId);
 			for(VideoMaterial videoMaterial : videoMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/youtubeVideo.png" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()" id="youtubeV">
+					<img src="Images/youtubeVideo.png"
+						onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"
+						id="youtubeV">
 					<div class="row">
 						<div class="col-8">
 							<h3 id="lessonNum">YouTube</h3>
@@ -149,14 +156,17 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"><%=videoMaterial.getName() %></h3>
+							<h3 id="title"
+								onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"><%=videoMaterial.getName() %></h3>
 						</div>
 					</div>
 				</div>
 
-				
-		<form action="<%=videoMaterial.getUrl() %>" target="_blank" hidden>
-		<input type="submit" id="click<%=videoMaterial.getVideoMatId()%>"></form><%} %>
+
+				<form action="<%=videoMaterial.getUrl() %>" target="_blank" hidden>
+					<input type="submit" id="click<%=videoMaterial.getVideoMatId()%>">
+				</form>
+				<%} %>
 			</div>
 		</div>
 		<!--Footer Here-->

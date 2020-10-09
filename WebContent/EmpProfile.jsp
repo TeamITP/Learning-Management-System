@@ -12,16 +12,20 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Employee | Profile</title>
-    <link rel="stylesheet" href="EmployeeProfile/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="EmployeeProfile/css/styles.css">
-    
-    <meta charset="ISO-8859-1">
-    <link rel="icon" href="Images/book.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Employee | Profile</title>
+<link rel="stylesheet"
+	href="EmployeeProfile/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="EmployeeProfile/css/styles.css">
+
+<meta charset="ISO-8859-1">
+<link rel="icon" href="Images/book.png">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
 
 <body style="border-radius: 7px;">
@@ -125,28 +129,66 @@
 						<label class="modal-title">Delete</label>
 						<button type="button" id="bnClose" style="outline: none"
 							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="post" action="EmployeeDelete">
-							<div class="row">
-								<input value="admin" name="url" hidden> <input value="<%=username %>"
-									name="userId" hidden> <label
-									style="padding: 10px; padding-left: 20px;"> Are you sure to delete your profile
-									?</label>
-							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cancel</button>
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</div>
-						</form>
+
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col" style="width: 300px;">
+							<div class="row">
+								<div class="col">
+									<a href="paymentHome.jsp"><button class="btn btn-primary"
+											type="button" style="padding-right: 20px; margin: 20px;">Go
+											to Dashboard</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
 		</div>
-    
+	</div>
+	<script src="EmployeeProfile/js/jquery.min.js"></script>
+	<script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
+
+
+	</div>
+
+	<!--Moodal for delete Profile-->
+	<div class="modal fade" id="deleteModal" role="form">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<label class="modal-title">Delete</label>
+					<button type="button" id="bnClose" style="outline: none"
+						class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<form class="modalUpd" method="post" action="EmployeeDelete">
+						<div class="row">
+							<input value="admin" name="url" hidden> <input
+								value="<%=username %>" name="userId" hidden> <label
+								style="padding: 10px; padding-left: 20px;"> Are you sure
+								to delete your profile ?</label>
+						</div>
+						<!-- form-group end.// -->
+						<div class="form-group">
+							<button data-dismiss="modal"
+								style="margin-right: 20px; color: #ffffff"
+								class="btn btn-warning">Cancel</button>
+							<button type="submit" class="btn btn-danger">Delete</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>
