@@ -401,7 +401,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 			document.save(filePath);
 			document.close();
 			
-			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Class_ID + ".pdf";
+			filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + Class_ID + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
