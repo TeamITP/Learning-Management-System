@@ -485,7 +485,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			cos.close();
 
 
-			//filePath = root + File.separator + classroomId + ".pdf";
+			filePath = root + File.separator + classroomId + ".pdf";
 
 			document.save(filePath);
 			System.out.println(filePath);
