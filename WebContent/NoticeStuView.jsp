@@ -60,29 +60,29 @@
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 			<div class="pageTopicContainer">
-				<h1 class="pageTopic">Notices</h1>
+				<h1 class="pageTopic"> Notices </h1>
 				<hr class="dividerTopic">
 			</div>
-
+			
 
 
 			<div class="boxed">
-				<h6>Title</h6>
-				Combined Mathematics exam will be held on next monday at 10.00 am.
-			</div>
-
-			<div class="boxed1">
-				<h6>Title</h6>
-				2020 A/L Chemistry class will not be held in next sunday.
-			</div>
-
-
-
-			<img src="Images/notice1.png" id="img1" width="600" height="500">
-
-			<!--Footer Here-->
-			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+			<h6>Title</h6>
+		Combined Mathematics exam will be held on next monday at 10.00 am.
 		</div>
+		
+		<div class="boxed1">
+			<h6>Title</h6>
+		2020 A/L Chemistry class will not be held in next sunday. 
+		</div>
+		
+	
+		
+<img src="Images/notice1.png" id="img1" width ="600" height="500">
+
+		<!--Footer Here-->
+		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
