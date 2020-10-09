@@ -61,18 +61,21 @@
 		<div class="pageContainer">
 			<div class="contact-clean">
 
-                <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
+                <!--<div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
                 <div class="col"><label>Enter Email Address</label><input class="form-control" name = "address" type="text" required></div>
                 <div class="col"><label>Enter Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
-                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
+                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>-->
 
-
+						<div class="col">
+							<label>Enter First Name</label><input class="form-control"
+								name="firstName" type="text" required>
+						</div>
 						<div class="col">
 							<label>Enter Last Name</label><input class="form-control"
 								name="lastName" type="text" required>
 						</div>
 						<div class="col">
-							<label>Enter the Address</label><input class="form-control"
+							<label>Enter Email Address</label><input class="form-control"
 								name="address" type="text" required>
 						</div>
 						<div class="col">
