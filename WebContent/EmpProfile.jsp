@@ -122,7 +122,7 @@
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<label class="modal-title">Delete</label>
+						<label class="modal-title">Delete Account</label>
 						<button type="button" id="bnClose" style="outline: none"
 							class="close" data-dismiss="modal">&times;</button>
 					</div>
