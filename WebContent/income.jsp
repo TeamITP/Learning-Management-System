@@ -10,16 +10,14 @@
 
 
 <!-- Required meta tags-->
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Colorlib Templates">
-<meta name="author" content="Colorlib">
-<meta name="keywords" content="Colorlib Templates">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-<!-- Title Page-->
-<title>Payment Home</title>
-
+    <!-- Title Page-->
+    <title>Incomes</title>
 
 
 
@@ -30,7 +28,6 @@
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 	
-
 <link rel="icon" href="Images/pmtIcon.png">
 <link rel="stylesheet" href="CSS/nav_pmt.css">
 <link rel="stylesheet" href="CSS/paymenthome.css">
@@ -38,18 +35,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-
-</head>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	</head>
 
 
 
 <body>
-
 
 <!-- mdbootstrapJaVaScrip-->
 <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
@@ -70,24 +63,24 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="paymentHome.jsp" class="active"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a>
+		<a href="paymentHome.jsp" class="active" ><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
 			<a href="ClassFee_pmt.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
 				href="tsalary.jsp"><i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
 				href="emsalary.jsp"><i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
 				href="income.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
-
-				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
+				href="expendi.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
 				href="expendi.jsp"> <i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a> <a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			</a>
+			
+			
+				 <a
+				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
 			<a href="empTeacherReg.jsp"><i
 				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
 				href="empStudentReg.jsp"> <i
@@ -99,113 +92,29 @@
 
 	<div class="page-container">
 		<!--Header Here-->
-
-
+		
+		
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 			<div class="pageTopicContainer">
 				
 				<hr class="dividerTopic">
 			</div>
-
-
+			
+		
 			<!--------------------------------------Body-------------------------------->
-			<!-----------------------------------Body------------------------------------->
-			<!-----------------------------------Body--------------------------------->
+					<!-----------------------------------Body------------------------------------->
+				<!-----------------------------------Body--------------------------------->
 			<!----------------------------------Body------------------------------------>
-
 			
 			
    				 
    				 <div class="txttttheader">			
- 			<h2> Payment Category</h2>
+ 			<h2> Institute Incomes</h2>
  			</div>
  			
  		
  		
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Hey Employee!</strong> Please be sure to sign out every time you use and end up to ensure the security of payments transactions
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
- 			
-
-
- 			<div class="container">
-  <div class="row row-cols-3">
-    <div class="col"><div class="wrapperIMG">
-  <div class="image1"> <a href="ClassFee_pmt.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/classfees.png" a class="btn btn-outline-light" href="ClassFee_pmt.jsp" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Class Fees</h5>
-    <p class="card-text">To pay the tuition fees of the students attending the class</p>
-    <a href="ClassFee_pmt.jsp" class="btn btn-primary">Pay Class Fee</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div></div>
-    <div class="col"><div class="image1">
-    				 <a href="tsalary.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/teachersalary.png" a class="btn btn-outline-light" href="tsalary.jsp" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Teachers Salary</h5>
-    <p class="card-text">To pay the monthly salary of the teachers related to the class.</p>
-    <a href="tsalary.jsp" class="btn btn-primary">Pay Teacher Salary</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-    				 <a href="emsalary.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/employeesalary.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Employee Salary</h5>
-    <p class="card-text">To pay the monthly salary of the employees related to the institution.</p>
-    <a href="#" class="btn btn-primary">Employee Salary</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-     				<a href="income.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/income.png"  a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-    <div class="col"><div class="image1">
-     				<a href="expendi.jsp" title="">
-    				
-<div class="card" style="width: 18rem;">
-  <img src="Images/expand.png" a class="btn btn-outline-light" href="#" role="button" style="width:150px;height:150px;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-    				</a>
-    				</div></div>
-  </div>
-</div>
 
 
 
@@ -333,5 +242,4 @@
 		
 		</body>		
 	
-
 </html>
