@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
@@ -49,27 +49,30 @@
 				<h3 id="titleTop">Update Classroom</h3>
 			</div>
 			<form action="UpdateClassroom" method="post">
-			<input placeholder="Subject" type="text" id="classroomId"
-						name="classroomId" value="<%=clzId %>"  hidden>
+				<input placeholder="Subject" type="text" id="classroomId"
+					name="classroomId" value="<%=clzId %>" hidden>
 				<div class="row">
 					<input placeholder="Subject" type="text" id="subject"
 						name="subject" value="<%=classroom.getSubject() %>" required>
 				</div>
 				<div class="row">
-					<input placeholder="Grade" value="<%=classroom.getGrade() %>" type="text" id="grade" name="grade"
-						required>
+					<input placeholder="Grade" value="<%=classroom.getGrade() %>"
+						type="text" id="grade" name="grade" required>
 				</div>
 				<div class="row">
-					<input placeholder="Class Date & Time" value="<%=classroom.getClassTime() %>" type="text" id="clzTime"
+					<input placeholder="Class Date & Time"
+						value="<%=classroom.getClassTime() %>" type="text" id="clzTime"
 						name="clzTime" required>
 				</div>
 				<div class="row">
-					<input placeholder="Description" value="<%=classroom.getDescription() %>" type="text" id="description"
-						name="description" required>
+					<input placeholder="Description"
+						value="<%=classroom.getDescription() %>" type="text"
+						id="description" name="description" required>
 				</div>
 				<div class="row">
-					<button type="submit" style="color:white !important"class="btn btn-warning" name="btnSubmit"
-						id="bnCreateClz">Update Classroom</button>
+					<button type="submit" style="color: white !important"
+						class="btn btn-warning" name="btnSubmit" id="bnCreateClz">Update
+						Classroom</button>
 				</div>
 			</form>
 

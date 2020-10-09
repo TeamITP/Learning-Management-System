@@ -2,7 +2,8 @@
 	url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
 	;
 
-:root { --primary: rgb(0, 132, 255);
+:root { -
+	-primary: rgb(0, 132, 255);
 }
 
 * {
@@ -158,15 +159,15 @@ nav li a:hover {
 }
 
 #loginA {
-	background:rgb(0, 132, 255);
-	color:white;
-	padding:5px 15px;
-	outline:none;
-	margin-left:20px;
+	background: rgb(0, 132, 255);
+	color: white;
+	padding: 5px 15px;
+	outline: none;
+	margin-left: 20px;
 	text-decoration: none !important;
-	border-radius:5px;
+	border-radius: 5px;
 }
 
 #loginA:hover {
-	cursor:pointer;
+	cursor: pointer;
 }

@@ -1,117 +1,111 @@
 @charset "ISO-8859-1";
-.mark
-{
-background-color:#006FFF !important;
-margin-left: 15px;
-border:1px solid #006FFF;
 
+.mark {
+	background-color: #006FFF !important;
+	margin-left: 15px;
+	border: 1px solid #006FFF;
 }
-.marks
-{
-    background-color: white;
-    margin-left: 15px;
-    border:1px solid #006FFF;
-    
+
+.marks {
+	background-color: white;
+	margin-left: 15px;
+	border: 1px solid #006FFF;
 }
-.head{
-    padding-left: 35px;
+
+.head {
+	padding-left: 35px;
 }
-.rank
-{
-    background-color: #FF0057;
-    margin-left: 15px;
-    border:1px solid #FF0057;
-    padding-top: 5px;
-    
+
+.rank {
+	background-color: #FF0057;
+	margin-left: 15px;
+	border: 1px solid #FF0057;
+	padding-top: 5px;
 }
-.ranks{
-    background-color: white;
-    margin-left: 15px;
-    border:1px solid #FF0057;
-    padding-top: 5px;
-   
+
+.ranks {
+	background-color: white;
+	margin-left: 15px;
+	border: 1px solid #FF0057;
+	padding-top: 5px;
 }
-.head2
-{
-    padding-left: 35px;
+
+.head2 {
+	padding-left: 35px;
 }
-.sheet
-{
-    padding:5px;
-    background-color:#006FFF;
-    border-radius: 7px;
-    max-width: max-content;
-    max-height: max-content;
-    margin: 20px;
-    color:white;
-    background-image:url('Ellipse 134.png') ;
-    margin-right:130px;      
+
+.sheet {
+	padding: 5px;
+	background-color: #006FFF;
+	border-radius: 7px;
+	max-width: max-content;
+	max-height: max-content;
+	margin: 20px;
+	color: white;
+	background-image: url('Ellipse 134.png');
+	margin-right: 130px;
 }
 
 .one, .two, .three {
-    max-width:  max-content;
-    max-height: max-content;
-}
-.row1
-{
-	margin-top:70px;
+	max-width: max-content;
+	max-height: max-content;
 }
 
-.coltwo{
-	margin-left:150px;
+.row1 {
+	margin-top: 70px;
 }
-.grid
-{
-   margin-top: 10px;
-   text-align: center;
-   margin-top: 10px ;
-   padding: 5px;
-}
-.one
-{
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.two
-{
-    background-color: #A7CBFB;
-    border-radius: 7px;
-    margin-right: 15px;
-   
 
-    
+.coltwo {
+	margin-left: 150px;
 }
-.three
-{
-    background-color: #FBFBA7;
-    border-radius: 7px;
+
+.grid {
+	margin-top: 10px;
+	text-align: center;
+	margin-top: 10px;
+	padding: 5px;
 }
-.btn 
-{
-    border-radius: 50px !important;
-    padding: 3px 40px !important;
-    margin-top: 5px ;
-    margin-left: 5px;
+
+.one {
+	margin-right: 15px;
+	margin-left: 15px;
 }
-.colone
-{
-    margin-left: 50px;
-    margin-top: 5px;
+
+.two {
+	background-color: #A7CBFB;
+	border-radius: 7px;
+	margin-right: 15px;
 }
-.coltwo
-{
-    margin-left: 170px;
-    margin-top: 5px;
-    
+
+.three {
+	background-color: #FBFBA7;
+	border-radius: 7px;
 }
+
+.btn {
+	border-radius: 50px !important;
+	padding: 3px 40px !important;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.colone {
+	margin-left: 50px;
+	margin-top: 5px;
+}
+
+.coltwo {
+	margin-left: 170px;
+	margin-top: 5px;
+}
+
 .pageTopic {
-    font-size: 15px;
-    color: #636363;
+	font-size: 15px;
+	color: #636363;
 }
+
 .dividerTopic {
-    border-top: 1px solid #707070;
-    margin-top: 0;
-    margin-bottom: 0;
+	border-top: 1px solid #707070;
+	margin-top: 0;
+	margin-bottom: 0;
 }
-
-

@@ -1,12 +1,12 @@
 .assignContainer {
-  margin: 10px;
-  border:1px solid #0080ff;
-  border-radius: 5px;
+	margin: 10px;
+	border: 1px solid #0080ff;
+	border-radius: 5px;
 }
 
 #imageAssignm {
-  z-index:-1;
-  margin-top:15px;
+	z-index: -1;
+	margin-top: 15px;
 }
 
 btnDelete1{

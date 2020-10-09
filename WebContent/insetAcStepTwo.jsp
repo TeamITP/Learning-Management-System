@@ -21,7 +21,7 @@
 
 
 <body>
-<%
+	<%
 	String username = "";
 String clzId = (String) session.getAttribute("classroomId");
 String lessonId = (String) session.getAttribute("lessonId");
@@ -89,8 +89,9 @@ String lessonId = (String) session.getAttribute("lessonId");
 				<img src="Images/step2.png" id="stepImage">
 			</div>
 			<div class="row">
-				<form enctype='multipart/form-data' method="post" action="ReadingUpload">
-				<input value="<%=clzId %> name="classroomId" hidden>
+				<form enctype='multipart/form-data' method="post"
+					action="ReadingUpload">
+					<input value="<%=clzId %> name=" classroomId" hidden>
 					<div class="uploadField">
 						<label for="fileUpload"> <img id="btnUpload"
 							src="Images/addIcon.png" name="btnUpload">
@@ -101,8 +102,8 @@ String lessonId = (String) session.getAttribute("lessonId");
 						</label>
 					</div>
 			</div>
-			<input onchange="inputChanged()" draggable="true" type="file" name="file"
-				id="fileUpload" hidden />
+			<input onchange="inputChanged()" draggable="true" type="file"
+				name="file" id="fileUpload" hidden />
 			<div class="row">
 				<button type="submit" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Next</button>
