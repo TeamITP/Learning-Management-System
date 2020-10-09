@@ -10,11 +10,12 @@
 
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Untitled</title>
@@ -27,11 +28,19 @@
   padding: 8px;
 }
     </style>
+
+<!--  <meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Untitled</title>
+<link rel="stylesheet" href="feed/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="feed/css/styles.css">
+>>>>>>> refs/remotes/origin/Aruni-->
 </head>
 
 <body>
 
-<%
+	<%
 	String username = "";
 		if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -51,6 +60,7 @@
 
 
 	<div class="page-container">
+
 	
 	<!-- Header here -->
   		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -121,6 +131,116 @@
                         </div>
                     </div>
                    <!--   <div style="padding-left: 30px;">
+=======
+
+		<!--
+		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+
+		<div class="row"
+			style="padding-top: 10px; padding-right: 50px; padding-left: 50px; padding-bottom: 10px;">
+			<div class="col"
+				style="padding-right: 15px; border-style: solid; border-color: rgb(246, 247, 249); margin-right: 10px;">
+				<div class="row"
+					style="height: 100px; border-style: solid; border-color: rgb(56, 146, 235);">
+					<div class="col" style="border-color: rgb(0, 136, 255);">
+						<div class="row">
+							<div class="col" style="padding-left: 0px; padding-right: 0px;">
+								<div>
+									<img class="img-fluid"
+										src="Teacher_Profile/img/500_F_320535373_RjsT5od9qoPmIfiusXuQuaAfhgYHh7Uy.png"
+										style="height: 62px; width: 746px;">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label class="col-form-label"><%=teacher.getName() %></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="padding-top: 10px; margin-top: 10px;">
+					<div class="col">
+						<div style="padding-left: 30px;">
+							<div class="row">
+								<div class="col" style="width: 150px; padding-left: 15px;">
+									<div style="height: 42px; padding-left: 60px;">
+										<label
+											style="background-color: #0088FF; width: 150px; color: rgb(252, 253, 254); padding-left: 50px; border-radius: 5px; height: 35px;">Name</label>
+									</div>
+								</div>
+								<div class="col">
+									<div style="height: 42px; padding-left: -10px;">
+										<label
+											style="border-style: solid; border-color: #197dff; width: 150px; color: #A8A0A0; border-radius: 5px; padding-left: 18px; height: 35px;"><%=teacher.getName() %></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="padding-left: 30px;">
+							<div class="row">
+								<div class="col" style="width: 150px; padding-left: 15px;">
+									<div style="height: 42px; padding-left: 60px;">
+										<label
+											style="background-color: #0088FF; width: 150px; color: rgb(252, 253, 254); padding-left: 50px; border-radius: 5px; height: 35px;">Subject</label>
+									</div>
+								</div>
+								<div class="col">
+									<div style="height: 42px; padding-left: -10px;">
+										<label
+											style="border-style: solid; border-color: #197dff; width: 150px; color: #A8A0A0; border-radius: 5px; padding-left: 18px; height: 35px;"><%=teacher.getSubject() %></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="padding-left: 30px;">
+							<div class="row">
+								<div class="col" style="width: 150px; padding-left: 15px;">
+									<div style="height: 42px; padding-left: 60px;">
+										<label
+											style="background-color: #0088FF; width: 150px; color: rgb(252, 253, 254); padding-left: 50px; border-radius: 5px; height: 35px;">Contact</label>
+									</div>
+								</div>
+								<div class="col">
+									<div style="height: 42px; padding-left: -10px;">
+										<label
+											style="border-style: solid; border-color: #197dff; width: 150px; color: #A8A0A0; border-radius: 5px; padding-left: 18px; height: 35px;"><%=teacher.getContact() %></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="padding-left: 30px;">
+							<div class="row">
+								<div class="col" style="width: 150px; padding-left: 15px;">
+									<div style="height: 42px; padding-left: 60px;">
+										<label
+											style="background-color: #0088FF; width: 150px; color: rgb(252, 253, 254); padding-left: 50px; border-radius: 5px; height: 35px;">Birthday</label>
+									</div>
+								</div>
+								<div class="col">
+									<div style="height: 42px; padding-left: -10px;">
+										<label
+											style="border-style: solid; border-color: #197dff; width: 150px; color: #A8A0A0; border-radius: 5px; padding-left: 18px; height: 35px;"><%=teacher.getBirthdate()%></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="padding-left: 30px;">
+							<div class="row">
+								<div class="col" style="width: 150px; padding-left: 15px;">
+									<div style="height: 42px; padding-left: 60px;">
+										<label
+											style="background-color: #0088FF; width: 150px; color: rgb(252, 253, 254); padding-left: 50px; border-radius: 5px; height: 35px;">Title</label>
+									</div>
+								</div>
+								<div class="col">
+									<div style="height: 42px; padding-left: -10px;">
+										<label
+											style="border-style: solid; border-color: #197dff; width: 150px; color: #A8A0A0; border-radius: 5px; padding-left: 18px; height: 35px;"><%=teacher.getTitle()%>
+									</div>
+								</div>-->
+								<!--   <div style="padding-left: 30px;">
+>>>>>>> refs/remotes/origin/Aruni
                         <div class="row">
                             <div class="col" style="width: 150px;padding-left: 15px;">
                                 <div style="height: 42px;padding-left: 60px;"><label style="background-color: #0088FF;width: 150px;color: rgb(252,253,254);padding-left: 50px;border-radius: 5px;height: 35px;">Email</label></div>
@@ -130,6 +250,7 @@
                             </div>
                         </div>
                     </div>-->
+
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;">
@@ -285,7 +406,7 @@
      </div>
      <!--Footer Here-->
             <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-            </div>
+      </div>
             
             
               
@@ -320,6 +441,8 @@
 			</div>
 		</div>
     
+
+
 </body>
 
 </html>

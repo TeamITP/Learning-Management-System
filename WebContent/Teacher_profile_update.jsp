@@ -7,24 +7,21 @@
 <%@page import="com.lms.model.Certification"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="CSS/Teacher_profile_update.css">
- <style type="text/css">
- @media screen and (max-width: 600px) {
- .col-75 {
-    width: 100%;
-    margin-top: 0;
-  
-  }
+<style type="text/css">
+@media screen and (max-width: 600px) {
+	.col-75 {
+		width: 100%;
+		margin-top: 0;
+	}
 }
- 
- 
- </style>
+</style>
 </head>
 <body>
 <%
@@ -45,6 +42,7 @@
 		//ArrayList<Teacher> arrayList = teacher_managment .getTeacherDeatail(username);
 	%>
 	<div class="page-container">
+
 		 <!-- Header here -->
   		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
   	<div class="pagecontainer">	
@@ -141,10 +139,11 @@
 	  </div>
 	
 	
+	
 	<!-- Footer Here -->
-		   <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-		
+	<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+
 	</div>
 </body>
- 
+
 </html>
