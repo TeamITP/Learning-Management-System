@@ -9,21 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.ExamResult;
-import com.lms.service.ExamResultServices;
-import com.lms.service.ExamResultServicesImp;
+import com.lms.model.Recorrect;
+import com.lms.service.RecorrectionServices;
+import com.lms.service.RecorrectionServicesImp;
+
+
+
 
 /**
- * Servlet implementation class UpdateResult
+ * Servlet implementation class Recorrection
  */
-@WebServlet("/UpdateExResult")
-public class UpdateExResult extends HttpServlet {
+@WebServlet("/Recorrection")
+public class Recorrection extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateExResult() {
+    public Recorrection() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,29 +44,34 @@ public class UpdateExResult extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int Marks  =Integer.parseInt(request.getParameter("marks"));
-		String ResultId = request.getParameter("resultId");
 		
-		ExamResult examresult = new ExamResult();
-		
-		examresult.setMarks(Marks);
+		String Description = request.getParameter("description");
+		String result_id = request.getParameter("resultid");
 		
 		
-		ExamResultServices examresultservices = new ExamResultServicesImp();	
+		Recorrect recorrect = new Recorrect();
+		recorrect.setDescription(Description);
+		recorrect.setResultId(result_id);
 		
-		int status = examresultservices.UpdateResult(ResultId, Marks);
+
+		
+  
+		
+		
+		RecorrectionServices recorrectionservices = new RecorrectionServicesImp();
+		int status = recorrectionservices.InsertRecorrection(recorrect);
+		
 		 if(status == 1)
-		    {
-			 request.setAttribute("message", "Result Update Succssfully ");
-				request.setAttribute("link", "ResultTeacherView.jsp");
-				request.setAttribute("status", "OK");
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-				dispatcher.forward(request, response); 	 	
+		    {request.setAttribute("message", "Recorrection is Successfully insert");
+			request.setAttribute("link", "Recorrect.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response); 	
 		    }
 		    else if(status == 0)
 		    {
-		    	request.setAttribute("message", "updateFailed");
+		    	request.setAttribute("message", "Insert Failed");
 		    }
-	}
+	} 
 
 }
