@@ -1,7 +1,11 @@
 package com.lms.service;
 
+/**
+ *  Imbulana Liyanage D.S.I.
+ * IT19134772
+ */
 
-
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +15,7 @@ import java.util.ArrayList;
 
 import java.util.logging.Logger;
 
- 
+import com.lms.model.Classroom;
 import com.lms.model.Student;
  
 
@@ -36,15 +40,30 @@ public interface StudentServices {
 		 * @return ArrayList<Lesson>
 		 * @param Class Id
 		 */
-		
+ 
 		public Student getStudentById(String studentId);
 		
 		public int removeStudentClassroom(String studentId, String classroomId);
 		
 		public int addStudentClassroom(String studentId, String classroomId);
+		
+		public String studentgenerateReport(String classroomId, String root);
+		
+		public ArrayList<Student> getStudentList();
 
 
-		ArrayList<Student> getStudentArrayList(String classroomId);
+		public int removeStudent(String Student_ID);
+
+
+		public Student CountStudent();
+
+
+		 
+
+		 
+
+
+		ArrayList<Student> getStudentArrayListbyDate(String classroomId, java.util.Date startDate, java.util.Date endDate);
 
 
 }

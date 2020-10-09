@@ -38,8 +38,8 @@
 				<h3 id="titleTop">Create Classroom</h3>
 			</div>
 			<form method="post" action="AddClassroom">
-			<input placeholder="Description" type="text" id="teacherId"
-						name="teacherId" value="<%=username%>" hidden>
+				<input placeholder="Description" type="text" id="teacherId"
+					name="teacherId" value="<%=username%>" hidden>
 				<div class="row">
 					<input placeholder="Subject" type="text" id="subject"
 						name="subject" required>

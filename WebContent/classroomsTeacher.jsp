@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 		if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -46,16 +46,19 @@
 				<h3 id="titleTop">Classrooms</h3>
 			</div>
 			<div class="row listClass">
-			<%
+				<%
 			ClassroomServices classroomServices = new ClassroomServicesImpl();
 			ArrayList<Classroom> arrayList = classroomServices.getClassroomList(username);
 			
 			for(Classroom classroom: arrayList) {%>
-				<div class="col-1.5 itemContainer" onclick="document.getElementById('<%=classroom.getClassrooId()%>').click()">
+				<div class="col-1.5 itemContainer"
+					onclick="document.getElementById('<%=classroom.getClassrooId()%>').click()">
 					<img src="Images/classroomImg.jpg" id="clzImg">
 					<div class="row">
 						<div class="col-9">
-							<h3 id="classYear">Grade <%=classroom.getGrade() %></h3>
+							<h3 id="classYear">
+								Grade
+								<%=classroom.getGrade() %></h3>
 						</div>
 					</div>
 					<div class="row">
@@ -65,12 +68,15 @@
 					</div>
 				</div>
 				<form action="ClassroomClick" method="Post">
-				<input name="classId" id="classId" value="<%=classroom.getClassrooId() %>" hidden>
-				<input type="submit" id="<%=classroom.getClassrooId()%>" hidden></form>
+					<input name="classId" id="classId"
+						value="<%=classroom.getClassrooId() %>" hidden> <input
+						type="submit" id="<%=classroom.getClassrooId()%>" hidden>
+				</form>
 				<%} %>
 
 				<div class="col-1.5 itemContainer">
-					<a href="createClassroom.jsp"><img id="btnUpload" src="Images/addIcon.png" name="btnUpload"></a>
+					<a href="createClassroom.jsp"><img id="btnUpload"
+						src="Images/addIcon.png" name="btnUpload"></a>
 				</div>
 			</div>
 		</div>

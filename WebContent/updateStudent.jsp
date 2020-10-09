@@ -1,24 +1,29 @@
+<!--Imbulana Liyanage D.S.I.-->
+<!--IT19134772-->
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.lms.model.Student"%>
 <%@page import="com.lms.service.StudentServicesImple"%>
 <%@page import="com.lms.service.StudentServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>update Student</title>
-    <link rel="stylesheet" href="studentupdate/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="studentupdate/css/styles.css">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>update Student</title>
+<link rel="stylesheet"
+	href="studentupdate/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="studentupdate/css/styles.css">
 <title>Insert title here</title>
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
 
-<%String username = "";
+	<%String username = "";
 
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -57,7 +62,7 @@
                         <div class="col"><label><strong>Last Name</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label><input class="form-control-lg" id= "lastName" name = "lastName" value = "<%=student.getLastName() %>" type="text" style="margin: 9px;"></div>
                     </div>
                     <div class="row">
-                         <div class="col"><label><strong>Address&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></label><input class="form-control-lg" id= "address" name = "address" value = "<%=student.getAddress() %>" type="text" style="margin: 9px;"> </div> 
+                         <div class="col"><label><strong>Email Address&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></label><input class="form-control-lg" id= "address" name = "address" value = "<%=student.getAddress() %>" type="text" style="margin: 9px;"> </div> 
                     </div>
                     <div class="row">
                         <div class="col"><label><strong>Phone Number&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><input class="form-control-lg" id= "phone" name = "phone" value = "<%=student.getPhone() %>" type="text" style="margin: 9px;"></div>
@@ -90,6 +95,7 @@
     </form>
     <script src="studentupdate/js/jquery.min.js"></script>
     <script src="studentupdate/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 
