@@ -79,26 +79,24 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-			<h1 class="pageTopic">Assignment</h1>
-			<hr class="dividerTopic">
+
+		<h1 class="pageTopic">Assignment</h1>
+              <hr class="dividerTopic">
+                <div class="row">
+		<div class="col-5"> 
+             
+	
+	
+<form action="AddAssignment" method="post">
 
 
 
-			<form action="AddAssignment" method="post">
 
-				<h1>Add Question</h1>
-				<input type="Deadline" name="deadline" placeholder="Deadline"
-					required>
-				<textarea placeholder="Question" name="question"></textarea>
-				<input name="classroomId" value="<%=clzId %>" hidden>
-				<button type="submit" class="btn">Add Assignment</button>
-			</form>
+</div>
+<div class="col-5"><img id="a2" src="Images/a2.png"  width="600" height="500"> </div></div>
 
-			<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
+    <!--Footer Here-->
 
-
-		</div>
-		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
 
