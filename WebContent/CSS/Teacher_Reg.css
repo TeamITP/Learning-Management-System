@@ -1,66 +1,64 @@
 @charset "ISO-8859-1";
 /*Teacher Registration css*/
-h3{
-	 color:white;
-}
-.row1{
-	border-radius: 8px;
-	padding-left:20px;
-	padding-top:500px;
-	
-}
-.rowh{
-	border-radius: 8px;
-	padding-left:20px;
-	padding-top:500px;
+h3 {
+	color: white;
 }
 
-.Reg-contain{
-	padding-top:100PX;
-	
-	
+.row1 {
+	border-radius: 8px;
+	padding-left: 20px;
+	padding-top: 500px;
+}
+
+.rowh {
+	border-radius: 8px;
+	padding-left: 20px;
+	padding-top: 500px;
+}
+
+.Reg-contain {
+	padding-top: 100PX;
 }
 /**/
-.form{
-	padding-top:20px
+.form {
+	padding-top: 20px
 }
+
 div.row_f1 {
-  height: 350px;
- 
+	height: 350px;
 }
+
 div.row_f2 {
-  height: 90px;
- 
+	height: 90px;
 }
 /*image positioning*/
-img{
-	position: center; 
+img {
+	position: center;
 }
 
-.reg-form{
+.reg-form {
 	border-style: groove;
-	 border-color:#006FFF;
-	 border-radius: 8px;
-	 border-width: 1.5px;
-	 
+	border-color: #006FFF;
+	border-radius: 8px;
+	border-width: 1.5px;
 }
 
-.form-group1,.form-group2,.form-group3,.form-group4,.form-group5,.form-group6{
-	padding-top:13px;
-	
+.form-group1, .form-group2, .form-group3, .form-group4, .form-group5,
+	.form-group6 {
+	padding-top: 13px;
 }
-div.reg-img{
-  position: absolute;
-  top: 250px;
-  right: -100px;
-  
-  /*width: 200px;
+
+div.reg-img {
+	position: absolute;
+	top: 250px;
+	right: -100px;
+
+	/*width: 200px;
   height: 100px;*/
-  
-}
-	div.reg-form{
-	right: 100px;
-	left:50px;
-	}
 }
 
+div.reg-form {
+	right: 100px;
+	left: 50px;
+}
+}

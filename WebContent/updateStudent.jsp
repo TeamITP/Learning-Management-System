@@ -6,22 +6,24 @@
 <%@page import="com.lms.service.StudentServicesImple"%>
 <%@page import="com.lms.service.StudentServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>update Student</title>
-    <link rel="stylesheet" href="studentupdate/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="studentupdate/css/styles.css">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>update Student</title>
+<link rel="stylesheet"
+	href="studentupdate/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="studentupdate/css/styles.css">
 <title>Insert title here</title>
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
 
-<%String username = "";
+	<%String username = "";
 
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
@@ -93,6 +95,7 @@
     </form>
     <script src="studentupdate/js/jquery.min.js"></script>
     <script src="studentupdate/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 

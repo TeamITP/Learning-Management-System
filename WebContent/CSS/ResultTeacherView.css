@@ -1,89 +1,86 @@
 @charset "ISO-8859-1";
-.grid
-{
-   margin-top: 10px;
-   margin-top: 10px;
-   padding: 5px;
-   text-align: center;
-}
-.one
-{
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.two
-{
-    background-color: #A7CBFB;
-    border-radius: 7px;
-    margin-right: 15px;
-    
-}
-.three
-{
-    background-color: #FBFBA7;
-    border-radius: 7px;
-}
-.id{
-margin-left: 14px;
-}
-.row1
-{
-    margin-top: 5px;
-    border: 2px solid #006FFF;
-    width: max-content;
-    border-radius: 7px;
-    margin-left:10px; 
 
-}
-.id{
-    padding: 7px;
-    margin: 12px;
-    border-radius: 7px;
-}
-.marks
-{
-    padding:7px;
-    margin: 12px;
-    border-radius: 7px;
-}
-.addresult
-{
-    margin: 12px;
-}
-.sheet
-{
-    padding:5px;
-    background-color:#006FFF;
-    border-radius: 7px;
-    max-width: max-content;
-    max-height: max-content;
-    margin: 20px;
-    color: white;
-    margin-left:2px;
-}
-.edit
-{
-width:150px !important;
-border-radius: 22px !important;
-margin-right:5px !important;
-margin-left:5px !important;
-background-color:#FFC400 !important;
-
+.grid {
+	margin-top: 10px;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: center;
 }
 
-.delete
-{
-   width:150px !important;
-   border-radius: 22px !important;
-   margin-left:8px !important;
-
+.one {
+	margin-right: 15px;
+	margin-left: 15px;
 }
-.five
-{
-	 margin-left:12px;
+
+.two {
+	background-color: #A7CBFB;
+	border-radius: 7px;
+	margin-right: 15px;
+}
+
+.three {
+	background-color: #FBFBA7;
+	border-radius: 7px;
+}
+
+.id {
+	margin-left: 14px;
+}
+
+.row1 {
+	margin-top: 5px;
+	border: 2px solid #006FFF;
+	width: max-content;
+	border-radius: 7px;
+	margin-left: 10px;
+}
+
+.id {
+	padding: 7px;
+	margin: 12px;
+	border-radius: 7px;
+}
+
+.marks {
+	padding: 7px;
+	margin: 12px;
+	border-radius: 7px;
+}
+
+.addresult {
+	margin: 12px;
+}
+
+.sheet {
+	padding: 5px;
+	background-color: #006FFF;
+	border-radius: 7px;
+	max-width: max-content;
+	max-height: max-content;
+	margin: 20px;
+	color: white;
+	margin-left: 2px;
+}
+
+.edit {
+	width: 150px !important;
+	border-radius: 22px !important;
+	margin-right: 5px !important;
+	margin-left: 5px !important;
+	background-color: #FFC400 !important;
+}
+
+.delete {
+	width: 150px !important;
+	border-radius: 22px !important;
+	margin-left: 8px !important;
+}
+
+.five {
+	margin-left: 12px;
 	column-width: 5px;
 }
-.promt
-{
-	margin-top:7px !important;
+
+.promt {
+	margin-top: 7px !important;
 }

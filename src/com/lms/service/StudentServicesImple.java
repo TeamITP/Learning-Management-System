@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -246,9 +247,53 @@ public class StudentServicesImple implements StudentServices{
 		return student;
 	}
 
+
+	public ArrayList<Student> getStudentArrayListbyDate(String classroomId, java.util.Date startDate, java.util.Date endDate) {
+		ArrayList<Student> arrayList = new ArrayList<Student>();
+
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT * FROM ClassroomStudent WHERE  Classroom_id = ? AND Date >= ? AND Date <= ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, classroomId);
+			preparedStatement.setDate(2, new Date(startDate.getTime()));
+			preparedStatement.setDate(3, new Date(endDate.getTime()));
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				Student  student = new Student();
+				student.setStudent_ID(resultSet.getString(2));
+				student.setJoinDate(resultSet.getString(3));
+				arrayList.add(student);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return arrayList;
+	}
+	
 	@Override
-	public int removeStudentClassroom(String studentId, String classroomId) {
-		int status = 0;
+	public Student getStudentById(String studentId) {
+		Student student = new Student();
+
 		try {
 			connection = ConnectDB.getDBConnection();
 
