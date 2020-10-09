@@ -1,68 +1,73 @@
 @charset "ISO-8859-1";
-
-form textarea {
-	margin: 20px;
-	padding: 40px 20px;
-	width: 580px;
-	outline: none;
-	font-size: 16px;
-	height: 320px;
-	border-radius: 8px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3), inset 3px 3px 3px
-		rgba(0, 0, 0, 0.3);
+form textarea{
+    margin: 20px;
+    padding: 40px 20px;
+    width: 580px;
+    outline: none;
+    font-size: 16px;
+    height:320px ;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3),
+    inset 3px 3px 3px rgba(0,0,0,0.3);
 }
 
-.btn2 {
-	position: relative;
-	margin: 20px 20px 40px 20px;
-	height: 40px;
-	width: 280px;
-	border: none;
-	outline: none;
-	border-radius: 8px;
-	color: White;
-	background: #006FFF;
-	font-size: 18px;
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-	border-radius: 10px !important;
+.btn2{
+
+    position: relative;
+    margin: 20px 20px 40px 20px;
+    height: 40px;
+    width: 280px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: White;
+    background: #006FFF;
+    font-size: 18px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    border-radius:10px !important;
+ 
 }
 
-form input {
-	margin: 20px;
-	padding: 10px 20px;
-	width: 280px;
-	border: none;
-	outline: none;
-	font-size: 16px;
-	border-radius: 10px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3), inset 3px 3px 3px
-		rgba(0, 0, 0, 0.3);
-	transition: 0.6s ease-in-out;
+form input{
+    margin: 20px;
+    padding: 10px 20px;
+    width: 280px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3),
+    inset 3px 3px 3px rgba(0,0,0,0.3);
+    transition: 0.6s ease-in-out;
 }
 
-form {
-	position: absolute;
-	width: 800px;
-	background: #fff;
-	border-radius: 20px sloid #006FFF;
-	border: #006FFF;
-	box-sizing: border-box;
-	overflow: hidden;
-	margin-left: 70px;
-	margin-top: 80px;
+
+form{
+    position: absolute;
+    width: 800px;
+    background: #fff;
+    border-radius:20px sloid #006FFF ;
+    border: #006FFF;
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 70px;
+    margin-top: 80px;
+
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Montserrat", sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
 }
-
-.row1 {
-	margin-right: 10px;
+.row1
+{
+    margin-right: 10px;
 }
-
-.picture {
-	margin-top: 20px;
+.picture
+{
+    margin-top: 20px;
+   
 }
