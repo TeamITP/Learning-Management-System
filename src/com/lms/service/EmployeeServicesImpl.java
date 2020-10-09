@@ -389,10 +389,10 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 									 * Then see, where your file originally saved on pc
 									 * */
-									filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For GitHub Deployment TESTING
-									//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+									filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empId + ".pdf";
 						
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
