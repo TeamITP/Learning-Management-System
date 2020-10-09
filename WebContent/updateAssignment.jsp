@@ -55,11 +55,66 @@ String aId = request.getParameter("A_ID");
 				<img src="Images/avatarTeacher.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
+<%@page import="com.lms.model.Classroom"%>
+<%@page import="com.lms.service.ClassroomServicesImpl"%>
+<%@page import="com.lms.service.ClassroomServices"%>
+<%@page import="com.lms.model.Assignment"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.lms.service.AssignmentServiceImpl"%>
+<%@page import="com.lms.service.AssignmentServices"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <title>Update Question</title>
+<link rel="icon" href="Images/book.png">
+        <link rel="stylesheet" href="CSS/teacherNav.css">
+     <link rel="stylesheet" href="CSS/teacherClassroom.css">
+     <link rel="stylesheet" href="CSS/UploadAssignment.css">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+<body>
+<%
+
+String aId = request.getParameter("A_ID");
+	String username = "";
+	String clzId = (String) session.getAttribute("classroomId");
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'T') {
+			response.sendRedirect("index.jsp");
+		}
+
+		
+		if (clzId == null) {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	
+	ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+	%>
+	
+	<div class="sideNav">
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/avatarTeacher.png" id="imageUserNav">
+			</div>
+			<div class="col-8 align-items-center">
 				<h5 class="nameNav"><%=username%></h5>
 			</div>
 		</div>
 		<hr id="breakLine">
-
+		
 		<div class="mainSideNav">
 			<a href="teacherClassroom.jsp"><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
@@ -83,7 +138,6 @@ String aId = request.getParameter("A_ID");
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-
 		<h1 class="pageTopic">Assignment</h1>
               <hr class="dividerTopic">
             <div class="row">
@@ -92,7 +146,12 @@ String aId = request.getParameter("A_ID");
 	
 <form action="updateAssignment" method="post">
 
-
+   <h1>Update Question</h1>
+    <input type="Deadline" name="deadline" placeholder="Deadline" required>
+    <textarea placeholder="Question" name="question"></textarea>
+    <input name="aId" value="<%=aId %>" hidden>
+    <button type="submit" class="btn">Update Assignment</button>
+</form>
 
  	
 
@@ -100,10 +159,9 @@ String aId = request.getParameter("A_ID");
 </div>
  <div class="col-5"> <img id="imageAssignm" src="Images/a2.png"   height="500" margin-right="100" ></div></div>
     <!--Footer Here-->
-
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>
-
+	</div>           
+           
 </body>
-
+ 
 </html>
