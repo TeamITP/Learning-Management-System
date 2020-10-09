@@ -19,6 +19,19 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
+<style>
+	.btndemo{
+		background-color: #33CCFF;
+  		border-radius: 12px;
+  		color: white;
+  		padding: 15px 15px;
+  		text-align: center;
+  		display: inline-block;
+  		font-size: 20px;
+  		margin: 2px 2px;
+  		cursor: pointer;	
+	}
+</style>
 
     <script>
 var b = 0;
@@ -49,6 +62,13 @@ var b = 0;
 		else{
 			return true;
 		}
+	}
+	
+	function demo(){
+		document.getElementById("fullname").value = "Kamala Ranasinghe";
+		document.getElementById("nic").value = "659087567V";
+		document.getElementById("phone").value = "0709965455";
+		document.getElementById("address").value = "870, Colombo Road, Kirillawala";
 	}
 	
 	</script>
@@ -122,7 +142,7 @@ var b = 0;
             <div class="row">
                 <div class="col-md-6">
                 <form onsubmit="return validate()" action="EmployeeInsert" method="post" >
-                    <div style="width: 380px;height: 380px;margin: 60px;padding: 20px;border: 3px solid rgb(0,111,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
+                    <div style="width: 380px;height: 450px;margin: 60px;padding: 20px;border: 3px solid rgb(0,111,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
                         <div class="row">
                             <div class="col" style="padding: 10px;"><input type="text" placeholder="Full Name" id="fullname" name="fullname" style="width: 320px;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" ></div>
                         </div>
@@ -137,7 +157,12 @@ var b = 0;
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 10px;">
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border: 3px solid rgb(0,109,255) ;"><label class="form-check-label" for="formCheck-1" style="width: 320px;font-size: 12px;">Above details are correct and agreed for the terms and conditions of the institute.</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border: 3px solid rgb(0,109,255) ;"><label class="form-check-label" for="formCheck-1" style="width: 320px;font-size: 14px;">Above details are correct and agreed for the terms and conditions of the institute.</label></div>
+                            </div>
+                        </div>
+                    	<div class="row"> 
+                            <div class="col" style="padding: 10px;">
+                            	<div class="btndemo"><input type="button" id="demo1" value="Demo" onClick="demo()"></div>
                             </div>
                         </div>
                         <div class="row">
@@ -147,6 +172,8 @@ var b = 0;
                     </div>
                 </form>    
                 </div>
+             
+                
                 <div class="col-md-6"><img src="EmployeeRegister/img/registerEmp.png" style="width: 350px;height: 350px;text-align: center;margin: 65px;padding: 10px;"></div>
             </div>
         </div>
