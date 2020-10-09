@@ -791,8 +791,8 @@ public String generateReport(String teacherId, String root) {
 	Cell<PDPage> cell;
 
 	Row<PDPage> row = table.createRow(20);
-	cell = row.createCell(15, "Teacher ID");
-	cell.setFontSize(12);
+	//cell = row.createCell(15, "Teacher ID");
+	//cell.setFontSize(12);
 	cell = row.createCell(15, "Teacher Name");
 	cell.setFontSize(12);
 	cell = row.createCell(15, "Teacher Title");
@@ -811,9 +811,9 @@ public String generateReport(String teacherId, String root) {
 		Teacher teacher1 = teacher_managmentx.getTeacher(teacher.get(i).getTeacherId());
 				
 		row = table.createRow(20);
-		cell = row.createCell(15, teacher1.getTeacherId());
-		cell.setFontSize(12);
-		cell.setTextColor(Color.GRAY);
+		//cell = row.createCell(15, teacher1.getTeacherId());
+		//cell.setFontSize(12);
+		//cell.setTextColor(Color.GRAY);
 		cell = row.createCell(15, teacher1.getName());
 		cell.setFontSize(12);
 		cell.setTextColor(Color.GRAY);
