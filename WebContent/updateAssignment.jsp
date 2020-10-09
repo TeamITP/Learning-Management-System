@@ -11,7 +11,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Upload Question</title>
+
+ <title>Update Question</title>
+
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/teacherNav.css">
 <link rel="stylesheet" href="CSS/teacherClassroom.css">
@@ -81,26 +83,24 @@ String aId = request.getParameter("A_ID");
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-			<h1 class="pageTopic">Assignment</h1>
-			<hr class="dividerTopic">
+
+		<h1 class="pageTopic">Assignment</h1>
+              <hr class="dividerTopic">
+            <div class="row">
+		<div class="col-5"> 
+	
+	
+<form action="updateAssignment" method="post">
 
 
 
-			<form action="updateAssignment" method="post">
+ 	
 
-				<h1>Update Question</h1>
-				<input type="Deadline" name="deadline" placeholder="Deadline"
-					required>
-				<textarea placeholder="Question" name="question"></textarea>
-				<input name="aId" value="<%=aId %>" hidden>
-				<button type="submit" class="btn">Update Assignment</button>
-			</form>
+ 
+</div>
+ <div class="col-5"> <img id="imageAssignm" src="Images/a2.png"   height="500" margin-right="100" ></div></div>
+    <!--Footer Here-->
 
-			<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
-
-
-		</div>
-		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>
 

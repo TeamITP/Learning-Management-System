@@ -272,6 +272,7 @@ $(document).ready(function(){
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
+
 				<div class="col-5">
 					<form action="ClzStudentReport" method="post">
 						<input name="classroomId" value="<%=clzId%>" hidden>
@@ -288,6 +289,7 @@ $(document).ready(function(){
 						<button type="submit" class="btn btn-danger" id="btnReport">Get
 							Report of Students</button>
 					</form>
+
 				</div>
 			</div>
 		</div>
