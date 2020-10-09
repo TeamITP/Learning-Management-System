@@ -41,19 +41,17 @@ public class Teacher_Profile_Update extends HttpServlet {
 		int status = teacher_managment1.updateTeacher(teacher);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
-			request.setAttribute("Teacher_ID", teacher.getTeacherId());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile_update.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Successfully Updated");
+			request.setAttribute("link", "Teacher_profile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			request.setAttribute("Teacher_ID", teacher.getTeacherId());
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", " Failed! Try again");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);	
 		}
 	}
 	

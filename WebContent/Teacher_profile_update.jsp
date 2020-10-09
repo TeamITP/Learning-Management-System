@@ -73,21 +73,24 @@
                                 <div style="padding-top: 5px;"><input class="form-control" type="date" name="birthday"value="<%=teacher.getBirthdate()%>"style="border-color: #197dff;"></div>
                                 <div style="padding-top: 5px;"><input class="form-control" name="pass" value="<%=teacher.getpw() %>" type="text" style="border-color: #197dff;"></div> 
                                   
-                                 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="submit" style="width: 120px;">Button</button></div>
+                                 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="submit" style="width: 120px;">Update</button></div>
                             </div>
                             </form>
                         </div>
-                        <div class="form-row">
+                        <!--   <div class="form-row">
                             <div class="col">
-                            	<form action="Teacher_Profile_Education_Update" method="post">
+                            	<!--  <form action="Teacher_Profile_Education_Update" method="post">
                             	 <input name="Teacher_ID" value="<%=username %>" hidden>
                                		 <div><label>Education</label></div>
                                		  <%Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
 							ArrayList<Education> arrayList = teacher_managment1.getEducationList(username);
 			
 							for(Education edu: arrayList) {%>
-                               	  <div><input class="form-control" type="text" name="edu" value="<%=edu.getEducation()%>" style="border-color: #197dff;height: 70px;"></div><%} %>
-                                	 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="submit" style="width: 120px;">Button</button></div>
+							<form action="Teacher_Profile_Education_Update" method="post">
+							 <input name="Teacher_ID" value="<%=username %>" hidden>
+							 <input name="EDU" value="<%=edu.getEducation() %>" hidden>
+                               	  <div><input class="form-control" type="text" name="edu" value="<%=edu.getEducation()%>" style="border-color: #197dff;height: 70px;"></div>
+                                	 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="submit" style="width: 120px;">Button</button></div><%} %>
                                 </form>
                                 <form>
                                 	 <div><label>Certification</label></div>
@@ -99,9 +102,9 @@
                                 	 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="button" style="width: 120px;">Button</button></div>
                            		</form>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
-                    <div class="col">
+                    <!--  <div class="col">
                         <div><label>Career Details</label></div>
                         <form>
                         		<div><label>Work Experience</label></div>
@@ -123,7 +126,7 @@
                                 <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="button" style="width: 120px;">Button</button></div>
                         </form>
                         <div style="padding-top: 60px;width: 150px;"><button class="btn btn-primary" type="button" style="width: 120px;">Button</button></div>
-                    </div>
+                    </div>-->
                 </div>
             </form>
         </div>

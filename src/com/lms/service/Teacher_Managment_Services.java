@@ -38,4 +38,7 @@ public interface Teacher_Managment_Services {
 	public int deleteTeacher1(String empId);
 	public int updateTeacher(Teacher teacher);
 	public int updateTeacherEducation( Education education );
+	
+	
+	public String generateReport(String teacherId, String root);
 }

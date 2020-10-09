@@ -141,13 +141,18 @@ var b = 0;
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 10px;">
+          <!--   <div class="row" style="padding-top: 10px;">
                 <div class="col" style="padding-top: 20px;">
                     <div class="container1" style="padding-left: 1px;">
-                        <div><input type="text" style="width: 300px;border: 2px solid rgb(0,123,255);border-radius: 5px;padding-top: 2px;"><button class="btn btn-primary" type="button" style="border-radius: 5px;height: 31px;padding-top: 1px;">Search</button></div>
+                        <div><input type="text" id="myInput"  style="width: 300px;border: 2px solid rgb(0,123,255);border-radius: 5px;padding-top: 2px;"><button class="btn btn-primary" type="button" style="border-radius: 5px;height: 31px;padding-top: 1px;">Search</button></div>
+                    	<div class="input-group-append">
+    					<span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+     					   aria-hidden="true"></i></span>
+  						</div>
                     </div>
                 </div>
-            </div>
+            </div>--> 
+            			
         </div>
         <div class="col">
             <div></div><img src="AdminSubjectList/img/undraw_people_search_wctu.png" style="height: 150px;"></div>
@@ -156,6 +161,15 @@ var b = 0;
     <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
         <div class="col">
             <div>
+            
+            
+			<div class="input-group md-form form-sm form-2 pl-0">
+  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
+  <div class="input-group-append">
+    <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+        aria-hidden="true"></i></span>
+  </div>
+</div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -169,7 +183,7 @@ var b = 0;
                             </tr>
                         </thead>
                        <% for(Teacher tec: arrayList) {%>
-                        <tbody>
+                        <tbody id="myTable">
                             <tr>
                                 <td>
                                     <div style="border-width: 1px;border-style: solid;height: 40px;background-color: #a5c7f4;"><%=tec.getTeacherId() %></div>
@@ -227,11 +241,22 @@ var b = 0;
                     </table>
                 </div>
             </div>
+            <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
         </div>
     </div>
+    
     <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
         <div class="col">
-            <div class="row">
+            <!--  <div class="row">
                 <div class="col" style="border-style: solid;border-color: rgb(0,111,255);border-radius: 5px;margin: 10px;">
                     <h1 style="font-size: 16px;background-color: #006fff;height: 38px;width: 100%;color: rgb(251,252,253);padding-left: 15px;">A/L Teachers</h1>
                     <div style="padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px;">
@@ -301,15 +326,16 @@ var b = 0;
                         <div class="col"><button class="btn btn-primary btn-block" type="button">Grade 5</button></div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
             <div class="row">
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
 				<div class="col-3">
-				<form action="ClzStudentReport" method="post">
-				<input name="classroomId"  hidden>
+				<form action="TeacherReport" method="post">
+				 
+				<input name="teacherID" value="<%=username %>" hidden>
 					<button type="submit" class="btn btn-danger" id="btnReport">Get
 						Report of Students</button></form>
 				</div>

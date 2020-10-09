@@ -15,26 +15,57 @@
     </head>
 
     <body>
-        <div class="sideNav">
-        <div class="row justify-content-center firstRow">
-            <div class="col-4">
-                <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
-            <div class="col-8 align-items-center">
-                    <h5 class="nameNav">Yasiru Randika</h5>
-            </div>
-        </div>
-        <hr id="breakLine">
-        <div class="mainSideNav">
-        <a href="employeeClassFess.jsp" ><i class="fas fa-money-bill-alt iconMainNavi" ></i>Class Fees</a>
-        <a href="empIncome.jsp"><i class="fas fa-funnel-dollar iconMainNavi"></i>Income</a>
-        <a href="empExpenditures.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditures</a>
-		<a href="empTeacherSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Teachers Salary</a>
-        <a href="empEmployeeSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Employees Salary</a>
-		<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a> 
-		<a href="empTeacherReg.jsp"class="active"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a>
-        <a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students</a>
-        </div>
-        </div>
+    
+    <%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("login.jsp");
+	}
+	%>
+       <div class="sideNav">
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/pmtIcon.png" id="imageUserNav">
+			</div>
+			<div class="col-8 align-items-center">
+				<h5 class="nameNav">Payments</h5>
+			</div>
+		</div>
+		<hr id="breakLine">
+		<div class="mainSideNav">
+		<a href="paymentHome.jsp" class="active" ><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
+			<a href="ClassFee_pmt.jsp"><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
+				href="tsalary.jsp"><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
+				href="teacherAssignments.jsp"><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
+				href="teacherNotices.jsp"><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
+				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
+				href="teacherPayments.jsp"> <i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
+			</a>
+			
+			
+				 <a
+				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i
+				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
+				href="empStudentReg.jsp"> <i
+				class="fas fa-user-plus iconMainNavi"></i>New Students
+			</a>
+		</div>
+
+	</div>
 
 <div class="page-container">
             <!--Header Here-->
@@ -55,12 +86,12 @@
                     <div class="col">
                         <div class="form-row">
                             <div class="col">
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Full Name"type="text" name="name"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Contact"type="text" name="contact"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Birthday"type="date" name="birthday"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Title"type="text" name="title"style="border-color: #197dff;"></div>
-                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Subject"type="text"name="subject" style="border-color: #197dff;"></div>
-                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Password"type="text"name="pass"style="border-color: #197dff;"></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Full Name"type="text" name="name"style="border-color: #197dff;" required></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Contact"type="text" name="contact"style="border-color: #197dff;"required></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Birthday"type="date" name="birthday"style="border-color: #197dff;"required></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Title"type="text" name="title"style="border-color: #197dff;"required></div>
+                                <div style="padding-top: 5px;"><input class="form-control" placeholder = "Subject"type="text"name="subject" style="border-color: #197dff;"required></div>
+                                 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Password"type="text"name="pass"style="border-color: #197dff;"required></div>
                                 <div>
                                     <div class="form-check" style="padding-top: 40px;"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border-radius: 2px;border: 2px solid #197dff ;border-bottom-color: #e73f34;"><label class="form-check-label" for="formCheck-1">Above details are correct and the teacher is agreed for the terms and conditions of the institute.</label></div>
                                 </div>

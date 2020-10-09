@@ -20,6 +20,13 @@
     <title>Untitled</title>
     <link rel="stylesheet" href="feed/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="feed/css/styles.css">
+    <style >
+    td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+    </style>
 </head>
 
 <body>
@@ -141,9 +148,9 @@
                                 <tr><td><%=edu.getEducation()%></td></tr><%} %></table>
                             </div>
                            
-                            <div class="col" style="padding-top: 20px;padding-right: 60px;">
+                         <!--    <div class="col" style="padding-top: 20px;padding-right: 60px;">
                             <div style="padding-top: 10px;padding-bottom:20px"><button class="btn btn-primary" type="button" onclick="location.href='Student_feedback.jsp'"style="width: 250px;">Add new Record</button></div>
-                        </div>
+                        </div>-->
                         </div>
                     </div>
                 </div>

@@ -25,10 +25,12 @@ public class Teacher_Profile_Education_Update extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Education education = new Education();
 		education.setTeacherId(request.getParameter("Teacher_ID"));
+		education.setTempeducation(request.getParameter("EDU"));
+		
 		education.setEducation(request.getParameter("edu"));
 		
 		
-	Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
+	   Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
 		
 		int status = teacher_managment1.updateTeacherEducation( education );
 		

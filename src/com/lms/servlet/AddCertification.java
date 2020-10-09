@@ -34,18 +34,18 @@ public class AddCertification extends HttpServlet {
 		int status = teacher_managment1.addCer(cer);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile.jsp");
-		    dis.forward(request, response);
+			//request.setAttribute("message", "Insert Succesful");
+			request.setAttribute("message", "New Record was added");
+			request.setAttribute("link", "Teacher_profile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
-		    dis.forward(request, response);
-		}
+			request.setAttribute("message", " Failed! Try again");
+			request.setAttribute("link", "teacherClassroom.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);	}	
 	}
 
 }

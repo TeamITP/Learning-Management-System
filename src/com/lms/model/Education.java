@@ -10,6 +10,7 @@ public class Education {
 		
 	private String TeacherId;
 	private String education;
+	private String tempeducation;
 	
 	
 	public Education() {
@@ -37,5 +38,17 @@ public class Education {
 		super();
 		TeacherId = teacherId;
 		this.education = education;
+	}
+	public Education(String teacherId, String education,String tempeducation) {
+		super();
+		TeacherId = teacherId;
+		this.education = education;
+		this.tempeducation= tempeducation;
+	}
+	public String getTempeducation() {
+		return tempeducation;
+	}
+	public void setTempeducation(String tempeducation) {
+		this.tempeducation = tempeducation;
 	}
 }
