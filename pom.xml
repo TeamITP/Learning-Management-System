@@ -94,6 +94,7 @@
 			<artifactId>boxable</artifactId>
 			<version>1.4</version>
 		</dependency>
+
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
