@@ -37,7 +37,7 @@
 	<div class="page-container">
 		 <!-- Header here -->
   		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-  		
+  	<div class="pagecontainer">		
   		<div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
         <div class="col">
             <div style="background-color: #197dff;border-radius: 5px;">
@@ -88,13 +88,13 @@
                             <div><input class="form-control" name="que"type="text" style="border-color: #197dff;height: 60px;"></div>
                             <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="submit" style="width: 120px;">Add new</button></div>
                         </form>
-                        <form>
+                      <!--  <form>
                         	<input placeholder="Description" type="text" id="teacherId"
 										name="teacherId" value="<%=username%>" hidden>
                             <div><label style="height: 24px;"><br>About Me<br><br></label></div>
                             <div><input class="form-control" type="text" style="border-color: #197dff;height: 60px;"></div>
                             <div style="padding-top: 10px;width: 150px;"><button class="btn btn-primary" type="button" style="width: 120px;">Add new</button></div>
-                        </form>
+                        </form>-->
                     </div>
                 </div>
             </form>
@@ -110,9 +110,9 @@
 	  </div>
 	
 	
-	<!-- Footer Here 
-	<br><br>
-		   <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>-->
+	<!-- Footer Here -->
+	
+		   <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		
 	</div>
 </body>

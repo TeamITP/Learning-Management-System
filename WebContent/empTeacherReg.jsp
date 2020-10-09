@@ -14,6 +14,82 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
+   <script>
+var b = 0;
+	function dropDown1() {
+	    if (b == 0) {
+	        document.getElementById("dropDown1").style.display = "inline-block";
+	        b = 1;
+	    } else {
+	        document.getElementById("dropDown1").style.display = "none";
+	        b = 0;
+	    }
+	}
+	
+	function validate(){
+		var Name = document.getElementById("name");
+		var contact = document.getElementById("name1");
+		var dob = document.getElementById("name2");
+		var title = document.getElementById("name3");
+		var sub = document.getElementById("name4");
+		var pw = document.getElementById("name5");
+		var chk = document.getElementById("formCheck-1");
+		
+		if(Name.value.trim() == "" || dob.value.trim() == "" || title.value.trim() == "" || sub.value.trim() == ""){
+			alert("No blank values are allowed !");
+		  	return false;
+		}
+		if(contact.value.length != 10){
+			alert("Please provide a valid phone number !");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	</script>
+	<script type="text/javascript">
+function demo(){
+	var Name = document.getElementById("name").value="Saman ";
+	var contact = document.getElementById("name1").value="0812464376";
+	var dob = document.getElementById("name2").value="03/10/1963 ";
+	var title = document.getElementById("name3").value="Teacher ";
+	var sub = document.getElementById("name4").value="Biology ";
+	var pw = document.getElementById("psw").value="Saman123 ";
+	
+}
+function checkPass()
+{
+    //Store the password field objects into variables ...
+    var password = document.getElementById('psw');
+    var confirm  = document.getElementById('confirm2');
+    //Store the Confirmation Message Object ...
+    var message = document.getElementById('confirm-message2');
+    //Set the colors we will be using ...
+    var good_color = "#66cc66";
+    var bad_color  = "#ff6666";
+    //Compare the values in the password field 
+    //and the confirmation field
+    if(password.value == confirm.value){
+        //The passwords match. 
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password 
+        confirm.style.backgroundColor = good_color;
+        message.style.color           = good_color;
+        message.innerHTML             = '<img src="/wp-content/uploads/2019/04/tick.png" alt="Passwords Match!">';
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        confirm.style.backgroundColor = bad_color;
+        message.style.color           = bad_color;
+        message.innerHTML             = '<img src="/wp-content/uploads/2019/04/publish_x.png" alt="Passwords Do Not Match!">';
+    }
+}  
+</script>
+	
+	
 </head>
 
 <body>
@@ -71,7 +147,7 @@
 			<div class="row"
 				style="padding-top: 10px; padding-right: 50px; padding-left: 100px;">
 				<div class="col" style="border-style: solid; border-color: #197dff;">
-					<form style="height: 468.525px;" action="Teacher_Registration"
+					<form onsubmit="return validate()"style="height: 468.525px;" action="Teacher_Registration"
 						method="post">
 						<div class="form-row">
 							<div class="col">
@@ -79,31 +155,31 @@
 									<div class="col">
 										<div style="padding-top: 5px;">
 											<input class="form-control" placeholder="Full Name"
-												type="text" name="name" style="border-color: #197dff;">
+												type="text"id="name" name="name" style="border-color: #197dff;" required>
 										</div>
 										<!--  <div style="padding-top: 5px;"><input class="form-control" placeholder = "Email"type="email"name="email"style="border-color: #197dff;"></div>-->
 										<div style="padding-top: 5px;">
 											<input class="form-control" placeholder="Contact" type="text"
-												name="contact" style="border-color: #197dff;">
+												name="contact"id="name1" style="border-color: #197dff;"required>
 										</div>
 										<div style="padding-top: 5px;">
 											<input class="form-control" placeholder="Birthday"
-												type="date" name="birthday" style="border-color: #197dff;">
+												type="date" name="birthday"id="name2" style="border-color: #197dff;"required>
 										</div>
 										<div style="padding-top: 5px;">
 											<input class="form-control" placeholder="Title" type="text"
-												name="title" style="border-color: #197dff;">
+												name="title"id="name3" style="border-color: #197dff;"required>
 										</div>
 										<div style="padding-top: 5px;">
 											<input class="form-control" placeholder="Subject" type="text"
-												name="subject" style="border-color: #197dff;">
+												name="subject" id="name4"style="border-color: #197dff;"required>
 										</div>
-										 <div style="padding-top: 5px;"><input class="form-control" placeholder = "Password"type="text"name="pass"style="border-color: #197dff;"required></div>
+										 <div style="padding-top: 5px;"><input class="form-control"id="psw"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder = "Password"type="text"name="pass"style="border-color: #197dff;"onkeyup="checkPass();"required></div>
 										<div>
 											<div class="form-check" style="padding-top: 40px;">
 												<input class="form-check-input" type="checkbox"
 													id="formCheck-1"
-													style="border-radius: 2px; border: 2px solid #197dff; border-bottom-color: #e73f34;"><label
+													style="border-radius: 2px; border: 2px solid #197dff; border-bottom-color: #e73f34;"required><label
 													class="form-check-label" for="formCheck-1">Above
 													details are correct and the teacher is agreed for the terms
 													and conditions of the institute.</label>
@@ -112,6 +188,9 @@
 										<div style="padding-top: 20px;">
 											<button class="btn btn-primary" type="submit">Register
 												Teacher</button>
+										</div>
+										<div style="padding-top: 20px;">
+											<button class="btn btn-primary" type="submit" id="demo1"value="DEMO" onclick="demo()">demo</button>
 										</div>
 									</div>
 								</div>
@@ -127,8 +206,7 @@
 				</div>
 			</div>
 
-
-
+			
 
 
 		</div>

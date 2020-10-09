@@ -177,13 +177,13 @@ var b = 0;
             <div>
             
             
-			<div class="input-group md-form form-sm form-2 pl-0">
-  <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
+			<!--  <div class="input-group md-form form-sm form-2 pl-0">
+    <input class="form-control my-0 py-1 red-border" type="text" id="myInput" placeholder="Search" aria-label="Search">
   <div class="input-group-append">
     <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
         aria-hidden="true"></i></span>
   </div>
-</div>
+</div>-->
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -348,7 +348,10 @@ $(document).ready(function(){
 				</div>
 				<div class="col-3">
 				<form action="TeacherReport" method="post">
-				 
+				<!--   <div class="col-6">
+						<p id="para">Enter the Subject</p>
+						<input type="text" class="dateS" name="sub" required="required">
+						</div>-->
 				<input name="teacherID" value="<%=username %>" hidden>
 					<button type="submit" class="btn btn-danger" id="btnReport">Get
 						Report of Students</button></form>

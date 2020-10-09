@@ -35,6 +35,7 @@ public class TeacherReport extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String teacherId = request.getParameter("teacherID");
+		//String sSubject=request.getParameter("sub");
 		
 		Teacher_Managment_Services teacher_managment2 = new Teacher_Managment_ServicesImple();
 		String path = teacher_managment2.generateReport(teacherId, getServletContext().getRealPath("/UploadedFiles/PDF"));

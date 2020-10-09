@@ -375,7 +375,7 @@
                     </div>
                 </div>
             </div>
-            <div style="padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px;">
+           <!--   <div style="padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px;">
                 <div class="row" style="border-style: solid;border-color: #197dff;height: 200px;border-radius: ppx;">
                     <div class="col">
                         <div><img src="Teacher_Profile/img/undraw_profile_6l1l.png" style="width: 250px;height: 200px;"></div>
@@ -393,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     <script src="Teacher_Profile/js/jquery.min.js"></script>

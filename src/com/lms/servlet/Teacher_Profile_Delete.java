@@ -33,21 +33,26 @@ public class Teacher_Profile_Delete extends HttpServlet {
 		int status = teacher_managment1.deleteTeacher(teacherId );
 		
 		if(status == 1) {
-			request.setAttribute("message", "Delete Successful");
-			HttpSession session=request.getSession();  
-	        session.invalidate();
+			//request.setAttribute("message", "Delete Successful");
+			//HttpSession session=request.getSession();  
+	       // session.invalidate();
 	        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			response.sendRedirect("index.jsp");
+			//response.sendRedirect("index.jsp");
 			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
 		    //dis.forward(request, response);
+			request.setAttribute("message", "Successfully Deleted");
+			request.setAttribute("link", "index.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Delete Failed");
-			request.setAttribute("userId", teacherId);
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
-		    dis.forward(request, response);
+			//request.setAttribute("message", "Student Assigning Failed");
+			request.setAttribute("link", "Teacher_profile.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 	}
 
 	}
