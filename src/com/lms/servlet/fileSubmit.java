@@ -42,7 +42,7 @@ public class fileSubmit extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(ServletFileUpload.isMultipartContent(request)){
+        /*if(ServletFileUpload.isMultipartContent(request)){
             try {
                 List <FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
                 for(FileItem item : multiparts){
@@ -59,7 +59,7 @@ public class fileSubmit extends HttpServlet {
         }else{
 
             request.setAttribute("gurumessage","No File found");
-}
+}*/
 
 
     }
