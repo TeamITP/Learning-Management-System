@@ -11,23 +11,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.lms.model.Employee;
 import com.lms.service.EmployeeServices;
 import com.lms.service.EmployeeServicesImpl;
-
 /**
- * Servlet implementation class EmployeeDelete
+ * Servlet implementation class EmployeeReport
  */
-@WebServlet("/EmployeeDelete")
-public class EmployeeDelete extends HttpServlet {
+@WebServlet("/EmployeeReport")
+public class EmployeeReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmployeeDelete() {
+    public EmployeeReport() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,28 +33,20 @@ public class EmployeeDelete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String empId = request.getParameter("userId");
-
+		String empId = request.getParameter("empId");
+		
 		EmployeeServices employeeServices = new EmployeeServicesImpl();
-		
-		int status = employeeServices.deleteEmployee(empId);
-		
-		if(status == 1) {
-			request.setAttribute("message", "Delete Successful");
-			HttpSession session=request.getSession();  
-	        session.invalidate();
-	        request.setAttribute("link", "index.jsp");
-			request.setAttribute("status", "OK");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-			dispatcher.forward(request, response);
-		} else if (status == 0) {
-			request.setAttribute("message", "Delete Failed");
-			request.setAttribute("userId", empId);
+		String path = employeeServices.generateReport(empId, getServletContext().getRealPath("/UploadedFiles/PDF"));
+		if(path != null) {
+			response.sendRedirect(path);
+		}else {
+			request.setAttribute("message", "Error in Generating Report");
 			request.setAttribute("link", "EmpProfile.jsp");
 			request.setAttribute("status", "FAIL");
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
 			dispatcher.forward(request, response);
+		}
+		
 	}
 
-}
 }

@@ -1,6 +1,13 @@
 <!--Anuththara K.G.S.N-->
 <!--IT19142692-->
 
+<%@page import="com.lms.model.Employee"%>
+<%@page import="com.lms.service.EmployeeServicesImpl"%>
+<%@page import="com.lms.service.EmployeeServices"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -106,121 +113,152 @@ var b = 0;
 
 
 <body>
+	<%
+		String username = "";
+			if (session.getAttribute("userId") != null) {
+			username = (String) session.getAttribute("userId");
+
+			if (username.charAt(0) != 'A') {
+			response.sendRedirect("index.jsp");
+			}
+
+			} else {
+			response.sendRedirect("index.jsp");
+			}
+
+			EmployeeServices employeeServices = new EmployeeServicesImpl();
+			ArrayList<Employee> arrayList = employeeServices.getEmployeeArrayList();
+			%>
 
 	<div class="pageContainer">
 
-		<div class="row">
-			<div class="col" style="width: 960px;">
-				<h1
-					style="width: 1000px; height: 45px; margin: 10px; padding: 10px; font-size: 25px; background-color: #3e8ce4; color: rgb(255, 255, 255); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Employee</h1>
-			</div>
-		</div>
-		<div class="row" style="height: 200px;">
-			<div class="col" style="height: 200px;">
-				<div class="row">
-					<div class="col" style="height: 110px; margin: 10px;">
-						<div
-							style="border-style: solid; border-color: rgb(62, 140, 228); width: 150px; height: 80px; margin: 20px; padding: 10px; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">
-							<div class="row">
-								<div class="col" style="width: 130px; height: 30px;">
-									<h1
-										style="font-size: 13px; height: 30px; width: 130px; background-color: #71afff;">Total
-										Employees</h1>
-								</div>
+	
+    <div class="row">
+        <div class="col" style="width: 960px;">
+            <h1 style="width: 1000px;height: 45px;margin: 10px;padding: 10px;font-size: 25px;background-color: #3e8ce4;color: rgb(255,255,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">Employee</h1>
+        </div>
+    </div>
+    <div class="row" style="height: 200px;">
+        <div class="col" style="height: 200px;">
+            <div class="row">
+                <div class="col" style="height: 110px;margin: 10px;">
+                    <div style="border-style: solid;border-color: rgb(62,140,228);width: 150px;height: 80px;margin: 20px;padding: 10px;border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
+                      <div>
+                        <div class="row">
+                            <div class="col"><label class="col-form-label" style="border-radius: 5px;border-style: none;border-color: rgb(77,160,244);background: linear-gradient(90deg, black 0%, rgb(0,111,255) 0%, rgb(117,215,247) 94%);background-color: #006FFF;width: 125px;height: 28px;">Total Employees</label></div>
+                        </div>
+                       	<%EmployeeServices employeeservices = new EmployeeServicesImpl();
+                       	Employee employees = employeeservices.CountEmployee();
+                       	%>
+                        <div class="row">
+                            <div class="col"><label class="col-form-label" style="border: 1px solid rgb(0,111,255);border-radius: 5px;padding-left: 35px;width: 125px;height: 28px;padding-top: 2px;"><%=employees.getcount() %></label></div>
+                        </div>
+                    </div>
+                      
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="col" style="height: 200px;"><img src="EmployeeAdmin/img/admin1Emp.png" style="width: 200px;height: 180px;margin: 10px;padding: 10px;"></div>
+    </div>
+    
+    <div class="row" style="height:30px">
+    		<form action="EmployeeReport" method="post">
+    		<input name="empId" value="<%=username %>" hidden>
+           	<div class="col"><button class="btn btn-success" type="submit" id="btnReport">Generate Report of Employees</button></div>
+    </div> 
+    
+    <div class="row" style="padding-top: 10px;padding-right: 50px;padding-left: 50px">
+        <div class="col">
+            <div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            	<th>Employee ID</th>
+      							<th> Name</th>
+     							<th>Address</th>
+     							<th>Phone</th>
+     							<th>NIC</th>
+     							<th>Password</th>
+                            </tr>
+                        </thead>
+                       <% for(Employee employee: arrayList) {%>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="border-width: 1px;border-style: solid;height: 40px ;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getEmp_ID() %></div>
+                                </td>
+                                <td>                                
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getName() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getAddress() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getPhone() %></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getNIC()%></div>
+                                </td>
+                                <td>
+                                    <div style="height: 40px;border: 1px solid #006FFF;border-style: solid;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px ;"><%=employee.getPassword()%></div>
+                                </td>
+                                <td><button class="btn btn-primary"data-toggle="modal" data-target="#del<%=employee.getEmp_ID() %>" type="submit" style="background-color: rgb(255,0,31);border-style: none;border-radius: 20px;">Delete</button></td>
+                            </tr>  
+                            
+            <div class="modal fade" id="del<%=employee.getEmp_ID() %>" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Remove Employee </label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="Post" action="EmployeeDel">
+						 <input value=  name="Emp_ID" hidden>
+							<div class="row"><input value="<%=employee.getEmp_ID() %>"
+									name="Emp_ID" hidden> <label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									remove this employee ?</label>
 							</div>
-							<div class="row">
-								<div class="col" style="width: 130px;">
-									<input type="text"
-										style="width: 130px; height: 30px; border-style: solid; border-color: rgb(62, 140, 228);">
-								</div>
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning">Cancel</button>
+								<button type="submit" class="btn btn-danger">Remove</button>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<input type="text"
-							style="margin: 20px; width: 350px; border-style: solid; border-color: rgb(62, 140, 228); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;"
-							placeholder="Search Employee Name Here">
-					</div>
-				</div>
-			</div>
-			<div class="col" style="height: 200px;">
-				<img src="EmployeeAdmin/img/admin1Emp.png"
-					style="width: 200px; height: 180px; margin: 10px; padding: 10px;">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col">
-				<input type="text"
-					style="margin: 2px; border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<button class="btn btn-primary" type="button"
-					style="background-color: rgb(217, 13, 0); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; height: 30px;">Delete</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<input type="text"
-					style="margin: 2px; border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<button class="btn btn-primary" type="button"
-					style="background-color: rgb(217, 13, 0); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; height: 30px; font-size: 16px;">Delete</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<input type="text"
-					style="margin: 2px; border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<input type="text" style="border-color: rgb(0, 123, 255);">
-			</div>
-			<div class="col">
-				<button class="btn btn-primary" type="button"
-					style="background-color: rgb(217, 13, 0); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; height: 30px;">Delete</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<a href="EmpRegister.jsp"><button class="btn btn-primary"
-						type="button"
-						style="margin: 10px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">Add
-						New Employee</button>
-			</div>
-		</div>
+                                 		                
+                        </tbody><%} %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="height:30px"></div>
+    
+    <div class="row">
+        <div class="col"><a href = "EmpRegister.jsp"><button class="btn btn-primary" type="button" style="margin: 10px;border-top-left-radius: 20px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;">Add New Employee</button></div>
+    </div> 
+		
+    </div>
+    <script src="EmployeeAdmin/js/jquery.min.js"></script>
+    <script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>
+    
+    </div>
+    
+		
 
-	</div>
-	<script src="EmployeeAdmin/js/jquery.min.js"></script>
-	<script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>
-
-	</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
