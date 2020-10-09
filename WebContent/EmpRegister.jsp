@@ -43,7 +43,7 @@ var b = 0;
 		
 		if(Name.value.trim() == "" || Nic.value.trim() == "" || Phone.value.trim() == "" || Address.value.trim() == ""){
 			alert("No blank values are allowed !");
-			return false;
+		  	return false;
 		}
 		if(Phone.value.length != 10){
 			alert("Please provide a valid phone number !");
@@ -56,7 +56,7 @@ var b = 0;
 	
 	</script>
 </head>
-
+	
 <header>
 	<div class="sidenav" id="navBarSide">
 		<a href="index.jsp" target="_BLANK" id="navToIndex"><label
