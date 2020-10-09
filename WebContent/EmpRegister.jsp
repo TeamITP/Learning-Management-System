@@ -143,7 +143,7 @@ var b = 0;
 								style="width: 380px; height: 380px; margin: 60px; padding: 20px; border: 3px solid rgb(0, 111, 255); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">
 								<div class="row">
 									<div class="col" style="padding: 10px;">
-										<input type="text" placeholder="Full Name" id="fullname"
+										<input type="text" placeholder="Full Name " id="fullname"
 											name="fullname"
 											style="width: 320px; border-color: rgb(0, 123, 255); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">
 									</div>
