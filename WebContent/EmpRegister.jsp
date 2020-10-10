@@ -22,7 +22,7 @@
 <style>
 	.btndemo{
 		background-color: #33CCFF;
-  		border-radius: 12px;
+  		border-radius: 8px;
   		color: white;
   		padding: 15px 15px;
   		text-align: center;
@@ -65,10 +65,10 @@ var b = 0;
 	}
 	
 	function demo(){
-		document.getElementById("fullname").value = "Kamala Ranasinghe";
-		document.getElementById("nic").value = "659087567V";
-		document.getElementById("phone").value = "0709965455";
-		document.getElementById("address").value = "870, Colombo Road, Kirillawala";
+		document.getElementById("fullname").value = "Meghana Samarawikrama";
+		document.getElementById("nic").value = "769087343V";
+		document.getElementById("phone").value = "0769785411";
+		document.getElementById("address").value = "43, Kandy Road, Kiribathgoda";
 	}
 	
 	</script>
@@ -161,9 +161,7 @@ var b = 0;
                             </div>
                         </div>
                     	<div class="row"> 
-                            <div class="col" style="padding: 10px;">
-                            	<div class="btndemo"><input type="button" id="demo1" value="Demo" onClick="demo()"></div>
-                            </div>
+                            <div class="col" style="padding: 10px;"><div class="btndemo"><input type="button" id="Demo" value="DEMO" onClick="demo()"></div></div>
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 10px;"><button class="btn btn-primary" type="submit" name="submit">Register Employee</button></div>
