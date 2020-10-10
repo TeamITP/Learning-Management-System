@@ -65,7 +65,7 @@ var b = 0;
 	}
 	
 	function demo(){
-		document.getElementById("fullname").value = "Meghana Samarawikrama";
+		document.getElementById("fullname").value = "Meghana Samaradiwakara";
 		document.getElementById("nic").value = "769087343V";
 		document.getElementById("phone").value = "0769785411";
 		document.getElementById("address").value = "43, Kandy Road, Kiribathgoda";
