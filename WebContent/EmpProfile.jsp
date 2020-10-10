@@ -116,7 +116,7 @@
 	
     </div>
     
-    <!--Moodal for delete Profile-->
+    <!--Moodal for Delete Profile-->
 		<div class="modal fade" id="deleteModal" role="form">
 			<div class="modal-dialog modal-dialog-centered">
 				<!-- Modal content-->
