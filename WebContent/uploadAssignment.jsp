@@ -91,6 +91,7 @@
    <h1>Add Question</h1>
     <input type="Deadline" name="deadline" placeholder="Deadline" required>
     <textarea placeholder="Question" name="question"></textarea>
+    <input type="SubmissionLink" name="submissionLink" placeholder="SubmissionLink" required>
     <input name="classroomId" value="<%=clzId %>" hidden>
     <button type="submit" class="btn">Add Assignment</button>
 </form>

@@ -35,17 +35,18 @@ public class AddAssignment extends HttpServlet {
 		assignment.setClass_ID(request.getParameter("classroomId"));
 		assignment.setDate(request.getParameter("deadline"));
 		assignment.setQuestion(request.getParameter("question"));
+		assignment.setSubmissionLink(request.getParameter("submissionLink"));
 		
 		AssignmentServiceImpl assignmentServiceImpl = new AssignmentServiceImpl();
 		
 		int status = assignmentServiceImpl.createAssignment(assignment);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("teacherAssignments.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Question Added Successfully");
+			request.setAttribute("link", "teacherAssignments.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");

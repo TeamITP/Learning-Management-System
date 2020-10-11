@@ -96,7 +96,7 @@
 					<p><%=assignment.getQuestion()%></p>
 					<p><%=assignment.getDate()%></p>
 					<div>
-					<a href="fileSubmit.jsp">Add Your Submission</a>
+					<a href="<%=assignment.getSubmissionLink() %>">Add Your Submission</a>
 <!-- 						<button class="btn">Submit</button> -->
 						
 					</div>
