@@ -155,7 +155,7 @@ public class ExaminationServicesImp implements ExaminationServices {
 	
 	
 	
-	public String generateReport(String examId,String root) {
+	public String generateReport(String examId,int max,String root) {
 		String filePath = null;
 
 		// Create a new font object selecting one of the PDF base fonts
@@ -253,31 +253,31 @@ public class ExaminationServicesImp implements ExaminationServices {
 		Cell<PDPage> cell;
 
 		Row<PDPage> row = table.createRow(20);
-		cell = row.createCell(15, "Result ID");
+		cell = row.createCell(22, "Result ID");
 		cell.setFontSize(12);
-		cell = row.createCell(15, "Student ID");
+		cell = row.createCell(22, "Student ID");
 		cell.setFontSize(12);
-		cell = row.createCell(15, "Marks");
+		cell = row.createCell(22, "Marks");
 		cell.setFontSize(12);
-		cell = row.createCell(15, "Rank");
+		cell = row.createCell(22, "Rank");
 		cell.setFontSize(12);
 
 		ExamResultServices examresultservices = new ExamResultServicesImp();
-	    ArrayList<ExamResult> arrayList = examresultservices.getExamResultList(examId);
-
+	    ArrayList<ExamResult> arrayList = examresultservices.getExamResultListByMarks(examId,max);
+	    
 		for (int i = 0; i < arrayList.size(); i++) {
-			ExamResult examresult = examresultservices.getResult(arrayList.get(i).getResult_ID());
+			ExamResult examresult = arrayList.get(i);
 			row = table.createRow(20);
-			cell = row.createCell(15, examresult.getResult_ID());
+			cell = row.createCell(22, examresult.getResult_ID());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(15, examresult.getStudent_ID());
+			cell = row.createCell(22, examresult.getStudent_ID());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(15,Integer.toString(examresult.getMarks()) );
+			cell = row.createCell(22,Integer.toString(examresult.getMarks()) );
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(15, Integer.toString(examresult.getRank()));
+			cell = row.createCell(22, Integer.toString(examresult.getRank()));
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
 			cell.setFontSize(12);
