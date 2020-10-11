@@ -100,3 +100,23 @@ background-color:#FFC400 !important;
 {
 	margin-top:10px !important;
 }
+
+#titleReport {
+	color: #006FFF !important;
+	font-size: 20px !important;
+	margin-left: 20px !important;
+	margin-top: 20px !important;
+}
+
+#para {
+	color: #aeaeae !important;
+	font-size: 15px !important;
+	margin-left: 20px !important;
+	margin-top: 5px !important;
+}
+
+.button{
+	margin-left:77px;!important;
+	margin-top:5px !important
+	
+}
