@@ -231,16 +231,64 @@ $(document).ready(function(){
    
    
     <!-- Search form -->  
-  
+    
+  <label id="titleReport">Generate Reports</label>
+     <p id="para">     Select the Marks Range  you Want to get the Report</p>
     <div class="row report">
+    
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
-				<div class="col-3">
+				
+				<div class="col-3 list">
 				<form action="ResultReport" method="post">
+				
+			 <div class="col"><input type="range" min="0" max="100" step="25" name="my-datalist" list="my-datalist"/>
+					<datalist id="my-datalist" style="--list-length: 5;"><!--
+					  ---><option>0</option><!--
+					  ---><option>25</option><!--
+					  ---><option>50</option><!--
+					  ---><option>75</option><!--
+					  ---><option>100</option><!--
+					---></datalist>	
+			
 				<input name="examid" value="<%= examId %>" hidden>
-					<button type="submit" class="btn btn-danger" id="btnReport">Get
-						Report of Results</button></form>
+				
+						
+<style>				
+					
+			/* style range */
+input[type=range] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+/* style datalist */
+input[type=range] + datalist {
+    display: block;
+    margin-top: -4px;
+}
+input[type=range] + datalist option {
+    display: inline-block;
+    width: calc((100% - 12px) / (var(--list-length) - 1));
+    text-align: center;
+}
+input[type=range] + datalist option:first-child {
+    width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    text-align: left;
+}
+input[type=range] + datalist option:last-child {
+    width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    text-align: right;
+}
+
+</style>	
+					
+						
+				<div class="row button">	<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Report of Results</button></div>					
+						</form>
 				</div>
 			</div>     
 			
