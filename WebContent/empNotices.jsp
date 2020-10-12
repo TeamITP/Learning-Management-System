@@ -84,13 +84,10 @@
 		<div class="col-7">
 		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
 		</div>
-		
-		<form  action="UpdateNotices.jsp" method="Get" >
-		
 		<div class="col-2">
-		
+		<form  action="UpdateNotices.jsp" method="Get" >
 		<input name="noticeId" value="<%=commonnotice.getNotice_id()%>" hidden>
-		<button type="submit" class="btn btn-warning" >Update</button>
+		<button type="submit" class="btn btn-warning" >Update</button></form>
 		</div>
 		
 		<div class="col-3">
@@ -100,11 +97,6 @@
 		
 		</div>
 		</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		</form>
 		
 		    <div class="modal fade" id="delete<%=commonnotice.getNotice_id()%>" role="form">
 			<div class="modal-dialog modal-dialog-centered">
@@ -138,15 +130,8 @@
 			</div>
 		</div>
 		<% } %> 
+		</div>
 		
-		<div class="col-6">
-		
-		<form action="ReportNotices" method="post">
-		<input name="userId" value="<%=username%>" hidden>
-		<button type="submit" style="margin-top:10px !important" class="btn btn-danger" id="btnReport" >Get Report</button>
-						
-		</form>
-			</div>
 		       
     <div class="col-6">     
         
@@ -157,14 +142,20 @@
     	<textarea name="description" placeholder="Notice Here"></textarea>
     	<button type="submit" class="btnSubmit">Publish Notice</button>
     	<img src="Images/image5.png" width ="200" height="200">   
-	</form>
+	</form></div></div>
    
-	</div>
-		     <div>
+    <div class="col-6">
+				<form action="ReportNotices" method="post">
+				<input name="userId" value="<%=username%>" hidden>
+					<button type="submit" style="margin-top:10px !important" class="btn btn-danger" id="btnReport" >Get Report</button></form>
+				</div>
+   
+   
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
                 
-       		 </div>   
+       	 
+       		 </div>
             
 </body>
 

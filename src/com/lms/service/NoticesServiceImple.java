@@ -121,12 +121,12 @@ public class NoticesServiceImple implements NoticeService {
 		try {
 			connection = ConnectDB.getDBConnection();
 
-			String sql = "UPDATE CommonNotice SET(type, notice_des, EmpId) VALUES(?, ?, ?)" ;
+			String sql = "UPDATE CommonNotice SET type=?, notice_des=?  where Notice_id=?" ;
 			preparedStatement = connection.prepareStatement(sql);
 
 			preparedStatement.setString(1, commonNotice.getTitle());
 			preparedStatement.setString(2, commonNotice.getNotice_des());
-			preparedStatement.setString(3, commonNotice.getEmpId());
+			preparedStatement.setString(3, commonNotice.getNotice_id());
 			
 
 			status = preparedStatement.executeUpdate();

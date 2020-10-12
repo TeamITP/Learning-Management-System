@@ -48,7 +48,7 @@ public class UpdateNotices extends HttpServlet {
     
 	    commonnotice.setTitle(request.getParameter("description"));
 	    commonnotice.setNotice_des(request.getParameter("notice"));
-	   // commonnotice.setQuestion(request.getParameter("question"));
+	    commonnotice.setNotice_id(request.getParameter("id"));
 		
 		NoticeService assignmentServices = new NoticesServiceImple();
 		int status = assignmentServices.updateNotice(commonnotice);

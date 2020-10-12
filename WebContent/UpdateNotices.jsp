@@ -75,7 +75,8 @@
                 </div>
        
               
-<form>
+<form action= "UpdateNotices" method= "post">
+<input name="id" value="<%=noticeId%>" hidden>
     <input name="description" style="width:400px; margin-top:20px" class="form-control" placeholder="Title" value="<%=commonnotice.getTitle()%>" type="text" id="description" required>
     <br>
     <textarea class="form-control" name="notice" style="width:400px"  placeholder="Notice Here" ><%=commonnotice.getNotice_des()%></textarea>
