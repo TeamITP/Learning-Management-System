@@ -17,40 +17,7 @@
 		<link rel="stylesheet" href="studentregistration/bootstrap/css/bootstrap.min.css">
     	<link rel="stylesheet" href="studentregistration/css/Contact-Form-Clean.css">
     	<link rel="stylesheet" href="studentregistration/css/styles.css">
-    	
-    	
-    	<script>
-var b = 0;
-	function dropDown1() {
-	    if (b == 0) {
-	        document.getElementById("dropDown1").style.display = "inline-block";
-	        b = 1;
-	    } else {
-	        document.getElementById("dropDown1").style.display = "none";
-	        b = 0;
-	    }
-	}
-	
-	function validate(){
-		var First = document.getElementById("firstName");
-		var Last  = document.getElementById("lastName");
-		var Address = document.getElementById("address");
-		var Phone = document.getElementById("phone");
-		var Gaurdian = document.getElementById("Guardian");
-		
-		if(Phone.value.length != 10){
-			alert("Please provide a valid phone number !");
-			return false;
-		}
-		else{
-			return true;
-		}
-	}
-	
-	</script>
-	
-	 
-        
+  
     </head>
 
     <body>
@@ -81,14 +48,14 @@ var b = 0;
         <div class="pageContainer">
         	    <div class="contact-clean">
 
-        <form onsubmit="return validate()" method="post"  Action = "StudentRegistration">
+        <form method="post"  Action = "StudentRegistration">
             <h2 class="text-center">Student Registration</h2>
             <div class="col"><label>Enter First Name</label><input class="form-control" id="firstName"  name = "firstName" type="text" required></div>
             <div class="form-group">
 
                 <div class="col"><label>Enter Last Name</label><input class="form-control" id="lastName" name = "lastName" type="text" required></div>
                 <div class="col"><label>Enter Email Address</label><input class="form-control" id="address" name = "address" type="text" required></div>
-                <div class="col"><label>Enter the Phone Number</label><input class="form-control" id="phone" name = "phone" type="text" required></div>
+                <div class="col"><label>Enter the Phone Number</label><input class="form-control" id="phone" name = "phone" size="10" type="text" required></div>
                 <div class="col"><label>Enter the Gaurdian Name</label><input class="form-control" id="Guardian" name = "Guardian" type="text" required></div>
 
 				<button class="btn btn-primary" id="demo1" value="DEMO1" onclick="demo()" >&nbsp;DEMO 1</button>
