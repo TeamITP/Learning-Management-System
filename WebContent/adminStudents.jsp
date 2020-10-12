@@ -141,112 +141,10 @@ var b = 0;
 			</li>
 			<li class="nav-item"></li>
 		</ul>
-		<div class="row">
-			<div class="col-auto align-self-center order-3 mx-auto">
-				<label class="text-info">Total Students&nbsp; &nbsp; &nbsp;</label><input
-					class="border rounded-0 border-info shadow form-control-lg"
-					type="text">
-			</div>
-		</div>
-		<div class="col align-self-center">
-			<button class="btn btn-primary btn-lg border rounded-0 shadow"
-				data-toggle="tooltip" data-bs-tooltip="" type="button">Add
-				Student</button>
-		</div>
-		<div>
-			<div class="container1">
-				<div class="row">
-					<div class="col-md-3">
-						<label class="col-form-label"><strong>Student ID</strong></label>
-					</div>
-					<div class="col-md-3">
-						<label class="col-form-label"><strong>First Name</strong></label>
-					</div>
-					<div class="col-md-3">
-						<label class="col-form-label"><strong>Phone
-								Number</strong></label>
-					</div>
-					<div class="col-md-3"></div>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="container1">
-				<div class="row">
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<button class="btn btn-danger btn-lg" type="button"
-							style="margin: 5px;">DELETE</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="container1">
-				<div class="row">
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<button class="btn btn-danger btn-lg" type="button"
-							style="margin: 6px;">DELETE</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="container1">
-				<div class="row">
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<button class="btn btn-danger btn-lg" type="button"
-							style="margin: 5px;">DELETE</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="container1">
-				<div class="row">
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<input type="text">
-					</div>
-					<div class="col-md-3">
-						<button class="btn btn-danger btn-lg" type="button"
-							style="margin: 5px;">DELETE</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
+		 
+
+		
+
 			
 			
 		</div>
@@ -304,13 +202,13 @@ var b = 0;
                     </div>
                 </div>
             </div>
-             <div class="row" style="padding-top: 10px;">
+             <!-- <div class="row" style="padding-top: 10px;">
                 <div class="col" style="padding-top: 20px;">
                     <div class="container1" style="padding-left: 1px;">
                         <div><input type="text" style="width: 300px;border: 2px solid rgb(0,123,255);border-radius: 5px;padding-top: 2px;"><button class="btn btn-primary" type="button" style="border-radius: 5px;height: 31px;padding-top: 1px;">Search</button></div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         
          
