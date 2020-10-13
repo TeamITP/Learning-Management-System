@@ -4,7 +4,7 @@
    margin-top: 10px;
    margin-top: 10px;
    padding: 5px;
-   text-align: center;
+   text-align: center !important;
 }
 .one
 {
@@ -16,12 +16,15 @@
     background-color: #A7CBFB;
     border-radius: 7px;
     margin-right: 15px;
+    vertical-align: middle;
     
 }
 .three
 {
     background-color: #FBFBA7;
     border-radius: 7px;
+    margin-left:22px !important;
+    vertical-align: middle;
 }
 .id{
 margin-left: 14px;
@@ -65,8 +68,8 @@ margin-left: 14px;
 {
 width:150px !important;
 border-radius: 22px !important;
-margin-right:5px !important;
-margin-left:5px !important;
+margin-right:0px !important;
+margin-left:20px !important;
 background-color:#FFC400 !important;
 
 }
@@ -75,7 +78,7 @@ background-color:#FFC400 !important;
 {
    width:150px !important;
    border-radius: 22px !important;
-   margin-left:8px !important;
+   margin-left:2px !important;
 
 }
 .five
@@ -86,4 +89,34 @@ background-color:#FFC400 !important;
 .promt
 {
 	margin-top:7px !important;
+}
+
+.active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+  color: #4dd0e1;
+}
+.report
+{
+	margin-top:10px !important;
+}
+
+#titleReport {
+	color: #006FFF !important;
+	font-size: 20px !important;
+	margin-left: 20px !important;
+	margin-top: 20px !important;
+}
+
+#para {
+	color: #aeaeae !important;
+	font-size: 15px !important;
+	margin-left: 20px !important;
+	margin-top: 5px !important;
+}
+
+.button{
+	margin-left:77px;!important;
+	margin-top:5px !important
+	
 }

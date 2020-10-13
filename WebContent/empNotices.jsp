@@ -69,43 +69,102 @@
       System.out.println(arrayList);
     %>
                 
- <div class="row">  
- <% for(CommonNotice commonnotice: arrayList) {%>      
+ 	<div class="row">  
+      
     <div class="col-6">
+    <% for(CommonNotice commonnotice: arrayList) {%> 
+    <div class="row">
     <div class="boxed">
+    
 			<h6><%=commonnotice.getTitle() %></h6>
-		<p><%=commonnotice.getNotice_des() %></p>
+		    <p><%=commonnotice.getNotice_des() %></p>
+		
 		<div class="row">
+		
 		<div class="col-7">
-		<h5 id="timeNotice">sep 09/2020 2.20</h5>
+		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
 		</div>
+		
+		<form  action="UpdateNotices.jsp" method="Get" >
+		
 		<div class="col-2">
-<button type="button" class="btn btn-warning btn-sm">Edit</button>
+		
+		<input name="noticeId" value="<%=commonnotice.getNotice_id()%>" hidden>
+		<button type="submit" class="btn btn-warning" >Update</button>
 		</div>
-		<div class="col-2">
-		<button type="button" class="btn btn-danger btn-sm">Delete</button>
+		
+		<div class="col-3">
+	<button type="button" data-toggle="modal" data-target="#delete<%=commonnotice.getNotice_id()%>" class="btn btn-danger delete" id="btnDelete" >Delete</button></div>
+			
+				</div>
+		
 		</div>
 		</div>
 		</div>
-		</div> 
-		 <%} %>        
+		</div>
+		</div>
+		</div>
+		</form>
+		
+		    <div class="modal fade" id="delete<%=commonnotice.getNotice_id()%>" role="form">
+			<div class="modal-dialog modal-dialog-centered">
+			
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<label class="modal-title">Delete Notice</label>
+						<button type="button" id="bnClose" style="outline: none"
+							class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="modalUpd" method="post" action="DeleteNotices">
+							<div class="row">
+								<input value="<%=commonnotice.getNotice_id()%>"
+									name="Notice_id" hidden><label
+									style="padding: 10px; padding-left: 20px;">Are you sure
+									you want to delete this Notice ?</label>
+							</div>
+							
+							<!-- form-group end.// -->
+							<div class="form-group">
+								<button data-dismiss="modal"
+									style="margin-right: 20px; color: #ffffff"
+									class="btn btn-warning promt">Cancel</button>
+								<button type="submit" class="btn btn-primary promt">Delete</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %> 
+		
+		<div class="col-6">
+		
+		<form action="ReportNotices" method="post">
+		<input name="userId" value="<%=username%>" hidden>
+		<button type="submit" style="margin-top:10px !important" class="btn btn-danger" id="btnReport" >Get Report</button>
+						
+		</form>
+			</div>
+		       
     <div class="col-6">     
         
     
-<form action="Notice" method="post"> 
-<input name="empId" value="<%=username %>" hidden>
-    <input name="title" placeholder="Title" required>
-    <textarea name="description" placeholder="Notice Here"></textarea>
-    <button type="submit" class="btn">Publish Notice</button>
-    <img src="Images/image5.png" width ="200" height="200">   
-</form>
+	<form id="formSu" action="Notice" method="post"> 
+		<input name="empId" value="<%=username %>" hidden>
+    	<input name="title" placeholder="Title" required>
+    	<textarea name="description" placeholder="Notice Here"></textarea>
+    	<button type="submit" class="btnSubmit">Publish Notice</button>
+    	<img src="Images/image5.png" width ="200" height="200">   
+	</form>
    
-</div></div>
-            </div>
+	</div>
+		     <div>
                 <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-            </div>
-            
+                
+       		 </div>   
             
 </body>
 

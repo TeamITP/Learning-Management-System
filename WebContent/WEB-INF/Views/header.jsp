@@ -38,22 +38,23 @@ String clzPath="";
 					<li><a href="contact.jsp">Contact</a></li>
 					<%
 			if (session.getAttribute("userId") == null) {
-		%><li><a  id="loginA" href="login.jsp">Login</a></li><%} %>
+		%><li><a id="loginA" href="login.jsp">Login</a></li>
+					<%} %>
 				</ul>
 			</nav>
 		</div>
 
-		
+
 		<%if(session.getAttribute("userId") != null) { %>
 		<div class="grid-item avtarImg">
 			<div class="dropdown" style="float: right;">
 				<img id="loginImage" src="Images/userAvatar.png">
 				<div class="dropdown-content">
 					<a href="<%=profilePath %>" class="regDropdown"><i
-						class="dropdownIcon fa fa-user" aria-hidden="true"></i>Profile</a> 
-						<a
+						class="dropdownIcon fa fa-user" aria-hidden="true"></i>Profile</a> <a
 						href="<%=clzPath %>" class="regDropdown"><i
-						class="dropdownIcon fa fa-graduation-cap" aria-hidden="true"></i>Classrooms</a> <a href="logOut" class="logoutDropdown"><i
+						class="dropdownIcon fa fa-graduation-cap" aria-hidden="true"></i>Classrooms</a>
+					<a href="logOut" class="logoutDropdown"><i
 						class="dropdownIcon fas fa-sign-out-alt"></i>Logout</a>
 				</div>
 			</div>

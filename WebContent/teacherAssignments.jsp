@@ -53,7 +53,7 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" ><i
+			<a href="teacherClassroom.jsp"><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
 				href="teacherAssignments.jsp" class="active"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
@@ -75,71 +75,86 @@
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-		<div class="row">
-		<div class="col-6">
-				<%
+			<div class="row">
+				<div class="col-6">
+					<%
 					AssignmentServices assignmentServices = new AssignmentServiceImpl();
 				ArrayList<Assignment> arrayList = assignmentServices.getAssignmentList(clzId);
 				%>
-				<% for (Assignment assignment : arrayList) {%>
-<!-- 					System.out.println(assignment.toString()); -->
-			
-				<div class="assignContainer">
-					<p><%=assignment.getQuestion()%></p>
-					<p><%=assignment.getDate()%></p>
-					<div>
+					<% for (Assignment assignment : arrayList) {%>
+					<!-- 					System.out.println(assignment.toString()); -->
 
-						<form action="updateAssignment.jsp" method="Post">
-				<input name="A_ID" id="A_ID" value="<%=assignment.getA_ID()%>" hidden>
-				<div class="row">
-				<div class="col-3">
-				<button type = "submit" id="btnUpdate" style="outline:none">Update</button>
-				</div>
-				<div class="col-3">
-				<button type="button" data-toggle="modal" data-target="#delete<%=assignment.getA_ID()%>" class="btn btn-danger delete" id="btnDelete" >Delete</button></div>
-				</div>
-				</form>
-				
-					<!--Moodal for delete for Marks-->
-				
-		<div class="modal fade" id="delete<%=assignment.getA_ID()%>" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete Question</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="post" action="deleteAssignment">
-							<div class="row">
-								<input value="<%=assignment.getA_ID()	%>"
-									name="A_ID" hidden><label
-									style="padding: 10px; padding-left: 20px;">Are you sure
-									you want to delete this Question ?</label>
+					<div class="assignContainer">
+						<p><%=assignment.getQuestion()%></p>
+						<p><%=assignment.getDate()%></p>
+						<div>
+
+							<form action="updateAssignment.jsp" method="Post">
+								<input name="A_ID" id="A_ID" value="<%=assignment.getA_ID()%>"
+									hidden>
+								<div class="row">
+									<div class="col-3">
+										<button type="submit" id="btnUpdate" style="outline: none">Update</button>
+									</div>
+									<div class="col-3">
+										<button type="button" data-toggle="modal"
+											data-target="#delete<%=assignment.getA_ID()%>"
+											class="btn btn-danger delete" id="btnDelete">Delete</button>
+									</div>
+								</div>
+							</form>
+
+							<!--Moodal for delete for Marks-->
+
+							<div class="modal fade" id="delete<%=assignment.getA_ID()%>"
+								role="form">
+								<div class="modal-dialog modal-dialog-centered">
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<label class="modal-title">Delete Question</label>
+											<button type="button" id="bnClose" style="outline: none"
+												class="close" data-dismiss="modal">&times;</button>
+										</div>
+										<div class="modal-body">
+											<form class="modalUpd" method="post"
+												action="deleteAssignment">
+												<div class="row">
+													<input value="<%=assignment.getA_ID()	%>" name="A_ID"
+														hidden><label
+														style="padding: 10px; padding-left: 20px;">Are you
+														sure you want to delete this Question ?</label>
+												</div>
+												<!-- form-group end.// -->
+												<div class="form-group">
+													<button data-dismiss="modal"
+														style="margin-right: 20px; color: #ffffff"
+														class="btn btn-warning promt">Cansel</button>
+													<button type="submit" class="btn btn-primary promt">Delete</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
 							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning promt">Cansel</button>
-								<button type="submit" class="btn btn-primary promt">Delete</button>
-							</div>
-						</form>
+						</div>
 					</div>
+					<%} %>
+				
+<div class="row" style="width:400px !important;margin-top:50px">
+<div class="col-6">
+				<a href="uploadAssignment.jsp"><button type="button" style="margin-top:10px !important;margin-left:10px" class="btn btn-primary" id="btnReport" >Add Questions</button></a>
+				</div>
+				 <div class="col-6">
+				<form action="reportAssignment" method="post">
+				<input name="classroomId" value="<%=clzId%>" hidden>
+					<button type="submit" style="margin-top:10px !important" class="btn btn-danger" id="btnReport" >Get
+						Questions</button></form>
 				</div>
 			</div>
-		</div>
-					</div>
-				</div>
-				    <%} %>   
-
-				
-
-				<a href="uploadAssignment.jsp">Add A Question</a>
 			</div>
 			<div class="col-6"><img id="imageAssignm" src="Images/a4.png" height="500"></div>
+
 			</div>
 		</div>
 

@@ -58,8 +58,9 @@ var b = 0;
 		<hr />
 		<label id="textMainNavi">Main Navigation</label>
 		<div class="mainSideNav">
-			<a href="adminHome.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Home</a>
-			<a href="adminEmployee.jsp" ><i
+			<a href="adminHome.jsp" class="active"><i
+				class="fas fa-home iconMainNavi"></i>Home</a> <a
+				href="adminEmployee.jsp"><i
 				class="fas fa-user-tie iconMainNavi"></i>Teachers</a> <a
 				href="adminEmployee.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Employees</a>
 			<a href="adminStudents.jsp"><i class="fas fa-user iconMainNavi"></i>Students</a><a

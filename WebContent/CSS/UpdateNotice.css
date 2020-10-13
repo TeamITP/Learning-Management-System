@@ -10,7 +10,7 @@
 }
 
 
-form{
+#formSu{
     position: absolute;
     width: 320px;
      border: 1px solid #006fff;
@@ -58,7 +58,7 @@ form textarea{
           inset 3px 3px 3px rgba(0,0,0,0.3);
 }
 
-form .btn{
+form .btnSubmit{
     position: relative;
     margin: 20px 20px 40px 20px;
     height: 40px;

@@ -81,6 +81,8 @@
 		<div class="pageContainer">
 		<h1 class="pageTopic">Assignment</h1>
               <hr class="dividerTopic">
+                <div class="row">
+		<div class="col-5"> 
              
 	
 	
@@ -93,10 +95,11 @@
     <button type="submit" class="btn">Add Assignment</button>
 </form>
 
-<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
 
  
 </div>
+<div class="col-5"><img id="a2" src="Images/a2.png"  width="600" height="500"> </div></div>
+
     <!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>           

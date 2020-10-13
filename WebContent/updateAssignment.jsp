@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
- <title>Upload Question</title>
+ <title>Update Question</title>
 <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
      <link rel="stylesheet" href="CSS/teacherClassroom.css">
@@ -83,7 +83,8 @@ String aId = request.getParameter("A_ID");
 		<div class="pageContainer">
 		<h1 class="pageTopic">Assignment</h1>
               <hr class="dividerTopic">
-             
+            <div class="row">
+		<div class="col-5"> 
 	
 	
 <form action="updateAssignment" method="post">
@@ -95,10 +96,11 @@ String aId = request.getParameter("A_ID");
     <button type="submit" class="btn">Update Assignment</button>
 </form>
 
-<!-- <img id="a2" src="Images/a2.png"  width="600" height="500"> -->
+ 	
 
  
 </div>
+ <div class="col-5"> <img id="imageAssignm" src="Images/a2.png"   height="500" margin-right="100" ></div></div>
     <!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>           

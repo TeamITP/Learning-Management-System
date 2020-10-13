@@ -23,9 +23,10 @@
 				<p id="textSubDescription">Everyday Anywhere Anytime</p>
 				<p id="textLongDescription">We conduct courses with highly
 					recognized and well experienced panel of teachers in Sri Lanka</p>
-					<%
+				<%
 			if (session.getAttribute("userId") == null) {%>
-				<a href="login.jsp"><button class="bnLogin">Login</button></a><%} %>
+				<a href="login.jsp"><button class="bnLogin">Login</button></a>
+				<%} %>
 			</div>
 			<div class="imageView">
 				<img id="imgMainIndex" src="Images/mainImageIndex.png">

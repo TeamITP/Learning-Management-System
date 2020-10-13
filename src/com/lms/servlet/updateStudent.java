@@ -50,19 +50,26 @@ public class updateStudent extends HttpServlet {
 		int status = studentServices.updateStudent(student);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Successful");
-			request.setAttribute("Student_ID", student.getStudent_ID());
+			request.setAttribute("message", "Update Successful");
+			request.setAttribute("link", "studentprofile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+			 
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("studentprofile.jsp");
-		    dis.forward(request, response);
+			 
+		     
 		} else if (status == 0) {
-			request.setAttribute("message", "Insert Failed");
-			request.setAttribute("Student_ID", student.getStudent_ID());
+			request.setAttribute("message", "Update Failed");
+			request.setAttribute("link", "studentprofile.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+			 
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("studentprofile.jsp");
-		    dis.forward(request, response);
+			 
 		}
 	}
 

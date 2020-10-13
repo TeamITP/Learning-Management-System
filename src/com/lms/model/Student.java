@@ -8,6 +8,16 @@ package com.lms.model;
 
 public class Student {
 	private String Student_ID;
+	private int count;
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	private String fristName;
 	private String lastName;
 	private String address;
