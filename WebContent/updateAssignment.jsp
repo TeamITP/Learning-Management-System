@@ -26,6 +26,7 @@
 String aId = request.getParameter("A_ID");
 	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
+	String A_ID = request.getParameter("A_ID");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
@@ -44,6 +45,9 @@ String aId = request.getParameter("A_ID");
 	
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
+	
+	AssignmentServices assignmentService = new AssignmentServiceImpl();
+	Assignment assignment = assignmentService.getAssignment(A_ID);
 	
 	%>
 	
@@ -90,8 +94,8 @@ String aId = request.getParameter("A_ID");
 <form action="updateAssignment" method="post">
 
    <h1>Update Question</h1>
-    <input type="Deadline" name="deadline" placeholder="Deadline" required>
-    <textarea placeholder="Question" name="question"></textarea>
+    <input type="Deadline" name="deadline" value="<%=assignment.getDate() %>" placeholder="Deadline" required>
+    <textarea placeholder="Question"  name="question"><%=assignment.getQuestion() %></textarea>
     <input name="aId" value="<%=aId %>" hidden>
     <button type="submit" class="btn">Update Assignment</button>
 </form>

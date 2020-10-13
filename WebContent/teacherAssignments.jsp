@@ -87,6 +87,7 @@
 				<div class="assignContainer">
 					<p><%=assignment.getQuestion()%></p>
 					<p><%=assignment.getDate()%></p>
+					<a href="<%=assignment.getSubmissionLink() %>">View Submissions</a>
 					<div>
 
 						<form action="updateAssignment.jsp" method="Post">
