@@ -36,7 +36,7 @@ public class ReadingClick extends HttpServlet {
 	    
 	    OutputStream out = null;
 	    
-	    File file = File.createTempFile(path+fileName, null);
+	    File file = new File(path + File.separator + fileName);
 	    
 	    try {
 	    	
@@ -48,7 +48,6 @@ public class ReadingClick extends HttpServlet {
 			e.printStackTrace();
 		}
 	    
-	    file.deleteOnExit();
 	    response.sendRedirect("UploadedFiles/Readings/" + fileName);
 	}
 

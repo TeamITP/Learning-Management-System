@@ -45,10 +45,9 @@ public class downloadReading extends HttpServlet {
 	    
 	    OutputStream out = null;
 	    
-	    File file = File.createTempFile(path+fileName, null);
-	    
+	    File file = new File(path + File.separator + fileName);
+
 	    try {
-	    	
 	        out = new FileOutputStream(file);
 	        
 	        byteArrayOutputStream.writeTo(out);
