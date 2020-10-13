@@ -103,7 +103,7 @@ String lessonId = (String) session.getAttribute("lessonId");
 					</div>
 			</div>
 			<input onchange="inputChanged()" draggable="true" type="file"
-				name="file" id="fileUpload" hidden />
+				name="file" id="fileUpload" hidden  required/>
 			<div class="row">
 				<button type="submit" class="btn btn-primary" name="btnSubmit"
 					id="btnSubmit">Next</button>

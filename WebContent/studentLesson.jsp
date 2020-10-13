@@ -128,8 +128,9 @@
 
 				<form action="ReadingClick" target="_blank" method="post" hidden>
 					<input name="materialId"
-						value="<%=readingMaterial.getReadingMatId() %>" hidden> <input
-						name="link" value="<%=readingMaterial.getPathLink() %>" hidden>
+						value="<%=readingMaterial.getReadingMatId() %>" hidden> 
+						<input value="<%=readingMaterial.getPathLink() %>" name="link">
+						
 					<input type="submit"
 						id="click<%=readingMaterial.getReadingMatId()%>">
 				</form>

@@ -322,7 +322,7 @@ $(document).ready(function(){
 						<div class="form-group">
 							<button data-dismiss="modal"
 								style="margin-right: 20px; color: #ffffff"
-								class="btn btn-warning">Cansel</button>
+								class="btn btn-warning">Cancel</button>
 							<button type="submit" class="btn btn-danger">Delete</button>
 						</div>
 					</form>
