@@ -70,8 +70,7 @@
 			<a href="studentClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
 			<a href="studentAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
 			<a href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
-			<a href="QnA_Student.jsp"> <i class="fas fa-question iconMainNavi"></i>Q & A
-			</a>
+			
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
