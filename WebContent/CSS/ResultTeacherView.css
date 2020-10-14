@@ -87,3 +87,13 @@ background-color:#FFC400 !important;
 {
 	margin-top:7px !important;
 }
+
+.active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+  color: #4dd0e1;
+}
+.report
+{
+	margin-top:10px !important;
+}

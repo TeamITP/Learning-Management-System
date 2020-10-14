@@ -5,22 +5,38 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Employee | Register</title>
-    <link rel="stylesheet" href="EmployeeRegister/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="EmployeeRegister/css/styles.css">
-    
-    <meta charset="ISO-8859-1">
-    <link rel="icon" href="Images/book.png">
-    <link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
-    <link rel="stylesheet" href="CSS/ownerHome.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Employee | Register</title>
+<link rel="stylesheet"
+	href="EmployeeRegister/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="EmployeeRegister/css/styles.css">
+
+<meta charset="ISO-8859-1">
+<link rel="icon" href="Images/book.png">
+<link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
+<link rel="stylesheet" href="CSS/ownerHome.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
+<style>
+	.btndemo{
+		background-color: #33CCFF;
+  		border-radius: 8px;
+  		color: white;
+  		padding: 15px 15px;
+  		text-align: center;
+  		display: inline-block;
+  		font-size: 20px;
+  		margin: 2px 2px;
+  		cursor: pointer;	
+	}
+</style>
 
-    <script>
+<script>
 var b = 0;
 	function dropDown1() {
 	    if (b == 0) {
@@ -40,7 +56,7 @@ var b = 0;
 		
 		if(Name.value.trim() == "" || Nic.value.trim() == "" || Phone.value.trim() == "" || Address.value.trim() == ""){
 			alert("No blank values are allowed !");
-			return false;
+		  	return false;
 		}
 		if(Phone.value.length != 10){
 			alert("Please provide a valid phone number !");
@@ -51,67 +67,46 @@ var b = 0;
 		}
 	}
 	
+	function demo(){
+		document.getElementById("fullname").value = "Meghana Samaradiwakara";
+		document.getElementById("nic").value = "769087343V";
+		document.getElementById("phone").value = "0769785411";
+		document.getElementById("address").value = "43, Kandy Road, Kiribathgoda";
+	}
+	
 	</script>
 </head>
-
+	
 <header>
-	<div class="sidenav" id="navBarSide">
-		<a href="index.jsp" target="_BLANK" id="navToIndex"><label class="logoLabel">NEW MONTANA</label></a>
-		<hr />
 
-		<div id="imgUserSideNav">
-			<img src="Images/avatar.png" id="userSideNav"> <label
-				class="userNameSideNavBar" id="userNameSide">Admin Name</label>
-			<i class="fas fa-caret-down" id="dropDownIcon" onclick="dropDown1()"></i>
-		</div>
-
-		<div id="dropDown1">
-			<div id="rowDropDown1">
-				<form id="form" method="post" action="empProfile">
-						<input name="user" value="" hidden> <a
-							onClick="submit()"> <i class="far fa-user"></i> <label class="textDropdownAvtar" id="textProf">Profile</label>
-						</a>
-					</form>
+	  <div class="sidenav" id="navBarSide">
+	  <div class="sideNav">
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/dashboard.png" id="imageUserNav">
 			</div>
-			<div id="rowDropDown1">
-				<a href="logout"> <i class="fas fa-power-off"></i><label
-					id="textLogout" class="textDropdownAvtar">Logout</label>
-				</a>
+			<div class="col-8 align-items-center">
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
-		<hr />
-		<label id="textMainNavi">Main Navigation</label>
+		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="adminHome.jsp"><i
-				class="fas fa-home iconMainNavi" ></i>Home</a>
-				<a href="adminTeacher.jsp" ><i
-				class="fas fa-user-tie iconMainNavi"></i>Teachers</a>
-			<a href="adminEmployee.jsp" class="active"><i
-				class="fas fa-user-tie iconMainNavi"></i>Employees</a> 
-				<a
-				href="adminCustomers.jsp"><i class="fas fa-user iconMainNavi"></i>Students</a><a
-				href="adminOrders.jsp"><i
-				class="fa fa-money iconMainNavi"></i>Bills and Payments</a> <a
-				href="adminServices.jsp" ><i
-				class="fas fa-tasks iconMainNavi"></i>Notices and Events</a>
-			<a href="adminContact.jsp"><i
-				class="far fa-comment-dots iconMainNavi"></i>Contact Center</a>
+			<a href="paymentHome.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp" class="active"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
 		</div>
-		<hr />
-		<label id="textMainNavi">Social Media</label>
-		<div class="col-xl-12">
-                    <a href="https://www.facebook.com "><img id="fb " class="iconF " alt="Facebook " src="Images/facebookGray.png " onmouseout="this.src='Images/facebookGray.png' " onmouseover="this.src='Images/facebookO.png' "></a>
-                    <a href="https://www.youtube.com "><img id="yt " class="iconF " alt="YouTube " src="Images/youtubeGray.png " onmouseover="this.src='Images/youtubeO.png' " onmouseout="this.src='Images/youtubeGray.png' "></a>
-                    <a href="https://twitter.com "><img id="tw " class="iconF " alt="Twitter " src="Images/twitterGray.png " onmouseover="this.src='Images/twitterO.png' " onmouseout="this.src='Images/twitterGray.png' "></a>
-                    <a href="https://www.instagram.com "><img id="in " class="iconF " alt="Instagram " src="Images/instagramGray.png " onmouseover="this.src='Images/instagramO.png' " onmouseout="this.src='Images/instagramGray.png' "></a>
-                </div>
-                <hr/>
-                <h3 id="Foot_copyright" style="display: inline ">&copy; 2020 NewMontana.lk</h3>
 	</div>
-	</header>
+	</div>
+</header>
 
 <body>
 	<div class="pageContainer">
+	<!--Header Here-->
+    <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
     <div>
         <div class="container">
             <div class="row">
@@ -122,7 +117,7 @@ var b = 0;
             <div class="row">
                 <div class="col-md-6">
                 <form onsubmit="return validate()" action="EmployeeInsert" method="post" >
-                    <div style="width: 380px;height: 380px;margin: 60px;padding: 20px;border: 3px solid rgb(0,111,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
+                    <div style="width: 380px;height: 450px;margin: 60px;padding: 20px;border: 3px solid rgb(0,111,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
                         <div class="row">
                             <div class="col" style="padding: 10px;"><input type="text" placeholder="Full Name" id="fullname" name="fullname" style="width: 320px;border-color: rgb(0,123,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;" ></div>
                         </div>
@@ -137,8 +132,11 @@ var b = 0;
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 10px;">
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border: 3px solid rgb(0,109,255) ;"><label class="form-check-label" for="formCheck-1" style="width: 320px;font-size: 12px;">Above details are correct and agreed for the terms and conditions of the institute.</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" style="border: 3px solid rgb(0,109,255) ;"><label class="form-check-label" for="formCheck-1" style="width: 320px;font-size: 14px;">Above details are correct and agreed for the terms and conditions of the institute.</label></div>
                             </div>
+                        </div>
+                    	<div class="row"> 
+                            <div class="col" style="padding: 10px;"><div class="btndemo"><input type="button" id="Demo" value="DEMO" onClick="demo()"></div></div>
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 10px;"><button class="btn btn-primary" type="submit" name="submit">Register Employee</button></div>
@@ -147,6 +145,8 @@ var b = 0;
                     </div>
                 </form>    
                 </div>
+             
+                
                 <div class="col-md-6"><img src="EmployeeRegister/img/registerEmp.png" style="width: 350px;height: 350px;text-align: center;margin: 65px;padding: 10px;"></div>
             </div>
         </div>
@@ -154,11 +154,23 @@ var b = 0;
     <script src="EmployeeRegister/js/jquery.min.js"></script>
     <script src="EmployeeRegister/bootstrap/js/bootstrap.min.js"></script>
     
+    <!--Footer Here-->
+    <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
     </div>
+
 </body>
 
-<script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </html>
+<script src="https://kit.fontawesome.com/a6c94f59df.js"
+	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	crossorigin="anonymous"></script>
+</html>

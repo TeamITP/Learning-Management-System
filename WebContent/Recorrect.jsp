@@ -17,23 +17,25 @@
 <body>
 <%
 		String username = "";
+String rId = request.getParameter("Result_ID");
+if(rId != null) {
+	HttpSession httpSession = request.getSession();
+	httpSession.setAttribute("Result_ID", rId);
+}
+String Result_ID = (String)session.getAttribute("Result_ID");
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
-
-		if (username.charAt(0) != 'T') {
+		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
-
 		
 		if (clzId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	
 %>
 <div class="sideNav">
@@ -74,11 +76,10 @@
                 </div>
 
               
-    <form action="ResultTeacherView" method="post">
-            
-        
+    <form action="Recorrection" method="post">
+             
         <textarea name="description"placeholder="Description"></textarea>
-        <input type="text" name="resultid" value="<%= %>" hidden>
+        <input type="text" name="resultid" value="<%=Result_ID  %>" hidden>
         <button type="submit" class="btn btn-primary btn2">Re-Correction Apply</button>
          
    </form>

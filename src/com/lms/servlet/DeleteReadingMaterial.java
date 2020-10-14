@@ -28,9 +28,6 @@ public class DeleteReadingMaterial extends HttpServlet {
 		
 		LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
 		
-		File file = new File(path);
-		file.delete();
-		
 		int status = lessonMaterialsService.deleteReadingMaterial(request.getParameter("materialId"));
 		
 		if(status == 1) {

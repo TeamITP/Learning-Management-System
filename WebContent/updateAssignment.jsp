@@ -11,17 +11,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
  <title>Update Question</title>
+
 <link rel="icon" href="Images/book.png">
-        <link rel="stylesheet" href="CSS/teacherNav.css">
-     <link rel="stylesheet" href="CSS/teacherClassroom.css">
-     <link rel="stylesheet" href="CSS/UploadAssignment.css">
-     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="CSS/teacherNav.css">
+<link rel="stylesheet" href="CSS/teacherClassroom.css">
+<link rel="stylesheet" href="CSS/UploadAssignment.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
 <body>
-<%
+	<%
 
 String aId = request.getParameter("A_ID");
 	String username = "";
@@ -50,7 +52,7 @@ String aId = request.getParameter("A_ID");
 	Assignment assignment = assignmentService.getAssignment(A_ID);
 	
 	%>
-	
+
 	<div class="sideNav">
 			<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -61,6 +63,7 @@ String aId = request.getParameter("A_ID");
 			</div>
 		</div>
 		<hr id="breakLine">
+
 		<div class="mainSideNav">
 			<a href="teacherClassroom.jsp" class=""><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
 			<a href="teacherAssignments.jsp" class="active"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
@@ -78,6 +81,7 @@ String aId = request.getParameter("A_ID");
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
+
 		<h1 class="pageTopic">Assignment</h1>
               <hr class="dividerTopic">
             <div class="row">
@@ -86,6 +90,7 @@ String aId = request.getParameter("A_ID");
 	
 <form action="updateAssignment" method="post">
 
+
    <h1>Update Question</h1>
     <input type="Deadline" name="deadline" value="<%=assignment.getDate() %>" placeholder="Deadline" required>
     <textarea placeholder="Question"  name="question"><%=assignment.getQuestion() %></textarea>
@@ -93,15 +98,17 @@ String aId = request.getParameter("A_ID");
     <button type="submit" class="btn">Update Assignment</button>
 </form>
 
+
  	
 
  
 </div>
  <div class="col-5"> <img id="imageAssignm" src="Images/a2.png"   height="500" margin-right="100" ></div></div>
     <!--Footer Here-->
+
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>           
-           
+	</div>
+
 </body>
- 
+
 </html>
