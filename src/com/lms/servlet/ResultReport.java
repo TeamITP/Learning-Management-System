@@ -44,9 +44,13 @@ public class ResultReport extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String examid = request.getParameter("examid");
+    int maxvalue = Integer.parseInt(request.getParameter("my-datalist"));
+    
+    
+    System.out.println("exam marks"+maxvalue);
 		
 		ExaminationServices examinationServices = new ExaminationServicesImp();
-		String path = examinationServices.generateReport(examid,getServletContext().getRealPath("/UploadedFiles/PDF"));
+		String path = examinationServices.generateReport(examid,maxvalue,getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
 			
