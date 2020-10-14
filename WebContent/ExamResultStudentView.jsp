@@ -112,7 +112,7 @@ String examId = (String)session.getAttribute("examId");
         </div>
         <div class="col-10 col-md-2 coltwo ">
                 <div class="row rank">
-                    <h class="head">Your Ranks</h>
+                    <h class="head">Your Rank</h>
                 </div>
                 <div class="row ranks">
                     <p class="head2"> <%=examResult.getRank() %></p>
