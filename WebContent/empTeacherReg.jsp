@@ -59,76 +59,46 @@ function demo(){
 	var pw = document.getElementById("psw").value="Saman123 ";
 	
 }
-function checkPass()
-{
-    //Store the password field objects into variables ...
-    var password = document.getElementById('psw');
-    var confirm  = document.getElementById('confirm2');
-    //Store the Confirmation Message Object ...
-    var message = document.getElementById('confirm-message2');
-    //Set the colors we will be using ...
-    var good_color = "#66cc66";
-    var bad_color  = "#ff6666";
-    //Compare the values in the password field 
-    //and the confirmation field
-    if(password.value == confirm.value){
-        //The passwords match. 
-        //Set the color to the good color and inform
-        //the user that they have entered the correct password 
-        confirm.style.backgroundColor = good_color;
-        message.style.color           = good_color;
-        message.innerHTML             = '<img src="/wp-content/uploads/2019/04/tick.png" alt="Passwords Match!">';
-    }else{
-        //The passwords do not match.
-        //Set the color to the bad color and
-        //notify the user.
-        confirm.style.backgroundColor = bad_color;
-        message.style.color           = bad_color;
-        message.innerHTML             = '<img src="/wp-content/uploads/2019/04/publish_x.png" alt="Passwords Do Not Match!">';
-    }
-}  
+
 </script>
 	
 	
 </head>
 
 <body>
-	 <div class="sideNav">
+<%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	%>
+	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/pmtIcon.png" id="imageUserNav">
+				<img src="Images/dashboard.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Payments</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-		<a href="paymentHome.jsp" ><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
-			<a href="ClassFee_pmt.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
-				href="tsalary.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
-				href="teacherNotices.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
-				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
-				href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
-			
-			
-				 <a
-				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
-			<a href="empTeacherReg.jsp" class="active"><i
-				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
-				href="empStudentReg.jsp"> <i
-				class="fas fa-user-plus iconMainNavi"></i>New Students
-			</a>
+			<a href="paymentHome.jsp" ><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"class="active"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
 		</div>
-</div>
+	</div>
 
 	<div class="page-container">
 		<!--Header Here-->
