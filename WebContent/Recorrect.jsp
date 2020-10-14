@@ -91,7 +91,8 @@ String Result_ID = (String)session.getAttribute("resultid");
                     <hr class="dividerTopic">
                 </div>
                
-          
+   <div class="row">  
+   <div class="col">    
     <form action="Recorrection" method="post">
       
         <textarea name="description"placeholder="Description"></textarea>
@@ -100,12 +101,12 @@ String Result_ID = (String)session.getAttribute("resultid");
          
    </form>
 
+</div> 
 
-
-<img src="Images/image-recorrection.png" class="picture" width="800" height="400">
+<div class="col"><img src="Images/image-recorrection.png" class="picture" width="800" height="500"></div>
 
                     
-                <!--Footer Here-->
+    </div>            <!--Footer Here-->
                 <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
             </div>
 </body>
