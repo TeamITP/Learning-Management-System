@@ -118,45 +118,7 @@
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
 	
-    </div>
     
-    <!--Moodal for delete Profile-->
-		<div class="modal fade" id="deleteModal" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="row">
-						<div class="col" style="width: 300px;">
-							<div class="row">
-								<div class="col">
-									<a href="paymentHome.jsp"><button class="btn btn-primary"
-											type="button" style="padding-right: 20px; margin: 20px;">Go
-											to Dashboard</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</div>
-	<script src="EmployeeProfile/js/jquery.min.js"></script>
-	<script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
-
-
-	</div>
 
 	<!--Moodal for delete Profile-->
 	<div class="modal fade" id="deleteModal" role="form">
