@@ -59,7 +59,7 @@
 
 
 
-	<!-- Employee Navigation Bar -->
+	<!-- Employee Navigation Bar  -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
