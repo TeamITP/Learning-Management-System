@@ -1,4 +1,3 @@
-
 <%@page import="com.lms.model.Classroom"%>
 <%@page import="com.lms.service.ClassroomServicesImpl"%>
 <%@page import="com.lms.service.ClassroomServices"%>
@@ -27,19 +26,15 @@
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
-
 		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
-
 		if (clzId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
@@ -54,9 +49,9 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="studentClassroom.jsp"><i
+			<a href="studentClassroom.jsp" ><i
 				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="studentAssignments.jsp" class="active"><i
+				href="studentAssignments.jsp"  class="active"><i
 				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
 				href="studentsNotices.jsp"><i
 				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
@@ -78,39 +73,36 @@
 		</div>
 		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
 	</div>
-
-	<div class="page-container">
+		
+		<div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
-			<div class="row">
-				<div class="col-6">
-					<%
+		<div class="row">
+		<div class="col-6">
+				<%
 					AssignmentServices assignmentServices = new AssignmentServiceImpl();
 				ArrayList<Assignment> arrayList = assignmentServices.getAssignmentList(clzId);
-
 				for (Assignment assignment : arrayList) {
 					System.out.println(assignment.toString());
 				%>
-					<div class="assignContainer">
-						<p><%=assignment.getQuestion()%></p>
-						<p><%=assignment.getDate()%></p>
-						<div>
-							<a href="fileSubmit.jsp">Add Your Submission</a>
-							<!-- 						<button class="btn">Submit</button> -->
-
-						</div>
+				<div class="assignContainer">
+					<p><%=assignment.getQuestion()%></p>
+					<p><%=assignment.getDate()%></p>
+					<div>
+					<a href="<%=assignment.getSubmissionLink() %>">Add Your Submission</a>
+<!-- 						<button class="btn">Submit</button> -->
+						
 					</div>
+				</div>
 
-					<%
+				<%
 					}
 				%>
 
-
-				</div>
-				<div class="col-6">
-					<img id="imageAssignm" src="Images/a4.png" height="500">
-				</div>
+		
+			</div>
+			<div class="col-6"><img id="imageAssignm" src="Images/a4.png" height="500"></div>
 			</div>
 		</div>
 

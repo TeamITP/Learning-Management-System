@@ -9,20 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.Assignment;
-import com.lms.service.AssignmentServiceImpl;
-import com.lms.service.AssignmentServices;
+import com.lms.model.CommonNotice;
+import com.lms.service.NoticeService;
+import com.lms.service.NoticesServiceImple;
+
 /**
- * Servlet implementation class updateAssignment
+ * Servlet implementation class UpdateNotices
  */
-@WebServlet("/updateAssignment")
-public class updateAssignment extends HttpServlet {
+@WebServlet("/UpdateNotices")
+public class UpdateNotices extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateAssignment() {
+    public UpdateNotices() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,26 +40,27 @@ public class updateAssignment extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-    Assignment assignment = new Assignment();
+		CommonNotice commonnotice = new CommonNotice();
 		
 		/*
 		 * Initialize values for classroom object
 		 * */
     
-	    assignment.setA_ID(request.getParameter("aId"));
-		assignment.setDate(request.getParameter("deadline"));
-		assignment.setQuestion(request.getParameter("question"));
+	    commonnotice.setTitle(request.getParameter("description"));
+	    commonnotice.setNotice_des(request.getParameter("notice"));
+	    commonnotice.setNotice_id(request.getParameter("id"));
 		
-		AssignmentServices assignmentServices = new AssignmentServiceImpl();
-		int status = assignmentServices.UpdateAssignment(assignment);
+		NoticeService assignmentServices = new NoticesServiceImple();
+		int status = assignmentServices.updateNotice(commonnotice);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Question Update Successfully");
-			request.setAttribute("link", "teacherAssignments.jsp");
-			request.setAttribute("status", "OK");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-			dispatcher.forward(request, response);
+			request.setAttribute("message", "Insert Succesful");
+			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
+			//dispatcher.forward(request, response);
+			response.sendRedirect("empNotices.jsp");
+			
+			//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+		    //dis.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
