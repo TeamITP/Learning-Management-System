@@ -92,14 +92,15 @@
 				for (Assignment assignment : arrayList) {
 					System.out.println(assignment.toString());
 				%>
-					<div class="assignContainer">
-						<p><%=assignment.getQuestion()%></p>
-						<p><%=assignment.getDate()%></p>
-						<div>
-							<a href="fileSubmit.jsp">Add Your Submission</a>
-							<!-- 						<button class="btn">Submit</button> -->
 
-						</div>
+				<div class="assignContainer">
+					<p><%=assignment.getQuestion()%></p>
+					<p><%=assignment.getDate()%></p>
+					<div>
+					<a href="<%=assignment.getSubmissionLink() %>">Add Your Submission</a>
+<!-- 						<button class="btn">Submit</button> -->
+						
+
 					</div>
 
 					<%

@@ -54,13 +54,11 @@ public class updateAssignment extends HttpServlet {
 		int status = assignmentServices.UpdateAssignment(assignment);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("teacherAssignments.jsp");
-			
-			//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-		    //dis.forward(request, response);
+			request.setAttribute("message", "Question Update Successfully");
+			request.setAttribute("link", "teacherAssignments.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
