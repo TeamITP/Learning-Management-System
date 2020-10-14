@@ -1,5 +1,12 @@
-<!--IT19134772-->
+
 <!--Imbulana Liyanage D.S.I.-->
+<!--IT19134772-->
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -48,10 +55,12 @@
         <div class="pageContainer">
         	    <div class="contact-clean">
 
-        <form method="post"  Action = "StudentRegistration">
-            <h2 class="text-center">Student Registration</h2>
-            <div class="col"><label>Enter First Name</label><input class="form-control" id="firstName"  name = "firstName" type="text" required></div>
-            <div class="form-group">
+
+                <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
+                <div class="col"><label>Enter Email Address</label><input class="form-control" name = "address" type="text" required></div>
+                <div class="col"><label>Enter Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
+                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
+
 
                 <div class="col"><label>Enter Last Name</label><input class="form-control" id="lastName" name = "lastName" type="text" required></div>
                 <div class="col"><label>Enter Email Address</label><input class="form-control" id="address" name = "address" type="text" required></div>
