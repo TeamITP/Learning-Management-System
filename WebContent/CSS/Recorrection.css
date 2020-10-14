@@ -51,7 +51,7 @@ form{
     
     box-sizing: border-box;
     overflow: hidden;
-    margin-left: 70px;
+    margin-left: 170px!important;
     margin-top: 80px;
 
 }
@@ -68,6 +68,6 @@ form{
 }
 .picture
 {
-    margin-top: 20px;
+   margin-left:140px !important;
    
 }
