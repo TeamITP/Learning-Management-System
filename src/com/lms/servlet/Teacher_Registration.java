@@ -33,36 +33,6 @@ public class Teacher_Registration extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*String name = request.getParameter("name");
-		//String email= request.getParameter("email");
-		String contact = request.getParameter("contact");
-		String birthdate =request.getParameter("birthday");
-		String title =request.getParameter("title");
-		String subject =request.getParameter("subject");
-		
-		
-		boolean isTrue;
-		isTrue = Teacher_Managment_ServicesImple.insertContact(name, contact,birthdate,title,subject);
-		
-		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-			dis.forward(request, response);
-		} else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("Student_feedback.jsp");
-			dis2.forward(request, response);
-		}*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -70,11 +40,12 @@ public class Teacher_Registration extends HttpServlet {
 		Teacher teacher = new Teacher();
 		
 		teacher.setName(request.getParameter("name"));
-		//teacher.setEmail(request.getParameter("email"));
+		
 	    teacher.setContact(request.getParameter("contact"));
 		teacher.setBirthdate(request.getParameter("birthday"));
 		teacher.setTitle(request.getParameter("title"));
 		teacher.setSubject(request.getParameter("subject"));
+		teacher.setpw(request.getParameter("pass"));
 		
 		
 		
@@ -85,17 +56,19 @@ public class Teacher_Registration extends HttpServlet {
 		int status = teacher_managment1.registerTeacher(teacher);
 		
 		if(status == 1) {
-			//request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Teacher Registered Successfully");
+			request.setAttribute("link", "EmpProfile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+			//RequestDispatcher dis = request.getRequestDispatcher("Teacher_profile.jsp");
+		    //dis.forward(request, response);
 		} else if (status == 0) {
-			//request.setAttribute("message", "Insert Failed");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("Teacher_registration.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("message", "Teacher Registerig Failed");
+			request.setAttribute("link", "empTeacherReg.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		}
 		
 		
