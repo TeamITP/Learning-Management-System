@@ -6,6 +6,7 @@ public class Assignment {
 	    private String Date;
 	    private String Class_ID;
 	    private String Question;
+	    private String submissionLink;
 	    
 	    
 	    public Assignment() {}
@@ -15,14 +16,17 @@ public class Assignment {
 	        this.Date = Date;
 	        this.Class_ID =Class_ID;
 	        this.Question = Question;
+	        
+	       
 	    }
 	    
 	    
-	    public Assignment(String A_ID, String Date, String Class_ID, String Question) {
+	    public Assignment(String A_ID, String Date, String Class_ID, String Question,String submissionLink) {
 	        super();
 	        this.A_ID = A_ID;
 	        this.Date= Date;
 	        this.Question = Question;
+	        this.submissionLink=submissionLink;
 	    }
 
 		public String getA_ID() {
@@ -56,6 +60,15 @@ public class Assignment {
 		public void setQuestion(String question) {
 			Question = question;
 		}
+
+		public String getSubmissionLink() {
+			return submissionLink;
+		}
+
+		public void setSubmissionLink(String submissionLink) {
+			this.submissionLink = submissionLink;
+		}
+		
 
 	   
 }

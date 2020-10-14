@@ -79,7 +79,7 @@
 		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
 		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
-	
+
 	<div class="page-container">
 		<!--Headers Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -89,80 +89,103 @@
 				<p id="introLesson"><%=lesson.getDescription() %></p>
 			</div>
 			<div class="row btnCont">
-			<form action="updateLesson.jsp" method="Post">
-				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
-				<button type = "submit" id="btnUpdate" style="outline:none">Update</button>
+				<form action="updateLesson.jsp" method="Post">
+					<input name="lessonId" id="lessonId"
+						value="<%=lesson.getLessonId() %>" hidden>
+					<button type="submit" id="btnUpdate" style="outline: none">Update</button>
 				</form>
-				<button id="btnDelete" style="outline:none"  data-toggle="modal" data-target="#deleteModalLesson">Delete</button>
+				<button id="btnDelete" style="outline: none" data-toggle="modal"
+					data-target="#deleteModalLesson">Delete</button>
 			</div>
 			<div class="pageTopicContainer">
 				<h1 class="pageTopic">Reading and Activities</h1>
 				<hr class="dividerTopic">
 			</div>
-			
+
 			<div class="row listClass">
-			<%LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
+				<%LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
 			ArrayList<ReadingMaterial> readingMaterials = lessonMaterialsService.getListReadingMaterials(lessonId);
 			for(ReadingMaterial readingMaterial : readingMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/pdfIcon.png" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()" id="clzImg">
+					<img src="Images/pdfIcon.png"
+						onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"
+						id="clzImg">
 					<div class="row">
 						<div class="col-8">
-							<h3 id="lessonNum">Views  <%=readingMaterial.getViews() %></i></h3>
+							<h3 id="lessonNum">
+								Views
+								<%=readingMaterial.getViews() %></i>
+							</h3>
 						</div>
 						<div class="col-4">
-							<button data-toggle="modal" data-target="#<%=readingMaterial.getReadingMatId() %>" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
+							<button data-toggle="modal"
+								data-target="#<%=readingMaterial.getReadingMatId() %>"
+								style="border: none; color: red; background: none; outline: none; margin-top: 5px;"
+								id="btnDel">
 								<i class="fas fa-minus-circle"></i>
 							</button>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title" onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
+							<h3 id="title"
+								onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
+						</div>
+					</div>
+					</form>
+				</div>
+				<div class="modal fade" id="<%=readingMaterial.getReadingMatId() %>"
+					role="form">
+					<div class="modal-dialog modal-dialog-centered">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<label class="modal-title">Delete Lesson Material</label>
+								<button type="button" id="bnClose" style="outline: none"
+									class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form class="modalUpd" method="Post"
+									action="DeleteReadingMaterial">
+									<input value="<%=readingMaterial.getPathLink() %>" name="path"
+										hidden>
+									<div class="row">
+										<input value="<%=readingMaterial.getReadingMatId() %>"
+											name="materialId" hidden> <label
+											style="padding: 10px; padding-left: 20px;">Are you
+											sure you want to delete this material ?</label>
+									</div>
+									<!-- form-group end.// -->
+									<div class="form-group">
+										<button data-dismiss="modal"
+											style="margin-right: 20px; color: #ffffff"
+											class="btn btn-warning">Cansel</button>
+										<button type="submit" class="btn btn-danger">Delete</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-			<div class="modal fade" id="<%=readingMaterial.getReadingMatId() %>" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete Lesson Material</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="Post" action="DeleteReadingMaterial">
-						<input value="<%=readingMaterial.getPathLink() %>" name="path" hidden>
-							<div class="row"><input value="<%=readingMaterial.getReadingMatId() %>"
-									name="materialId" hidden> <label
-									style="padding: 10px; padding-left: 20px;">Are you sure
-									you want to delete this material ?</label>
-							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cansel</button>
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<form action="<%=readingMaterial.getPathLink() %>" target="_blank" hidden>
-		<input type="submit" id="click<%=readingMaterial.getReadingMatId()%>"></form>
+				<form action="downloadReading" method="post" target="_blank"
+					hidden>
+					<input value="<%=readingMaterial.getPathLink() %>" name="link">
+					<input type="submit"
+						id="click<%=readingMaterial.getReadingMatId()%>">
+				</form>
 				<%} %>
 
 
 				<div class="col-1.5 itemContainer">
-					<img id="btnUpload" onclick="document.getElementById('btnLes').click()" src="Images/addIcon.png" name="btnUpload">
+					<img id="btnUpload"
+						onclick="document.getElementById('btnLes').click()"
+						src="Images/addIcon.png" name="btnUpload">
 				</div>
 				<form action="insetAcStepOne.jsp">
-				<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
-				<input type="submit" id="btnLes" hidden></form>
-				</div>
+					<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
+					<input type="submit" id="btnLes" hidden>
+				</form>
+			</div>
 
 
 			<div class="pageTopicContainer">
@@ -171,104 +194,116 @@
 			</div>
 
 			<div class="row listClass">
-			<%
+				<%
 			ArrayList<VideoMaterial> videoMaterials = lessonMaterialsService.getListVideo(lessonId);
 			for(VideoMaterial videoMaterial : videoMaterials) {%>
 				<div class="col-1.5 itemContainer">
-					<img src="Images/youtubeVideo.png" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()" id="youtubeV">
+					<img src="Images/youtubeVideo.png"
+						onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"
+						id="youtubeV">
 					<div class="row">
 						<div class="col-8">
 							<h3 id="lessonNum">YouTube</h3>
 						</div>
 						<div class="col-4">
-							<button data-toggle="modal" data-target="#<%=videoMaterial.getVideoMatId() %>" style="border:none; color:red; background:none; outline:none; margin-top:5px;" id="btnDel">
+							<button data-toggle="modal"
+								data-target="#<%=videoMaterial.getVideoMatId() %>"
+								style="border: none; color: red; background: none; outline: none; margin-top: 5px;"
+								id="btnDel">
 								<i class="fas fa-minus-circle"></i>
 							</button>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<h3 id="title" onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"><%=videoMaterial.getName() %></h3>
+							<h3 id="title"
+								onclick="document.getElementById('click<%=videoMaterial.getVideoMatId()%>').click()"><%=videoMaterial.getName() %></h3>
 						</div>
 					</div>
 				</div>
 
-				
-		<form action="<%=videoMaterial.getUrl() %>" target="_blank" hidden>
-		<input type="submit" id="click<%=videoMaterial.getVideoMatId()%>"></form>
 
-		<!--Moodal for delete video-->
-		<div class="modal fade" id="<%=videoMaterial.getVideoMatId() %>" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete Video</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="post" action="DeleteVideo">
-							<div class="row"> <input value="<%=videoMaterial.getVideoMatId() %>"
-									name="materialId" hidden> <label
-									style="padding: 10px; padding-left: 20px;">Are you sure
-									you want to delete this video ?</label>
+				<form action="<%=videoMaterial.getUrl() %>" target="_blank" hidden>
+					<input type="submit" id="click<%=videoMaterial.getVideoMatId()%>">
+				</form>
+
+				<!--Moodal for delete video-->
+				<div class="modal fade" id="<%=videoMaterial.getVideoMatId() %>"
+					role="form">
+					<div class="modal-dialog modal-dialog-centered">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<label class="modal-title">Delete Video</label>
+								<button type="button" id="bnClose" style="outline: none"
+									class="close" data-dismiss="modal">&times;</button>
 							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cansel</button>
-								<button type="submit" class="btn btn-danger">Delete</button>
+							<div class="modal-body">
+								<form class="modalUpd" method="post" action="DeleteVideo">
+									<div class="row">
+										<input value="<%=videoMaterial.getVideoMatId() %>"
+											name="materialId" hidden> <label
+											style="padding: 10px; padding-left: 20px;">Are you
+											sure you want to delete this video ?</label>
+									</div>
+									<!-- form-group end.// -->
+									<div class="form-group">
+										<button data-dismiss="modal"
+											style="margin-right: 20px; color: #ffffff"
+											class="btn btn-warning">Cansel</button>
+										<button type="submit" class="btn btn-danger">Delete</button>
+									</div>
+								</form>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<%} %>
-		
-		<div class="col-1.5 itemContainer">
-					<img id="btnUpload" onclick="document.getElementById('btnLess').click()" src="Images/addIcon.png" name="btnUpload">
+				<%} %>
+
+				<div class="col-1.5 itemContainer">
+					<img id="btnUpload"
+						onclick="document.getElementById('btnLess').click()"
+						src="Images/addIcon.png" name="btnUpload">
 				</div>
 				<form action="insertYoutubeVideo.jsp">
-				<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
-				<input type="submit" id="btnLess" hidden></form>
-				</div>
+					<input name="lessonId" id="lessonId" value="<%=lessonId %>" hidden>
+					<input type="submit" id="btnLess" hidden>
+				</form>
+			</div>
 
-		<!--Moodal for delete for Lesson-->
-		<div class="modal fade" id="deleteModalLesson" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete Video</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form class="modalUpd" method="post" action="DeleteLesson">
-							<div class="row">
-								<input name="url" hidden> <input value="<%=lesson.getLessonId() %>"
-									name="lessonId" hidden> <label
-									style="padding: 10px; padding-left: 20px;">Are you sure
-									you want to delete this lesson ?</label>
-							</div>
-							<!-- form-group end.// -->
-							<div class="form-group">
-								<button data-dismiss="modal"
-									style="margin-right: 20px; color: #ffffff"
-									class="btn btn-warning">Cansel</button>
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</div>
-						</form>
+			<!--Moodal for delete for Lesson-->
+			<div class="modal fade" id="deleteModalLesson" role="form">
+				<div class="modal-dialog modal-dialog-centered">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<label class="modal-title">Delete Video</label>
+							<button type="button" id="bnClose" style="outline: none"
+								class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<form class="modalUpd" method="post" action="DeleteLesson">
+								<div class="row">
+									<input name="url" hidden> <input
+										value="<%=lesson.getLessonId() %>" name="lessonId" hidden>
+									<label style="padding: 10px; padding-left: 20px;">Are
+										you sure you want to delete this lesson ?</label>
+								</div>
+								<!-- form-group end.// -->
+								<div class="form-group">
+									<button data-dismiss="modal"
+										style="margin-right: 20px; color: #ffffff"
+										class="btn btn-warning">Cansel</button>
+									<button type="submit" class="btn btn-danger">Delete</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!--Footer Here-->
+			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
-		<!--Footer Here-->
-		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
-	</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"

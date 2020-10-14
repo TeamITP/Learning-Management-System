@@ -17,6 +17,7 @@ public class Teacher_Qualification {
 		this.teacher_id = teacher_id;
 		this.description = description;
 	}
+	public Teacher_Qualification() {}
 
 	public String getQ_id() {
 		return q_id;

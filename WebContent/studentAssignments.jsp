@@ -1,4 +1,3 @@
-
 <%@page import="com.lms.model.Classroom"%>
 <%@page import="com.lms.service.ClassroomServicesImpl"%>
 <%@page import="com.lms.service.ClassroomServices"%>
@@ -27,19 +26,15 @@
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
-
 		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
-
 		if (clzId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
-
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
@@ -88,7 +83,6 @@
 				<%
 					AssignmentServices assignmentServices = new AssignmentServiceImpl();
 				ArrayList<Assignment> arrayList = assignmentServices.getAssignmentList(clzId);
-
 				for (Assignment assignment : arrayList) {
 					System.out.println(assignment.toString());
 				%>
@@ -96,7 +90,7 @@
 					<p><%=assignment.getQuestion()%></p>
 					<p><%=assignment.getDate()%></p>
 					<div>
-					<a href="fileSubmit.jsp">Add Your Submission</a>
+					<a href="<%=assignment.getSubmissionLink() %>">Add Your Submission</a>
 <!-- 						<button class="btn">Submit</button> -->
 						
 					</div>

@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<%
+	<%
 	String username = "";
 
 	String clzId = (String) session.getAttribute("classroomId");
@@ -90,21 +90,23 @@
 			</div>
 			<img src="Images/insertLesson.png" id="mainImg">
 			<form action="updateLesson" method="Post">
-				<input name="lessonId" id="lessonId" value="<%=lesson.getLessonId() %>" hidden>
-			<div class="row">
-				<input placeholder="Title" value="<%=lesson.getName()%>"id="titleInput" name="lessonName">
-			</div>
-			<div class="row">
-				<textarea placeholder="Description" id="description"
-					name="description"><%=lesson.getDescription() %></textarea>
-			</div>
-			<div class="row">
-				<button type="submit" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Update Lesson</button>
-			</div>
-			</from>
-			<!--Footer Here-->
-			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+				<input name="lessonId" id="lessonId"
+					value="<%=lesson.getLessonId() %>" hidden>
+				<div class="row">
+					<input placeholder="Title" value="<%=lesson.getName()%>"
+						id="titleInput" name="lessonName">
+				</div>
+				<div class="row">
+					<textarea placeholder="Description" id="description"
+						name="description"><%=lesson.getDescription() %></textarea>
+				</div>
+				<div class="row">
+					<button type="submit" class="btn btn-primary" name="btnSubmit"
+						id="btnSubmit">Update Lesson</button>
+				</div>
+				</from>
+				<!--Footer Here-->
+				<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		</div>
 </body>
 
