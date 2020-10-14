@@ -16,8 +16,7 @@
 <meta charset="ISO-8859-1">
 <title>Home | Admin</title>
 <link rel="icon" href="Images/book.png">
-<link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
-<link rel="stylesheet" href="CSS/ownerHome.css">
+<link rel="stylesheet" href="CSS/employeeNav.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -29,6 +28,9 @@
 	href="adminstudent1/css/Navigation-with-Search.css">
 <link rel="stylesheet" href="adminstudent1/css/styles.css">
 
+<script src="adminstudent1/js/jquery.min.js"></script>
+<script src="adminstudent1/bootstrap/js/bootstrap.min.js"></script>
+<script src="adminstudent1/js/bs-init.js"></script>
  
 <script>
 var b = 0;
@@ -42,13 +44,25 @@ var b = 0;
 	    }
 	}</script>
 </head>
+  <%String username = "";
 
-<header>
+	if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
 
-	
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
 
-	<div class="sidenav" id="navBarSide">
-		<div class="sideNav">
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	StudentServices studentServices = new StudentServicesImple();
+	ArrayList<Student> arrayList = studentServices.getStudentList();
+	%>
+
+<body>
+<!-- Employee Navigation Bar -->
+	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
 				<img src="Images/dashboard.png" id="imageUserNav">
@@ -68,52 +82,12 @@ var b = 0;
 			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
 		</div>
 	</div>
-	</div>
-	
-	
-</header>
-
-<body>
-	 
+<div class="page-container">
+		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-		 
 
-		
-
-			
-			
-		</div>
-		<script src="adminstudent1/js/jquery.min.js"></script>
-		<script src="adminstudent1/bootstrap/js/bootstrap.min.js"></script>
-		<script src="adminstudent1/js/bs-init.js"></script>
-
-	</div>
-
-    <body>
-    
-    <%String username = "";
-
-	if (session.getAttribute("userId") != null) {
-		username = (String) session.getAttribute("userId");
-
-		if (username.charAt(0) != 'E') {
-			response.sendRedirect("index.jsp");
-		}
-
-	} else {
-		response.sendRedirect("index.jsp");
-	}
-	StudentServices studentServices = new StudentServicesImple();
-	ArrayList<Student> arrayList = studentServices.getStudentList();
-	%>
-	
-        <div class="page-container">
-	<div class="pageContainer">
-	
-		<!-- Header here -->
-  		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
-  		
-  		  <div class="row" style="padding-top: 10px;">
+		<div class="pageContainer">
+			<div class="row" style="padding-top: 10px;">
   		
         <div class="col" style="padding-top: 10px;padding-right: 50px;padding-left: 50px;">
             <div style="background-color: #006FFF;border-radius: 5px;"><label style="color: rgb(248,249,251);padding-left: 10px;">Students</label></div>
@@ -244,18 +218,17 @@ var b = 0;
 				<input name="Student_ID"  hidden>
 					<button type="submit" class="btn btn-success" id="btnReport">Get
 						Report of Students</button></form>
-				</div>
 			</div></div>
 			</div>
 			</br>
-			</br>		
-						
-    <div>
-        
-					
-            
-					
-    </div>
+			</br>
+		</div>
+		<!--Footer Here-->
+		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	
+	</div>
+</body>
+	
     <script src="adminstudent1/js/jquery.min.js"></script>
     <script src="adminstudent1/bootstrap/js/bootstrap.min.js"></script>
     <script src="adminstudent1/js/bs-init.js"></script>
