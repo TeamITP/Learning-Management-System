@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 style="border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;background-color: #297ce9;font-size: 25px;width: 910px;height: 45px;margin: 70px;padding: 10px;color: rgb(234,243,255);">Employee Profile Update</h1>
+                    <h1 style="padding-top: 10px; border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;background-color: #297ce9;font-size: 25px;width: 910px;height: 45px;margin: 70px;padding: 10px;color: rgb(234,243,255);">Employee Profile Update</h1>
                 </div>
             </div>
             <div class="row">

@@ -80,9 +80,10 @@ var b = 0;
 		</div>
 	</div>
 	</div>
-	<div class="pageContainer">
+	<div class="page-container">
 	<!--Header Here-->
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+	<div class="pageContainer">
     <div class="row">
         <div class="col" style="width: 960px;">
             <h1 style="width: 1000px;height: 45px;margin: 10px;padding: 10px;font-size: 25px;background-color: #3e8ce4;color: rgb(255,255,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">Employee</h1>
@@ -206,7 +207,7 @@ var b = 0;
     <script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>
     
     </div>
-
+</div>
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>

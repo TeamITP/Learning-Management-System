@@ -105,7 +105,7 @@ var b = 0;
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 style="font-size: 25px;padding: 10px;background-color: #006fff;color: rgb(255,255,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;height: 45px;width: 910px;margin: 10px;">Employee</h1>
+                    <h1 style="font-size: 25px; padding-top: 10px; padding: 10px;background-color: #006fff;color: rgb(255,255,255);border-top-left-radius: 7px;border-top-right-radius: 7px;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;height: 45px;width: 910px;margin: 10px;">Employee</h1>
                 </div>
             </div>
             <div class="row">
