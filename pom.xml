@@ -3,7 +3,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<!--  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">-->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>LearningManagementSystem</groupId>
 	<artifactId>LearningManagementSystem</artifactId>
@@ -99,7 +98,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.sendgrid/sendgrid-java -->
-	
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>4.6.4</version>
+		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
