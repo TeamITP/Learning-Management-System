@@ -56,27 +56,23 @@ String examId = (String)session.getAttribute("examId");
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 %>
-<div class="sideNav">
+<!-- Teacher Navigation -->
+	
+	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav"><%=username %></h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp" class="active"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
@@ -84,7 +80,6 @@ String examId = (String)session.getAttribute("examId");
 		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
 		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
-
 <!--Page Content Start Here-->
 <div class="page-container">
             <!--Header Here-->
@@ -231,16 +226,64 @@ $(document).ready(function(){
    
    
     <!-- Search form -->  
-  
+    
+  <label id="titleReport">Generate Reports</label>
+     <p id="para">     Select the Marks Range  you Want to get the Report</p>
     <div class="row report">
+    
 				<div class="col-2">
 					<img src="Images/reportImg.png" id="reportImg">
 				</div>
-				<div class="col-3">
+				
+				<div class="col-3 list">
 				<form action="ResultReport" method="post">
+				
+			 <div class="col"><input type="range" min="0" max="100" step="25" name="my-datalist" list="my-datalist"/>
+					<datalist id="my-datalist" style="--list-length: 5;"><!--
+					  ---><option>0</option><!--
+					  ---><option>25</option><!--
+					  ---><option>50</option><!--
+					  ---><option>75</option><!--
+					  ---><option>100</option><!--
+					---></datalist>	
+			
 				<input name="examid" value="<%= examId %>" hidden>
-					<button type="submit" class="btn btn-danger" id="btnReport">Get
-						Report of Results</button></form>
+				
+						
+<style>				
+					
+			/* style range */
+input[type=range] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+/* style datalist */
+input[type=range] + datalist {
+    display: block;
+    margin-top: -4px;
+}
+input[type=range] + datalist option {
+    display: inline-block;
+    width: calc((100% - 12px) / (var(--list-length) - 1));
+    text-align: center;
+}
+input[type=range] + datalist option:first-child {
+    width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    text-align: left;
+}
+input[type=range] + datalist option:last-child {
+    width: calc((100% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    text-align: right;
+}
+
+</style>	
+					
+						
+				<div class="row button">	<button type="submit" class="btn btn-danger" id="btnReport">Get
+						Report of Results</button></div>					
+						</form>
 				</div>
 			</div>     
 			
