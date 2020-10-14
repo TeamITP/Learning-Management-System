@@ -9,21 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lms.model.ExamResult;
+import com.lms.service.ClassroomServices;
+import com.lms.service.ClassroomServicesImpl;
 import com.lms.service.ExamResultServices;
 import com.lms.service.ExamResultServicesImp;
+import com.lms.service.ExaminationServices;
+import com.lms.service.ExaminationServicesImp;
 
 /**
- * Servlet implementation class UpdateResult
+ * Servlet implementation class ResultReport
  */
-@WebServlet("/UpdateExResult")
-public class UpdateExResult extends HttpServlet {
+@WebServlet("/ResultReport")
+public class ResultReport extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateExResult() {
+    public ResultReport() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,30 +43,27 @@ public class UpdateExResult extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String examid = request.getParameter("examid");
+    int maxvalue = Integer.parseInt(request.getParameter("my-datalist"));
+    
+    
+    System.out.println("exam marks"+maxvalue);
 		
-		int Marks  =Integer.parseInt(request.getParameter("marks"));
-		String ResultId = request.getParameter("resultId");
+		ExaminationServices examinationServices = new ExaminationServicesImp();
+		String path = examinationServices.generateReport(examid,maxvalue,getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
-		ExamResult examresult = new ExamResult();
+		if (path != null) {
+			
+			response.sendRedirect(path);
+			
+		} else {
+			request.setAttribute("message", "Error in Generating Report");
+			request.setAttribute("link", "classroomsTeacher.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		
-		examresult.setMarks(Marks);
-		
-		
-		ExamResultServices examresultservices = new ExamResultServicesImp();	
-		
-		int status = examresultservices.UpdateResult(ResultId, Marks);
-		 if(status == 1)
-		    {
-			 request.setAttribute("message", "Result Update Succssfully ");
-				request.setAttribute("link", "ResultTeacherView.jsp");
-				request.setAttribute("status", "OK");
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
-				dispatcher.forward(request, response); 	 	
-		    }
-		    else if(status == 0)
-		    {
-		    	request.setAttribute("message", "updateFailed");
-		    }
+		}
 	}
 
 }
