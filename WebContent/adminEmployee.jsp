@@ -19,9 +19,8 @@
     <link rel="stylesheet" href="EmployeeAdmin/css/styles.css">
     
     <meta charset="ISO-8859-1">
-    <link rel="icon" href="Images/book.png">
-    <link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
-    <link rel="stylesheet" href="CSS/ownerHome.css">
+    <link rel="icon" href="Images/book.png">  
+    <link rel="stylesheet" href="CSS/employeeNav.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
@@ -40,8 +39,26 @@ var b = 0;
 	}</script>
 </head>
 
-<header>
-	  <div class="sidenav" id="navBarSide">
+<body>
+	<%
+		String username = "";
+			if (session.getAttribute("userId") != null) {
+			username = (String) session.getAttribute("userId");
+
+			if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+			}
+
+			} else {
+			response.sendRedirect("index.jsp");
+			}
+
+			EmployeeServices employeeServices = new EmployeeServicesImpl();
+			ArrayList<Employee> arrayList = employeeServices.getEmployeeArrayList();
+			%>
+
+<!-- Employee Navigation Bar -->
+	<div class="sidenav" id="navBarSide">
 	  <div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -63,27 +80,6 @@ var b = 0;
 		</div>
 	</div>
 	</div>
-	</header>
-
-
-<body>
-	<%
-		String username = "";
-			if (session.getAttribute("userId") != null) {
-			username = (String) session.getAttribute("userId");
-
-			if (username.charAt(0) != 'E') {
-			response.sendRedirect("index.jsp");
-			}
-
-			} else {
-			response.sendRedirect("index.jsp");
-			}
-
-			EmployeeServices employeeServices = new EmployeeServicesImpl();
-			ArrayList<Employee> arrayList = employeeServices.getEmployeeArrayList();
-			%>
-
 	<div class="pageContainer">
 	<!--Header Here-->
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
