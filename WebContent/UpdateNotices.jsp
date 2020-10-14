@@ -1,3 +1,6 @@
+<%@page import="com.lms.model.CommonNotice"%>
+<%@page import="com.lms.service.NoticesServiceImple"%>
+<%@page import="com.lms.service.NoticeService"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,18 +11,36 @@
         <link rel="icon" href="Images/book.png">
         <link rel="stylesheet" href="CSS/teacherNav.css">
         <link rel="stylesheet" href="CSS/teacherClassroom.css">
-        <link rel="stylesheet" href="CSS/UpdateNotice.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
 </head>
 <body>
+<%
+	String username = "";
+	String noticeId = request.getParameter("noticeId");
+	String EmpId = (String) session.getAttribute("EmpId");
+	
+		if (session.getAttribute("userId") != null) {
+			username = (String) session.getAttribute("userId");
+
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
+
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+
+	NoticeService noticeService = new NoticesServiceImple();
+	CommonNotice commonnotice = noticeService.getNoticeById(noticeId);
+	%>
 
  <div class="sideNav">
-            <div class="row justify-content-center firstRow">
-                <div class="col-4">
-                    <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
-                <div class="col-8 align-items-center">
+           		 <div class="row justify-content-center firstRow">
+                 <div class="col-4">
+                 <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
+                 <div class="col-8 align-items-center">
                     <h5 class="nameNav">Yasiru Randika</h5>
                 </div>
             </div>
@@ -52,15 +73,18 @@
                     <h1 class="pageTopic"> Update Notice </h1>
                     <hr class="dividerTopic">
                 </div>
-          
+       
               
-<form>
-    <input name="" placeholder="Title" required>
-    <textarea placeholder="Notice Here"></textarea>
-    <button class="btn">Update Notice</button>
+<form action= "UpdateNotices" method= "post">
+<input name="id" value="<%=noticeId%>" hidden>
+    <input name="description" style="width:400px; margin-top:20px" class="form-control" placeholder="Title" value="<%=commonnotice.getTitle()%>" type="text" id="description" required>
+    <br>
+    <textarea class="form-control" name="notice" style="width:400px"  placeholder="Notice Here" ><%=commonnotice.getNotice_des()%></textarea>
+    <br>
+    <button class="btn btn-primary">Update Notice</button>
 </form>
 
- <img src="Images/image4.png" id="imgUpN" width ="500" height="400">     
+ <img src="Images/image4.png" style = "z-index:-1; position:absolute"id="imgUpN" width ="500" height="400">     
 
             </div>
                 <!--Footer Here-->

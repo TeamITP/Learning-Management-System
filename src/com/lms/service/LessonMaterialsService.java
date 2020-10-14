@@ -1,7 +1,10 @@
 package com.lms.service;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+
+import javax.servlet.http.Part;
 
 import com.lms.model.ReadingMaterial;
 import com.lms.model.VideoMaterial;
@@ -70,4 +73,28 @@ public interface LessonMaterialsService {
 		 * @param lessonId
 		 */
 		public int updateViewCount(String lessonId);
+		
+		/**
+		 * Upload reading materials to blob storage
+		 * 
+		 * @param Part
+		 */
+		public String uploadToBlob(Part part);
+		
+		/**
+		 * Delete reading materials from blob storage
+		 * 
+		 * @param Part
+		 */
+		public void deleteFromBlob(String fileName);
+		
+		/**
+		 * Download reading from Blob Storage
+		 * 
+		 * @param Part
+		 */
+		public ByteArrayOutputStream downloadFromBlob(String id);
+		
+		
+		
 }

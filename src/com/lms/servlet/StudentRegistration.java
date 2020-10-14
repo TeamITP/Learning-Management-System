@@ -43,16 +43,24 @@ public class StudentRegistration extends HttpServlet {
 
 		if(status == 1) {
 			request.setAttribute("message", "Insert Succesful");
+			request.setAttribute("link", "studentprofile.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+			 
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-		    dis.forward(request, response);
+			 
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
+			request.setAttribute("link", "login.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
+			 
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
 			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
-		    dis.forward(request, response);
+			 
 		}
 	}
 

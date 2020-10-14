@@ -33,9 +33,11 @@ public class ClzStudentReport extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String classroomId = request.getParameter("classroomId");
+		String startDate = request.getParameter("StartDate");
+		String endDate = request.getParameter("EndDate");
 		
 		ClassroomServices classroomServices = new ClassroomServicesImpl();
-		String path = classroomServices.generateReport(classroomId, getServletContext().getRealPath("/UploadedFiles/PDF"));
+		String path = classroomServices.generateReport(classroomId, startDate, endDate, getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
 			response.sendRedirect(path);

@@ -10,7 +10,7 @@
 }
 
 
-form{
+#formSu{
     position: absolute;
     width: 320px;
      border: 1px solid #006fff;
@@ -58,7 +58,7 @@ form textarea{
           inset 3px 3px 3px rgba(0,0,0,0.3);
 }
 
-form .btn{
+form .btnSubmit{
     position: relative;
     margin: 20px 20px 40px 20px;
     height: 40px;
@@ -76,7 +76,7 @@ form .btn{
 .boxed {
 	border-radius:5px;
 	padding: 40px 20px;
-	width:500px;
+	width:600px;
 	height:200px;
 	border:1px solid #0080ff;
 	font-size: 16px;
@@ -102,4 +102,7 @@ form .btn{
 }
 #h6{
 	color: blue;
+}
+.btnDelete{
+	width:4px !important;
 }

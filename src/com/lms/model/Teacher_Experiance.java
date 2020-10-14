@@ -25,6 +25,7 @@ public class Teacher_Experiance {
 		this.place = place;
 		this.place_contact = place_contact;
 	}
+	public Teacher_Experiance() {}
 
 
 	public String getQ_id() {
