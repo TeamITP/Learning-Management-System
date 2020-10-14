@@ -17,11 +17,15 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<script type="text/javascript">function overlayShow() {
+		  document.getElementById("overlay").className += " show";
+	}
+</script>
 </head>
 
 
 <body>
-<%
+	<%
 	String username = "";
 String clzId = (String) session.getAttribute("classroomId");
 String lessonId = (String) session.getAttribute("lessonId");
@@ -75,8 +79,10 @@ String lessonId = (String) session.getAttribute("lessonId");
 		<h5 class="textClz" id="classYear">2020 A/L</h5>
 		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
 	</div>
+	<div id="overlay" class="overlay">
 
 	<div class="page-container">
+	
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
@@ -90,7 +96,7 @@ String lessonId = (String) session.getAttribute("lessonId");
 			</div>
 			<div class="row">
 				<form enctype='multipart/form-data' method="post" action="ReadingUpload">
-				<input value="<%=clzId %> name="classroomId" hidden>
+					<input value="<%=clzId %> name=" classroomId" hidden>
 					<div class="uploadField">
 						<label for="fileUpload"> <img id="btnUpload"
 							src="Images/addIcon.png" name="btnUpload">
@@ -101,17 +107,18 @@ String lessonId = (String) session.getAttribute("lessonId");
 						</label>
 					</div>
 			</div>
-			<input onchange="inputChanged()" draggable="true" type="file" name="file"
-				id="fileUpload" hidden />
+			<input onchange="inputChanged()" draggable="true" type="file"
+				name="file" id="fileUpload" hidden  required/>
 			<div class="row">
 				<button type="submit" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Next</button>
+					id="btnSubmit" onclick="overlayShow()">Next</button>
 			</div>
 			</form>
 			<div id="warning">Make sure your input is a pdf document</div>
 		</div>
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	</div>
 	</div>
 </body>
 

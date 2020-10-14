@@ -1,3 +1,6 @@
+//Anuththara K.G.S.N
+//IT19142692
+
 package com.lms.servlet;
 
 import java.io.IOException;
@@ -43,18 +46,17 @@ public class EmployeeDelete extends HttpServlet {
 			request.setAttribute("message", "Delete Successful");
 			HttpSession session=request.getSession();  
 	        session.invalidate();
-	        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("index.jsp");
-			//RequestDispatcher dis = request.getRequestDispatcher("teacherClassroom.jsp");
-		    //dis.forward(request, response);
+	        request.setAttribute("link", "index.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Delete Failed");
 			request.setAttribute("userId", empId);
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			RequestDispatcher dis = request.getRequestDispatcher("EmpProfile.jsp");
-		    dis.forward(request, response);
+			request.setAttribute("link", "EmpProfile.jsp");
+			request.setAttribute("status", "FAIL");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 	}
 
 }

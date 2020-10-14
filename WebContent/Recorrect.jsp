@@ -33,12 +33,10 @@ String Result_ID = (String)session.getAttribute("resultid");
 		if (username.charAt(0) != 'S') {
 			response.sendRedirect("index.jsp");
 		}
-
 		
 		if (clzId == null) {
 			response.sendRedirect("index.jsp");
 		}
-
 	} else {
 		response.sendRedirect("index.jsp");
 	}
