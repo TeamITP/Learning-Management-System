@@ -5,6 +5,11 @@ package com.lms.service;
  * 
  * */
 
-public interface Teacher_admin_Services {
+import java.util.logging.Logger;
 
+public interface Teacher_admin_Services {
+	
+	public static final Logger logger = Logger.getLogger(UserService.class.getName());
+
+	public String generateReport(String teacherId, String root);
 }
