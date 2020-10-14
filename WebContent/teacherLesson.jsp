@@ -132,6 +132,7 @@
 								onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
 						</div>
 					</div>
+					</form>
 				</div>
 				<div class="modal fade" id="<%=readingMaterial.getReadingMatId() %>"
 					role="form">
@@ -166,8 +167,9 @@
 						</div>
 					</div>
 				</div>
-				<form action="<%=readingMaterial.getPathLink() %>" target="_blank"
+				<form action="downloadReading" method="post" target="_blank"
 					hidden>
+					<input value="<%=readingMaterial.getPathLink() %>" name="link">
 					<input type="submit"
 						id="click<%=readingMaterial.getReadingMatId()%>">
 				</form>

@@ -47,15 +47,17 @@ public class ReadingUpload extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		
+		
 		 // Create path components to save the file
 	    final String path = getServletContext().getRealPath("/UploadedFiles/Readings");
 	    final Part filePart = request.getPart("file");
 	    final String fileName = filePart.getSubmittedFileName();
-
+	    
 	    OutputStream out = null;
 	    InputStream filecontent = null;
-	    final PrintWriter writer = response.getWriter();
 	    int status = 0;
+	    /*final PrintWriter writer = response.getWriter();
+	    
 
 	    try {
 	        out = new FileOutputStream(new File(path + File.separator
@@ -70,19 +72,18 @@ public class ReadingUpload extends HttpServlet {
 	        while ((read = filecontent.read(bytes)) != -1) {
 	            out.write(bytes, 0, read);
 	        }
+	        */
+	        LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
+	        String newFile = lessonMaterialsService.uploadToBlob(filePart);
 	        
 	        ReadingMaterial readingMaterial = new ReadingMaterial();
 	        readingMaterial.setPathLink(newFile);
 	        HttpSession session = request.getSession();
 			readingMaterial.setClassroomId((String) session.getAttribute("classroomId"));
-	        LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
+	        
 	        status = lessonMaterialsService.insertPDFtoReading(readingMaterial);
 	        if(status == 1) {
 				request.setAttribute("message", "Insert Succesful");
-				//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-				//dispatcher.forward(request, response);
-				//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
-			    //dis.forward(request, response);
 				response.sendRedirect("insertStepThree.jsp");
 			} else if (status == 0) {
 				request.setAttribute("message", "Insert Failed");
@@ -90,26 +91,7 @@ public class ReadingUpload extends HttpServlet {
 				//dispatcher.forward(request, response);
 				response.sendRedirect("insetAcStepTwo.jsp");
 			}
-	    } catch (FileNotFoundException fne) {
-	        writer.println("You either did not specify a file to upload or are "
-	                + "trying to upload a file to a protected or nonexistent "
-	                + "location.");
-	        writer.println("<br/> ERROR: " + fne.getMessage());
-
-	        System.out.println("Problems during file upload. Error: " +fne.getMessage());
-	    } finally {
-	        if (out != null) {
-	            out.close();
-	        }
-	        if (filecontent != null) {
-	            filecontent.close();
-	        }
-	        if (writer != null) {
-	            writer.close();
-	        }
-	    }
+	    } 
 	    
 	}
 	
-
-}

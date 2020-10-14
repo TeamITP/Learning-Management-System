@@ -515,4 +515,78 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		return filePath;
 	}
 
+	@Override
+	public String getTeacherInClassroom(String teacherId) {
+		String name = "";
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT Name FROM Teacher WHERE Teacher_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, teacherId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				name = resultSet.getString(1);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of the transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return name;
+	}
+
+	@Override
+	public String getStudentNameInClassroom(String studentId) {
+		String name = "";
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT fristName, lastName FROM Student WHERE Student_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, studentId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				name = resultSet.getString(1) + " " + resultSet.getString(2);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of the transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return name;
+	}
+
 }

@@ -34,8 +34,8 @@ String clzPath="";
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="<%=clzPath%>">Classrooms</a></li>
+					<li><a href="notices.jsp">Notices</a></li>
 					<li><a href="about.jsp">About</a></li>
-					<li><a href="contact.jsp">Contact</a></li>
 					<%
 			if (session.getAttribute("userId") == null) {
 		%><li><a id="loginA" href="login.jsp">Login</a></li>

@@ -54,4 +54,8 @@ public interface ClassroomServices {
 	public String generateReport(String classroomId, String startDate, String endDate, String string);
 	
 	public int deleteClassroom(String classroomId);
+	
+	public String getTeacherInClassroom(String teacherId);
+	
+	public String getStudentNameInClassroom(String studentId);
 }
