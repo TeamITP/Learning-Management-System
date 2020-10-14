@@ -22,25 +22,25 @@
 
     <body>
         <div class="sideNav">
-        <div class="row justify-content-center firstRow">
-            <div class="col-4">
-                <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
-            <div class="col-8 align-items-center">
-                    <h5 class="nameNav">Yasiru Randika</h5>
-            </div>
-        </div>
-        <hr id="breakLine">
-        <div class="mainSideNav">
-        <a href="employeeClassFess.jsp"  ><i class="fas fa-money-bill-alt iconMainNavi" ></i>Class Fees</a>
-        <a href="empIncome.jsp"><i class="fas fa-funnel-dollar iconMainNavi"></i>Income</a>
-        <a href="empExpenditures.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditures</a>
-		<a href="empTeacherSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Teachers Salary</a>
-        <a href="empEmployeeSal.jsp" ><i class="fas fa-money-check-alt iconMainNavi"></i>Employees Salary</a>
-		<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a> 
-		<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a>
-        <a href="empStudentReg.jsp" class="active"> <i class="fas fa-user-plus iconMainNavi"></i>New Students</a>
-        </div>
-        </div>
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/dashboard.png" id="imageUserNav">
+			</div>
+			<div class="col-8 align-items-center">
+				<h5 class="nameNav">Dashboard</h5>
+			</div>
+		</div>
+		<hr id="breakLine">
+		<div class="mainSideNav">
+			<a href="paymentHome.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp" class="active"><i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
+		</div>
+	</div>
 
 <div class="page-container">
             <!--Header Here-->
