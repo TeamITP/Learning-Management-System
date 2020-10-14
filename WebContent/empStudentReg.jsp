@@ -1,12 +1,6 @@
 
-<!--Imbulana Liyanage D.S.I.-->
 <!--IT19134772-->
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-
+<!--Imbulana Liyanage D.S.I.-->
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -28,6 +22,19 @@
     </head>
 
     <body>
+    
+    <%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	%>
+	
         <div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -55,12 +62,10 @@
         <div class="pageContainer">
         	    <div class="contact-clean">
 
-
-                <div class="col"><label>Enter Last Name</label><input class="form-control" name = "lastName" type="text" required></div>
-                <div class="col"><label>Enter Email Address</label><input class="form-control" name = "address" type="text" required></div>
-                <div class="col"><label>Enter Phone Number</label><input class="form-control" name = "phone" type="text" required></div>
-                <div class="col"><label>Enter Gaurdian Name</label><input class="form-control" name = "Guardian" type="text" required></div>
-
+        <form method="post"  Action = "StudentRegistration">
+            <h2 class="text-center">Student Registration</h2>
+            <div class="col"><label>Enter First Name</label><input class="form-control" id="firstName"  name = "firstName" type="text" required></div>
+            <div class="form-group">
 
                 <div class="col"><label>Enter Last Name</label><input class="form-control" id="lastName" name = "lastName" type="text" required></div>
                 <div class="col"><label>Enter Email Address</label><input class="form-control" id="address" name = "address" type="text" required></div>
