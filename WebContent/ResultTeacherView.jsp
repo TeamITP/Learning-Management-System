@@ -28,20 +28,26 @@
 <%
 		String username = "";
 String eId = request.getParameter("examId");
+
 if(eId != null) {
 	HttpSession httpSession = request.getSession();
 	httpSession.setAttribute("examId", eId);
 }
+
 String examId = (String)session.getAttribute("examId");
+
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
+
 		if (username.charAt(0) != 'T') {
 			response.sendRedirect("index.jsp");
 		}
+
 		if (examId == null) {
 			response.sendRedirect("index.jsp");
 		}
+
 	} else {
 		response.sendRedirect("index.jsp");
 	}
