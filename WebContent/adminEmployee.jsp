@@ -87,10 +87,10 @@ var b = 0;
 
 	</div>
 
-	<div class="pageContainer">
-
+	<div class="page-container">
 	<!--Header Here-->
     <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+	<div class="pageContainer">
 
     <div class="row">
         <div class="col" style="width: 960px;">
@@ -215,6 +215,9 @@ var b = 0;
     <script src="EmployeeAdmin/bootstrap/js/bootstrap.min.js"></script>
     
     </div>
+
+</div>
+
 </body>
 
 <script src="https://kit.fontawesome.com/a6c94f59df.js"
