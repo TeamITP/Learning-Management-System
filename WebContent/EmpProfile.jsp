@@ -117,8 +117,6 @@
     </div>
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
-	
-    
 
 	<!--Moodal for delete Profile-->
 	<div class="modal fade" id="deleteModal" role="form">

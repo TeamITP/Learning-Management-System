@@ -1,5 +1,5 @@
-/*Anuththara K.G.S.N*/
-/*IT19142692*/
+//Anuththara K.G.S.N
+//IT19142692
 
 package com.lms.service;
 
@@ -179,9 +179,9 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
-			/*
-			 * Close statement and database connectivity at the end of transaction
-			 */
+			
+			//Close statement and database connectivity at the end of transaction
+			 
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
@@ -226,9 +226,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
-			/*
-			 * Close statement and database connectivity at the end of transaction
-			 */
+			 //Close statement and database connectivity at the end of transaction
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
