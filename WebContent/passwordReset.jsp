@@ -12,8 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <script
-	src="JS/pwReset.js"></script>
+<script src="JS/pwReset.js"></script>
 </head>
 <%
 String userId = (String)request.getAttribute("user");
@@ -26,34 +25,42 @@ if(userId == null) {
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="row boxLogIn">
-            <div class="hidden-md-down col-md-6 d-flex justify-content-center ">
-                <img id="loginIllus" src="Images/pwReset.svg">
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <form class="form codeVerify" method="post" action="resetStuPassword">
-                    <div class="col-sm-12 avatarDiv">
-                        <img id="avatar" src="Images/password.png">
-                    </div>
-                        <input class="form-control" type="text" name="uid" value="${user }"placeholder="User Id" hidden>
-                    
-                    <div class="form-group col-sm-12 inputBox">
-                    <input class="PasswordChg_inputBox form-control" type="password" id="password1" onkeyup= "validatePassword(this.value)" placeholder="New Password" name="password" required>
-                     </div>
-                     <div class="form-group col-sm-12 inputBox">
-                     <input class="PasswordChg_inputBox form-control" type="password" id="password2" onkeyup= "setChange1()" placeholder="Confirm Password" required>
-</div>
-                    <div class="col-sm-12 d-flex justify-content-center">
-                    <b><p style="align:'center'" id="EditUserStu_passwordMatch"></p></b>
-                        <label class="loginError">${message }</span>
-                    </div>
-                    <div class="col-sm-12 d-flex justify-content-center">
-                        <button type="submit" onclick="return setChange()" id="bnVerify" class="btn btn-primary" id="bnLogin" name="submit" value="login">Reset Password</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+			<div class="hidden-md-down col-md-6 d-flex justify-content-center ">
+				<img id="loginIllus" src="Images/pwReset.svg">
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<form class="form codeVerify" method="post"
+					action="resetStuPassword">
+					<div class="col-sm-12 avatarDiv">
+						<img id="avatar" src="Images/password.png">
+					</div>
+					<input class="form-control" type="text" name="uid" value="${user }"
+						placeholder="User Id" hidden>
 
-			
+					<div class="form-group col-sm-12 inputBox">
+						<input class="PasswordChg_inputBox form-control" type="password"
+							id="password1" onkeyup="validatePassword(this.value)"
+							placeholder="New Password" name="password" required>
+					</div>
+					<div class="form-group col-sm-12 inputBox">
+						<input class="PasswordChg_inputBox form-control" type="password"
+							id="password2" onkeyup="setChange1()"
+							placeholder="Confirm Password" required>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-center">
+						<b><p style="align: 'center'" id="EditUserStu_passwordMatch"></p></b>
+						<label class="loginError">${message }</span>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-center">
+						<button type="submit" onclick="return setChange()" id="bnVerify"
+							class="btn btn-primary" id="bnLogin" name="submit" value="login">Reset
+							Password</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>

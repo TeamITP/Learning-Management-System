@@ -16,7 +16,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-	<script type="text/javascript">
+<script type="text/javascript">
     // Callback
     window.onbeforeunload = function(e) {
         // Turning off the event
@@ -32,19 +32,22 @@
 		<div class="pageContainer">
 			<img src="Images/databaseMessage.png" id="mainImg">
 			<div class="cont">
-			<div class="row">
-			<div class="col-1.5">
-			<%if(status.equals("OK")) { %>
-			<img src="Images/tick.png" id="icon">
-			<%} else { %>
-			<img src="Images/close.png" id="icon">
-			<%} %>
-			</div>
-			<div class="col-9">
-			<h5 id="message">${message }</h5>
-			</div>
-			<div class="row"><a href="${link }"><button class="btn btn-primary" id="btn">Back to Portal</button></a></div>
-			</div>
+				<div class="row">
+					<div class="col-1.5">
+						<%if(status.equals("OK")) { %>
+						<img src="Images/tick.png" id="icon">
+						<%} else { %>
+						<img src="Images/close.png" id="icon">
+						<%} %>
+					</div>
+					<div class="col-9">
+						<h5 id="message">${message }</h5>
+					</div>
+					<div class="row">
+						<a href="${link }"><button class="btn btn-primary" id="btn">Back
+								to Portal</button></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!--Footer Here-->

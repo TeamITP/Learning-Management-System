@@ -7,24 +7,28 @@ package com.lms.model;
  * */
 public class Teacher {
 	private String TeacherId;
-	private String Email;
+	private int count;
+	
 	private String Name;
 	private String Contact;
 	private String Birthdate;
 	private String Title;
 	private String Subject;
+	private String pw;
 	
 	
-	public Teacher(String teacherId,String email, String name, String contact, String birthdate, String title,
-			String subject) {
+	
+	public Teacher(String teacherId, String name, String contact, String birthdate, String title,
+			String subject,String pw1) {
 		super();
 		TeacherId = teacherId;
-		Email = email;
+		
 		Name = name;
 		Contact = contact;
 		Birthdate = birthdate;
 		Title = title;
 		Subject = subject;
+		pw=pw1;
 	}
 
 
@@ -41,15 +45,23 @@ public class Teacher {
 	public void setTeacherId(String teacherId) {
 		TeacherId = teacherId;
 	}
-
-
-	public String getEmail() {
-		return Email;
+	public int getcount() {
+		return count;
 	}
 
 
-	public void setEmail(String email) {
-		Email = email;
+	public void setcount(int count1) {
+		count = count1;
+	}
+
+
+	public String getpw() {
+		return pw;
+	}
+
+
+	public void setpw(String pw1) {
+		pw =pw1;
 	}
 
 
@@ -101,6 +113,8 @@ public class Teacher {
 	public void setSubject(String subject) {
 		Subject = subject;
 	}
+
+
 	
 	
 

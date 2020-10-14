@@ -24,28 +24,33 @@ if(userId == null) {
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="row boxLogIn d-flex justify-content-center">
-            <div class="col d-flex justify-content-center">
-                <form class="form codeVerify" method="post" action="VerificationCode">
-                <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Account Verification</h5>
-      </div>
-                    <div class="col-sm-12 avatarDiv">
-                        <img id="avatar" class="img" src="Images/cvv.png">
-                    </div>
-                        <input class="form-control" type="text" name="uid" value="${user }"placeholder="User Id" hidden>
-                    <div class="form-group col-sm-12 inputBox">
-                        <input class="form-control" type="digits" name="code" placeholder="Verification Code" required>
-                    </div>
-                    <div class="col-sm-12 d-flex justify-content-center">
-                        <label class="loginError">${message }</span>
-                    </div>
-                    <div class="col-sm-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" id="bnVerify" name="submit" value="login">Verify Account</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-			
+			<div class="col d-flex justify-content-center">
+				<form class="form codeVerify" method="post"
+					action="VerificationCode">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle">Account
+							Verification</h5>
+					</div>
+					<div class="col-sm-12 avatarDiv">
+						<img id="avatar" class="img" src="Images/cvv.png">
+					</div>
+					<input class="form-control" type="text" name="uid" value="${user }"
+						placeholder="User Id" hidden>
+					<div class="form-group col-sm-12 inputBox">
+						<input class="form-control" type="digits" name="code"
+							placeholder="Verification Code" required>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-center">
+						<label class="loginError">${message }</span>
+					</div>
+					<div class="col-sm-12 d-flex justify-content-center">
+						<button type="submit" class="btn btn-primary" id="bnVerify"
+							name="submit" value="login">Verify Account</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 	</div>

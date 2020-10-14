@@ -56,6 +56,29 @@
 		</plugins>
 	</build>
 	<dependencies>
+	<dependency>
+    <groupId>com.azure</groupId>
+    <artifactId>azure-storage-blob</artifactId>
+    <version>12.4.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.azure</groupId>
+  <artifactId>azure-storage-queue</artifactId>
+  <version>12.3.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.azure</groupId>
+  <artifactId>azure-storage-file-share</artifactId>
+  <version>12.2.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.azure</groupId>
+  <artifactId>azure-storage-file-datalake</artifactId>
+  <version>12.0.0-preview.6</version>
+</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -63,54 +86,38 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-    <groupId>org.apache.pdfbox</groupId>
-    <artifactId>pdfbox</artifactId>
-    <version>2.0.21</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
-<dependency>
-    <groupId>javax.activation</groupId>
-    <artifactId>javax.activation-api</artifactId>
-    <version>1.2.0</version>
-</dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.21</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>javax.activation-api</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/com.sendgrid/sendgrid-java -->
-<dependency>
-    <groupId>com.sendgrid</groupId>
-    <artifactId>sendgrid-java</artifactId>
-    <version>4.6.4</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sendgrid/sendgrid-java -->
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>4.6.4</version>
+		</dependency>
 
-<dependency>
-     <groupId>com.google.api-client</groupId>
-     <artifactId>google-api-client</artifactId>
-     <version>1.30.10</version>
-   </dependency>
-   <dependency>
-    <groupId>com.google.oauth-client</groupId>
-    <artifactId>google-oauth-client-jetty</artifactId>
-    <version>1.22.0</version>
-</dependency>
-   <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-gmail -->
-<dependency>
-    <groupId>com.google.apis</groupId>
-    <artifactId>google-api-services-gmail</artifactId>
-    <version>v1-rev110-1.25.0</version>
-</dependency>
-   
 
-<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-<dependency>
-    <groupId>com.sun.mail</groupId>
-    <artifactId>javax.mail</artifactId>
-    <version>1.6.2</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
+		</dependency>
 
-<dependency>
-    <groupId>com.github.dhorions</groupId>
-    <artifactId>boxable</artifactId>
-    <version>1.4</version>
-</dependency>
+		<dependency>
+			<groupId>com.github.dhorions</groupId>
+			<artifactId>boxable</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>

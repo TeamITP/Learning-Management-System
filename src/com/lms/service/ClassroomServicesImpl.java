@@ -4,10 +4,14 @@ import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -301,9 +305,21 @@ public class ClassroomServicesImpl implements ClassroomServices {
 	}
 
 	@Override
-	public String generateReport(String classroomId, String root) {
+	public String generateReport(String classroomId, String startDate, String endDate, String root) {
 		String filePath = null;
-
+		
+		DateFormat simleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date startDateString = null, endDateString = null;
+		try {
+			startDateString = simleDateFormat.parse(startDate);
+			System.out.println(startDateString.toString());
+			endDateString = simleDateFormat.parse(endDate);
+			System.out.println(endDateString.toString());
+		} catch (ParseException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
 		// Create a new font object selecting one of the PDF base fonts
 		PDFont fontPlain = PDType1Font.HELVETICA;
 		PDFont fontBold = PDType1Font.HELVETICA_BOLD;
@@ -326,7 +342,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		LocalDateTime now = LocalDateTime.now();
 
 		Classroom classroom = getClassroom(classroomId);
@@ -363,6 +379,10 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			cos.newLine();
 			cos.showText("Grade : " + classroom.getGrade());
 			cos.newLine();
+			cos.showText("Start Date : " + startDate);
+			cos.newLine();
+			cos.showText("End DATE : " + endDate);
+			cos.newLine();
 			cos.newLine();
 			cos.setFont(fontPlain, 12);
 			cos.showText("Students Details");
@@ -384,7 +404,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		float yStart = yStartNewPage;
 		float bottomMargin = 70;
 		// y position is your coordinate of top left corner of the table
-		float yPosition = 600;
+		float yPosition = 570;
 
 		BaseTable table = null;
 		try {
@@ -400,6 +420,22 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		// the first parameter is the cell width
 		Cell<PDPage> cell;
 
+		StudentServices classroomServices = new StudentServicesImple();
+		ArrayList<Student> students = classroomServices.getStudentArrayListbyDate(classroomId, startDateString, endDateString);
+		
+		if (students.size() == 0) {
+			try {
+				cos.setFont(PDType1Font.COURIER, 12);
+				cos.setLeading(14.5f);
+				cos.beginText();
+				cos.newLineAtOffset(25, 520);
+				cos.showText("*** No Data Found ***");
+				cos.endText();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+		} else {
 		Row<PDPage> row = table.createRow(20);
 		cell = row.createCell(15, "Student ID");
 		cell.setFontSize(12);
@@ -409,13 +445,12 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		cell.setFontSize(12);
 		cell = row.createCell(15, "Phone");
 		cell.setFontSize(12);
-		cell = row.createCell(20, "Address");
+		cell = row.createCell(20, "Email");
 		cell.setFontSize(12);
 		cell = row.createCell(20, "Joined Data");
 		cell.setFontSize(12);
 
-		StudentServices classroomServices = new StudentServicesImple();
-		ArrayList<Student> students = classroomServices.getStudentArrayList(classroomId);
+		
 
 		for (int i = 0; i < students.size(); i++) {
 			Student student = classroomServices.getStudent(students.get(i).getStudent_ID());
@@ -439,6 +474,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
 		}
+		}
 		try {
 			table.draw();
 
@@ -447,26 +483,32 @@ public class ClassroomServicesImpl implements ClassroomServices {
 
 			// close the content stream
 			cos.close();
-		
-						filePath = root + File.separator + classroomId + ".pdf";
 
-						document.save(filePath);
-						System.out.println(filePath);
-						document.close();
+
+			filePath = root + File.separator + classroomId + ".pdf";
+
+			document.save(filePath);
+			System.out.println(filePath);
+			document.close();
+
+			//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+
+
+			//Final DEPLOYMENT ON SERVER
+			//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			
+			//For Local Host
+			/*
+			 * 'LearningManagementSystem' name in the below link might change
+			 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
+			 * Then see, where your file originally saved on pc
+			 * */
+			//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			
+			//For GitHub Deployment TESTING
+			filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 						
-						//Final DEPLOYMENT ON SERVER
-						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-						
-						//For Local Host
-						/*
-						 * 'LearningManagementSystem' name in the below link might change
-						 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
-						 * Then see, where your file originally saved on pc
-						 * */
-						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
-						
-						//For GitHub Deployment TESTING
-						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -474,6 +516,80 @@ public class ClassroomServicesImpl implements ClassroomServices {
 		}
 
 		return filePath;
+	}
+
+	@Override
+	public String getTeacherInClassroom(String teacherId) {
+		String name = "";
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT Name FROM Teacher WHERE Teacher_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, teacherId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				name = resultSet.getString(1);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of the transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return name;
+	}
+
+	@Override
+	public String getStudentNameInClassroom(String studentId) {
+		String name = "";
+		try {
+			connection = ConnectDB.getDBConnection();
+
+			String sql = "SELECT fristName, lastName FROM Student WHERE Student_ID = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, studentId);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				name = resultSet.getString(1) + " " + resultSet.getString(2);
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of the transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				logger.log(Level.SEVERE, e.getMessage());
+			}
+		}
+		return name;
 	}
 
 }
