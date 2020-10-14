@@ -16,6 +16,6 @@ public interface ExaminationServices {
    public Examination getExamination(String examId);
 
    
-   public String generateReport(String examId, String root);
+   public String generateReport(String examId,int max, String root);
 
 }
