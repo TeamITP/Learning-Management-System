@@ -70,7 +70,7 @@
 				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Dashboard/h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
@@ -78,7 +78,6 @@
 			<a href="teacherClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
 			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
 			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
-			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
