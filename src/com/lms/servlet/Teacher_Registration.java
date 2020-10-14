@@ -40,16 +40,12 @@ public class Teacher_Registration extends HttpServlet {
 		Teacher teacher = new Teacher();
 		
 		teacher.setName(request.getParameter("name"));
-		
 	    teacher.setContact(request.getParameter("contact"));
 		teacher.setBirthdate(request.getParameter("birthday"));
 		teacher.setTitle(request.getParameter("title"));
 		teacher.setSubject(request.getParameter("subject"));
 		teacher.setpw(request.getParameter("pass"));
 		
-		
-		
-		 
 		
 		Teacher_Managment_Services teacher_managment1 = new Teacher_Managment_ServicesImple();
 		
