@@ -21,6 +21,19 @@
     </head>
 
     <body>
+    
+    <%
+	String username = "";
+		if (session.getAttribute("userId") != null) {
+		username = (String) session.getAttribute("userId");
+		if (username.charAt(0) != 'E') {
+			response.sendRedirect("index.jsp");
+		}
+	} else {
+		response.sendRedirect("index.jsp");
+	}
+	%>
+	
         <div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
