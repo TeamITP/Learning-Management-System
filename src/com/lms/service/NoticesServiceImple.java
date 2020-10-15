@@ -273,10 +273,12 @@ public class NoticesServiceImple implements NoticeService {
 			cos.showText("----------------------------------------------------------------------------");
 			cos.newLine();
 			cos.newLine();
-			
 			cos.newLine();
 			cos.setFont(fontPlain, 12);
-			cos.showText("Notices:");
+			cos.showText("Notices");
+			cos.newLine();
+			cos.showText("Date: 2020/10/01 to 2020/10/31");
+			cos.newLine();
 			cos.endText();
 			
 

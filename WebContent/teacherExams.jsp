@@ -42,7 +42,8 @@
 			response.sendRedirect("index.jsp");
 		}
 
-	} else {
+	} else 
+	{
 		response.sendRedirect("index.jsp");
 	}
 

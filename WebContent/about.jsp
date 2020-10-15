@@ -15,13 +15,15 @@
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
 
+
+
 <div class="page-container">
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 		
-		            <% NoticeService noticeservice  = new NoticesServiceImple();
-      ArrayList<CommonNotice> arrayList = noticeservice.getNotice(Notice_id);
+		    <% NoticeService noticeservice  = new NoticesServiceImple();
+      ArrayList<CommonNotice> arrayList = noticeservice.getNotice("username");
       System.out.println(arrayList);
     %>
       
@@ -42,14 +44,11 @@
 		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
 		</div>
 		<div class="col-2">
-		<form  action="UpdateNotices.jsp" method="Get" >
+		<form  action="Notices.jsp" method="Get" >
 		<input name="noticeId" value="<%=commonnotice.getNotice_id()%>" hidden>
 		<button type="submit" class="btn btn-warning" >Update</button></form>
 		</div>
 		
-		<div class="col-3">
-	<button type="button" data-toggle="modal" data-target="#delete<%=commonnotice.getNotice_id()%>" class="btn btn-danger delete" id="btnDelete" >Delete</button></div>
-			
 				</div>
 		
 		</div>

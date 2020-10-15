@@ -76,7 +76,7 @@ form .btnSubmit{
 .boxed {
 	border-radius:5px;
 	padding: 40px 20px;
-	width:500px;
+	width:600px;
 	height:200px;
 	border:1px solid #0080ff;
 	font-size: 16px;
@@ -102,4 +102,7 @@ form .btnSubmit{
 }
 #h6{
 	color: blue;
+}
+.btnDelete{
+	width:4px !important;
 }
