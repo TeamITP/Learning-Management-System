@@ -376,6 +376,51 @@ public class NoticesServiceImple implements NoticeService {
 
 		return filePath;
 	}
+
+
+	@Override
+	public ArrayList<CommonNotice> getNoticeArray() {
+ArrayList<CommonNotice> arrayList = new ArrayList<CommonNotice>();
+		
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT * From CommonNotice";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				CommonNotice commonnotice = new CommonNotice();
+				
+				commonnotice.setNotice_des(resultSet.getString(5));
+				commonnotice.setTitle(resultSet.getString(3));
+				commonnotice.setNotice_id(resultSet.getString(2));
+				commonnotice.setDateTime(resultSet.getString(4));
+				
+				
+				arrayList.add( commonnotice);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrayList;
+	}
 	
 	
 
