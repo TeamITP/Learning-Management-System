@@ -121,7 +121,7 @@
                
             </div>
              <!--Footer Here-->
-               <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include> 
+               
             
     </body>
     <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
