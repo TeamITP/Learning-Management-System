@@ -42,7 +42,9 @@
 	StudentServices studentServices = new StudentServicesImple();
 	Student student = studentServices.getStudent(username);
 	%>
-
+	
+	<!--Header Here-->
+		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 
 	<div class="row">
 		<div class="col">
@@ -113,7 +115,7 @@
 			<div class="row">
 				<div class="col-md-4">
 
-					<a href="ClassroomsStudent.jsp"><button
+					<a href="classroomsStudent.jsp"><button
 							class="btn btn-success" type="button">Classroom</button></a>
 				</div>
 				<div class="col-md-4">
@@ -174,6 +176,8 @@
 			</div>
 		</div>
 	</div>
+	
+
 </body>
 
 

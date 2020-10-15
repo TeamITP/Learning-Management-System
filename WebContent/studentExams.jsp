@@ -32,13 +32,16 @@
 	String clzId = (String) session.getAttribute("classroomId");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
+
 		if (username.charAt(0) != 'S') {
 			response.sendRedirect("login.jsp");
 		}
+
 		
 		if (clzId == null) {
 			response.sendRedirect("classroomsStudent.jsp");
 		}
+
 	} else {
 		response.sendRedirect("index.jsp");
 	}
@@ -113,13 +116,15 @@
    
 <%} %>
 </div>
-<div class="col colone"><img src="Images/twostudents.png"  width="600" height="700"></div>
+<div class="col colone"><img src="Images/twostudents.png"  width="600" height="500"></div>
+     
+               
     </div>
                     
-                    
-                <!--Footer Here-->
-               <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include> 
+               
             </div>
+             <!--Footer Here-->
+               <jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include> 
             
     </body>
     <script src="https://kit.fontawesome.com/a6c94f59df.js" crossorigin="anonymous"></script>
