@@ -30,7 +30,7 @@
 	
 <link rel="icon" href="Images/pmtIcon.png">
 <link rel="stylesheet" href="CSS/nav_pmt.css">
-<link rel="stylesheet" href="CSS/paymenthome.css">
+<link rel="stylesheet" href="CSS/income.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -63,7 +63,7 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-		<a href="paymentHome.jsp" class="active" ><i
+		<a href="paymentHome.jsp" ><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
 			<a href="ClassFee_pmt.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
@@ -71,7 +71,7 @@
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
 				href="emsalary.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
-				href="income.jsp"><i
+				href="income.jsp"  class="active" ><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
 				href="expendi.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
 				href="expendi.jsp"> <i
@@ -114,6 +114,94 @@
  			</div>
  			
  		
+ 		
+			
+					<!---------------------------------------Form-------------------------------------->
+			
+			<div class="container">
+  			<div class="row">
+   				 <div class="col">
+   				 
+   			
+     			<form method="post" action="ClassfeesInsert">
+
+    <div class="col">
+    				
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Cheque Number </label>
+      <input type="text" class="form-control" id="Cheque_Num" name = "Cheque_Num" placeholder="Cheque Number">
+    </div>
+  </div>
+  
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Value</label>
+      <input type="text" class="form-control" id="Value" name = "Value"  placeholder="Value">
+    </div>
+ </div>
+    
+    				
+     <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Description</label>
+      <input type="text" class="form-control" id="Description" name = "Description"  placeholder="Description">
+    </div>
+  </div>
+    
+  
+   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">From</label>
+      <input type="text" class="form-control" id="From_" name = "From_"  placeholder="From:">
+    </div>
+  </div>
+  
+  
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Date</label>
+      <input type="date" class="form-control" id="DateAndTime" name = "DateAndTime"  placeholder="Date">
+    </div>
+  </div>
+  
+  
+  
+  <div class="form-group">
+  
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-outline-info">Update</button>
+  <button type="submit" class="btn btn-outline-danger">Delete</button>
+  
+</form>
+  </div>  	
+    
+  </div>
+   						 
+    				<div class="col">
+     						 <div class="imgPMT">
+  			<img src="Images/incomes.png"  style="width:600px">
+  			</div>
+			</div>
+			
+    			
+			
+			
+		</div>
+			
+		
+			
+			
+			
+			
+			
+	
+			
+			
+			
+		<!---------------------------------------Form-------------------------------------->
+					<!---------------------------------------Form-------------------------------------->
  		
 
 

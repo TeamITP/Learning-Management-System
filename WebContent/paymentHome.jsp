@@ -10,16 +10,14 @@
 
 
 <!-- Required meta tags-->
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Colorlib Templates">
-<meta name="author" content="Colorlib">
-<meta name="keywords" content="Colorlib Templates">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-<!-- Title Page-->
-<title>Payment Home</title>
-
+    <!-- Title Page-->
+    <title>Payment Home</title>
 
 
 
@@ -30,7 +28,6 @@
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 	
-
 <link rel="icon" href="Images/pmtIcon.png">
 <link rel="stylesheet" href="CSS/nav_pmt.css">
 <link rel="stylesheet" href="CSS/paymenthome.css">
@@ -38,18 +35,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-
-</head>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	</head>
 
 
 
 <body>
-
 
 <!-- mdbootstrapJaVaScrip-->
 <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
@@ -70,24 +63,24 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="paymentHome.jsp" class="active"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a>
+		<a href="paymentHome.jsp" class="active" ><i
+				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
 			<a href="ClassFee_pmt.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
 				href="tsalary.jsp"><i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
 				href="emsalary.jsp"><i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
 				href="income.jsp"><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
-
 				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
 				href="expendi.jsp"> <i
-
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a> <a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			</a>
+			
+			
+				 <a
+				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
 			<a href="empTeacherReg.jsp"><i
 				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
 				href="empStudentReg.jsp"> <i
@@ -99,21 +92,20 @@
 
 	<div class="page-container">
 		<!--Header Here-->
-
-
+		
+		
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 			<div class="pageTopicContainer">
 				
 				<hr class="dividerTopic">
 			</div>
-
-
+			
+		
 			<!--------------------------------------Body-------------------------------->
-			<!-----------------------------------Body------------------------------------->
-			<!-----------------------------------Body--------------------------------->
+					<!-----------------------------------Body------------------------------------->
+				<!-----------------------------------Body--------------------------------->
 			<!----------------------------------Body------------------------------------>
-
 			
 			
    				 
@@ -333,5 +325,4 @@
 		
 		</body>		
 	
-
 </html>
