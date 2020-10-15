@@ -11,6 +11,7 @@
 <meta charset="ISO-8859-1">
 <title> Notices | New Montana</title>
 <link rel="icon" href="Images/book.png">
+<link rel="stylesheet" href="CSS/UpdateNotice.css">
 </head>
 <jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 <body>
@@ -42,12 +43,13 @@
 		
 		<div class="col-7">
 		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
-		</div>
-		
 		
 		</div>
 		
+		
 		</div>
+		</div>
+	
 		</div>
 		
 		    <div class="modal fade" id="delete<%=commonnotice.getNotice_id()%>" role="form">
@@ -63,7 +65,7 @@
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		
 		</div>
-
+<img src="Images/Noticeimg.jpg" id="img2" width ="500" height="500">
 </body>
-<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+
 </html>

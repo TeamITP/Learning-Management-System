@@ -317,9 +317,9 @@ public class NoticesServiceImple implements NoticeService {
 		Row<PDPage> row = table.createRow(20);
 		cell = row.createCell(15, "Notice_Id");
 		cell.setFontSize(12);
-		cell = row.createCell(55, "Title");
+		cell = row.createCell(30, "Title");
 		cell.setFontSize(12);
-		cell = row.createCell(30, "Description");
+		cell = row.createCell(55, "Description");
 		cell.setFontSize(12);
 	
 	
@@ -333,10 +333,10 @@ public class NoticesServiceImple implements NoticeService {
 			cell = row.createCell(15, notice1.getNotice_id());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(55, notice1.getTitle());
+			cell = row.createCell(30, notice1.getTitle());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(30, notice1.getNotice_des());
+			cell = row.createCell(55, notice1.getNotice_des());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
 			
