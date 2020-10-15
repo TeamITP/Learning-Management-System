@@ -51,35 +51,29 @@ String lessonId = (String) session.getAttribute("lessonId");
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
+	<!-- Teacher Navigation -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
-	<div id="overlay" class="overlay">
 
 	<div class="page-container">
 	

@@ -70,7 +70,7 @@
 				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Dashboard/h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">

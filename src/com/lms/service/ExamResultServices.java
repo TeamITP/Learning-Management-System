@@ -25,6 +25,8 @@ public interface ExamResultServices {
 	
 	public ExamResult getResult(String Resultid);
 	
+	public ArrayList<ExamResult> getExamResultListByMarks(String ExamID,int max );
+	
 	
 	
 

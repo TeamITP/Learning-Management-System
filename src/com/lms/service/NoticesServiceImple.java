@@ -357,7 +357,7 @@ public class NoticesServiceImple implements NoticeService {
 						document.close();
 						
 						//Final DEPLOYMENT ON SERVER
-						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						filePath = "\\UploadedFiles\\PDF\\" + empid + ".pdf";
 						
 						//For Local Host
 						/*
@@ -368,7 +368,7 @@ public class NoticesServiceImple implements NoticeService {
 						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empid + ".pdf";
 						
 						//For GitHub Deployment TESTING
-						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empid + ".pdf";
+						//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empid + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

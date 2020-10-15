@@ -10,16 +10,14 @@
 
 
 <!-- Required meta tags-->
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Colorlib Templates">
-<meta name="author" content="Colorlib">
-<meta name="keywords" content="Colorlib Templates">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-<!-- Title Page-->
-<title>Payment Home</title>
-
+    <!-- Title Page-->
+    <title>Payment Home</title>
 
 
 
@@ -30,7 +28,6 @@
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
 <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
 	
-
 <link rel="icon" href="Images/pmtIcon.png">
 <link rel="stylesheet" href="CSS/nav_pmt.css">
 <link rel="stylesheet" href="CSS/paymenthome.css">
@@ -38,18 +35,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-
-</head>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	</head>
 
 
 
 <body>
-
 
 <!-- mdbootstrapJaVaScrip-->
 <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
@@ -58,8 +51,7 @@
 <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
 
 
-
-	<!-- Employee Navigation Bar -->
+<!-- Employee Navigation Bar -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -81,23 +73,22 @@
 		</div>
 	</div>
 
-	<div class="page-container">
+<div class="page-container">
 		<!--Header Here-->
-
-
+		
+		
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 			<div class="pageTopicContainer">
 				
 				<hr class="dividerTopic">
 			</div>
-
-
+			
+		
 			<!--------------------------------------Body-------------------------------->
-			<!-----------------------------------Body------------------------------------->
-			<!-----------------------------------Body--------------------------------->
+					<!-----------------------------------Body------------------------------------->
+				<!-----------------------------------Body--------------------------------->
 			<!----------------------------------Body------------------------------------>
-
 			
 			
    				 
@@ -154,7 +145,7 @@
   <div class="card-body">
     <h5 class="card-title">Employee Salary</h5>
     <p class="card-text">To pay the monthly salary of the employees related to the institution.</p>
-    <a href="#" class="btn btn-primary">Employee Salary</a>
+    <a href="emsalary.jsp" class="btn btn-primary">Employee Salary</a>
   </div>
 </div>
 
@@ -267,7 +258,7 @@
 <!-- page-container end--> 			
 </div> 			
 <!-- page-container end--> 		 			
- <!-- page-container end--> 		
+ <!-- page-container end--> 				
 			
 			
 			
@@ -317,5 +308,4 @@
 		
 		</body>		
 	
-
 </html>

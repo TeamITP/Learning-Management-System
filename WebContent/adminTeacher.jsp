@@ -18,8 +18,9 @@
 	href="AdminSubjectList/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="AdminSubjectList/css/styles.css">
 <link rel="icon" href="Images/book.png">
-<link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
-<link rel="stylesheet" href="CSS/ownerHome.css">
+<link rel="stylesheet" href="CSS/employeeNav.css">
+<!--  <link rel="stylesheet" href="CSS/instituteOwnerHeader.css">
+<link rel="stylesheet" href="CSS/ownerHome.css">-->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -39,7 +40,7 @@ var b = 0;
 	}</script>
 </head>
 <header>
-<div class="sidenav" id="navBarSide">
+<!--  <div class="sidenav" id="navBarSide">
 		<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
@@ -60,12 +61,10 @@ var b = 0;
 			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
 		</div>
 	</div>
-	</div>
+	</div>-->
 </header>
 
 <body>
-
-
 	<%
 	String username = "";
 		if (session.getAttribute("userId") != null) {
@@ -84,14 +83,32 @@ var b = 0;
 		ArrayList<Teacher> arrayList =  teacher_managmentx.getTeacherList();
 		
 	%>
-	
-	
-
+	<div class="sideNav">
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/dashboard.png" id="imageUserNav">
+			</div>
+			<div class="col-8 align-items-center">
+				<h5 class="nameNav">Dashboard</h5>
+			</div>
+		</div>
+		<hr id="breakLine">
+		<div class="mainSideNav">
+			<a href="paymentHome.jsp" ><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"class="active"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
+		</div>
+	</div>
 <div class="page-container">
+	<!-- Header here -->
+  		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 	<div class="pageContainer">
 	
-		<!-- Header here -->
-  		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
+		
   		
   		  <div class="row" style="padding-top: 10px;">
   		

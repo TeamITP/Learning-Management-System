@@ -15,6 +15,6 @@ public interface AssignmentServices {
 	
 	public int DeleteAssignment(String A_ID);
 	
-	public String generateReport(String Class_ID);
+	public String generateReport(String Class_ID, String root);
 
 }

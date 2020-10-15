@@ -13,7 +13,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
+<!-- Student Lesson Page -->
 <head>
 <meta charset="ISO-8859-1">
 <title>Lesson</title>

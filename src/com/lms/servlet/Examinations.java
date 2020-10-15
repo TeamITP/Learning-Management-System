@@ -51,11 +51,11 @@ public class Examinations extends HttpServlet {
 		int status = examinationservices.InsertExamination(examination);
 		
 	    if(status == 1)
-	    {
-	    	request.setAttribute("message", "Insert Successful");
-	    	
-	    	RequestDispatcher dis = request.getRequestDispatcher("teacherExams.jsp");
-	    	dis.forward(request, response);    	
+	    {request.setAttribute("message", "Exam Succssfully Added");
+		request.setAttribute("link", "teacherExams.jsp");
+		request.setAttribute("status", "OK");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+		dispatcher.forward(request, response); 	 	
 	    }
 	    else if(status == 0)
 	    {

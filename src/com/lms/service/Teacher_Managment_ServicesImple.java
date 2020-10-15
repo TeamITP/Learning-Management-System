@@ -846,7 +846,7 @@ public String generateReport(String teacherId, String root) {
 					document.close();
 					
 					//Final DEPLOYMENT ON SERVER
-					//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+					filePath = "\\UploadedFiles\\PDF\\" + teacherId + ".pdf";
 					
 					//For Local Host
 					/*
@@ -854,7 +854,7 @@ public String generateReport(String teacherId, String root) {
 					 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 					 * Then see, where your file originally saved on pc
 					 * */
-					filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + teacherId + ".pdf";
+					//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + teacherId + ".pdf";
 					
 					//For GitHub Deployment TESTING
 					//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + teacherId + ".pdf";

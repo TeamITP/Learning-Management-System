@@ -45,7 +45,7 @@ public class reportAssignment extends HttpServlet {
        
 		
 		AssignmentServices assignmentServices = new AssignmentServiceImpl();
-		String path = assignmentServices.generateReport(classroomId);
+		String path = assignmentServices.generateReport(classroomId, getServletContext().getRealPath("/UploadedFiles/PDF"));
 		
 		if (path != null) {
 			response.sendRedirect(path);
