@@ -12,7 +12,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Home | Admin</title>
+<title>Classroom</title>
 <link rel="icon" href="Images/book.png">
 <link rel="stylesheet" href="CSS/studentNav.css">
 <link rel="stylesheet" href="CSS/studentClassroom.css">
@@ -49,31 +49,35 @@ String clzId = (String)session.getAttribute("classroomId");
 	LessonService lessonService = new LessonServiceImple();
 	ArrayList<Lesson> lessons = lessonService.getListLessons(clzId);
 %>
+	<!-- Student Navigation Bar -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/userAvatar.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="studentClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="studentAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="studentsResults.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
-				href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="QnA_Student.jsp"> <i
-				class="fas fa-question iconMainNavi"></i>Q & A
+			<a href="studentClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="studentAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="studentExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Student.jsp"> <i class="fas fa-question iconMainNavi"></i>Q & A
 			</a>
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
 		<h5 class="textClz" id="className"><%=classroom.getSubject() %></h5>
+		<div class="row justify-content-center lastRow">
+			<div class="col-3">
+				<img src="Images/avatarTeacher.png" id="teacherAv">
+			</div>
+			<div class="col-9 align-items-center">
+				<h5 class="textClz" id="teacherName"><%=classroomServices.getTeacherInClassroom(classroom.getTeacherId()) %></h5>
+			</div>
+		</div>
 		<h5 class="textClz" id="classTime"><%=classroom.getClassTime() %></h5>
 	</div>
 
