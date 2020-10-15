@@ -239,12 +239,11 @@
 							</div>
 							<div class="col-5">
 								<div class="row">
-									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(username) %></h2>
+									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(qnA.getStuId()) %></h2>
 								</div>
 								<div class="row">
 									<h2 class="date"><%=qnA.getDate() %></h2>
 								</div>
-							</div>
 							</div>
 							<div class="col-2">
 								<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#update<%=qnA.getId() %>">Update</button>
@@ -255,7 +254,7 @@
 						</div>
 
 						<!--SecoND Row-->
-						<div class="row question"><%=qnA.getQuestion() %></div>
+						<div class="row question"><div class="col-12"><%=qnA.getQuestion() %></div></div>
 
 						<!--Thrid Row-->
 						<div class="row answerQ">
@@ -331,7 +330,8 @@
 				
 
 <% ArrayList<QnA> arrayList = qnA_Service.getUnRepliedQuestions(clzId);
-if(arrayList.size() > 0) {%>
+ArrayList<QnA> arrayList1 = qnA_Service.getReliedQuestions(clzId);
+if(arrayList.size() > 0 | arrayList1.size() > 0) {%>
 				<br>
 			<h4><span class="badge badge-success">All Questions</span></h4>
 			<br>
@@ -351,7 +351,7 @@ if(arrayList.size() > 0) {%>
 							</div>
 							<div class="col-5 justify-content-start">
 								<div class="row">
-									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(username) %></h2>
+									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(qnA.getStuId()) %></h2>
 								</div>
 								<div class="row">
 									<h2 class="date"><%=qnA.getDate() %></h2>
@@ -369,9 +369,7 @@ if(arrayList.size() > 0) {%>
 				
 				<!--Replied Quesions-->
 				<div class="row justify-content-start">
-				<%ArrayList<QnA> arrayList1 = qnA_Service.getReliedQuestions(clzId);
-				
-				for(QnA qnA : arrayList1) { %>
+				<% for(QnA qnA : arrayList1) { %>
 					<div class="col-10 col-md-5 QuestionBox">
 						<!--First Row-->
 						<div class="row">
@@ -380,7 +378,7 @@ if(arrayList.size() > 0) {%>
 							</div>
 							<div class="col-5">
 								<div class="row">
-									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(username) %></h2>
+									<h2 class="name"><%=classroomServices.getStudentNameInClassroom(qnA.getStuId()) %></h2>
 								</div>
 								<div class="row">
 									<h2 class="date"><%=qnA.getDate() %></h2>
