@@ -365,10 +365,10 @@ public class NoticesServiceImple implements NoticeService {
 						 * So, please sout AND print the -> filePath = root + File.separator + empid+ ".pdf";
 						 * Then see, where your file originally saved on pc
 						 * */
-						filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empid + ".pdf";
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empid + ".pdf";
 						
 						//For GitHub Deployment TESTING
-						//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empid + ".pdf";
+						filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empid + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
