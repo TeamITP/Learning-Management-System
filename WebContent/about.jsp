@@ -22,46 +22,6 @@
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
 		
-		    <% NoticeService noticeservice  = new NoticesServiceImple();
-      ArrayList<CommonNotice> arrayList = noticeservice.getNotice("username");
-      System.out.println(arrayList);
-    %>
-      
-		
-		    <div class="col-6">
-		    
-    <% for(CommonNotice commonnotice: arrayList) {%> 
-    
-    <div class="row">
-    <div class="boxed">
-    
-			<h6><%=commonnotice.getTitle() %></h6>
-		    <p><%=commonnotice.getNotice_des() %></p>
-		
-		<div class="row">
-		
-		<div class="col-7">
-		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
-		</div>
-		<div class="col-2">
-		<form  action="Notices.jsp" method="Get" >
-		<input name="noticeId" value="<%=commonnotice.getNotice_id()%>" hidden>
-		<button type="submit" class="btn btn-warning" >Update</button></form>
-		</div>
-		
-				</div>
-		
-		</div>
-		</div>
-		
-		    <div class="modal fade" id="delete<%=commonnotice.getNotice_id()%>" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-			
-			</div>
-		</div>
-		<% } %> 
-		</div>
-		
 			</div>
 			<!--Footer Here-->
 			<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
