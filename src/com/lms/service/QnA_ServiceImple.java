@@ -205,7 +205,7 @@ public class QnA_ServiceImple implements QnA_Service  {
 		try {
 			connection = ConnectDB.getDBConnection();
 
-			String sql = "UPDATE QnA SET status = 0, Answer = '' WHERE Q_id = ?";
+			String sql = "UPDATE QnA SET status = 0, Answer = '' WHERE Q_id = ? ORDER BY id DESC";
 			preparedStatement = connection.prepareStatement(sql);
 
 			preparedStatement.setString(1, id);
@@ -239,7 +239,7 @@ public class QnA_ServiceImple implements QnA_Service  {
 			connection = ConnectDB.getDBConnection();
 
 
-			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND status = 1";
+			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND status = 1 ORDER BY id DESC";
 			preparedStatement = connection.prepareStatement(sqlQ);
 			preparedStatement.setString(1, clzId);
 
@@ -285,7 +285,7 @@ public class QnA_ServiceImple implements QnA_Service  {
 			connection = ConnectDB.getDBConnection();
 
 
-			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND status = 0";
+			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND status = 0 ORDER BY id DESC";
 			preparedStatement = connection.prepareStatement(sqlQ);
 			preparedStatement.setString(1, clzId);
 
@@ -331,7 +331,7 @@ public class QnA_ServiceImple implements QnA_Service  {
 			connection = ConnectDB.getDBConnection();
 
 
-			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND Student_id = ? AND status = 1";
+			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND Student_id = ? AND status = 1 ORDER BY id DESC";
 			preparedStatement = connection.prepareStatement(sqlQ);
 			preparedStatement.setString(1, clzId);
 			preparedStatement.setString(2, stuId);
@@ -379,7 +379,7 @@ public class QnA_ServiceImple implements QnA_Service  {
 			connection = ConnectDB.getDBConnection();
 
 
-			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND Student_id = ? AND status = 0";
+			String sqlQ = "SELECT * FROM QnA WHERE Classroom_id = ? AND Student_id = ? AND status = 0 ORDER BY id DESC";
 			preparedStatement = connection.prepareStatement(sqlQ);
 			preparedStatement.setString(1, clzId);
 			preparedStatement.setString(2, stuId);

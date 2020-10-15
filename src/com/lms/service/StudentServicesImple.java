@@ -675,7 +675,7 @@ public class StudentServicesImple implements StudentServices{
 						document.close();
 						
 						//Final DEPLOYMENT ON SERVER
-						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						filePath = "\\UploadedFiles\\PDF\\" +Student_ID + ".pdf";
 						
 						//For Local Host
 						/*
@@ -683,7 +683,7 @@ public class StudentServicesImple implements StudentServices{
 						 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 						 * Then see, where your file originally saved on pc
 						 * */
-						filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
 						
 						//For GitHub Deployment TESTING
 						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
