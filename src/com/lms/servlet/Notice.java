@@ -32,11 +32,11 @@ public class Notice extends HttpServlet {
 		int status = noticesServiceImple.insertNotice(commonNotice);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("empNotices.jsp");
-		    //dis.forward(request, response);
+			request.setAttribute("message", "Notice Inserted Successfully");
+			request.setAttribute("link", "empNotices.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Insert Failed");
 			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");

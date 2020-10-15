@@ -1,6 +1,11 @@
 package com.lms.servlet;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +29,26 @@ public class ReadingClick extends HttpServlet {
 		LessonMaterialsService lessonMaterialsService = new LessonMaterialServImple();
 		lessonMaterialsService.updateViewCount(request.getParameter("materialId"));
 		
-		response.sendRedirect(request.getParameter("link"));
+		String fileName = request.getParameter("link");
+		ByteArrayOutputStream byteArrayOutputStream = lessonMaterialsService.downloadFromBlob(fileName);
+		
+		final String path = getServletContext().getRealPath("/UploadedFiles/Readings");
+	    
+	    OutputStream out = null;
+	    
+	    File file = new File(path + File.separator + fileName);
+	    
+	    try {
+	    	
+	        out = new FileOutputStream(file);
+	        
+	        byteArrayOutputStream.writeTo(out);
+	        
+	    } catch (Exception e) {
+			e.printStackTrace();
+		}
+	    
+	    response.sendRedirect("UploadedFiles/Readings/" + fileName);
 	}
 
 }

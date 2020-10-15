@@ -56,11 +56,8 @@ public interface StudentServices {
 
 
 		public Student CountStudent();
-
-
-		 
-
-		 
+		
+		ArrayList<Student> getStudentArrayList(String classroomId);
 
 
 		ArrayList<Student> getStudentArrayListbyDate(String classroomId, java.util.Date startDate, java.util.Date endDate);

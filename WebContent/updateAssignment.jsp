@@ -28,6 +28,7 @@
 String aId = request.getParameter("A_ID");
 	String username = "";
 	String clzId = (String) session.getAttribute("classroomId");
+	String A_ID = request.getParameter("A_ID");
 	if (session.getAttribute("userId") != null) {
 		username = (String) session.getAttribute("userId");
 
@@ -47,37 +48,34 @@ String aId = request.getParameter("A_ID");
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	
+	AssignmentServices assignmentService = new AssignmentServiceImpl();
+	Assignment assignment = assignmentService.getAssignment(A_ID);
+	
 	%>
 
 	<div class="sideNav">
-		<div class="row justify-content-center firstRow">
+			<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav"><%=username%></h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp" class="active"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp" class=""><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp" class="active"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
 		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
 		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
 		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
-	</div>
+		</div>
 
 	<div class="page-container">
 		<!--Header Here-->
@@ -92,6 +90,13 @@ String aId = request.getParameter("A_ID");
 	
 <form action="updateAssignment" method="post">
 
+
+   <h1>Update Question</h1>
+    <input type="Deadline" name="deadline" value="<%=assignment.getDate() %>" placeholder="Deadline" required>
+    <textarea placeholder="Question"  name="question"><%=assignment.getQuestion() %></textarea>
+    <input name="aId" value="<%=aId %>" hidden>
+    <button type="submit" class="btn">Update Assignment</button>
+</form>
 
 
  	

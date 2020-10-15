@@ -43,6 +43,7 @@ public class VerificationCode extends HttpServlet {
 			dispatcher.forward(request, response);
 		} else if (status == 0) {
 			request.setAttribute("message", "Verification Code Incorrect");
+			request.setAttribute("user", userId);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/codeVerify.jsp");
 			dispatcher.forward(request, response);
 		}

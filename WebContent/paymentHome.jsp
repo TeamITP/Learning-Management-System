@@ -52,10 +52,11 @@
 
 
 
+	<!-- Employee Navigation Bar -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/pmtIcon.png" id="imageUserNav">
+				<img src="Images/dashboard.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
 				<h5 class="nameNav">Dashboard</h5>
@@ -63,6 +64,7 @@
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
+
 		<a href="paymentHome.jsp" class="active" ><i
 				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Category</a> 
 			<a href="ClassFee_pmt.jsp"><i
@@ -86,8 +88,8 @@
 				href="empStudentReg.jsp"> <i
 				class="fas fa-user-plus iconMainNavi"></i>New Students
 			</a>
-		</div>
 
+		</div>
 	</div>
 
 	<div class="page-container">

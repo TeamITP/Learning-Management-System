@@ -291,21 +291,26 @@ public class StudentServicesImple implements StudentServices{
 	}
 	
 	@Override
-	public Student getStudentById(String studentId) {
-		Student student = new Student();
+	public ArrayList<Student> getStudentArrayList (String classroomId) {
+		ArrayList<Student> arrayList = new ArrayList<Student>();
 
 		try {
 			connection = ConnectDB.getDBConnection();
 
-			String sql = "DELETE FROM ClassroomStudent WHERE Student_id = ? AND Classroom_id = ?";
+			String sql = "SELECT * FROM ClassroomStudent WHERE  Classroom_id = ?";
 
 			preparedStatement = connection.prepareStatement(sql);
 
-			preparedStatement.setString(1, studentId);
-			preparedStatement.setString(2, classroomId);
+			preparedStatement.setString(1, classroomId);
 
-			status= preparedStatement.executeUpdate();
+			ResultSet resultSet = preparedStatement.executeQuery();
 
+			while (resultSet.next()) {
+				Student  student = new Student();
+				student.setStudent_ID(resultSet.getString(2));
+				student.setJoinDate(resultSet.getString(3));
+				arrayList.add(student);
+			}
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
@@ -323,8 +328,7 @@ public class StudentServicesImple implements StudentServices{
 				logger.log(Level.SEVERE, e.getMessage());
 			}
 		}
-		
-		return status;
+		return arrayList;
 	}
 
 	@Override
@@ -524,6 +528,7 @@ public class StudentServicesImple implements StudentServices{
 		return student1;
 	}
 	
+	//Generate PDF Report
 	@Override
 	public String studentgenerateReport(String Student_ID, String root) {
 		String filePath = null;
@@ -670,7 +675,7 @@ public class StudentServicesImple implements StudentServices{
 						document.close();
 						
 						//Final DEPLOYMENT ON SERVER
-						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						filePath = "\\UploadedFiles\\PDF\\" +Student_ID + ".pdf";
 						
 						//For Local Host
 						/*
@@ -678,10 +683,10 @@ public class StudentServicesImple implements StudentServices{
 						 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 						 * Then see, where your file originally saved on pc
 						 * */
-						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
 						
 						//For GitHub Deployment TESTING
-						filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Student_ID + ".pdf";
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -689,6 +694,12 @@ public class StudentServicesImple implements StudentServices{
 		}
 
 		return filePath;
+	}
+
+	@Override
+	public int removeStudentClassroom(String studentId, String classroomId) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
