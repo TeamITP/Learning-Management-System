@@ -43,13 +43,14 @@
 		<div class="col-7">
 		<h5 id="timeNotice"><%=commonnotice.getDateTime() %></h5>
 		</div>
+		
 		<div class="col-2">
 		<form  action="Notices.jsp" method="Get" >
 		<input name="noticeId" value="<%=commonnotice.getNotice_id()%>" hidden>
 		<button type="submit" class="btn btn-warning" >Update</button></form>
 		</div>
 		
-				</div>
+		</div>
 		
 		</div>
 		</div>
