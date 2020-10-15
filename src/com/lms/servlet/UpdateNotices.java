@@ -54,10 +54,11 @@ public class UpdateNotices extends HttpServlet {
 		int status = assignmentServices.updateNotice(commonnotice);
 		
 		if(status == 1) {
-			request.setAttribute("message", "Insert Succesful");
-			//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/databaseMessage.jsp");
-			//dispatcher.forward(request, response);
-			response.sendRedirect("empNotices.jsp");
+			request.setAttribute("message", "Update Notice Successfully");
+			request.setAttribute("link", "empNotices.jsp");
+			request.setAttribute("status", "OK");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+			dispatcher.forward(request, response);
 			
 			//RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 		    //dis.forward(request, response);

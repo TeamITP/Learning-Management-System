@@ -17,6 +17,8 @@ public interface NoticeService {
 	
 	public ArrayList<CommonNotice> getNotice(String empid);
 	
+	public ArrayList<CommonNotice> getNoticeArray();
+	
 	public int updateNotice(CommonNotice commonnotice);
 	
 	public CommonNotice getNoticeById(String noticeId);
