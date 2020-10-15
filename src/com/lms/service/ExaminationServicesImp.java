@@ -297,6 +297,8 @@ public class ExaminationServicesImp implements ExaminationServices {
 			document.save(filePath);
 			System.out.println(filePath);
 			document.close();
+			//Final DEPLOYMENT ON SERVER
+			filePath = "\\UploadedFiles\\PDF\\" +examId + ".pdf";
 			// Save the results and ensure that the document is properly closed:
 			//filePath = System.getProperty("catalina.base")
 					//+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + examId + ".pdf";
@@ -305,7 +307,7 @@ public class ExaminationServicesImp implements ExaminationServices {
 			//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" +examId + ".pdf";
 			//For GithHub
 			//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + examId + ".pdf";
-			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + examId + ".pdf";
+			//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + examId + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

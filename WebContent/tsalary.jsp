@@ -126,41 +126,26 @@ png {
 		response.sendRedirect("login.jsp");
 	}
 	%>
-
+<!-- Employee Navigation Bar -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/pmtIcon.png" id="imageUserNav">
+				<img src="Images/dashboard.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Payments</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="ClassFee_pmt.jsp.jsp" ><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Class Fee</a> <a
-				href="tsalary.jsp" class="active"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Teacher Salary</a>  <a
-				href="emsalary.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Employee Salary</a><a
-				href="teacherNotices.jsp"><i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Income</a> <a
-				href="teacherExams.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Expenditure</a> <a
-				href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
-			
-			
-				 <a
-				href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
-			<a href="empTeacherReg.jsp"><i
-				class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> <a
-				href="empStudentReg.jsp"> <i
-				class="fas fa-user-plus iconMainNavi"></i>New Students
-			</a>
+			<a href="paymentHome.jsp" class="active"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
 		</div>
-
 	</div>
 
 	<div class="page-container">
@@ -324,11 +309,7 @@ png {
 									</div>
 								</div>
 							</div>
-		
-  
-  </div>
-		
-		</div> 
+	
 		 <%} %>   
   
   
@@ -414,7 +395,7 @@ png {
 <!-- ------ -->
 
 
-			
+			</div></div></div>
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
 		<script src="js/jquery-3.3.1.min.js"></script>

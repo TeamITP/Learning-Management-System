@@ -4,6 +4,19 @@
 <!--  Pussadeniya PMSSB-->
 <!--  IT1218618-->
 
+<!-- Validation-->
+<script>
+function validateForm() {
+  var x = document.forms["EEE"]["Emp_ID"].value;
+  if (x == "") {
+    alert("Employee ID  must be filled out");
+    return false;
+    
+ 
+  }
+}
+</script>
+
  <%@page import="com.lms.service.EsalaryServices"%>
      <%@page import="com.lms.service.EsalaryServicesImpl"%>
       <%@page import="java.util.ArrayList"%>
@@ -161,7 +174,7 @@ png {
  
  
  </div>
- 
+ <div class="container">
  
  <!-- -Body Start-- -->
   <!-- -Body Start-- -->
@@ -173,7 +186,7 @@ png {
   
   
   
-  <form method="post" action="EsalaryInsert">
+  <form method="post" action="EsalaryInsert"   name="EEE" onsubmit="return validateForm()">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Employee ID </label>
@@ -304,9 +317,6 @@ png {
 							</div>
 		
   
-  </div>
-		
-		</div> 
 		 <%} %>   
   
   
@@ -316,7 +326,7 @@ png {
   
   
   
-  
+  </div></div></div></div>
   
   
   
@@ -324,10 +334,7 @@ png {
   
   
 
- 
-     
-</div>
-     
+
      
  <!-- ------ -->
 <!-- ------ -->
@@ -357,6 +364,8 @@ png {
 <!-- ------ -->
 <!-- ------ -->
 <!-- ------ -->
+
+
 
 
 			
