@@ -54,9 +54,11 @@ public class ResultTeacherView extends HttpServlet {
 		
 		 if(status == 1)
 		    {
-		    	request.setAttribute("message", "Insert Successful");
-		    	RequestDispatcher dis = request.getRequestDispatcher("ResultTeacherView.jsp");
-		    	dis.forward(request, response);    	
+		    	request.setAttribute("message", "Result  Added Succssfully ");
+				request.setAttribute("link", "ResultTeacherView.jsp");
+				request.setAttribute("status", "OK");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+				dispatcher.forward(request, response); 	
 		    }
 		    else if(status == 0)
 		    {

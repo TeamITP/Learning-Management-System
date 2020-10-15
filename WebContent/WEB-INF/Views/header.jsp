@@ -29,13 +29,13 @@ String clzPath="";
 	<div class="grid-container">
 		<div class="grid-item navContain">
 			<a href="index.jsp" class="logo"><i class="fa fa-graduation-cap"
-				aria-hidden="true"></i> New Montana</a>
+				aria-hidden="true"></i> My Institute</a>
 			<nav>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="<%=clzPath%>">Classrooms</a></li>
+					<li><a href="Notices.jsp">Notices</a></li>
 					<li><a href="about.jsp">About</a></li>
-					<li><a href="contact.jsp">Contact</a></li>
 					<%
 			if (session.getAttribute("userId") == null) {
 		%><li><a id="loginA" href="login.jsp">Login</a></li>

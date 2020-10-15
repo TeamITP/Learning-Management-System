@@ -59,30 +59,26 @@
 		response.sendRedirect("login.jsp");
 	}
 
-	ClassroomServices classroomServices = new ClassroomServicesImpl();
-	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
+	
+	<!-- Teacher Navigation -->
+	<%ClassroomServices classroomServices = new ClassroomServicesImpl();
+	Classroom classroom = classroomServices.getClassroom(clzId); %>
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav"><%=username %></h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherResults.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Results</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
@@ -322,7 +318,7 @@ $(document).ready(function(){
 						<div class="form-group">
 							<button data-dismiss="modal"
 								style="margin-right: 20px; color: #ffffff"
-								class="btn btn-warning">Cansel</button>
+								class="btn btn-warning">Cancel</button>
 							<button type="submit" class="btn btn-danger">Delete</button>
 						</div>
 					</form>

@@ -48,9 +48,12 @@ public class DeleteExamResult extends HttpServlet {
 		int status = examresultservices.DeleteResult(ResultId);
 		 if(status == 1)
 		    {
-		    	request.setAttribute("message", "delete Successful");
-		    	RequestDispatcher dis = request.getRequestDispatcher("ResultTeacherView.jsp");
-		    	dis.forward(request, response);    	
+			 request.setAttribute("message", "Succssfully Deleted");
+				request.setAttribute("link", "ResultTeacherView.jsp");
+				request.setAttribute("status", "OK");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+				dispatcher.forward(request, response); 	
+		    	
 		    }
 		    else if(status == 0)
 		    {

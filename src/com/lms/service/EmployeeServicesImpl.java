@@ -1,5 +1,5 @@
-/*Anuththara K.G.S.N*/
-/*IT19142692*/
+//Anuththara K.G.S.N
+//IT19142692
 
 package com.lms.service;
 
@@ -179,9 +179,9 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
-			/*
-			 * Close statement and database connectivity at the end of transaction
-			 */
+			
+			//Close statement and database connectivity at the end of transaction
+			 
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
@@ -226,9 +226,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, e.getMessage());
 		} finally {
-			/*
-			 * Close statement and database connectivity at the end of transaction
-			 */
+			 //Close statement and database connectivity at the end of transaction
 			try {
 				if (preparedStatement != null) {
 					preparedStatement.close();
@@ -381,7 +379,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									document.close();
 									
 									//Final DEPLOYMENT ON SERVER
-									//filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For Local Host
 									/*
@@ -389,10 +387,10 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									 * So, please sout AND print the -> filePath = root + File.separator + classroomId + ".pdf";
 									 * Then see, where your file originally saved on pc
 									 * */
-									filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For GitHub Deployment TESTING
-									//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+									//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empId + ".pdf";
 						
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

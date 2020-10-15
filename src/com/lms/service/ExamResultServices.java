@@ -18,5 +18,16 @@ public interface ExamResultServices {
 	
 	
 	public int DeleteResult(String resultid);
+	
+	
+	public ExamResult getstudentmarks(String studentid,String examid);
+	
+	
+	public ExamResult getResult(String Resultid);
+	
+	public ArrayList<ExamResult> getExamResultListByMarks(String ExamID,int max );
+	
+	
+	
 
 }

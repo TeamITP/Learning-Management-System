@@ -100,7 +100,8 @@
                             <div class="col"><input type="text" value="<%=employee.getPassword()%>" id="password" name="password" style="width: 300px;border-color: rgb(0,111,255);"></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 4px;margin: 2px;"><button class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" type="button" style="height: 35px;background-color: rgb(232,32,19);margin: 10px;">Delete Account</button>
+                            <div class="col" style="padding: 4px;margin: 2px;">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" type="button" style="height: 35px;background-color: rgb(232,32,19);margin: 10px;">Delete Account</button>
                             <a href = "EmpUpdate.jsp"><button class="btn btn-primary" type="button" style="margin: 20px;height: 35px;background-color: rgb(248,194,5);">Update</button></div>
                         </div>
                         </form>
@@ -117,46 +118,6 @@
     </div>
     <script src="EmployeeProfile/js/jquery.min.js"></script>
     <script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
-	
-    </div>
-    
-    <!--Moodal for delete Profile-->
-		<div class="modal fade" id="deleteModal" role="form">
-			<div class="modal-dialog modal-dialog-centered">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<label class="modal-title">Delete</label>
-						<button type="button" id="bnClose" style="outline: none"
-							class="close" data-dismiss="modal">&times;</button>
-
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="row">
-						<div class="col" style="width: 300px;">
-							<div class="row">
-								<div class="col">
-									<a href="paymentHome.jsp"><button class="btn btn-primary"
-											type="button" style="padding-right: 20px; margin: 20px;">Go
-											to Dashboard</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</div>
-	<script src="EmployeeProfile/js/jquery.min.js"></script>
-	<script src="EmployeeProfile/bootstrap/js/bootstrap.min.js"></script>
-
-
-	</div>
 
 	<!--Moodal for delete Profile-->
 	<div class="modal fade" id="deleteModal" role="form">

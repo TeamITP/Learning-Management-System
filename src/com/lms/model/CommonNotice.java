@@ -65,7 +65,7 @@ package com.lms.model;
 		public void setAdminId(String adminId) {
 			AdminId = adminId;
 		}
-
+		
 		
 	}
 

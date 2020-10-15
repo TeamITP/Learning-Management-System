@@ -1,6 +1,7 @@
 package com.lms.service;
 
 import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,14 +45,14 @@ public class AssignmentServiceImpl implements AssignmentServices {
 		try {
 			connection = ConnectDB.getDBConnection();
 			
-			String sql = "INSERT INTO Assignment( Date, Class_ID, Question) VALUES( ?, ?, ?)";
+			String sql = "INSERT INTO Assignment( Date, Class_ID, Question,submissionLink) VALUES( ?, ?, ?,?)";
 			
 			preparedStatement = connection.prepareStatement(sql);
 
 			preparedStatement.setString(1, assignment.getDate());
 			preparedStatement.setString(2, assignment.getClass_ID());
 			preparedStatement.setString(3, assignment.getQuestion());
-			
+			preparedStatement.setString(4, assignment.getSubmissionLink());
 			
 			status = preparedStatement.executeUpdate();
 			
@@ -93,7 +94,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 				assignment.setDate(resultSet.getString(3));
 				assignment.setClass_ID(resultSet.getString(4));
 				assignment.setQuestion(resultSet.getString(5));
-				
+				assignment.setSubmissionLink(resultSet.getString(6));
 				arrayList.add(assignment);
 			}
 			System.out.println(arrayList.size());
@@ -135,6 +136,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 				assignment.setDate(resultSet.getString(3));
 				assignment.setClass_ID(resultSet.getString(4));
 				assignment.setQuestion(resultSet.getString(5));
+				assignment.setSubmissionLink(resultSet.getString(6));
 			}
 	} catch (SQLException e) {
 		System.out.println(e.getMessage());
@@ -269,7 +271,7 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 	
 	
 	
-	public String generateReport(String Class_ID) {
+	public String generateReport(String Class_ID, String root) {
 		String filePath = null;
 
 		// Create a new font object selecting one of the PDF base fonts
@@ -395,13 +397,12 @@ ArrayList<Assignment> arrayList = new ArrayList<Assignment>();
 			// close the content stream
 			cos.close();
 			// Save the results and ensure that the document is properly closed:
-			filePath = System.getProperty("catalina.base")
-					+ "\\wtpwebapps\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Class_ID + ".pdf";
+			filePath =root + File.separator  + Class_ID + ".pdf";
 
 			document.save(filePath);
 			document.close();
-			
-			filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + Class_ID + ".pdf";
+		
+			filePath = "\\UploadedFiles\\PDF\\" +  Class_ID + ".pdf";
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

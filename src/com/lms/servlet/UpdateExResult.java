@@ -54,9 +54,11 @@ public class UpdateExResult extends HttpServlet {
 		int status = examresultservices.UpdateResult(ResultId, Marks);
 		 if(status == 1)
 		    {
-		    	request.setAttribute("message", "update Successful");
-		    	RequestDispatcher dis = request.getRequestDispatcher("ResultTeacherView.jsp");
-		    	dis.forward(request, response);    	
+			 request.setAttribute("message", "Result Update Succssfully ");
+				request.setAttribute("link", "ResultTeacherView.jsp");
+				request.setAttribute("status", "OK");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/databaseMessage.jsp");
+				dispatcher.forward(request, response); 	 	
 		    }
 		    else if(status == 0)
 		    {
