@@ -207,6 +207,7 @@ connection = ConnectDB.getDBConnection();
 				if (resultSet.getString(4).equals(studentid)) {
 					examResult.setMarks(resultSet.getInt(5));
 					examResult.setRank(resultSet.getInt(6));
+					examResult.setResult_ID(resultSet.getString(2));
 					break;
 				}
 				
@@ -247,6 +248,7 @@ connection = ConnectDB.getDBConnection();
 			ResultSet resultSet = preparedstatement.executeQuery();
 			
 			while (resultSet.next()) {
+				examresult.setResult_ID(resultSet.getString(2));
 				examresult.setExam_ID(resultSet.getString(3));
 				examresult.setMarks(resultSet.getInt(5));
 				examresult.setStudent_ID(resultSet.getString(4));
@@ -275,5 +277,58 @@ connection = ConnectDB.getDBConnection();
 	
 	
 	
-
+	public ArrayList<ExamResult> getExamResultListByMarks(String ExamID,int max ) {
+		
+		ArrayList<ExamResult> arrayList = new ArrayList<ExamResult>();
+		 System.out.println("exam marks max"+max);
+		
+		
+		
+		
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT *,Rank() OVER(ORDER BY Marks DESC) rank From Exam_Result WHERE Exam_ID = ? AND  Marks  BETWEEN ? AND ?";
+			
+			preparedstatement = connection.prepareStatement(sql);
+			
+			preparedstatement.setString(1, ExamID);
+			preparedstatement.setInt(2, 0);
+			preparedstatement.setInt(3, max);
+			
+			ResultSet resultSet = preparedstatement.executeQuery();
+			
+			while (resultSet.next()) {
+				ExamResult examresult = new ExamResult();
+				examresult.setResult_ID(resultSet.getString(2));
+				examresult.setStudent_ID(resultSet.getString(4));
+				examresult.setMarks(resultSet.getInt(5));
+				examresult.setRank(resultSet.getInt(6));
+				System.out.println(resultSet.getInt(6));
+				
+				
+				arrayList.add(examresult);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedstatement != null) {
+					preparedstatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrayList;
+	
+	
+	}
 }
+

@@ -317,9 +317,9 @@ public class NoticesServiceImple implements NoticeService {
 		Row<PDPage> row = table.createRow(20);
 		cell = row.createCell(15, "Notice_Id");
 		cell.setFontSize(12);
-		cell = row.createCell(55, "Title");
+		cell = row.createCell(30, "Title");
 		cell.setFontSize(12);
-		cell = row.createCell(30, "Description");
+		cell = row.createCell(55, "Description");
 		cell.setFontSize(12);
 	
 	
@@ -333,10 +333,10 @@ public class NoticesServiceImple implements NoticeService {
 			cell = row.createCell(15, notice1.getNotice_id());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(55, notice1.getTitle());
+			cell = row.createCell(30, notice1.getTitle());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
-			cell = row.createCell(30, notice1.getNotice_des());
+			cell = row.createCell(55, notice1.getNotice_des());
 			cell.setFontSize(12);
 			cell.setTextColor(Color.GRAY);
 			
@@ -357,7 +357,7 @@ public class NoticesServiceImple implements NoticeService {
 						document.close();
 						
 						//Final DEPLOYMENT ON SERVER
-						//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+						filePath = "\\UploadedFiles\\PDF\\" + empid + ".pdf";
 						
 						//For Local Host
 						/*
@@ -365,7 +365,7 @@ public class NoticesServiceImple implements NoticeService {
 						 * So, please sout AND print the -> filePath = root + File.separator + empid+ ".pdf";
 						 * Then see, where your file originally saved on pc
 						 * */
-						filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empid + ".pdf";
+						//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empid + ".pdf";
 						
 						//For GitHub Deployment TESTING
 						//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empid + ".pdf";
@@ -375,6 +375,51 @@ public class NoticesServiceImple implements NoticeService {
 		}
 
 		return filePath;
+	}
+
+
+	@Override
+	public ArrayList<CommonNotice> getNoticeArray() {
+ArrayList<CommonNotice> arrayList = new ArrayList<CommonNotice>();
+		
+		try {
+			connection = ConnectDB.getDBConnection();
+			
+			String sql = "SELECT * From CommonNotice";
+			
+			preparedStatement = connection.prepareStatement(sql);
+			
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				CommonNotice commonnotice = new CommonNotice();
+				
+				commonnotice.setNotice_des(resultSet.getString(5));
+				commonnotice.setTitle(resultSet.getString(3));
+				commonnotice.setNotice_id(resultSet.getString(2));
+				commonnotice.setDateTime(resultSet.getString(4));
+				
+				
+				arrayList.add( commonnotice);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			/*
+			 * Close statement and database connectivity at the end of transaction
+			 */
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (java.sql.SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrayList;
 	}
 	
 	

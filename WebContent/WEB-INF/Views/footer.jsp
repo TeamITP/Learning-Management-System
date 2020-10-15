@@ -17,7 +17,7 @@
 		<div class="row footerRow ">
 			<div class="cols-md-12 col-lg-3 col-xl-2 ">
 				<h3 id="Foot_copyright" style="display: inline">&copy; 2020
-					NewMontana.lk</h3>
+					MyInstitute.lk</h3>
 			</div>
 			<div class="col-lg-9 col-xl-8 d-none d-lg-block">
 				<img class="iconF1 " src="Images/callBlue.png "
@@ -25,11 +25,11 @@
 				<p class="linkF " style="display: inline">011 23423453</p>
 				<img class="iconF1 " src="Images/webBlue.png "
 					style="display: inline">
-				<p class="linkF " style="display: inline">www.newmontana.lk</p>
+				<p class="linkF " style="display: inline">www.myinstitute.lk</p>
 				<img class="iconF1 " src="Images/placeBlue.png "
 					style="display: inline">
 				<p class="linkF " style="display: inline">No.12, Main Road,
-					Gampaha</p>
+					Malabe</p>
 			</div>
 			<div class="col-xl-2 d-none d-xl-block">
 				<a href="https://www.facebook.com "><img id="fb " class="iconF "

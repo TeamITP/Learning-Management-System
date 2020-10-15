@@ -496,7 +496,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 
 
 			//Final DEPLOYMENT ON SERVER
-			//filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			filePath = "\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 			
 			//For Local Host
 			/*
@@ -507,7 +507,7 @@ public class ClassroomServicesImpl implements ClassroomServices {
 			//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 			
 			//For GitHub Deployment TESTING
-			filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
+			//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + classroomId + ".pdf";
 						
 			
 		} catch (IOException e) {

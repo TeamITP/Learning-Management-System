@@ -379,7 +379,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									document.close();
 									
 									//Final DEPLOYMENT ON SERVER
-									//filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									filePath = "\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For Local Host
 									/*
@@ -390,7 +390,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 									//filePath = "\\LearningManagementSystem\\UploadedFiles\\PDF\\" + empId + ".pdf";
 									
 									//For GitHub Deployment TESTING
-									filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empId + ".pdf";
+									//filePath = "\\LearningManagementSystem-0.0.1-SNAPSHOT\\UploadedFiles\\PDF\\" + empId + ".pdf";
 						
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

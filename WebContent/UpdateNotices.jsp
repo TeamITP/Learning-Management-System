@@ -36,31 +36,27 @@
 	CommonNotice commonnotice = noticeService.getNoticeById(noticeId);
 	%>
 
- <div class="sideNav">
-           		 <div class="row justify-content-center firstRow">
-                 <div class="col-4">
-                 <img src="Images/avatarTeacher.png" id="imageUserNav"></div>
-                 <div class="col-8 align-items-center">
-                    <h5 class="nameNav">Yasiru Randika</h5>
-                </div>
-            </div>
-            <hr id="breakLine">
-            <div class="mainSideNav">
-                <a href="teacherClassroom.jsp" ><i
-				class="fas fa-home iconMainNavi" ></i>Classroom</a>
-                <a href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a>
-                <a href="teacherNotices.jsp" class="active"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
-                <a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a>
-                <a href="teacherPayments.jsp"> <i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments</a>
-                <a href="QnA_Teacher.jsp" > <i class="fas fa-question iconMainNavi"></i>Q & A</a>
-            </div>
-            <hr id="breakLine">
-            <h5 class="subTitle">Class Details</h5>
-            <h5 class="textClz" id="className">Combined Mathematics</h5>
-            <h5 class="textClz" id="classYear">2020 A/L</h5>
-            <h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
-        </div>
+ <!-- Employee Navigation Bar -->
+	<div class="sideNav">
+		<div class="row justify-content-center firstRow">
+			<div class="col-4">
+				<img src="Images/dashboard.png" id="imageUserNav">
+			</div>
+			<div class="col-8 align-items-center">
+				<h5 class="nameNav">Dashboard</h5>
+			</div>
+		</div>
+		<hr id="breakLine">
+		<div class="mainSideNav">
+			<a href="paymentHome.jsp"><i class="fas fa-file-invoice-dollar iconMainNavi"></i>Payment Home</a>
+			<a href="adminTeacher.jsp"><i class="fas fa-user-tie iconMainNavi"></i>Teachers</a> 
+			<a href="adminEmployee.jsp"><i class="fas fa-user iconMainNavi"></i>Employees</a> 
+			<a href="adminStudents.jsp"><i class="fas fa-user-graduate iconMainNavi"></i>Students</a> 
+			<a href="empNotices.jsp"class="active"><i class="fas fa-bullhorn iconMainNavi"></i>Notices</a>
+			<a href="empTeacherReg.jsp"><i class="fas fa-user-plus iconMainNavi"></i>New Teachers</a> 
+			<a href="empStudentReg.jsp"> <i class="fas fa-user-plus iconMainNavi"></i>New Students </a>
+		</div>
+	</div>
 
 
 <!--Page Content Start Here-->
@@ -73,7 +69,9 @@
                     <h1 class="pageTopic"> Update Notice </h1>
                     <hr class="dividerTopic">
                 </div>
-       
+           <div class="row">
+		<div class="col-5"> 
+             
               
 <form action= "UpdateNotices" method= "post">
 <input name="id" value="<%=noticeId%>" hidden>
@@ -84,7 +82,8 @@
     <button class="btn btn-primary">Update Notice</button>
 </form>
 
- <img src="Images/image4.png" style = "z-index:-1; position:absolute"id="imgUpN" width ="500" height="400">     
+<div class="col-5">
+ <img src="Images/image4.png" style = "z-index:-1; position:absolute"id="imgUpN" width ="500" height="400">     </div></div>
 
             </div>
                 <!--Footer Here-->

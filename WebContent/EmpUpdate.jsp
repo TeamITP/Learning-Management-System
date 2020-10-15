@@ -1,4 +1,4 @@
-<!--Anuththara K.G.S.N-->
+;<!--Anuththara K.G.S.N-->
 <!--IT19142692-->
 
 <%@page import="java.util.ArrayList"%>
@@ -29,15 +29,12 @@
 		String username = "";
 			if (session.getAttribute("userId") != null) {
 			username = (String) session.getAttribute("userId");
-
 			if (username.charAt(0) != 'E') {
 			response.sendRedirect("index.jsp");
 			}
-
 			} else {
 			response.sendRedirect("index.jsp");
 			}
-
 			EmployeeServices employeeServices = new EmployeeServicesImpl();
 			Employee employee = employeeServices.getEmployee(username);
 			%>
