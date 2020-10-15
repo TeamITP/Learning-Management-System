@@ -131,7 +131,8 @@ int n = 0;
 		    		"\r\n" + 
 		    		"<h2 style=\"color:#0066ff;font-size: 20px; font-family: Arial, Helvetica, sans-serif;\"><b>" +String.valueOf(n) + "</b></h2>\r\n" + 
 		    		"\r\n" + 
-		    		"<p style=\"font-size: 15px; font-family: Arial, Helvetica, sans-serif;\">Thank You <br> New Montana Accounts Team</p>");
+		    		"<p style=\"font-size: 15px; font-family: Arial, Helvetica, sans-serif;\">Thank You <br> New Montana Accounts Team</p>" + 
+		    		"<br><br><p style=\"font-size: 12px; font-family: Arial, Helvetica, sans-serif;\">If you don't have requested a verification code to unlock your code, someone else is trying to access your account. Please iform the account team if there any any. We will block the suspicious accessing device. This is an auto generated email to verify your account. Don't disclose this verification code to anyone else. Don't reply to this email. Stay Connected with us.</p>");
 		    Mail mail = new Mail(from, subject, to, content);
 
 		    SendGrid sg = new SendGrid("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");

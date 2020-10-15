@@ -51,27 +51,22 @@
 
 <body>
 
+	<!-- Teacher Navigation -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
@@ -79,7 +74,7 @@
 		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
 		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
-
+	
 	<div class="page-container">
 		<!--Headers Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
@@ -132,6 +127,7 @@
 								onclick="document.getElementById('click<%=readingMaterial.getReadingMatId()%>').click()"><%=readingMaterial.getName() %></h3>
 						</div>
 					</div>
+					</form>
 				</div>
 				<div class="modal fade" id="<%=readingMaterial.getReadingMatId() %>"
 					role="form">
@@ -166,8 +162,9 @@
 						</div>
 					</div>
 				</div>
-				<form action="<%=readingMaterial.getPathLink() %>" target="_blank"
+				<form action="downloadReading" method="post" target="_blank"
 					hidden>
+					<input value="<%=readingMaterial.getPathLink() %>" name="link">
 					<input type="submit"
 						id="click<%=readingMaterial.getReadingMatId()%>">
 				</form>

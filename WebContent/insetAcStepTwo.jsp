@@ -17,6 +17,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<script type="text/javascript">function overlayShow() {
+		  document.getElementById("overlay").className += " show";
+	}
+</script>
 </head>
 
 
@@ -47,36 +51,32 @@ String lessonId = (String) session.getAttribute("lessonId");
 	ClassroomServices classroomServices = new ClassroomServicesImpl();
 	Classroom classroom = classroomServices.getClassroom(clzId);
 	%>
+	<!-- Teacher Navigation -->
 	<div class="sideNav">
 		<div class="row justify-content-center firstRow">
 			<div class="col-4">
-				<img src="Images/avatarTeacher.png" id="imageUserNav">
+				<img src="Images/openbook.png" id="imageUserNav">
 			</div>
 			<div class="col-8 align-items-center">
-				<h5 class="nameNav">Yasiru Randika</h5>
+				<h5 class="nameNav">Dashboard</h5>
 			</div>
 		</div>
 		<hr id="breakLine">
 		<div class="mainSideNav">
-			<a href="teacherClassroom.jsp" class="active"><i
-				class="fas fa-home iconMainNavi"></i>Classroom</a> <a
-				href="teacherAssignments.jsp"><i
-				class="fas fa-file-alt iconMainNavi"></i>Assignments</a> <a
-				href="teacherNotices.jsp"><i
-				class="fas fa-bullhorn iconMainNavi"></i>Notices</a> <a
-				href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam
-				Marks</a> <a href="teacherPayments.jsp"> <i
-				class="fas fa-file-invoice-dollar iconMainNavi"></i>Payments
-			</a>
+			<a href="teacherClassroom.jsp" class="active"><i class="fas fa-home iconMainNavi"></i>Classroom</a> 
+			<a href="teacherAssignments.jsp"><i class="fas fa-file-alt iconMainNavi"></i>Assignments</a> 
+			<a href="teacherExams.jsp"><i class="fas fa-poll iconMainNavi"></i>Exam Marks</a> 
+			<a href="QnA_Teacher.jsp"><i class="fas fa-poll iconMainNavi"></i>Q & A</a> 
 		</div>
 		<hr id="breakLine">
 		<h5 class="subTitle">Class Details</h5>
-		<h5 class="textClz" id="className">Combined Mathematics</h5>
-		<h5 class="textClz" id="classYear">2020 A/L</h5>
-		<h5 class="textClz" id="classTime">Monday 2.30 pm - 6.30 pm</h5>
+		<h5 class="textClz" id="className"><%=classroom.getSubject()%></h5>
+		<h5 class="textClz" id="classYear"><%=classroom.getDescription()%></h5>
+		<h5 class="textClz" id="classTime"><%=classroom.getClassTime()%></h5>
 	</div>
 
 	<div class="page-container">
+	
 		<!--Header Here-->
 		<jsp:include page="WEB-INF/Views/header.jsp"></jsp:include>
 		<div class="pageContainer">
@@ -89,8 +89,7 @@ String lessonId = (String) session.getAttribute("lessonId");
 				<img src="Images/step2.png" id="stepImage">
 			</div>
 			<div class="row">
-				<form enctype='multipart/form-data' method="post"
-					action="ReadingUpload">
+				<form enctype='multipart/form-data' method="post" action="ReadingUpload">
 					<input value="<%=clzId %> name=" classroomId" hidden>
 					<div class="uploadField">
 						<label for="fileUpload"> <img id="btnUpload"
@@ -103,16 +102,17 @@ String lessonId = (String) session.getAttribute("lessonId");
 					</div>
 			</div>
 			<input onchange="inputChanged()" draggable="true" type="file"
-				name="file" id="fileUpload" hidden />
+				name="file" id="fileUpload" hidden  required/>
 			<div class="row">
 				<button type="submit" class="btn btn-primary" name="btnSubmit"
-					id="btnSubmit">Next</button>
+					id="btnSubmit" onclick="overlayShow()">Next</button>
 			</div>
 			</form>
 			<div id="warning">Make sure your input is a pdf document</div>
 		</div>
 		<!--Footer Here-->
 		<jsp:include page="WEB-INF/Views/footer.jsp"></jsp:include>
+	</div>
 	</div>
 </body>
 
